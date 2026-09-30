@@ -2,7 +2,7 @@
 
 One Arsenal ZIP installs all 16 mods with the gameplay changes listed below.
 
-[Download Modpack v1.0.7](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.7/Super-Earth-Arsenal-Modpack-v1.0.7.zip) · [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download Modpack v1.0.7](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.7/Super-Earth-Arsenal-Modpack-v1.0.7.zip) Â· [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Current gameplay changes
 
@@ -44,6 +44,3 @@ Import the ZIP into Arsenal, enable its single option, keep Bingus Shared Loader
 ## Initialization
 
 Startup discovery limits work per frame and searches game data libraries. Weapon and sentry tuning waits for installed companion mods to finish initializing.
-
-
-User confirmed the Accelerator fix, revised Arc Thrower balance and Scorcher 540 RPM in a mission on 30 September 2026.
