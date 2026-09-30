@@ -2,7 +2,7 @@
 
 One Arsenal ZIP installs all 16 mods with the gameplay changes listed below.
 
-[Download Modpack v1.0.7](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.7/Super-Earth-Arsenal-Modpack-v1.0.7.zip) · [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download Modpack v1.0.8](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.8/Super-Earth-Arsenal-Modpack-v1.0.8.zip) Â· [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Current gameplay changes
 
@@ -27,11 +27,11 @@ One Arsenal ZIP installs all 16 mods with the gameplay changes listed below.
 
 ## Controls and shared effects
 
-**SAI Focus Precision:** Equip the Focus Lens for the precision spread. Compatible with the supported shared damage-table edits from One True Flag, AR-11 Arbitrator, and ARC-3 Rapid Arc Thrower.
+**SAI Focus Precision:** Equip the Focus Lens for the precision spread. Compatible with the supported shared damage-table edits from One True Flag, AR-11 Arbitrator, and ARC-3 Rapid Arc Thrower v0.9 and v0.10.
 
 **AR-11 Arbitrator:** Other optic ergonomics modifiers remain effective.
 
-**TX-41 Sterilizer:** Acid Storm temporarily reduces armor effectiveness. Gas MKII is shared with AX/TX-13 Guard Dog Dog Breath, which also deals 45 DPS. The Helldiver multiplier reduces incoming damage from all Gas sources, including grenades and hazards. The shared Acid Storm duration also affects weather status after the storm ends. Includes the current ARC-3 Rapid Arc Thrower balance.
+**TX-41 Sterilizer:** Acid Storm temporarily reduces armor effectiveness. Gas MKII is shared with AX/TX-13 Guard Dog Dog Breath, which also deals 45 DPS. The Helldiver multiplier reduces incoming damage from all Gas sources, including grenades and hazards. The shared Acid Storm duration also affects weather status after the storm ends. Supports the current ARC-3 Rapid Arc Thrower v0.10 balance during initialization.
 
 **ARC-3 Rapid Arc Thrower:** Enable Arc Thrower Revamped in CowboyBingus's Vanilla Plus Megapack for hold-to-fire.
 
