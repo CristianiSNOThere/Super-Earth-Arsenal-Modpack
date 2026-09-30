@@ -1,13 +1,14 @@
 # Super-Earth Arsenal Modpack
 
-One Arsenal ZIP installs all 15 mods with the gameplay changes listed below.
+One Arsenal ZIP installs all 16 mods with the gameplay changes listed below.
 
-[Download Modpack v1.0.3](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.3/Super-Earth-Arsenal-Modpack-v1.0.3.zip) · [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download Modpack v1.0.4](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.4/Super-Earth-Arsenal-Modpack-v1.0.4.zip) · [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Current gameplay changes
 
 | Mod | Gameplay settings |
 |---|---|
+| PLAS-1 Scorcher AR | Increases the magazine from 20 to 50 rounds and fire rate from 350 to 600 RPM. Reduces normal damage from 200 total to 150: 75 impact plus 75 explosion, before armor, hit location and distance falloff. Sets impact durable damage to 38 and explosion durable damage to 75 (113 combined against fully durable targets). Increases the full-damage blast radius from 1 to 1.25 metres and outer blast radius from 2 to 2.5 metres. Starting spare magazines increase from 3 to 4, and maximum spare magazines from 5 to 6; resupply grants 5 magazines. Uses the Scorcher's native Semi and Auto selector. Select Auto in Weapon Functions for continuous fire; at 600 RPM, a 50-round magazine provides approximately five seconds of sustained fire. Reduces horizontal/vertical recoil drift from 20 to 15, horizontal camera recoil from 2 to 1.5, and vertical camera recoil from 20 to 15 (25% less per shot). |
 | One True Flag | Default damage is 300 normal / 150 durable. For selectable damage from 0 to 9999 and half/equal durable damage, use the individual One True Flag package. |
 | SAI Focus Precision | Sets LAS-12 SAI normal damage to 90 and durable damage to 21 with any lens. Sets Focus Lens horizontal and vertical spread to 0.5 MRAD. |
 | AR-11 Arbitrator | Sets rifle damage to 80 and magazine capacity to 65 rounds. Sets underbarrel starting and maximum spare ammo to 30, stagger force to 25, and push force to 20. Its shotgun magazine holds 4 shells and refills 20 shells. Base ergonomics is 41, giving 40 with the default optic. |
