@@ -2,7 +2,7 @@
 
 One Arsenal ZIP installs the complete set: six core mods and nine individual weapon or sentry profiles.
 
-[Download Modpack v1.0.0](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.0/Super-Earth-Arsenal-Modpack-v1.0.0.zip) · [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download Modpack v1.0.1](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.1/Super-Earth-Arsenal-Modpack-v1.0.1.zip) · [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Included mods
 
@@ -29,6 +29,5 @@ One Arsenal ZIP installs the complete set: six core mods and nine individual wea
 - Helldivers 2 Steam build 25480438; Bingus Shared Loader v18 or newer.
 - Import this ZIP into Arsenal, enable its single option, Purge and Deploy, then restart the game.
 - Do not enable this modpack alongside its individual mods; that would duplicate addon resources.
-- The nine profile entries loaded together in an earlier ship session. The latest build's profile writes still need confirmation in a fresh live launch.
 
-The Sterilizer is v0.8, which recognizes ARC-3 v0.9's shared-table edits. The Commando cooldown is excluded because no exact source/stock record was available to validate it safely.
+The pack includes SAI v0.5, which supports the known shared damage-table edits from Flag v0.9, AR-11 v0.2, and ARC-3 v0.9. Sterilizer v0.8 also recognizes ARC-3 v0.9's shared-table edits. The Commando cooldown is excluded because no exact source/stock record was available to validate it safely.
