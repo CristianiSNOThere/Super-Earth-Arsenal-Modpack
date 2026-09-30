@@ -2,7 +2,7 @@
 
 One Arsenal ZIP installs all 15 mods with the gameplay changes listed below.
 
-[Download Modpack v1.0.2](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.2/Super-Earth-Arsenal-Modpack-v1.0.2.zip) · [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download Modpack v1.0.3](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.3/Super-Earth-Arsenal-Modpack-v1.0.3.zip) · [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Current gameplay changes
 
@@ -39,3 +39,7 @@ One Arsenal ZIP installs all 15 mods with the gameplay changes listed below.
 ## Install
 
 Import the ZIP into Arsenal, enable its single option, keep Bingus Shared Loader at its documented priority, Purge and Deploy, and restart the game. Requires Helldivers 2 Steam build 25480438 and Bingus Shared Loader v18 or newer. Use the modpack or the individual packages to avoid duplicate addon resources.
+
+## Initialization
+
+Startup discovery limits work per frame and searches game data libraries. Weapon and sentry tuning waits for installed companion mods to finish initializing.
