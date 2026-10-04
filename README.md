@@ -15,7 +15,7 @@
 
 One Arsenal ZIP installs all 17 mods with the gameplay changes listed below.
 
-[Download Modpack v1.0.10](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.10/Super-Earth-Arsenal-Modpack-v1.0.10.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download Modpack v1.0.11](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.11/Super-Earth-Arsenal-Modpack-v1.0.11.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Current gameplay changes
 
@@ -26,7 +26,7 @@ One Arsenal ZIP installs all 17 mods with the gameplay changes listed below.
 | SAI Focus Precision | Sets LAS-12 SAI normal damage to 90 and durable damage to 21 with any lens. Sets Focus Lens horizontal and vertical spread to 0.5 MRAD. |
 | AR-11 Arbitrator | Sets rifle damage to 80 and magazine capacity to 65 rounds. Sets underbarrel starting and maximum spare ammo to 30, stagger force to 25, and push force to 20. Its shotgun magazine holds 4 shells and refills 20 shells. Base ergonomics is 41, giving 40 with the default optic. |
 | R/40-K Hot-Shot | Sets magazine capacity to 20 rounds, starting magazines to 5, resupply magazines to 5, maximum magazines to 5, and ergonomics to 45. Uses standard magazine reloads. |
-| TX-41 Sterilizer | Applies the Acid Storm armor-reduction status with spray hits for 15 seconds. Sets Gas MKII damage to 45 DPS, magazine capacity to 175, and Gas MKII and Gas Confusion buildup per hit to 0.75. Sets the Helldiver incoming Gas multiplier to 0.7333. |
+| Gas Overhaul | Adds 15-second temporary armor reduction to supported gas weapons, including Dog Breath and gas grenades. Shared gas normal/durable damage rises from 25/25 to 45/45 DPS; Sterilizer magazine capacity from 125 to 175, gas/confusion buildup from 0.5 to 0.75, and incoming Helldiver gas multiplier from 1.3 to 0.7333. Shared Acid Storm duration changes from 1 to 15 seconds. |
 | ARC-3 Rapid Arc Thrower | Sets minimum/full/overcharge times to 0.307692/0.338462/0.369231 seconds, primary reach to 45 m, and normal/durable damage per pulse to 226/90. Sets Stun Medium buildup to 1.2, demolition strength to 4, hit reaction force strength to 25, impulse to 2, and horizontal/vertical camera climb multipliers to 0.4. The nominal firing rate is 35% lower than v0.9; compensated pulse damage gives roughly 10% less sustained damage, with 5 m more reach. |
 | ARC-12 Blitzer | Sets normal damage to 100, durable damage to 45, arc range to 30 m, and fire rate to 80 RPM. |
 | CQC-20 Breaching Hammer | Sets direct-hit, slight-blast, and large-blast armor penetration to 7. Sets starting, resupply, and maximum magazine counts to 21 each. |
@@ -45,7 +45,7 @@ One Arsenal ZIP installs all 17 mods with the gameplay changes listed below.
 
 **AR-11 Arbitrator:** Other optic ergonomics modifiers remain effective.
 
-**TX-41 Sterilizer:** Acid Storm temporarily reduces armor effectiveness. Gas MKII is shared with AX/TX-13 Guard Dog Dog Breath, which also deals 45 DPS. The Helldiver multiplier reduces incoming damage from all Gas sources, including grenades and hazards. The shared Acid Storm duration also affects weather status after the storm ends. Supports the current ARC-3 Rapid Arc Thrower v0.11 balance during initialization.
+**Gas Overhaul:** Applies temporary armor reduction to Sterilizer, Dog Breath, Re-Educator, Speargun, gas grenades, gas mines, Gas Mortar Sentry, Eagle Gas Airstrike and Orbital Gas Strike. The 45 DPS damage and incoming gas protection also affect shared gas sources and hazards. Shared Acid Storm duration affects the weather status after the storm ends. Replaces the older Sterilizer package; do not enable it separately alongside this pack. [Full stock comparison](source/gas-overhaul/README.md).
 
 **ARC-3 Rapid Arc Thrower:** Enable Arc Thrower Revamped in CowboyBingus's Vanilla Plus Megapack for hold-to-fire.
 
@@ -78,3 +78,7 @@ The user accepted the finished weapon design. Offline checks verify the packaged
 ## Changes in v1.0.10
 
 Adds SG-8P Punisher Plasma. Includes the previously published ARC-3 v0.11 Stun Medium buildup1.2, Sterilizer v0.11 shared Acid Storm duration15 seconds and SAI v0.8 compatibility update. Other existing mod settings are retained.
+
+## Changes in v1.0.11
+
+Replaces Sterilizer v0.11 with Gas Overhaul v0.12 and extends its 15-second temporary armor reduction to the other supported gas weapons. Existing shared gas damage and all other mod tuning are retained. The user confirmed the Gas Overhaul candidate works in gameplay; offline composition checks preserve all 27 other runtime resources, including Punisher Plasma assets and native safety. No exhaustive third-party compatibility claim is made.
