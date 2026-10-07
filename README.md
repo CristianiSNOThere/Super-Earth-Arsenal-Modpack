@@ -15,7 +15,7 @@
 
 One Arsenal ZIP installs all 17 mods with the gameplay changes listed below.
 
-[Download Modpack v1.0.11](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.11/Super-Earth-Arsenal-Modpack-v1.0.11.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download Modpack v1.0.12](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.12/Super-Earth-Arsenal-Modpack-v1.0.12.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Current gameplay changes
 
@@ -59,7 +59,7 @@ Import the ZIP into Arsenal, enable its single option, keep Bingus Shared Loader
 
 ## Initialization
 
-Startup discovery limits work per frame and searches game data libraries. Weapon and sentry tuning waits for installed companion mods to finish initializing.
+Startup discovery limits work per frame and searches game data libraries. Weapon and sentry tuning waits for installed companion mods to finish initializing. v1.0.12 bounds that wait at 120 seconds and reports the named blocker. One True Flag recognizes exact supported AR-11 and ARC-3 edits in its shared-table check while rejecting unknown edits. The 17 individual-package candidate set passed one fresh startup: all nine profiles applied 33 values with zero refusals, Scorcher applied 14, and Flag, SAI, AR-11, ARC-3, Gas and Hot-Shot reported Applied. The combined v1.0.12 package and gameplay have not been verified.
 
 ## Controls and compatibility
 
@@ -82,3 +82,7 @@ Adds SG-8P Punisher Plasma. Includes the previously published ARC-3 v0.11 Stun M
 ## Changes in v1.0.11
 
 Replaces Sterilizer v0.11 with Gas Overhaul v0.12 and extends its 15-second temporary armor reduction to the other supported gas weapons. Existing shared gas damage and all other mod tuning are retained. The user confirmed the Gas Overhaul candidate works in gameplay; offline composition checks preserve all 27 other runtime resources, including Punisher Plasma assets and native safety. No exhaustive third-party compatibility claim is made.
+
+## Changes in v1.0.12
+
+Updates startup compatibility for the same 17 mods. One True Flag now recognizes the exact supported AR-11 and ARC-3 shared damage-table edits if they apply first; unknown edits still fail validation. The shared profile and Scorcher runtimes report a named companion failure after 120 seconds rather than waiting indefinitely. Gameplay tuning is unchanged. The equivalent 17 individual candidates passed fresh startup; the combined v1.0.12 package still needs its own startup and gameplay check.
