@@ -15,7 +15,7 @@
 
 One Arsenal ZIP installs all 17 mods with the gameplay changes listed below.
 
-[Download Modpack v1.0.12](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.12/Super-Earth-Arsenal-Modpack-v1.0.12.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download Modpack v1.0.13](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.13/Super-Earth-Arsenal-Modpack-v1.0.13.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Current gameplay changes
 
@@ -27,7 +27,7 @@ One Arsenal ZIP installs all 17 mods with the gameplay changes listed below.
 | AR-11 Arbitrator | Sets rifle damage to 80 and magazine capacity to 65 rounds. Sets underbarrel starting and maximum spare ammo to 30, stagger force to 25, and push force to 20. Its shotgun magazine holds 4 shells and refills 20 shells. Base ergonomics is 41, giving 40 with the default optic. |
 | R/40-K Hot-Shot | Sets magazine capacity to 20 rounds, starting magazines to 5, resupply magazines to 5, maximum magazines to 5, and ergonomics to 45. Uses standard magazine reloads. |
 | Gas Overhaul | Adds 15-second temporary armor reduction to supported gas weapons, including Dog Breath and gas grenades. Shared gas normal/durable damage rises from 25/25 to 45/45 DPS; Sterilizer magazine capacity from 125 to 175, gas/confusion buildup from 0.5 to 0.75, and incoming Helldiver gas multiplier from 1.3 to 0.7333. Shared Acid Storm duration changes from 1 to 15 seconds. |
-| ARC-3 Rapid Arc Thrower | Sets minimum/full/overcharge times to 0.307692/0.338462/0.369231 seconds, primary reach to 45 m, and normal/durable damage per pulse to 226/90. Sets Stun Medium buildup to 1.2, demolition strength to 4, hit reaction force strength to 25, impulse to 2, and horizontal/vertical camera climb multipliers to 0.4. The nominal firing rate is 35% lower than v0.9; compensated pulse damage gives roughly 10% less sustained damage, with 5 m more reach. |
+| ARC-3 Rapid/Supercharge | Adds the native Auto/Rapid and Semi/Supercharge fire-mode selector. Rapid charges in 0.307692/0.338462/0.369231 seconds and uses 0.85x of the shared 226/90 normal/durable pulse damage (about 192.1/76.5 before armor and hit location). Supercharge charges in 4.9/5.0/5.25 seconds, uses dedicated 1550/1550 damage, targets one enemy (chain 1, split 0), and cannot explode from overcharge. Both modes keep stock ARC audio and 45 m reach. |
 | ARC-12 Blitzer | Sets normal damage to 100, durable damage to 45, arc range to 30 m, and fire rate to 80 RPM. |
 | CQC-20 Breaching Hammer | Sets direct-hit, slight-blast, and large-blast armor penetration to 7. Sets starting, resupply, and maximum magazine counts to 21 each. |
 | PLAS-39 Accelerator Rifle | Sets magazine capacity to 21, horizontal/vertical drift and camera recoil to 2, horizontal/vertical spread to 0.3, sway to 0.4, stagger to 25, direct-hit and blast armor penetration to 4, and outer blast/shockwave values to 2.5. Offers near-instant Semi fire at 200 RPM and charged three-round Burst with normal firing audio. |
@@ -41,13 +41,13 @@ One Arsenal ZIP installs all 17 mods with the gameplay changes listed below.
 
 ## Controls and shared effects
 
-**SAI Focus Precision:** Equip the Focus Lens for the precision spread. Compatible with the supported shared damage-table edits from One True Flag, AR-11 Arbitrator, and ARC-3 Rapid Arc Thrower v0.9, v0.10 and v0.11.
+**SAI Focus Precision:** Equip the Focus Lens for the precision spread. Compatible with the exact supported shared damage-table edits from One True Flag, AR-11 Arbitrator, and ARC-3 Rapid/Supercharge v0.13 (which retains the 226/90 shared row).
 
 **AR-11 Arbitrator:** Other optic ergonomics modifiers remain effective.
 
 **Gas Overhaul:** Applies temporary armor reduction to Sterilizer, Dog Breath, Re-Educator, Speargun, gas grenades, gas mines, Gas Mortar Sentry, Eagle Gas Airstrike and Orbital Gas Strike. The 45 DPS damage and incoming gas protection also affect shared gas sources and hazards. Shared Acid Storm duration affects the weather status after the storm ends. Replaces the older Sterilizer package; do not enable it separately alongside this pack. [Full stock comparison](source/gas-overhaul/README.md).
 
-**ARC-3 Rapid Arc Thrower:** Enable Arc Thrower Revamped in CowboyBingus's Vanilla Plus Megapack for hold-to-fire.
+**ARC-3 Rapid/Supercharge:** Hold R, then choose Auto for Rapid or Semi for the 5-second Supercharge. Enable Arc Thrower Revamped in CowboyBingus's Vanilla Plus Megapack for hold-to-fire. Optional: [WeakPoint Lock-On All-In-One 3.0](https://ayakamods.com/mods/weakpoint-lock-on-v2.3981/) by potatoman7676 has a selectable **Titan Head** lock-on option. ARC attacks use the game's lock-on points; selecting that option can help Supercharge hit a Bile Titan's head. Install it separately and select the options you want. Head hits and one-shot kills still depend on target, range, and actual hit routing. Avoid the package's Disable Lock-On options for ARC weapons.
 
 **PLAS-39 Accelerator Rifle:** Hold R and use Weapon Wheel Left (default: left-click) in the left side of Weapon Functions. Semi fires one round with a 0.01-second minimum charge and 0.30-second spacing. Burst uses a 0.45-second minimum charge and three rounds spaced 0.12 seconds apart. Changes apply as you select and follow the game's remembered mode. Custom bindings use the native selector.
 
@@ -59,7 +59,7 @@ Import the ZIP into Arsenal, enable its single option, keep Bingus Shared Loader
 
 ## Initialization
 
-Startup discovery limits work per frame and searches game data libraries. Weapon and sentry tuning waits for installed companion mods to finish initializing. v1.0.12 bounds that wait at 120 seconds and reports the named blocker. One True Flag recognizes exact supported AR-11 and ARC-3 edits in its shared-table check while rejecting unknown edits. The 17 individual-package candidate set passed one fresh startup: all nine profiles applied 33 values with zero refusals, Scorcher applied 14, and Flag, SAI, AR-11, ARC-3, Gas and Hot-Shot reported Applied. The combined v1.0.12 package and gameplay have not been verified.
+Startup discovery limits work per frame and searches game data libraries. Weapon and sentry tuning waits for installed companion mods to finish initializing. v1.0.12 bounds that wait at 120 seconds and reports the named blocker. One True Flag recognizes exact supported AR-11 and ARC-3 edits in its shared-table check while rejecting unknown edits. The 17 individual-package candidate set passed one fresh startup: all nine profiles applied 33 values with zero refusals, Scorcher applied 14, and Flag, SAI, AR-11, ARC-3, Gas and Hot-Shot reported Applied. The ARC-3 v0.13 gameplay payload was user-confirmed in the individual v0.22l test with Bingus Shared Loader v19. The v1.0.13 combined release retains the other 27 runtime resources from v1.0.12; its own startup and gameplay still need a fresh check.
 
 ## Controls and compatibility
 
@@ -86,3 +86,7 @@ Replaces Sterilizer v0.11 with Gas Overhaul v0.12 and extends its 15-second temp
 ## Changes in v1.0.12
 
 Updates startup compatibility for the same 17 mods. One True Flag now recognizes the exact supported AR-11 and ARC-3 shared damage-table edits if they apply first; unknown edits still fail validation. The shared profile and Scorcher runtimes report a named companion failure after 120 seconds rather than waiting indefinitely. Gameplay tuning is unchanged. The equivalent 17 individual candidates passed fresh startup; the combined v1.0.12 package still needs its own startup and gameplay check.
+
+## Changes in v1.0.13
+
+Adds ARC-3's native Auto/Rapid and Semi/Supercharge fire modes. Rapid now uses 0.85x charge damage; Supercharge uses a five-second charge, dedicated 1550/1550 damage, and one-target arc settings. Stock ARC audio remains. All other runtime resources retain their v1.0.12 payloads.
