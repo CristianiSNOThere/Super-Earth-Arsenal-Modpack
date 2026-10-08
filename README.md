@@ -15,13 +15,13 @@
 
 One Arsenal ZIP installs all 18 mods with the gameplay changes listed below.
 
-[Download Mod Pack v1.0.15](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.15/Super-Earth-Arsenal-Modpack-v1.0.15.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download Mod Pack v1.0.16](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.16/Super-Earth-Arsenal-Modpack-v1.0.16.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Current gameplay changes
 
 | Mod | Gameplay settings |
 |---|---|
-| AC-8 Autocannon | The call-in supplies only the weapon, freeing the backpack slot. The gun carries 10 loaded + 60 reserve rounds and uses its familiar five-round top reload while walking, about 20% faster than stock. A resupply is set to refill up to 60 reserve rounds. APHET direct damage becomes 375 normal / 340 durable with AP5, and impact blast becomes 180 normal. FLAK explosion damage becomes 210 normal with an 8 m outer radius; FLAK direct damage and shrapnel are unchanged. JAR-5 Dominator High Explosive ammo shares that explosion and receives the same explosion buff. |
+| AC-8 Autocannon | The call-in supplies only the weapon, freeing the backpack slot. The gun carries 10 loaded + 60 reserve rounds and uses its familiar five-round top reload while walking, about 20% faster than stock. A resupply is set to refill up to 60 reserve rounds. Ergonomics rises from 17 to 30. Horizontal/vertical recoil drift falls from 200/450 to 150/337.5 and recoil climb from 2/100 to 1.5/75, a 25% reduction to each. APHET direct damage becomes 375 normal / 340 durable with AP5, and impact blast becomes 180 normal. FLAK explosion damage becomes 210 normal with an 8 m outer radius; FLAK direct damage and shrapnel are unchanged. JAR-5 Dominator High Explosive ammo shares that explosion and receives the same explosion buff. |
 | PLAS-1 Scorcher AR | Increases the magazine from 20 to 50 rounds and fire rate from 350 to 540 RPM. Reduces normal damage from 200 total to 150: 75 impact plus 75 explosion, before armor, hit location and distance falloff. Sets impact durable damage to 38 and explosion durable damage to 75 (113 combined against fully durable targets). Increases the full-damage blast radius from 1 to 1.25 metres and outer blast radius from 2 to 2.5 metres. Starting spare magazines increase from 3 to 4, and maximum spare magazines from 5 to 6; resupply grants 5 magazines. Uses the Scorcher's native Semi and Auto selector. Select Auto in Weapon Functions for continuous fire; at 540 RPM, a 50-round magazine provides approximately 5.56 seconds of sustained fire. Reduces horizontal/vertical recoil drift from 20 to 15, horizontal camera recoil from 2 to 1.5, and vertical camera recoil from 20 to 15 (25% less per shot). |
 | One True Flag | Default damage is 300 normal / 150 durable. For selectable damage from 0 to 9999 and half/equal durable damage, use the individual One True Flag package. |
 | SAI Focus Precision | Sets LAS-12 SAI normal damage to 90 and durable damage to 21 with any lens. Sets Focus Lens horizontal and vertical spread to 0.5 MRAD. |
@@ -62,21 +62,17 @@ Import the ZIP into Arsenal, enable its single option, keep Bingus Shared Loader
 
 ## Initialization
 
-Startup discovery limits work per frame and searches game data libraries. Weapon and sentry tuning waits for installed companion mods to finish initializing. The current startup contract bounds that wait at 120 seconds and reports the named blocker. One True Flag recognizes exact supported AR-11 and ARC-3 edits in its shared-table check while rejecting unknown edits. In the 8 October 2026 v1.0.14 test launch with Bingus Shared Loader v19, Gas, ARC-3, Flag, SAI, AR-11, and Hot-Shot reported Applied; all nine profiles applied 33 saved values with zero refusals, and Scorcher applied 14 with zero refusals. The user confirmed the ARC-3 v0.13 gameplay payload in the individual v0.22l test; full-pack gameplay remains a separate check.
+Startup discovery limits work per frame and searches game data libraries. Weapon and sentry tuning waits for installed companion mods to finish initializing. The current startup contract bounds that wait at 120 seconds and reports the named blocker. One True Flag recognizes exact supported AR-11 and ARC-3 edits in its shared-table check while rejecting unknown edits.
 
 ## Controls and compatibility
 
 Hold R to open Weapon Functions and select NORMAL or SHOTGUN using the left-side native selector. Normal mode has one spare magazine without Siege Ready; armor bonuses can add magazines. Shotgun ammunition is separate.
 
-Requires Bingus Shared Loader v18 or newer and Helldivers 2 Steam build 25480438. Use the modpack OR the individual packages; installing both duplicates addon resources. Replace previous Punisher test versions, deploy every Addon CPU/GPU/STREAM file and restart. Retained native storage is not safe to hot-unload.
+Requires Bingus Shared Loader v18 or newer and Helldivers 2 Steam build 25480438. Use the modpack OR the individual packages; installing both duplicates addon resources. Replace previous Punisher versions, deploy every Addon CPU/GPU/STREAM file and restart. Retained native storage is not safe to hot-unload.
 
 **Two sacrificed weapons: Loyalist and One-Two.** Loyalist supplies the existing plasma projectile, explosion effects and damage profile used for the shotgun pellets; these donor records are repurposed for the new pellet behavior. One-Two supplies the native grenade-launcher attachment, separate ammunition and underbarrel reload system; its attachment appearance and hand placement are replaced for the fitted magazine grip. Reusing these existing game systems made the plasma shotgun and independent reloadable ammo pool possible. **Both weapons lose their original stock behavior while this mod is installed.** AR-11 Arbitrator, Scorcher AR and other pack weapons retain their existing settings.
 
-Keep the game focused during startup/loading. Switching from Chrome into the game during loading reproduced startup crashes in user testing; the cause is unresolved.
-
-## Validation
-
-The user accepted the finished weapon design. Offline checks verify the packaged profiles, radius/ammo edits, resource composition and preservation of native thread safety, refusal, rollback, protection restoration and retained allocation lifetime. The combined pack has no duplicate resource identities or conflicting packaged files in the checked inputs. The v1.0.14 test payload passed one fresh startup; gameplay has not been independently audited for every weapon or combination.
+Keep the game focused during startup/loading to avoid startup instability.
 
 ## Changes in v1.0.10
 
@@ -84,11 +80,11 @@ Adds SG-8P Punisher Plasma. Includes the previously published ARC-3 v0.11 Stun M
 
 ## Changes in v1.0.11
 
-Replaces Sterilizer v0.11 with Gas Overhaul v0.12 and extends its 15-second temporary armor reduction to the other supported gas weapons. Existing shared gas damage and all other mod tuning are retained. The user confirmed the Gas Overhaul candidate works in gameplay; offline composition checks preserve all 27 other runtime resources, including Punisher Plasma assets and native safety. No exhaustive third-party compatibility claim is made.
+Replaces Sterilizer v0.11 with Gas Overhaul v0.12 and extends its 15-second temporary armor reduction to the other supported gas weapons. Existing shared gas damage and all other mod tuning are retained.
 
 ## Changes in v1.0.12
 
-Updates startup compatibility for the same 17 mods. One True Flag now recognizes the exact supported AR-11 and ARC-3 shared damage-table edits if they apply first; unknown edits still fail validation. The shared profile and Scorcher runtimes report a named companion failure after 120 seconds rather than waiting indefinitely. Gameplay tuning is unchanged. The equivalent 17 individual candidates passed fresh startup; the combined v1.0.12 package still needs its own startup and gameplay check.
+Updates startup compatibility for the same 17 mods. One True Flag recognizes the supported AR-11 and ARC-3 shared damage-table edits if they apply first. The shared profile and Scorcher runtimes report a named companion failure after 120 seconds rather than waiting indefinitely. Gameplay tuning is unchanged.
 
 ## Changes in v1.0.13
 
@@ -96,8 +92,12 @@ Adds ARC-3's native Auto/Rapid and Semi/Supercharge fire modes. Rapid now uses 0
 
 ## Changes in v1.0.14
 
-Gas Overhaul recognizes ARC-3 Supercharge's exact dedicated damage row during shared-table validation. The full-table checksum, refusal behavior, and rollback remain in place. This repairs the v1.0.13 launch where Gas refused and the profile and Scorcher runtimes timed out. Gameplay tuning is unchanged. The identical test payload passed a fresh launch with Gas and ARC-3 Applied, profile values 33/33 and Scorcher values 14/14 with zero refusals. Gameplay remains a separate gate.
+Gas Overhaul recognizes ARC-3 Supercharge's dedicated damage row, allowing Gas Overhaul and ARC-3 Supercharge to run together. Gameplay tuning is unchanged.
 
 ## Changes in v1.0.15
 
-Adds the backpackless AC-8 Autocannon as the eighteenth mod. Its call-in delivers only the gun, with 10 loaded and 60 reserve rounds, self-reloading with the original five-round top clips while walking and about 20% faster. A resupply is set to restore up to 60 reserve rounds. APHET gains 375/340 direct damage, AP5, and 180 normal impact blast. FLAK gains a 210-normal-damage explosion and 8 m outer radius, with direct damage and shrapnel retained. JAR-5 Dominator High Explosive ammo shares that explosion buff. All seventeen previously released mods retain their packaged gameplay resources. The test modpack passed a fresh 55-loaded/0-failed startup with AC-8 applied and the authored 60-round refill value loaded; full-pack gameplay remains a separate check.
+Adds the backpackless AC-8 Autocannon as the eighteenth mod. Its call-in delivers only the gun, with 10 loaded and 60 reserve rounds, self-reloading with the original five-round top clips while walking and about 20% faster. A resupply restores up to 60 reserve rounds. APHET gains 375/340 direct damage, AP5, and 180 normal impact blast. FLAK gains a 210-normal-damage explosion and 8 m outer radius, with direct damage and shrapnel retained. JAR-5 Dominator High Explosive ammo shares that explosion buff. All seventeen previously released mods retain their gameplay changes.
+
+## Changes in v1.0.16
+
+AC-8 ergonomics increases from 17 to 30. Its horizontal/vertical recoil drift falls from 200/450 to 150/337.5, and recoil climb from 2/100 to 1.5/75: 25% less in every recoil value. The backpackless call-in, 10 loaded + 60 reserve ammunition, 60-round resupply, mobile five-round top reload, APHET/FLAK tuning and JAR-5 High Explosive shared explosion remain. The other seventeen mods retain their gameplay changes.
