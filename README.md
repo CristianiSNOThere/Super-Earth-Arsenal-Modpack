@@ -11,16 +11,17 @@
 > [!WARNING]
 > **DO NOT USE LOYALIST OR ONE-TWO WHILE THIS MOD OR THE MODPACK IS INSTALLED.** Their records and attachment systems have been repurposed for Punisher Plasma. Equipping or using these donor weapons may crash the game.
 
-# Super-Earth Arsenal Modpack
+# Super Earth Arsenal Mod Pack
 
-One Arsenal ZIP installs all 17 mods with the gameplay changes listed below.
+One Arsenal ZIP installs all 18 mods with the gameplay changes listed below.
 
-[Download Modpack v1.0.14](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.14/Super-Earth-Arsenal-Modpack-v1.0.14.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download Mod Pack v1.0.15](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.15/Super-Earth-Arsenal-Modpack-v1.0.15.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Current gameplay changes
 
 | Mod | Gameplay settings |
 |---|---|
+| AC-8 Autocannon | The call-in supplies only the weapon, freeing the backpack slot. The gun carries 10 loaded + 60 reserve rounds and uses its familiar five-round top reload while walking, about 20% faster than stock. A resupply is set to refill up to 60 reserve rounds. APHET direct damage becomes 375 normal / 340 durable with AP5, and impact blast becomes 180 normal. FLAK explosion damage becomes 210 normal with an 8 m outer radius; FLAK direct damage and shrapnel are unchanged. JAR-5 Dominator High Explosive ammo shares that explosion and receives the same explosion buff. |
 | PLAS-1 Scorcher AR | Increases the magazine from 20 to 50 rounds and fire rate from 350 to 540 RPM. Reduces normal damage from 200 total to 150: 75 impact plus 75 explosion, before armor, hit location and distance falloff. Sets impact durable damage to 38 and explosion durable damage to 75 (113 combined against fully durable targets). Increases the full-damage blast radius from 1 to 1.25 metres and outer blast radius from 2 to 2.5 metres. Starting spare magazines increase from 3 to 4, and maximum spare magazines from 5 to 6; resupply grants 5 magazines. Uses the Scorcher's native Semi and Auto selector. Select Auto in Weapon Functions for continuous fire; at 540 RPM, a 50-round magazine provides approximately 5.56 seconds of sustained fire. Reduces horizontal/vertical recoil drift from 20 to 15, horizontal camera recoil from 2 to 1.5, and vertical camera recoil from 20 to 15 (25% less per shot). |
 | One True Flag | Default damage is 300 normal / 150 durable. For selectable damage from 0 to 9999 and half/equal durable damage, use the individual One True Flag package. |
 | SAI Focus Precision | Sets LAS-12 SAI normal damage to 90 and durable damage to 21 with any lens. Sets Focus Lens horizontal and vertical spread to 0.5 MRAD. |
@@ -40,6 +41,8 @@ One Arsenal ZIP installs all 17 mods with the gameplay changes listed below.
 | SG-8P Punisher Plasma | **Normal mode:** Stock → modified: explosion damage **225 → 350 normal**, with **225 → 225 durable**; inner/full-damage radius **2.3 → 3.5 m**, outer damage radius **3 → 6.5 m**, and shockwave radius **4 → 8 m**. Standard burning is added to the blast. Fire rate changes **80 → 60 RPM** and magazine capacity **10 → 17 rounds**. Starting spare magazines change **6 → 1**, resupply magazines **8 → 1**, and maximum spare magazines **8 → 1**, without armor bonuses such as Siege Ready. Projectile drag changes **4 → 1.2** and gravity multiplier **3 → 1**, producing a flatter trajectory; sway changes **1 → 0.5** (50% less). Demolition strength changes **10 → 30**, stagger **35 → 25**, and push remains **30 → 30**. It retains one projectile and one round consumed per shot.<br><br>**Shotgun mode:** Stock Punisher Plasma has no shotgun attachment or separate shotgun ammunition; this mod adds **SHOTGUN** alongside **NORMAL** in the left-side Weapon Functions selector. The new mode fires **9 explosive plasma pellets at 100 RPM**, consuming **one round total per trigger pull**. Each pellet deals **25 normal/9 durable direct damage plus 25 normal/9 durable explosion damage**: a nominal **450 normal/162 durable** across all nine pellets if every direct hit and full-strength blast connects, before armor, falloff and hit-location effects. Inner/outer/shockwave radii are **0.5/0.5/0.5 m per pellet**, with **AP3 at every impact angle**, **100 horizontal/90 vertical MRAD** spread, and **25 stagger/25 push**. The added independent ammo pool holds **20 loaded rounds plus 60 loose spares**. Its native underbarrel reload runs at **2× the donor reload speed**. The fitted StA-11 magazine replaces the grenade-launcher appearance and provides the support-hand hold, with its cross-section enlarged **10%** while keeping the top mount and length fixed. **Sacrifices Loyalist and One-Two; see the donor explanation below.** |
 
 ## Controls and shared effects
+
+**AC-8 Autocannon:** Use the stock Weapon Functions selector for APHET and FLAK. The pod supplies the weapon without its backpack. The FLAK explosion change also applies to JAR-5 Dominator High Explosive ammunition.
 
 **SAI Focus Precision:** Equip the Focus Lens for the precision spread. Compatible with the exact supported shared damage-table edits from One True Flag, AR-11 Arbitrator, and ARC-3 Rapid/Supercharge v0.13 (which retains the 226/90 shared row).
 
@@ -94,3 +97,7 @@ Adds ARC-3's native Auto/Rapid and Semi/Supercharge fire modes. Rapid now uses 0
 ## Changes in v1.0.14
 
 Gas Overhaul recognizes ARC-3 Supercharge's exact dedicated damage row during shared-table validation. The full-table checksum, refusal behavior, and rollback remain in place. This repairs the v1.0.13 launch where Gas refused and the profile and Scorcher runtimes timed out. Gameplay tuning is unchanged. The identical test payload passed a fresh launch with Gas and ARC-3 Applied, profile values 33/33 and Scorcher values 14/14 with zero refusals. Gameplay remains a separate gate.
+
+## Changes in v1.0.15
+
+Adds the backpackless AC-8 Autocannon as the eighteenth mod. Its call-in delivers only the gun, with 10 loaded and 60 reserve rounds, self-reloading with the original five-round top clips while walking and about 20% faster. A resupply is set to restore up to 60 reserve rounds. APHET gains 375/340 direct damage, AP5, and 180 normal impact blast. FLAK gains a 210-normal-damage explosion and 8 m outer radius, with direct damage and shrapnel retained. JAR-5 Dominator High Explosive ammo shares that explosion buff. All seventeen previously released mods retain their packaged gameplay resources. The test modpack passed a fresh 55-loaded/0-failed startup with AC-8 applied and the authored 60-round refill value loaded; full-pack gameplay remains a separate check.
