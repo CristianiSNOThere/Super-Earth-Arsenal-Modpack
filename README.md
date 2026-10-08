@@ -15,7 +15,7 @@
 
 One Arsenal ZIP installs all 17 mods with the gameplay changes listed below.
 
-[Download Modpack v1.0.13](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.13/Super-Earth-Arsenal-Modpack-v1.0.13.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download Modpack v1.0.14](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.14/Super-Earth-Arsenal-Modpack-v1.0.14.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Current gameplay changes
 
@@ -59,7 +59,7 @@ Import the ZIP into Arsenal, enable its single option, keep Bingus Shared Loader
 
 ## Initialization
 
-Startup discovery limits work per frame and searches game data libraries. Weapon and sentry tuning waits for installed companion mods to finish initializing. v1.0.12 bounds that wait at 120 seconds and reports the named blocker. One True Flag recognizes exact supported AR-11 and ARC-3 edits in its shared-table check while rejecting unknown edits. The 17 individual-package candidate set passed one fresh startup: all nine profiles applied 33 values with zero refusals, Scorcher applied 14, and Flag, SAI, AR-11, ARC-3, Gas and Hot-Shot reported Applied. The ARC-3 v0.13 gameplay payload was user-confirmed in the individual v0.22l test with Bingus Shared Loader v19. The v1.0.13 combined release retains the other 27 runtime resources from v1.0.12; its own startup and gameplay still need a fresh check.
+Startup discovery limits work per frame and searches game data libraries. Weapon and sentry tuning waits for installed companion mods to finish initializing. The current startup contract bounds that wait at 120 seconds and reports the named blocker. One True Flag recognizes exact supported AR-11 and ARC-3 edits in its shared-table check while rejecting unknown edits. In the 8 October 2026 v1.0.14 test launch with Bingus Shared Loader v19, Gas, ARC-3, Flag, SAI, AR-11, and Hot-Shot reported Applied; all nine profiles applied 33 saved values with zero refusals, and Scorcher applied 14 with zero refusals. The user confirmed the ARC-3 v0.13 gameplay payload in the individual v0.22l test; full-pack gameplay remains a separate check.
 
 ## Controls and compatibility
 
@@ -73,7 +73,7 @@ Keep the game focused during startup/loading. Switching from Chrome into the gam
 
 ## Validation
 
-The user accepted the finished weapon design. Offline checks verify the packaged profiles, radius/ammo edits, resource composition and preservation of native thread safety, refusal, rollback, protection restoration and retained allocation lifetime. The combined pack has no duplicate resource identities or conflicting packaged files in the checked inputs. Fresh combined-pack startup and gameplay have not been independently audited.
+The user accepted the finished weapon design. Offline checks verify the packaged profiles, radius/ammo edits, resource composition and preservation of native thread safety, refusal, rollback, protection restoration and retained allocation lifetime. The combined pack has no duplicate resource identities or conflicting packaged files in the checked inputs. The v1.0.14 test payload passed one fresh startup; gameplay has not been independently audited for every weapon or combination.
 
 ## Changes in v1.0.10
 
@@ -90,3 +90,7 @@ Updates startup compatibility for the same 17 mods. One True Flag now recognizes
 ## Changes in v1.0.13
 
 Adds ARC-3's native Auto/Rapid and Semi/Supercharge fire modes. Rapid now uses 0.85x charge damage; Supercharge uses a five-second charge, dedicated 1550/1550 damage, and one-target arc settings. Stock ARC audio remains. All other runtime resources retain their v1.0.12 payloads.
+
+## Changes in v1.0.14
+
+Gas Overhaul recognizes ARC-3 Supercharge's exact dedicated damage row during shared-table validation. The full-table checksum, refusal behavior, and rollback remain in place. This repairs the v1.0.13 launch where Gas refused and the profile and Scorcher runtimes timed out. Gameplay tuning is unchanged. The identical test payload passed a fresh launch with Gas and ARC-3 Applied, profile values 33/33 and Scorcher values 14/14 with zero refusals. Gameplay remains a separate gate.
