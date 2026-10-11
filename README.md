@@ -15,7 +15,7 @@
 
 One Arsenal ZIP installs all 19 mods with the gameplay changes listed below.
 
-[Download Mod Pack v1.0.17](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.17/Super-Earth-Arsenal-Modpack-v1.0.17.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download Mod Pack v1.0.18](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.18/Super-Earth-Arsenal-Modpack-v1.0.18.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Current gameplay changes
 
@@ -99,6 +99,6 @@ Adds the backpackless AC-8 Autocannon as the eighteenth mod. Its call-in deliver
 
 AC-8 ergonomics increases from 17 to 30. Its horizontal/vertical recoil drift falls from 200/450 to 150/337.5, and recoil climb from 2/100 to 1.5/75: 25% less in every recoil value. The backpackless call-in, 10 loaded + 60 reserve ammunition, 60-round resupply, mobile five-round top reload, APHET/FLAK tuning and JAR-5 High Explosive shared explosion remain. The other seventeen mods retain their gameplay changes.
 
-## Changes in v1.0.17
+## Changes in v1.0.18
 
 Adds AR-32 Pacifier Tuning as the nineteenth mod. Its bullets deal 65 normal and 15 durable damage, up from 55/10, and build Stun Medium at strength 3 per hit, up from 2. The default magazine holds 65 rounds instead of 40, and weapon sway falls from 1 to 0.6. The other eighteen mods retain their gameplay changes.
