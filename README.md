@@ -1,27 +1,16 @@
-# WARNING: CHANGE YOUR PRIMARY WEAPON BEFORE REMOVING THIS MOD
+# Super Earth Arsenal Mod Pack v1.0.19
 
-> [!CAUTION]
-> **UNEQUIP PUNISHER PLASMA BEFORE DISABLING, PURGING, REMOVING OR REPLACING THIS MOD OR THE MODPACK.**
-> With the mod still installed, equip a different primary weapon, close Helldivers 2 completely, then remove or replace the package. Removing it while Punisher Plasma is equipped can prevent the game from starting.
-> **Recovery:** Reinstall the mod or modpack, equip a different primary, close the game completely, then remove it again.
+This ZIP includes the eighteen listed mods. SG-8P Punisher Plasma is omitted and remains at its stock behavior. Loyalist and One-Two are also no longer repurposed by Punisher Plasma.
 
-> [!WARNING]
-> **START THE GAME WITH A DIFFERENT PRIMARY WEAPON EQUIPPED.** Punisher Plasma must not already be equipped while this mod initializes. If it is, the safety check stops installation and Punisher remains stock. Equip another primary, close the game completely with the mod still installed, then relaunch. Allow up to two minutes for initialization before equipping Punisher Plasma. Keep the game focused during startup/loading.
+The AR-32 Pacifier deals 75 normal and 15 durable damage, builds Stun Medium at strength 3 per hit, has a 65-round default magazine, and has 0.6 sway.
 
-> [!WARNING]
-> **DO NOT USE LOYALIST OR ONE-TWO WHILE THIS MOD OR THE MODPACK IS INSTALLED.** Their records and attachment systems have been repurposed for Punisher Plasma. Equipping or using these donor weapons may crash the game.
+[Download v1.0.19](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.19/Super-Earth-Arsenal-Modpack-v1.0.19.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
-# Super Earth Arsenal Mod Pack
-
-One Arsenal ZIP installs all 19 mods with the gameplay changes listed below.
-
-[Download Mod Pack v1.0.18](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.18/Super-Earth-Arsenal-Modpack-v1.0.18.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
-
-## Current gameplay changes
+## Gameplay changes
 
 | Mod | Gameplay settings |
 |---|---|
-| AR-32 Pacifier | Bullets deal 65 normal and 15 durable damage, up from 55/10, and build Stun Medium at strength 3 per hit, up from 2. Its default magazine holds 65 rounds, up from 40, and weapon sway falls from 1 to 0.6. |
+| AR-32 Pacifier | Bullets deal 75 normal and 15 durable damage, up from 55/10, and build Stun Medium at strength 3 per hit, up from 2. Its default magazine holds 65 rounds, up from 40, and weapon sway falls from 1 to 0.6. |
 | AC-8 Autocannon | The call-in supplies only the weapon, freeing the backpack slot. The gun carries 10 loaded + 60 reserve rounds and uses its familiar five-round top reload while walking, about 20% faster than stock. A resupply is set to refill up to 60 reserve rounds. Ergonomics rises from 17 to 30. Horizontal/vertical recoil drift falls from 200/450 to 150/337.5 and recoil climb from 2/100 to 1.5/75, a 25% reduction to each. APHET direct damage becomes 375 normal / 340 durable with AP5, and impact blast becomes 180 normal. FLAK explosion damage becomes 210 normal with an 8 m outer radius; FLAK direct damage and shrapnel are unchanged. JAR-5 Dominator High Explosive ammo shares that explosion and receives the same explosion buff. |
 | PLAS-1 Scorcher AR | Increases the magazine from 20 to 50 rounds and fire rate from 350 to 540 RPM. Reduces normal damage from 200 total to 150: 75 impact plus 75 explosion, before armor, hit location and distance falloff. Sets impact durable damage to 38 and explosion durable damage to 75 (113 combined against fully durable targets). Increases the full-damage blast radius from 1 to 1.25 metres and outer blast radius from 2 to 2.5 metres. Starting spare magazines increase from 3 to 4, and maximum spare magazines from 5 to 6; resupply grants 5 magazines. Uses the Scorcher's native Semi and Auto selector. Select Auto in Weapon Functions for continuous fire; at 540 RPM, a 50-round magazine provides approximately 5.56 seconds of sustained fire. Reduces horizontal/vertical recoil drift from 20 to 15, horizontal camera recoil from 2 to 1.5, and vertical camera recoil from 20 to 15 (25% less per shot). |
 | One True Flag | Default damage is 300 normal / 150 durable. For selectable damage from 0 to 9999 and half/equal durable damage, use the individual One True Flag package. |
@@ -39,66 +28,13 @@ One Arsenal ZIP installs all 19 mods with the gameplay changes listed below.
 | 40-K Meltagun | Sets ergonomics to 40. |
 | A/GM-17 Gas Mortar Sentry | Sets sentry health to 600. |
 | RS-422 Railgun | Sets durable damage to 240. |
-| SG-8P Punisher Plasma | **Normal mode:** Stock → modified: explosion damage **225 → 350 normal**, with **225 → 225 durable**; inner/full-damage radius **2.3 → 3.5 m**, outer damage radius **3 → 6.5 m**, and shockwave radius **4 → 8 m**. Standard burning is added to the blast. Fire rate changes **80 → 60 RPM** and magazine capacity **10 → 17 rounds**. Starting spare magazines change **6 → 1**, resupply magazines **8 → 1**, and maximum spare magazines **8 → 1**, without armor bonuses such as Siege Ready. Projectile drag changes **4 → 1.2** and gravity multiplier **3 → 1**, producing a flatter trajectory; sway changes **1 → 0.5** (50% less). Demolition strength changes **10 → 30**, stagger **35 → 25**, and push remains **30 → 30**. It retains one projectile and one round consumed per shot.<br><br>**Shotgun mode:** Stock Punisher Plasma has no shotgun attachment or separate shotgun ammunition; this mod adds **SHOTGUN** alongside **NORMAL** in the left-side Weapon Functions selector. The new mode fires **9 explosive plasma pellets at 100 RPM**, consuming **one round total per trigger pull**. Each pellet deals **25 normal/9 durable direct damage plus 25 normal/9 durable explosion damage**: a nominal **450 normal/162 durable** across all nine pellets if every direct hit and full-strength blast connects, before armor, falloff and hit-location effects. Inner/outer/shockwave radii are **0.5/0.5/0.5 m per pellet**, with **AP3 at every impact angle**, **100 horizontal/90 vertical MRAD** spread, and **25 stagger/25 push**. The added independent ammo pool holds **20 loaded rounds plus 60 loose spares**. Its native underbarrel reload runs at **2× the donor reload speed**. The fitted StA-11 magazine replaces the grenade-launcher appearance and provides the support-hand hold, with its cross-section enlarged **10%** while keeping the top mount and length fixed. **Sacrifices Loyalist and One-Two; see the donor explanation below.** |
-
-## Controls and shared effects
-
-**AC-8 Autocannon:** Use the stock Weapon Functions selector for APHET and FLAK. The pod supplies the weapon without its backpack. The FLAK explosion change also applies to JAR-5 Dominator High Explosive ammunition.
-
-**SAI Focus Precision:** Equip the Focus Lens for the precision spread. Compatible with the exact supported shared damage-table edits from One True Flag, AR-11 Arbitrator, and ARC-3 Rapid/Supercharge v0.13 (which retains the 226/90 shared row).
-
-**AR-11 Arbitrator:** Other optic ergonomics modifiers remain effective.
-
-**Gas Overhaul:** Applies temporary armor reduction to Sterilizer, Dog Breath, Re-Educator, Speargun, gas grenades, gas mines, Gas Mortar Sentry, Eagle Gas Airstrike and Orbital Gas Strike. The 45 DPS damage and incoming gas protection also affect shared gas sources and hazards. Shared Acid Storm duration affects the weather status after the storm ends. Replaces the older Sterilizer package; do not enable it separately alongside this pack. [Full stock comparison](source/gas-overhaul/README.md).
-
-**ARC-3 Rapid/Supercharge:** Hold R, then choose Auto for Rapid or Semi for the 5-second Supercharge. Enable Arc Thrower Revamped in CowboyBingus's Vanilla Plus Megapack for hold-to-fire. Optional: [WeakPoint Lock-On All-In-One 3.0](https://ayakamods.com/mods/weakpoint-lock-on-v2.3981/) by potatoman7676 has a selectable **Titan Head** lock-on option. ARC attacks use the game's lock-on points; selecting that option can help Supercharge hit a Bile Titan's head. Install it separately and select the options you want. Head hits and one-shot kills still depend on target, range, and actual hit routing. Avoid the package's Disable Lock-On options for ARC weapons.
-
-**PLAS-39 Accelerator Rifle:** Hold R and use Weapon Wheel Left (default: left-click) in the left side of Weapon Functions. Semi fires one round with a 0.01-second minimum charge and 0.30-second spacing. Burst uses a 0.45-second minimum charge and three rounds spaced 0.12 seconds apart. Changes apply as you select and follow the game's remembered mode. Custom bindings use the native selector.
 
 ## Install
 
-Before replacing/removing this pack, change away from Punisher Plasma while the pack remains installed and close the game completely.
+If your currently installed pack includes Punisher Plasma, equip a different primary while that pack is still installed. Close the game completely before replacing it. Import this ZIP into Arsenal, enable its single option, keep Bingus Shared Loader at its documented priority, Purge and Deploy, then restart the game. Requires Helldivers 2 Steam build 25480438 and Bingus Shared Loader v19. Disable other Super Earth Arsenal modpacks and the individual versions of these mods to avoid duplicate resources.
 
-Import the ZIP into Arsenal, enable its single option, keep Bingus Shared Loader at its documented priority, Purge and Deploy, and restart the game. Requires Helldivers 2 Steam build 25480438 and Bingus Shared Loader v18 or newer. Use the modpack or the individual packages to avoid duplicate addon resources.
+For AC-8, choose APHET or FLAK through the stock Weapon Functions selector. For ARC-3, hold R and choose Auto/Rapid or Semi/Supercharge. For PLAS-39, hold R and use the left-side Weapon Functions selector.
 
-## Controls and compatibility
+## Changes in v1.0.19
 
-Hold R to open Weapon Functions and select NORMAL or SHOTGUN using the left-side native selector. Normal mode has one spare magazine without Siege Ready; armor bonuses can add magazines. Shotgun ammunition is separate.
-
-Requires Bingus Shared Loader v18 or newer and Helldivers 2 Steam build 25480438. Use the modpack OR the individual packages; installing both duplicates addon resources. Replace previous Punisher versions, deploy the complete package and restart. Do not remove the pack while the game is running.
-
-**Two sacrificed weapons: Loyalist and One-Two.** Loyalist supplies the existing plasma projectile, explosion effects and damage profile used for the shotgun pellets; these donor records are repurposed for the new pellet behavior. One-Two supplies the native grenade-launcher attachment, separate ammunition and underbarrel reload system; its attachment appearance and hand placement are replaced for the fitted magazine grip. Reusing these existing game systems made the plasma shotgun and independent reloadable ammo pool possible. **Both weapons lose their original stock behavior while this mod is installed.** AR-11 Arbitrator, Scorcher AR and other pack weapons retain their existing settings.
-
-Keep the game focused during startup/loading to avoid startup instability.
-
-## Changes in v1.0.10
-
-Adds SG-8P Punisher Plasma. Includes the previously published ARC-3 v0.11 Stun Medium buildup1.2, Sterilizer v0.11 shared Acid Storm duration15 seconds and SAI v0.8 compatibility update. Other existing mod settings are retained.
-
-## Changes in v1.0.11
-
-Replaces Sterilizer v0.11 with Gas Overhaul v0.12 and extends its 15-second temporary armor reduction to the other supported gas weapons. Existing shared gas damage and all other mod tuning are retained.
-
-## Changes in v1.0.12
-
-Improves how the same 17 mods start together. Gameplay tuning is unchanged.
-
-## Changes in v1.0.13
-
-Adds ARC-3's native Auto/Rapid and Semi/Supercharge fire modes. Rapid now uses 0.85x charge damage; Supercharge uses a five-second charge, dedicated 1550/1550 damage, and one-target arc settings. Stock ARC audio remains. All other runtime resources retain their v1.0.12 payloads.
-
-## Changes in v1.0.14
-
-Gas Overhaul and ARC-3 Supercharge can run together. Gameplay tuning is unchanged.
-
-## Changes in v1.0.15
-
-Adds the backpackless AC-8 Autocannon as the eighteenth mod. Its call-in delivers only the gun, with 10 loaded and 60 reserve rounds, self-reloading with the original five-round top clips while walking and about 20% faster. A resupply restores up to 60 reserve rounds. APHET gains 375/340 direct damage, AP5, and 180 normal impact blast. FLAK gains a 210-normal-damage explosion and 8 m outer radius, with direct damage and shrapnel retained. JAR-5 Dominator High Explosive ammo shares that explosion buff. All seventeen previously released mods retain their gameplay changes.
-
-## Changes in v1.0.16
-
-AC-8 ergonomics increases from 17 to 30. Its horizontal/vertical recoil drift falls from 200/450 to 150/337.5, and recoil climb from 2/100 to 1.5/75: 25% less in every recoil value. The backpackless call-in, 10 loaded + 60 reserve ammunition, 60-round resupply, mobile five-round top reload, APHET/FLAK tuning and JAR-5 High Explosive shared explosion remain. The other seventeen mods retain their gameplay changes.
-
-## Changes in v1.0.18
-
-Adds AR-32 Pacifier Tuning as the nineteenth mod. Its bullets deal 65 normal and 15 durable damage, up from 55/10, and build Stun Medium at strength 3 per hit, up from 2. The default magazine holds 65 rounds instead of 40, and weapon sway falls from 1 to 0.6. The other eighteen mods retain their gameplay changes.
+Removes the Punisher Plasma changes, restoring stock Punisher Plasma, Loyalist and One-Two behavior. Pacifier normal bullet damage increases from 65 to 75; its 15 durable damage, Stun Medium buildup strength 3, 65-round default magazine and 0.6 sway remain. The other seventeen included mods retain their gameplay changes.
