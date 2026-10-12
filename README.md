@@ -1,10 +1,10 @@
-# Super Earth Arsenal Mod Pack v1.0.21
+# Super Earth Arsenal Mod Pack v1.0.22
 
 This ZIP includes the nineteen listed mods. SG-8P Punisher Plasma is omitted and remains at its stock behavior. Loyalist and One-Two are also no longer repurposed by Punisher Plasma.
 
 The AR-32 Pacifier deals 75 normal and 15 durable damage, builds Stun Medium at strength 3 per hit, has a 65-round default magazine, and has 0.6 sway.
 
-[Download v1.0.21](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.21/Super-Earth-Arsenal-Modpack-v1.0.21.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download v1.0.22](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.22/Super-Earth-Arsenal-Modpack-v1.0.22.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Gameplay changes
 
@@ -22,7 +22,7 @@ The AR-32 Pacifier deals 75 normal and 15 durable damage, builds Stun Medium at 
 | ARC-3 Rapid/Supercharge | Adds the native Auto/Rapid and Semi/Supercharge fire-mode selector. Rapid charges in 0.307692/0.338462/0.369231 seconds and uses 0.85x of the shared 226/90 normal/durable pulse damage (about 192.1/76.5 before armor and hit location). Supercharge charges in 3.4/3.5/3.75 seconds, uses 2325/2325 damage and AP7, targets one enemy (chain 1, split 0), and cannot explode from overcharge. Both modes keep stock ARC audio and 45 m reach. |
 | ARC-12 Blitzer | Sets normal damage to 100, durable damage to 45, arc range to 30 m, and fire rate to 80 RPM. |
 | CQC-20 Breaching Hammer | Sets direct-hit, slight-blast, and large-blast armor penetration to 7. Sets starting, resupply, and maximum magazine counts to 21 each. |
-| PLAS-39 Accelerator Rifle | Sets magazine capacity to 21, horizontal/vertical drift and camera recoil to 2, horizontal/vertical spread to 0.3, sway to 0.4, stagger to 25, direct-hit and blast armor penetration to 4, and outer blast/shockwave values to 2.5. Offers near-instant Semi fire at 200 RPM and charged three-round Burst with normal firing audio. |
+| PLAS-39 Accelerator Rifle | Sets magazine capacity to 21, horizontal/vertical drift and camera recoil to 2, horizontal/vertical spread to 0.3, sway to 0.4, stagger to 25, direct-hit and blast armor penetration to 4, and outer blast/shockwave values to 2.5. Offers near-instant Semi fire at a base rate of 200 RPM and charged three-round Burst with normal firing audio. |
 | P-34 Breacher | Sets the magazines received from resupply to 2. |
 | S-11 Speargun | Sets starting magazines to 16, resupply magazines to 10, maximum magazines to 20, and ergonomics to 40. |
 | APW-1 Anti-Materiel Rifle | Sets ergonomics to 40. |
@@ -34,8 +34,8 @@ The AR-32 Pacifier deals 75 normal and 15 durable damage, builds Stun Medium at 
 
 If your currently installed pack includes Punisher Plasma, equip a different primary while that pack is still installed. Close the game completely before replacing it. Import this ZIP into Arsenal, enable its single option, keep Bingus Shared Loader at its documented priority, Purge and Deploy, then restart the game. Requires Helldivers 2 Steam build 25480438 and Bingus Shared Loader v19. Disable other Super Earth Arsenal modpacks and the individual versions of these mods to avoid duplicate resources.
 
-For AC-8, choose APHET or FLAK through the stock Weapon Functions selector. For ARC-3, hold R and choose Auto/Rapid or Semi/Supercharge. For PLAS-39, hold R and use the left-side Weapon Functions selector.
+For AC-8, choose APHET or FLAK through the stock Weapon Functions selector. For ARC-3, hold R and choose Auto/Rapid or Semi/Supercharge. For PLAS-39, hold R and use the left-side Weapon Functions selector. Semi fires one round with a 0.01-second minimum charge and a base 0.30-second interval; the native fire-rate modifier can increase that interval to approximately 0.333 seconds. Burst fires three rounds spaced 0.12 seconds apart with a 0.45-second minimum charge, consuming three rounds. Both modes retain normal firing audio and the game's fire-rate modifier.
 
-## Changes in v1.0.21
+## Changes in v1.0.22
 
-Adds PLAS-45 Epoch Highest-Charge Rework: only the highest-charge shot gains 30% normal/durable direct and blast damage, burning on blast hits and 5/6/7 m full-damage/outer-damage/shockwave radii. Its magazine increases to 4 rounds, maximum spare magazines to 5, and it reloads while walking. Starting and resupply spare magazines remain 2 each. ARC-3 Supercharge damage increases from 1550/1550 to 2325/2325 and its charge time falls from 4.9/5.0/5.25 to 3.4/3.5/3.75 seconds. Both ARC modes retain AP7. Pacifier remains at 75/15 damage; Punisher remains omitted.
+Fixes PLAS-39 Semi/Burst switching and firing audio when the game applies its fire-rate modifier. Both modes retain that modifier and follow the selected Weapon Functions mode. All nineteen mods retain their listed tuning. Pacifier remains included and Punisher Plasma remains omitted.
