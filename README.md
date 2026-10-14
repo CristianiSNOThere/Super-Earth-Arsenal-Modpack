@@ -1,15 +1,16 @@
-# Super Earth Arsenal Mod Pack v1.0.22
+# Super Earth Arsenal Mod Pack v1.0.23
 
-This ZIP includes the nineteen listed mods. SG-8P Punisher Plasma is omitted and remains at its stock behavior. Loyalist and One-Two are also no longer repurposed by Punisher Plasma.
+This ZIP includes the twenty listed mods. SG-8P Punisher Plasma is omitted and remains at its stock behavior. Loyalist and One-Two are also no longer repurposed by Punisher Plasma.
 
 The AR-32 Pacifier deals 75 normal and 15 durable damage, builds Stun Medium at strength 3 per hit, has a 65-round default magazine, and has 0.6 sway.
 
-[Download v1.0.22](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.22/Super-Earth-Arsenal-Modpack-v1.0.22.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download v1.0.23](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.23/Super-Earth-Arsenal-Modpack-v1.0.23.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Gameplay changes
 
 | Mod | Gameplay settings |
 |---|---|
+| VG-70 Variable | Keeps its primary slot, mobile reload and backpack-free operation. Magazine capacity becomes 150 rounds. Auto offers 550, 750 and 1,000 RPM at 110/29, 90/24 and 75/20 normal/durable damage per bullet, AP3. Volley fires 15 simultaneous bullets at 40/11 each, AP3, following the selected 550, 750 or 1,000 RPM rate. Total fires all remaining rounds at 28/8 per bullet, AP4, with 0.75 spread on both axes. Spare-magazine settings remain 6 starting, 7 maximum and 7 per resupply. Base ergonomics becomes 40 and sway becomes 0.9. Recoil falls 15% in every mode: horizontal/vertical drift 5/10 becomes 4.25/8.5, and climb 4/8 becomes 3.4/6.8. Total retains its stock right-arm self-injury and knockdown behavior. Sustained Auto muzzle flashes stay aligned. Reload timing, projectile speed and sounds are retained. |
 | PLAS-45 Epoch | PLAS-45 Epoch highest-charge shots gain 30% more normal and durable direct-hit and blast damage, burning on blast hits, a 5 m full-damage radius, 6 m outer damage radius and 7 m shockwave radius. Magazine capacity increases from 3 to 4 rounds and maximum spare magazines from 4 to 5. Reload while walking with the existing reload animation. Base highest-tier direct damage is 520/260 and blast damage is 1040/1040, with its existing charge multiplier retained. Charge times remain 1.0/2.5/2.6 seconds and lower-charge shots retain their current values. Starting/resupply spare magazines remain 2/2. |
 | AR-32 Pacifier | Bullets deal 75 normal and 15 durable damage, up from 55/10, and build Stun Medium at strength 3 per hit, up from 2. Its default magazine holds 65 rounds, up from 40, and weapon sway falls from 1 to 0.6. |
 | AC-8 Autocannon | The call-in supplies only the weapon, freeing the backpack slot. The gun carries 10 loaded + 60 reserve rounds and uses its familiar five-round top reload while walking, about 20% faster than stock. A resupply is set to refill up to 60 reserve rounds. Ergonomics rises from 17 to 30. Horizontal/vertical recoil drift falls from 200/450 to 150/337.5 and recoil climb from 2/100 to 1.5/75, a 25% reduction to each. APHET direct damage becomes 375 normal / 340 durable with AP5, and impact blast becomes 180 normal. FLAK explosion damage becomes 210 normal with an 8 m outer radius; FLAK direct damage and shrapnel are unchanged. JAR-5 Dominator High Explosive ammo shares that explosion and receives the same explosion buff. |
@@ -36,6 +37,6 @@ If your currently installed pack includes Punisher Plasma, equip a different pri
 
 For AC-8, choose APHET or FLAK through the stock Weapon Functions selector. For ARC-3, hold R and choose Auto/Rapid or Semi/Supercharge. For PLAS-39, hold R and use the left-side Weapon Functions selector. Semi fires one round with a 0.01-second minimum charge and a base 0.30-second interval; the native fire-rate modifier can increase that interval to approximately 0.333 seconds. Burst fires three rounds spaced 0.12 seconds apart with a 0.45-second minimum charge, consuming three rounds. Both modes retain normal firing audio and the game's fire-rate modifier.
 
-## Changes in v1.0.22
+## Changes in v1.0.23
 
-Fixes PLAS-39 Semi/Burst switching and firing audio when the game applies its fire-rate modifier. Both modes retain that modifier and follow the selected Weapon Functions mode. All nineteen mods retain their listed tuning. Pacifier remains included and Punisher Plasma remains omitted.
+Adds the VG-70 Variable portable Maxigun rework. The pack includes 20 mods; Pacifier remains included and Punisher Plasma remains omitted.
