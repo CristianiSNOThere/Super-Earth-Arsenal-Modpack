@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "guid": "bf6cb345-73c0-5b9b-a16c-38d490155842",
-  "version": "2.0.0",
-  "baseline": "1.0.26",
+  "version": "2.1.0",
+  "baseline": "2.0.0",
   "packages": [
     {
       "index": 0,
@@ -595,6 +595,25 @@
       "includes": [
         "Addon"
       ]
+    },
+    {
+      "index": 22,
+      "id": "adjudicator-heavy",
+      "name": "BR-14 Adjudicator Heavy Battle Rifle",
+      "option": "Enable BR-14 Adjudicator Heavy Battle Rifle",
+      "description": "BR-14 Adjudicator becomes a heavy battle rifle: normal/durable damage rises from 95/23 to 115/30, stagger force from 15 to 25, and push force becomes 10 instead of 12. Magazine capacity increases from 30 to 48 rounds. Fire rate falls from 550 to 480 RPM. Bullet velocity rises from 820 to 1,000 m/s, and speed loss per penetration falls from 25% to 15%. Horizontal recoil drift becomes 16.5 instead of 17, vertical recoil drift rises from 35 to 57.5, and base sway falls from 1 to 0.6. Existing armor penetration, recoil climb, spread, drag and spare-magazine counts are retained.",
+      "version": "0.1.1",
+      "guid": "fa1d35a8-f8e0-4ca5-91f0-291002a632ce",
+      "origin": "source/adjudicator-heavy/entry.lua",
+      "origin_sha256": "97AE46AA7A53415D8B71A42DB85969A18E79EAFAA2E116F494C9EEB7A6FB5F55",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "4BCD3AE9F75E79CA1D127C5ED7D06C1F571D2A4D3FCA7F27704F912953A05473",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
     }
   ],
   "flag_options": [
@@ -1041,5 +1060,6 @@
       "durable_ratio": 100
     }
   ],
-  "flag_layout": "single-dropdown-under-flag-option"
+  "flag_layout": "single-dropdown-under-flag-option",
+  "expected_resources": 36
 }

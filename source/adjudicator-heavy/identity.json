@@ -1,0 +1,9 @@
+{
+  "guid": "fa1d35a8-f8e0-4ca5-91f0-291002a632ce",
+  "module": "mods/codex/adjudicator_heavy",
+  "implementation": "mods/codex/adjudicator_heavy_impl",
+  "global_name": "AdjudicatorHeavyV1",
+  "version": "0.1.1",
+  "key": "E2D1C5B92BC18807",
+  "implementation_key": "816AD0F643DA2768"
+}

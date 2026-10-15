@@ -107,12 +107,23 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--import-baseline', action='store_true')
     parser.add_argument('--release',action='store_true',help='Use the reviewed public descriptions; preserve all tested gameplay files')
+    parser.add_argument('--incremental',action='store_true',help='Audit each option dependency closure without repeating the migration matrix')
+    parser.add_argument('--output',type=Path,help='New immutable candidate path; required with --incremental')
+    parser.add_argument('--evidence',type=Path,help='New evidence folder; required with --incremental')
     args = parser.parse_args()
     if args.import_baseline:
         import_baseline()
     catalog = json.loads((CANON / 'catalog.json').read_text(encoding='utf-8'))
     packages = catalog['packages']
-    assert len(packages) == 22
+    if args.incremental:
+        assert args.output and args.evidence and not args.import_baseline
+        assert catalog['baseline']=='2.0.0' and catalog['version']=='2.1.0'
+        assert len(packages)==23 and catalog['expected_resources']==36
+    else:
+        assert not args.output and not args.evidence
+        assert catalog['version']=='2.0.0', 'Use an explicit new incremental candidate for a changed catalog'
+        assert len(packages)==22
+    pack_version=catalog['version']
     files = {}
     inventory = {}
     owners = {}
@@ -126,7 +137,10 @@ def main():
     from lua_runtime import Lua51
     runtime = Lua51()
     options = []
-    assert len({p['guid'] for p in packages})==22 and GUID not in {p['guid'] for p in packages}
+    assert len({p['guid'] for p in packages})==len(packages) and GUID not in {p['guid'] for p in packages}
+    assert [p['index']for p in packages]==list(range(len(packages)))
+    assert len({p['id']for p in packages})==len(packages)
+    assert len({p['option']for p in packages})==len(packages)
     for p in packages:
         resource_bits = 0
         referenced=set();provided=set()
@@ -170,7 +184,7 @@ def main():
              optional_peers=sorted(optional),resources=[f'{k:016X}:{t:016X}'for k,t in sorted(provided)]))
         options.append(dict(Name=p['option'], Description=p['description'],
                             Include=['Mods/' + p['id'] + '/' + d for d in p['includes']]))
-    assert len(inventory) == 34
+    assert len(inventory) == catalog.get('expected_resources',34)
     assert (0x8CB98E0A56C28528, LUA) not in inventory
     assert not any(kind == 0xAD9C6D9ED1E5E77A for key, kind in inventory)
     flag = next(p for p in packages if p['id'] == 'one-true-flag')
@@ -200,12 +214,12 @@ def main():
         preset_payloads.append(dict(normal=normal,durable=durable,durable_ratio=ratio,folder=folder,
                                     resource=f'{preset_key:016X}',sha256=sha(archive)))
     assert preset_payloads[0]['normal']==300 and preset_payloads[0]['durable']==150
-    manifest = dict(Version='2.0.0', Guid=GUID, Name='Super Earth Arsenal Mod Pack',
-                    Description='Choose any of the 22 weapon and equipment mods independently. '
+    manifest = dict(Version=pack_version, Guid=GUID, Name='Super Earth Arsenal Mod Pack',
+                    Description=f'Choose any of the {len(packages)} weapon and equipment mods independently. '
                     'Includes configurable One True Flag damage.', Options=options)
     files['manifest.json'] = (json.dumps(manifest, indent=2) + '\n').encode()
     # Player-visible behavior stays in the public copy; test evidence is separate.
-    readme = ['# Super Earth Arsenal Mod Pack v2.0.0', '',
+    readme = ['# Super Earth Arsenal Mod Pack v'+pack_version, '',
               'Choose the weapon and equipment mods you want in Arsenal, then deploy the pack.', '',
               'Requires Bingus Shared Loader. Select each desired mod in the pack options. '
               'When importing or upgrading from v1, review the new switches before deploying. '
@@ -219,16 +233,20 @@ def main():
               '| Option | Changes |', '|---|---|']
     readme += ['| ' + p['name'] + ' | ' + (flag_option['Description'] if p['id']==flag['id']else p['description']).replace('|', '/') + ' |' for p in packages]
     files['README.md'] = ('\n'.join(readme) + '\n').encode('utf-8')
-    if args.release:
+    if args.release or args.incremental:
         public=json.loads((CANON/'release-metadata.json').read_text(encoding='utf-8'))
         manifest['Description']=public['description']
         for option in manifest['Options']:
-            option['Description']=public['option_descriptions'][option['Name']]
+            option['Description']=public['option_descriptions'].get(option['Name'],option['Description']) if args.incremental and not args.release else public['option_descriptions'][option['Name']]
+        if args.incremental and not args.release:
+            manifest['Description']=f'Choose from {len(packages)} independently selectable weapon and equipment mods, including BR-14 Adjudicator Heavy Battle Rifle. One True Flag has one dropdown with 29 damage presets (default 300 normal / 150 durable).'
         files['manifest.json']=(json.dumps(manifest,indent=2)+'\n').encode()
-        files['README.md']=(REPO/'README.md').read_bytes()
-    OUT.mkdir(parents=True, exist_ok=True)
-    EVIDENCE.mkdir(parents=True, exist_ok=True)
-    zip_path = (REPO/'Super-Earth-Arsenal-Modpack-v2.0.0.zip') if args.release else (OUT/'Super-Earth-Arsenal-Modpack-v2.0.0-Selectable-Rev3-Test.zip')
+        if args.release:files['README.md']=(REPO/'README.md').read_bytes()
+    evidence=args.evidence if args.incremental else EVIDENCE
+    evidence.mkdir(parents=True,exist_ok=True)
+    OUT.mkdir(parents=True,exist_ok=True)
+    zip_path = args.output if args.incremental else ((REPO/'Super-Earth-Arsenal-Modpack-v2.0.0.zip') if args.release else (OUT/'Super-Earth-Arsenal-Modpack-v2.0.0-Selectable-Rev3-Test.zip'))
+    zip_path.parent.mkdir(parents=True,exist_ok=True)
     import io
     buffer = io.BytesIO()
     with zipfile.ZipFile(buffer, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as z:
@@ -246,29 +264,39 @@ def main():
     assert not any('/' not in n and '.patch_' in n for n in files)
     # Each option contains its complete accepted dependency closure. Identical
     # overlaps were proven above. Enumerate every mask and construct its union.
-    unions = [0] * (1 << len(packages))
-    needed = [0] * (1 << len(packages))
-    for mask in range(1, len(unions)):
-        low = mask & -mask
-        unions[mask] = unions[mask ^ low] | option_resource_bits[low.bit_length() - 1]
-        needed[mask] = needed[mask ^ low] | option_dependencies[low.bit_length()-1]
-        assert unions[mask] != 0
-        assert unions[mask]&needed[mask]==needed[mask], 'Selection has an unresolved module dependency'
-    matrix = selection_matrix()
-    (EVIDENCE / 'selections.json').write_text(json.dumps(matrix))
+    if args.incremental:
+        # Each option supplies its own dependency closure; identical overlaps
+        # above prove the same property for any union without mask enumeration.
+        for available,required in zip(option_resource_bits,option_dependencies):
+            assert available and available&required==required
+        matrix=[1<<(len(packages)-1),(1<<len(packages))-1]
+        checked_masks=None
+    else:
+        unions = [0] * (1 << len(packages))
+        needed = [0] * (1 << len(packages))
+        for mask in range(1, len(unions)):
+            low = mask & -mask
+            unions[mask] = unions[mask ^ low] | option_resource_bits[low.bit_length() - 1]
+            needed[mask] = needed[mask ^ low] | option_dependencies[low.bit_length()-1]
+            assert unions[mask] != 0
+            assert unions[mask]&needed[mask]==needed[mask], 'Selection has an unresolved module dependency'
+        matrix = selection_matrix()
+        checked_masks=len(unions)
+    (evidence / 'selections.json').write_text(json.dumps(matrix))
     detail = dict(result='PASS', artifact=str(zip_path), sha256=sha(body), bytes=len(body),
-                  baseline='22 mods / v1.0.26', package_guid=GUID, options=len(options),
-                  mod_switches=22, flag_controls=1, flag_dropdown_presets=preset_payloads,all_selection_masks=len(unions),
+                  baseline=('22 mods / v2.0.0'if args.incremental else '22 mods / v1.0.26'), package_guid=GUID, options=len(options),
+                  mod_switches=len(packages), flag_controls=1, flag_dropdown_presets=preset_payloads,all_selection_masks=checked_masks,
                   runtime_selection_masks=len(matrix), resources=len(inventory),
                   differing_payload_collisions=0, unchanged_accepted_payloads=True,
+                  dependency_check='Each option provides its full closure; shared overlaps byte-identical',
                   pure_lua_archives=True, root_patch_files=0,
                   removed_pack_only_resources=['8CB98E0A56C28528', '9BA626AFA44A3AA3:AD9C6D9ED1E5E77A'],
-                  selection_dependencies='All masks checked against referenced Lua resource keys; Tenderizer Gas peer is optional',
+                  selection_dependencies=('Every option closure checked against referenced Lua resource keys; Tenderizer Gas peer is optional'if args.incremental else 'All masks checked against referenced Lua resource keys; Tenderizer Gas peer is optional'),
                   package_catalog=catalog_detail,
                   modules=module_owners,
                   resources_detail=[dict(key=f'{k:016X}', kind=f'{t:016X}', sha256=sha(v), owners=owners[k,t])
                                     for (k,t),v in sorted(inventory.items())])
-    (EVIDENCE / ('release-composition-v2.0.0.json'if args.release else 'composition-rev3.json')).write_text(json.dumps(detail, indent=2) + '\n')
+    (evidence / ('composition.json'if args.incremental else ('release-composition-v2.0.0.json'if args.release else 'composition-rev3.json'))).write_text(json.dumps(detail, indent=2) + '\n')
     print(json.dumps({k:v for k,v in detail.items() if k not in ('resources_detail','modules','package_catalog','flag_dropdown_presets')}, indent=2))
 
 

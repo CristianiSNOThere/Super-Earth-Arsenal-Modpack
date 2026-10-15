@@ -1,0 +1,3 @@
+# BR-14 Adjudicator Heavy Battle Rifle
+
+BR-14 Adjudicator becomes a heavy battle rifle: normal/durable damage rises from 95/23 to 115/30, stagger force from 15 to 25, and push force becomes 10 instead of 12. Magazine capacity increases from 30 to 48 rounds. Fire rate falls from 550 to 480 RPM. Bullet velocity rises from 820 to 1,000 m/s, and speed loss per penetration falls from 25% to 15%. Horizontal recoil drift becomes 16.5 instead of 17, vertical recoil drift rises from 35 to 57.5, and base sway falls from 1 to 0.6. Existing armor penetration, recoil climb, spread, drag and spare-magazine counts are retained.

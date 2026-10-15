@@ -9,8 +9,17 @@ the remaining v2 release checks are separate.
 
 Full22Rev3startup at16:16:44 local is also confirmed:61loaded/0failed,
 all22expected final states and75exact deployed files; Flagdefault300/150applied.
-Both startup selections can be reused as exact baseline evidence. FullRev3
-user gameplay feedback remains pending; do not infer universal gameplay.
+Both startup selections are accepted baseline evidence; v2.0.0 was subsequently
+published at the user request. Do not infer universal gameplay.
+
+## v2.1.0 accepted extension
+
+AdjudicatorHeavy adds one private option/resource pair; existing22gameplay
+archives and29Flagpresets are exact. Rev2full23startup18:59:51Europe/Madrid
+passes62loaded/0failed,all23finalstates,78deployedfiles. Useraccepts480RPM and
+requests publication. Incrementalchecks cover30actualBR-14transactions,
+targetedstartup/faultcases,fullresourceclosure,6Arsenaldeployments andoldoption
+migration. The oldmigrationmatrix was reused rather than repeated.
 
 ## Rule
 

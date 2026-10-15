@@ -11,17 +11,16 @@ resource/dependency audits, exact guards/rollback and fresh startup/gameplay
 gates. Build individual ZIPs only when separately maintaining legacy individual
 releases; a selectable-pack-only change does not require 22 individual builds.
 
-## Current release: selectable pack v2.0.0 (2026-10-15)
+## Current release: selectable pack v2.1.0 (2026-10-15)
 
-The user approved a single selectable package and automated subset testing. New
-candidate build inputs are under `source/configurable-pack/`, with tools under
-`tools/configurable-pack/`; read `source/configurable-pack/BUILD.md` first. This
-repository is the home for new selectable-pack work. The user accepted Rev3 and
-requested v2.0.0 publication on2026-10-15. The old individual repo is repurposed
-for standalone runtime/weapon projects, including Punisher Plasma. Preserve its
-22earlier individual releases and all pack history. Current handoff is
-`work/configurable-pack-20261015/continuation-20261015.md` relative to the HD2 Mods
-workspace. The local automated checks do not replace fresh startup/gameplay gates.
+Current set:23 independently selectable mods, including BR-14 Adjudicator Heavy
+Battle Rifle at480RPM, and the unchanged29-preset Flag dropdown. User accepts
+Rev2 and explicitly requests publication. Canonical authored Adjudicator source
+is under `source/adjudicator-heavy/`; catalog/payloads and build tools remain
+under `source/configurable-pack/` and `tools/configurable-pack/`. Read BUILD.md
+and REGRESSION-POLICY.md before changes. The former individual repository hosts
+standalone runtime projects; keep its22legacy releases and all pack history.
+No need to build a new individual package for a selectable-pack-only addition.
 
 Every new mod in this set, including Arc Thrower and Autocannon work, must follow the current startup contract in `source/startup-initialization/` and the companion gate in `source/scorcher-ar/runtime.lua`. Use bounded waits with named failures; retain exact supported peer-order checks, fail-closed shared-table validation, and rollback. Update supported peer values when a new mod edits a shared table.
 
@@ -31,11 +30,13 @@ Keep deployment and Arsenal settings with the user. Verify a published replaceme
 
 Public release descriptions and player-facing READMEs must explain the complete player-visible changes without implementation details, test history, failed prototypes, or statements about which tests were or were not run. Keep validation evidence in internal work notes.
 
-## Latest local evidence: full Rev3 startup (2026-10-15)
+## Latest accepted startup
 
-Selectable v2.0.0 Rev3 full22 startup at16:16:44 Europe/Madrid is verified:
-61loaded/0failed, all22final states,75exact deployed files, Flag300/150preset
-loaded before Flag. Evidence under the workspace's
-`work/configurable-pack-20261015/full-rev3-launch-20261015T141905Z/`.
-The user subsequently accepted the result and requested publication. Keep the incremental policy;
-no repeat of the exhaustive migration suite or rebuild is needed for this launch.
+Rev2 full23 launch18:59:51 Europe/Madrid:62loaded/0failed, all23final mod states,
+Adjudicator480RPM,78exact deployed files and installedmanifest. Workspace evidence:
+`work/adjudicator-heavy-20261015-rev2/full-adjudicator-rev2-launch-20261015T170057Z/`.
+User subsequently says "Perfect. Let us update the repo.", accepting the result
+and authorizing publication. The earlier muzzle-flash report was withdrawn by
+the user as a fluke; no visual changes were made. Keep offline/startup/loaded/
+gameplay evidence distinct. Publication evidence/latest handoff is under
+`work/release-adjudicator-20261015/` in the HD2 Mods workspace.

@@ -1,10 +1,12 @@
-# Super Earth Arsenal Mod Pack v2.0.0
+# Super Earth Arsenal Mod Pack v2.1.0
 
-Choose the weapon and equipment changes you want from one package. Each of the **22 mods has its own switch in Arsenal**: enable a single weapon, a smaller selection, or the complete set.
+Choose the weapon and equipment changes you want from one package. Each of the **23 mods has its own switch in Arsenal**: enable a single weapon, a smaller selection, or the complete set.
 
-**One True Flag now has one damage dropdown with 29 presets**, defaulting to **300 normal / 150 durable**. Its settings are inside the Flag option.
+**One True Flag has one damage dropdown with 29 presets**, defaulting to **300 normal / 150 durable**. Its settings are inside the Flag option.
 
-[Download v2.0.0](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v2.0.0/Super-Earth-Arsenal-Modpack-v2.0.0.zip) | [All releases](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases) | [Standalone runtime projects](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+**New in v2.1.0:** BR-14 Adjudicator Heavy Battle Rifle, with 115/30 damage, a 48-round magazine and 480 RPM.
+
+[Download v2.1.0](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v2.1.0/Super-Earth-Arsenal-Modpack-v2.1.0.zip) | [All releases](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases) | [Standalone runtime projects](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Choose your mods
 
@@ -20,6 +22,7 @@ Punisher Plasma is not included. It remains a separate project in the [standalon
 
 | Mod | Gameplay settings |
 |---|---|
+| BR-14 Adjudicator Heavy Battle Rifle | BR-14 Adjudicator becomes a heavy battle rifle: normal/durable damage rises from 95/23 to 115/30, stagger force from 15 to 25, and push force becomes 10 instead of 12. Magazine capacity increases from 30 to 48 rounds. Fire rate falls from 550 to 480 RPM. Bullet velocity rises from 820 to 1,000 m/s, and speed loss per penetration falls from 25% to 15%. Horizontal recoil drift becomes 16.5 instead of 17, vertical recoil drift rises from 35 to 57.5, and base sway falls from 1 to 0.6. Existing armor penetration, recoil climb, spread, drag and spare-magazine counts are retained. |
 | Tenderizer Armor Softener | AR-61 Tenderizer magazine capacity increases from 35 to 70 rounds and bullet launch speed from 820 to 1,000 m/s. Direct and slight-angle armor penetration increase from AP2 to AP3; the other angle settings remain unchanged. Bullets apply Acid Storm to temporarily reduce enemy armor effectiveness for 15 seconds. Base sway is set to 0.9. Normal/durable damage is 90/30, with the existing 600/850 RPM settings, recoil and spread. The shared Acid Storm duration also affects its weather effect after exposure ends. |
 | Sickle Laser AR | LAS-16 Sickle deals 70 normal and 10 durable damage and generates 50% less heat per shot, from 1.15 to 0.575. LAS-17 Double-Edge Sickle deals 65/10 normal/durable damage cold and warm, then 83/14 at hot and maximum heat. Both weapons have at least AP3 penetration; Double-Edge reaches AP4 at maximum heat. Both Sickles have a base fire rate of 700 RPM, zero horizontal and vertical spread, and 2,000 m/s projectiles at every heat tier with no distance damage fall-off. Double-Edge direct heat self-damage is reduced by 25%. Its heat buildup, cooling and maximum-heat ignition remain unchanged; general fire damage is unchanged. |
 | VG-70 Variable | Keeps its primary slot, mobile reload and backpack-free operation. Magazine capacity becomes 150 rounds. Auto offers 550, 750 and 1,000 RPM at 110/29, 90/24 and 75/20 normal/durable damage per bullet, AP3. Volley fires 15 simultaneous bullets at 40/11 each, AP3, following the selected 550, 750 or 1,000 RPM rate. Total fires all remaining rounds at 28/8 per bullet, AP4, with 0.75 spread on both axes. Spare-magazine settings remain 6 starting, 7 maximum and 7 per resupply. Base ergonomics becomes 40 and sway becomes 0.9. Recoil falls 15% in every mode: horizontal/vertical drift 5/10 becomes 4.25/8.5, and climb 4/8 becomes 3.4/6.8. Total retains its stock right-arm self-injury and knockdown behavior. Sustained Auto muzzle flashes stay aligned. Reload timing, projectile speed and sounds are retained. |
@@ -63,8 +66,9 @@ Requires Helldivers 2 Steam build 25480438 and Bingus Shared Loader v19.
 - **Scorcher:** select Auto in Weapon Functions for continuous fire.
 - **PLAS-39:** hold R and use the left-side Weapon Functions selector. Semi fires one round with a 0.01-second minimum charge and a base 0.30-second interval; the native fire-rate modifier can increase that interval to approximately 0.333 seconds. Burst fires three rounds spaced 0.12 seconds apart with a 0.45-second minimum charge. Both modes keep normal firing audio and the game's fire-rate modifier.
 
-## Changes in v2.0.0
+## Changes in v2.1.0
 
-- All 22 weapon and equipment mods can now be selected independently from one ZIP.
-- One True Flag's settings are combined into one dropdown with 29 damage presets, including half or equal durable damage. The default remains 300/150.
-- The existing weapon balance is retained, including Sickle, Tenderizer and Pacifier.
+- Adds BR-14 Adjudicator Heavy Battle Rifle as the 23rd independently selectable mod.
+- Adjudicator gains 115/30 damage, a 48-round magazine, 480 RPM, 1,000 m/s bullets, and 15% speed loss per penetration.
+- Sets Adjudicator stagger to 25, push to 10, horizontal/vertical recoil drift to 16.5/57.5, and base sway to 0.6.
+- Keeps the existing weapon settings and One True Flag's 29 presets, defaulting to 300/150.

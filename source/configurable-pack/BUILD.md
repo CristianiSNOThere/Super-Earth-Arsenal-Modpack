@@ -1,127 +1,95 @@
-# Selectable pack v2.0.0 release source
+# Selectable pack v2.1.0 release source
 
-The user accepted the full Rev3 startup and explicitly requested the repository
-update/publication on2026-10-15. The v2.0.0 release contains the exact tested
-Rev3 Addon and preset files. Only README.md and manifest Description fields are
-updated for publication. The former individual repository is repurposed for
-standalone runtime/weapon projects; all22earlier individual releases remain.
+Current baseline:23 independent mod switches, including BR-14 Adjudicator Heavy
+Battle Rifle, and One True Flag's single29-choice damage dropdown. DefaultFlag
+damage remains300normal/150durable. User accepts the final480RPM Rev2 candidate
+and requests repository update/publication on2026-10-15.
 
-The public release is built with `tools/configurable-pack/build.py --release`.
-It reads reviewed metadata from `release-metadata.json` and public README.md;
-GUID/version/option names, folders, presets and gameplay bytes remain exact.
-Without `--release`, the builder still reproduces the immutable Rev3 test ZIP.
-Publication evidence is under `work/release-selectable-pack-20261015/` in the
-HD2 Mods workspace. Do not rerun that one-time release preparation over a later
-baseline. The release SHA differs from Rev3 only because the public copy changes.
+## Inputs and build
 
-## Build inputs
+`catalog.json` records ordered stable option names, package identities, Include
+paths and payload hashes. `payloads/<id>/` contains the accepted archives.
+`release-metadata.json` holds the reviewed main/option descriptions; repository
+README.md supplies the release ZIP README. Canonical readable implementations
+are under this repository's source directories, including `adjudicator-heavy/`.
+The former individual repository is not an input for routine builds.
 
-`catalog.json` is the ordered list of 22 mod switches and the Flag damage presets.
-Current Rev3 has one 29-choice dropdown inside the One True Flag option;
-300 normal /150 durable is first and remains the default. Normal presets are
-0,100,200,300,400,500,600,750,1000,1500,2000,3000,5000,7500 and9999; each offers half
-or equal durable damage (zero has one equivalent 0/0 choice). User approved one
-dropdown. The old five independent digit controls are retained as baseline data
-only and are omitted from the Rev3 ZIP. It no longer offers every custom integer.
-`payloads/<id>/` contains exact accepted Addon and Flag Settings files, imported
-once from the 22 published individual ZIPs. Origin ZIP names, versions, GUIDs,
-SHA256 and every imported file hash are recorded. Subsequent builds read this
-repository's catalog/payloads only. The individual repository is not a build input
-unless explicitly running the one-time `--import-baseline` migration again in a
-new empty catalog directory.
-
-Canonical authored Lua is under this repository's existing source directories.
-Preserve the catalog's payload hashes until deliberately updating a mod. Rebuild
-all carriers of a changed shared Lua resource together, update their catalog
-hashes, then rerun the composition/startup/transaction checks. A mismatching
-resource hash fails the builder. This migration changes packaging and public
-copy only; every accepted gameplay resource is byte-identical.
-
-The candidate uses the existing pack GUID bf6cb345-73c0-5b9b-a16c-38d490155842.
-It omits the old unconditional five-peer pack entrypoint and redundant legacy
-bootstrap. Bingus Shared Loader remains required. Each enabled option includes
-its complete accepted archive; identical shared library duplicates resolve under
-the loader's existing resource and require cache. Animation archives remain
-separate from pure-Lua archives. There are no patch files at the ZIP root, so
-Arsenal's empty-selection fallback installs no weapon archive.
-
-## Commands from the HD2 Mods workspace root
+Use the workspace's bundled Python executable from the HD2 Mods root:
 
 ```powershell
-& 'C:\Users\crife\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' 'work/super-earth-arsenal-modpack-repo/tools/configurable-pack/build.py'
-& 'C:\Program Files\nodejs\node.exe' 'work/super-earth-arsenal-modpack-repo/tools/configurable-pack/test_flag_dropdown.cjs' 'work/configurable-pack-20261015/arsenal-backend' 'work/configurable-pack-20261015' 'outputs/configurable-pack-20261015/Super-Earth-Arsenal-Modpack-v2.0.0-Selectable-Rev3-Test.zip'
-& 'C:\Users\crife\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' 'work/super-earth-arsenal-modpack-repo/tools/configurable-pack/test_flag_presets.py'
+python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/build.py --release --incremental --output work/super-earth-arsenal-modpack-repo/Super-Earth-Arsenal-Modpack-v2.1.0.zip --evidence work/release-adjudicator-20261015/pack
 ```
 
-The Lua tests require the local supported lua51.dll and extracted stock tables
-already used by this workspace. The focused guards reuse existing fixture data
-only after proving that their embedded transaction/module source matches the
-current accepted code. Reports and generated fixtures go under
-`work/configurable-pack-20261015/`, outside this repository. Do not run legacy
-builder entrypoints: they can regenerate older gameplay or initialization code.
+The explicit output is immutable: a different byte stream at an existing path
+is refused. Use a new version/revision for gameplay changes. Historical v2.0.0
+and earlier ZIPs remain intact. The legacy no-incremental builder mode requires
+the historical22-option catalog; obtain it from the v2.0.0 tag to reproduce that
+version. Do not run old one-time prepare/import scripts against current inputs.
 
-The Arsenal fixture uses a read-only copy of the installed 0.36.2 backend from
-app.asar. Its config, library, game/data and game/bin directories are fresh local
-fixtures, with no access to the actual user's profile. The extraction helper is
-`work/configurable-pack-20261015/probe.py`; it copies JS/JSON backend dependencies
-without starting Arsenal. Backend logs are retained in each UUID fixture folder.
+Incremental mode checks every resource/hash, pure-Lua archive and each option's
+complete dependency closure. Identical shared overlaps plus a complete closure
+per option establish static union compatibility without enumerating millions
+of masks. This is a resource/dependency property, not universal runtime/gameplay
+proof. New BR-14 resources are private; all22earlier gameplay archives and all29
+Flag preset archives remain byte-identical to v2.0.0.
 
-## Evidence and limits
+The stable packGUID remainsbf6cb345-73c0-5b9b-a16c-38d490155842. There are no root
+patches, so all-off deploys no weapon archive. Lua and animation archives remain
+separate. Current base resource union36; selectedFlag adds its mutually exclusive
+preset resource. Full23 selection with aFlagpreset deploys26mainarchives and52
+empty companions,78files total. Existing duplicate animation resources are exact.
 
-Follow `REGRESSION-POLICY.md` for future changes; do not repeat the initial
-exhaustive migration suites by default. Rev3 is a packaging/settings change.
-It passes64focused installed-Arsenal deployments, all29actual Flag writes
-with current SAI/Gas guards, two actual discovery-order cases, and exact
-previous gameplay-resource equality. The builder saves `composition-rev3.json`;
-the initial `composition.json` and other Rev2 reports remain unchanged.
+## Focused regression
 
-The Rev2 four-mod launch at16:02:19 local is confirmed:41loaded/0failed,
-APW-1+CQC-20+P-34+Railgun,4profiles/9values applied,12exact file matches.
-Rev3 full22startup at16:16:44 local is now confirmed:61loaded/0failed,
-all22mods final,75exact deployed file matches,Flag300/150preset loaded before
-Flag and applied. Saved evidence is
-`work/configurable-pack-20261015/full-rev3-launch-20261015T141905Z/report.json`.
-The user subsequently accepted the result and requested publication. This is
-release acceptance, not independent numerical gameplay or host/client evidence;
-independent loaded resources were not inspected.
+Follow REGRESSION-POLICY.md. Do not rerun all prior pairs/triples or ask the user
+to test every old weapon. Reuse exact baseline code/data/dependency hashes.
 
-Latest evidence: `work/configurable-pack-20261015/README.md` and JSON reports.
-Composition checks enumerate all 4,194,304 selections and verify dependency
-closures and exact shared payloads. Real Arsenal import/deploy/purge covers
-1,817 selections plus eight edge cases. Real Shared Loader discovery runs on
-all 1,817 selected archive sets. The 7,268 Lua startup-control cases execute the
-shipped controllers, profile registration and peer readiness in four orders.
-Patch and native adapters in that matrix are fixtures; it is not 7,268 live
-startups or full transaction executions. The separate guard/transaction suite
-executes current transaction code in isolated memory, including partial writes,
-foreign edits and rollback. Full Variable synthetic runtime is also exercised.
+```powershell
+python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/test_runtime.py --incremental --evidence work/adjudicator-heavy-20261015-rev2/pack
+node work/super-earth-arsenal-modpack-repo/tools/configurable-pack/test_incremental.cjs work/configurable-pack-20261015/arsenal-backend work/adjudicator-heavy-20261015-rev2/pack outputs/adjudicator-heavy-20261015/Super-Earth-Arsenal-Modpack-v2.1.0-Adjudicator-Rev2-RPM480-Test.zip
+```
 
-Actual game startup, loaded-resource inspection, gameplay and host/client
-behavior remain separate gates. No real deployment/settings were changed.
-Before publication, use a few representative user launches, inspect fresh
-expected-module final states and exact deployed candidate bytes, and obtain
-gameplay acceptance. Do not request manual testing of every combination.
+The Arsenal backend fixture uses a read-only extraction of installed0.36.2 and
+fresh local profile/library/game directories; it never controls the real profile.
+The runtime harness exercises actual discovery/controllers/registration/peer
+gates with patch/native adapters. Real transaction checks are separate:
+`work/adjudicator-heavy-20261015-rev2/verify.py` runs30cases in isolated LuaJIT
+buffers, including unknown data, owner checks, partial writes, readback failure,
+rollback, foreign edits and actual local Windows memory protection restoration.
+`verify_startup.py` covers9bounded startup cases and2saved-code penetration cases.
+The canonical7source implementations recompile exactly to shipped bytecode.
 
-## Upgrade behavior
+The initial selectable migration's exhaustive composition,1825Arsenal deployments,
+7268startup simulations and old transaction suites remain in
+`work/configurable-pack-20261015/`; no migration matrix was repeated for BR-14.
 
-Arsenal0.36.2 does not map the old v1 option name to the22new names. Import
-with its global enable-all preference on enables all22switches and the first
-Flag preset. With that preference off it still enables the first mod option;
-Flag starts disabled with no preset radio selected. Flag's internal fallback
-remains300/150 when enabled without a preset. Rev2 had27options; Rev3 has22.
-Users must review switches on import/upgrade; do not modify their profile to
-silently choose a subset. Flag's disabled parent suppresses its preset archive
-even if a stored child radio remains selected. Each selected preset sets all
-five internal values; it does not inherit stale digits from an earlier preset.
+## Accepted live evidence and release delta
 
-Gas/Tenderizer retain the shared 15-second Acid Storm duration. AC-8/Epoch retain
-the shared animation resource; AC-8's JAR-5 shared explosion remains. Turning off
-a weapon option does not undo shared effects supplied by another selected mod.
+Fresh Rev2 full23 startup18:59:51 Europe/Madrid:62loaded/0failed; all23expected
+final mod states; exactAdjudicator480RPM status;13dedicated Applied logs,
+9profiles/33values with0refused/0panelerrors,Scorcher14fields andPLAS39native
+selector final. Installedmanifest and78selected deployed files match Rev2.
+Evidence: `work/adjudicator-heavy-20261015-rev2/full-adjudicator-rev2-launch-20261015T170057Z/`.
+User subsequently accepts the result and authorizes publication. Independent
+loaded-resource inspection, per-target numerical measurements and universal
+host/client behavior are not claimed. User's earlier muzzle-flash report was
+withdrawn as a fluke; no visual change was implemented.
 
-## Repository migration
+Public v2.1.0 changes only README.md and manifest Description fields from accepted
+Rev2. Gameplay/preset files, version, GUID, names, paths, order and defaults remain
+exact. Publication evidence is under `work/release-adjudicator-20261015/`.
 
-Keep new selectable-pack work in this repository. Keep v1.0.26 and all earlier
-pack releases plus the22individual release history intact. The old repository
-is repurposed as Helldivers2RuntimeMods; it is not archived or renamed. Its old
-Arsenal packages are retained, and its new landing page directs weapon-pack
-users here. Do not add new pack weapons to that legacy release pipeline.
+## Import behavior and shared effects
+
+Arsenal0.36.2 preserves existing named22-option selections on upgrade; the appended
+BR-14 option follows the manager's import defaults. Review selections on import.
+With enable-all off, Arsenal still enables its first option; with enable-all on,
+all23parents and the firstFlagpreset are enabled. A disabledFlag parent suppresses
+its preset. Preset archive numbering preserves discovery before theFlag module.
+
+Gas/Tenderizer retain shared15-second AcidStorm duration, includingweather.
+AC-8/Epoch share their animation resource; AC-8/JAR-5 share aFLAK explosion.
+Existing whole-table validators remain supported because BR-14's original
+serialized damage/projectile arrays are not modified. Deployment, settings and
+gameplay remain with the user. Keep all pack release history and the former
+individual repository's22legacy releases.

@@ -45,6 +45,15 @@ def source_function(src, name, next_marker):
     return src[start:end]
 
 def main():
+    import argparse
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--incremental',action='store_true')
+    parser.add_argument('--evidence',type=Path)
+    args=parser.parse_args()
+    if args.incremental:assert args.evidence
+    else:assert not args.evidence
+    evidence=args.evidence if args.incremental else b.EVIDENCE
+    evidence.mkdir(parents=True,exist_ok=True)
     runtime = Lua51()
     catalog = json.loads((b.CANON / 'catalog.json').read_text())
     packets, all_resources = [], {}
@@ -73,6 +82,9 @@ def main():
         0x2B2BF12F46CB74AC: 'plas39-accelerator-rifle/implementation.lua',
         0xF157B721BA21CD57: 'vg70-variable/implementation.lua',
     }
+    if args.incremental:
+        identity=json.loads((b.REPO/'source/adjudicator-heavy/identity.json').read_text())
+        mappings[int(identity['implementation_key'],16)]='adjudicator-heavy/entry.lua'
     for (key,kind), data in all_resources.items():
         if kind != b.LUA:
             continue
@@ -115,7 +127,7 @@ def main():
             metadata[p['id']] = dict(global_name=global_match[1], status=status,
                                      returns_boolean=('make_api,patch)' in control or 'make_api, patch,' in control or 'make_api, patch)' in control))
     # Twelve controllers: 11 dedicated patches and PLAS-39's mode controller.
-    assert len(controllers) == 12, list(controllers)
+    assert len(controllers) == (13 if args.incremental else 12), list(controllers)
     profile_chunks = {}
     for p in packets:
         chunks = [sources[key] for key in p['lua'] if key in sources and '.register_profile({' in sources[key]]
@@ -132,10 +144,13 @@ def main():
     scorcher_api = api_chunk(scorcher)
     variable_gate = (b.REPO / 'source/vg70-variable/compatibility-profile.lua').read_text()
     tenderizer_profile = (b.REPO / 'source/tenderizer-armor/profile.lua').read_text()
-    orders = [list(range(1,23)), list(range(22,0,-1))]
-    for seed in (1107,2911):
-        order = list(range(1,23)); random.Random(seed).shuffle(order); orders.append(order)
-    masks = b.selection_matrix()
+    n=len(packets)
+    assert n==(23 if args.incremental else 22)
+    orders = [list(range(1,n+1)), list(range(n,0,-1))]
+    if not args.incremental:
+        for seed in (1107,2911):
+            order = list(range(1,n+1)); random.Random(seed).shuffle(order); orders.append(order)
+    masks = [1<<(n-1),(1<<n)-1] if args.incremental else b.selection_matrix()
     script = 'local controllers=' + literal(controllers) + '\n'
     script += 'local metadata=' + literal(metadata) + '\n'
     script += 'local profile_chunks=' + literal(profile_chunks) + '\n'
@@ -145,7 +160,8 @@ def main():
     script += 'local packets=' + literal([{k:v for k,v in p.items() if k != 'lua'} for p in packets]) + '\n'
     script += 'local masks=' + literal(masks) + '\nlocal orders=' + literal(orders) + '\n'
     script += 'local discovery_path=' + literal((b.ROOT / 'work/flag-mod/BingusSharedLoader-main/src/discover.lua').as_posix()) + '\n'
-    script += 'local report_path=' + literal((b.EVIDENCE / 'runtime-counts.json').as_posix()) + '\n'
+    script += 'local report_path=' + literal((evidence / 'runtime-counts.json').as_posix()) + '\n'
+    script += 'local incremental='+literal(args.incremental)+'\n'
     script += r'''
 local bit=require('bit')
 local discovery=dofile(discovery_path)
@@ -264,7 +280,7 @@ for _,mask in ipairs(masks)do
   cases=cases+1
  end
 end
-assert(discoveries==1817 and cases==7268)
+assert(discoveries==#masks and cases==#masks*#orders)
 local fault_cases=0
 local peers={
  ['gas-overhaul']='FlagDamagePrototypeV1',
@@ -275,6 +291,7 @@ local peers={
  ['tenderizer-armor-softener']='SterilizerArmorControlV1',
 }
 for id,control in pairs(controllers)do
+ if not incremental or id=='adjudicator-heavy'then
  for _,mode in ipairs({'bad_exe','unknown_patch','failed_peer','late_peer'})do
   if (mode~='failed_peer'and mode~='late_peer')or peers[id]then
    local env=make_environment();local now,calls,base_calls=0,0,0
@@ -327,6 +344,7 @@ for id,control in pairs(controllers)do
    fault_cases=fault_cases+1
   end
  end
+ end
 end
 local f=assert(io.open(report_path,'w'))
 f:write('{"result":"PASS","loader_discovery_selections":',discoveries,
@@ -334,16 +352,16 @@ f:write('{"result":"PASS","loader_discovery_selections":',discoveries,
  ',"selected_profile_registrations":',profiles,',"additional_fault_cases":',fault_cases,'}')
 f:close()
 '''
-    (b.EVIDENCE / 'startup-matrix.lua').write_text(script, encoding='utf-8')
+    (evidence / 'startup-matrix.lua').write_text(script, encoding='utf-8')
     runtime.run(script.encode(), '@configurable-startup-control-matrix.lua')
-    report = json.loads((b.EVIDENCE / 'runtime-counts.json').read_text())
+    report = json.loads((evidence / 'runtime-counts.json').read_text())
     report.update(compiled_source_matches=compiled_checks,
                   controllers=len(controllers), profile_entrypoints=len(profile_chunks),
-                  orders=['forward','reverse','seed1107','seed2911'],
+                  orders=['forward','reverse']if args.incremental else ['forward','reverse','seed1107','seed2911'],
                   scope='Real loader discovery, shipped startup controllers, registration and peer gates; patch/native adapters are fixtures.',
                   live_startup='NOT RUN', loaded_resource='NOT RUN', gameplay='NOT RUN',
                   transaction_matrix=False, process_access=False)
-    (b.EVIDENCE / 'runtime-matrix.json').write_text(json.dumps(report, indent=2)+'\n')
+    (evidence / 'runtime-matrix.json').write_text(json.dumps(report, indent=2)+'\n')
     print(json.dumps(report, indent=2))
 
 if __name__ == '__main__':
