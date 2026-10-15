@@ -1,0 +1,1045 @@
+{
+  "schema": 1,
+  "guid": "bf6cb345-73c0-5b9b-a16c-38d490155842",
+  "version": "2.0.0",
+  "baseline": "1.0.26",
+  "packages": [
+    {
+      "index": 0,
+      "id": "40-k-meltagun",
+      "name": "40-K Meltagun",
+      "option": "Enable 40-K Meltagun",
+      "description": "Sets ergonomics to 40.",
+      "version": "1.0.2",
+      "guid": "103d6d9d-2bd7-5af3-8e7d-6d0b97d91abb",
+      "origin": "40-K-Meltagun-v1.0.2.zip",
+      "origin_sha256": "170CD390F8CF9F2FE0962D610F9C7DE5A97F2739E2750F62D1AE471FEF90ABD2",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "0815E68AE3383585E421931B173DFA17A9A61DA177308708C6B534CC444F02C4",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 1,
+      "id": "a-gm-17-gas-mortar-sentry",
+      "name": "A/GM-17 Gas Mortar Sentry",
+      "option": "Enable A/GM-17 Gas Mortar Sentry",
+      "description": "Sets sentry health to 600.",
+      "version": "1.0.2",
+      "guid": "53613a00-e1f5-53ce-a291-a5804aae342f",
+      "origin": "A-GM-17-Gas-Mortar-Sentry-v1.0.2.zip",
+      "origin_sha256": "72C016DB151FEAB3D48DD8298F6852D93AA24C41B7C3BAFBEB7691EB62B252C9",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "186CC8C01F143BD9718598D13AA7F97C550C287E74A592C7BF8276586998AB49",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 2,
+      "id": "ac-8-autocannon",
+      "name": "AC-8 Autocannon Backpackless Rework",
+      "option": "Enable AC-8 Autocannon Backpackless Rework",
+      "description": "The AC-8 call-in delivers only the Autocannon, leaving the backpack slot free. It holds 10 loaded rounds and 60 reserve rounds, self-reloads with its familiar five-round top clips while walking, and reloads about 20% faster. A resupply can refill up to 60 reserve rounds. Ergonomics rises from 17 to 30. Horizontal and vertical recoil drift fall from 200/450 to 150/337.5, and horizontal and vertical recoil climb fall from 2/100 to 1.5/75 (25% less recoil in each value). APHET direct damage rises from 325/260 to 375/340 normal/durable, direct armor penetration rises from AP4 to AP5, and impact explosion normal damage rises from 150 to 180. FLAK explosion normal damage rises from 190 to 210 and outer blast radius from 7 to 8 metres; its parent round and shrapnel are unchanged. JAR-5 Dominator High Explosive ammunition shares that explosion and receives the same explosion damage and radius increase.",
+      "version": "1.0.2",
+      "guid": "f7811576-8aa3-54f8-80d6-c573fe97e896",
+      "origin": "AC-8-Autocannon-v1.0.2.zip",
+      "origin_sha256": "1BF2FEF6284E1D76E78D784D77DF1C58F7BD5CD7BCAA66C0AFC5B2B66034FAB0",
+      "files": {
+        "Addon/18235e0c9ec0e636.patch_0": "D95064050733CF9D8CBA39903362A8C33E655032B4C5621CF4787B3A9DA1CB1C",
+        "Addon/18235e0c9ec0e636.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/18235e0c9ec0e636.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0": "12FAD45944F352E258DC9C23E5CA03848432DCEFF3C49F0BD74E276DFFE64376",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 3,
+      "id": "apw-1-anti-materiel-rifle",
+      "name": "APW-1 Anti-Materiel Rifle",
+      "option": "Enable APW-1 Anti-Materiel Rifle",
+      "description": "Sets ergonomics to 40.",
+      "version": "1.0.2",
+      "guid": "29538c57-87fe-5852-b69f-3bdb1ad70656",
+      "origin": "APW-1-Anti-Materiel-Rifle-v1.0.2.zip",
+      "origin_sha256": "03625AA29494CE31C44298EFB9EEC569E79F29EE9633B6F8FBD89BD657FA7AEF",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "86FDB26F2E39B80CEDC885E3796691DE37598CF5573BCF906B5C59B3CA336805",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 4,
+      "id": "ar-11-arbitrator",
+      "name": "AR-11 Arbitrator",
+      "option": "Enable AR-11 Arbitrator",
+      "description": "Sets rifle damage to 80 and magazine capacity to 65 rounds. Sets underbarrel starting and maximum spare ammo to 30, stagger force to 25, and push force to 20. Its shotgun magazine holds 4 shells and refills 20 shells. Base ergonomics is 41, giving 40 with the default optic.",
+      "version": "0.4",
+      "guid": "5e2f9d64-6a33-4c86-b4a2-c2a6d264a318",
+      "origin": "AR-11-Arbitrator-v0.4.zip",
+      "origin_sha256": "35BE130FEBC2C211474C96E697D8C97D01D56DBB01AB862B3BF5FFD3D704042E",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "2B758D760081A0574CE0FAF53FFDACC28BD44C94091ABB0F6E7EF5BF3D04AC18",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 5,
+      "id": "ar-32-pacifier",
+      "name": "AR-32 Pacifier Tuning",
+      "option": "Enable AR-32 Pacifier Tuning",
+      "description": "AR-32 Pacifier bullets deal 75 normal and 15 durable damage, build Stun Medium at strength 3 per hit, and its default magazine holds 65 rounds. Weapon sway is 0.6.",
+      "version": "1.0.1",
+      "guid": "1ff1a45b-8f8a-5f9d-942e-05c60414f7ad",
+      "origin": "AR-32-Pacifier-v1.0.1.zip",
+      "origin_sha256": "4741061B238673F3F8FCD33FC27CA7F2EE2C6DC833008E0BFA47CB73E40F6D25",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "DCB26AD0FF3B763B533C279A79D1564EDB97B1AAEE11EE13849873BEDA39FEB1",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 6,
+      "id": "arc-12-blitzer",
+      "name": "ARC-12 Blitzer",
+      "option": "Enable ARC-12 Blitzer",
+      "description": "Sets normal damage to 100, durable damage to 45, arc range to 30 m, and fire rate to 80 RPM.",
+      "version": "1.0.2",
+      "guid": "d77fed2c-ed2a-5212-ad6f-ae41fa0a0713",
+      "origin": "ARC-12-Blitzer-v1.0.2.zip",
+      "origin_sha256": "1C976146F1A2CC943ECA1FBB2670B5742F0183E107EF7DF959FA32FA0F070245",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "6415A1FEE6A2443220964958C129CAEFF85C7C69AFFE7A4D6AC7D962BBA885B7",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 7,
+      "id": "arc-3-rapid-supercharge",
+      "name": "ARC-3 Rapid/Supercharge",
+      "option": "Enable ARC-3 Rapid/Supercharge",
+      "description": "ARC-3 offers Auto/Rapid and Semi/Supercharge. Rapid charges in 0.307692/0.338462/0.369231 seconds and deals approximately 192.1 normal / 76.5 durable damage. Supercharge charges in 3.4/3.5/3.75 seconds, deals 2325 normal / 2325 durable damage, targets one enemy, and cannot explode from overcharge. Both modes have AP7, 45 m reach and stock ARC audio.",
+      "version": "0.14",
+      "guid": "2f61e45d-92fc-4517-b931-a6cd10515357",
+      "origin": "ARC-3-Rapid-Supercharge-v0.14.zip",
+      "origin_sha256": "FCFD560D6F3B7DCA71390BCDA492D0C90056BDA3F4245A9BB3F18D7BD6550CF9",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "EA2828E0C914485D9743FA889F1EAC4EB21A6A58F484C90AE8093F0ADDECACB5",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 8,
+      "id": "cqc-20-breaching-hammer",
+      "name": "CQC-20 Breaching Hammer",
+      "option": "Enable CQC-20 Breaching Hammer",
+      "description": "Sets direct-hit, slight-blast, and large-blast armor penetration to 7. Sets starting, resupply, and maximum magazine counts to 21 each.",
+      "version": "1.0.2",
+      "guid": "fd2b08df-b0fc-5f0e-9303-1cee648052e4",
+      "origin": "CQC-20-Breaching-Hammer-v1.0.2.zip",
+      "origin_sha256": "7D353744ABA3EE9FEA485E79D38241AB8C8EDB8F848B48E092989F19D9C65864",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "BE28B9D12F6D3C7824109108CF2D3E25C51E4FA478C97EAC006D034BCB14586C",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 9,
+      "id": "gas-overhaul",
+      "name": "Gas Overhaul",
+      "option": "Enable Gas Overhaul",
+      "description": "Gas weapons apply 15-second temporary armor reduction. Shared gas normal/durable damage is 45/45 DPS; Sterilizer capacity is 175 rounds, gas/confusion buildup is 0.75, and incoming Helldiver gas damage multiplier is 0.7333. Can be used alongside ARC-3 Rapid/Supercharge v0.14. Can be used alongside SAI Focus Precision v0.10.",
+      "version": "0.16",
+      "guid": "d7bcf26d-5c36-42de-b8ce-e456b8840a25",
+      "origin": "Gas-Overhaul-v0.16.zip",
+      "origin_sha256": "420B853A93E3EF6D9B1F4561C747C3CAE46F25ED4F75747FAD6FC52E7676B129",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "3BC9BC5E66813BC1FE6282F9C7A41C13AFE5E58ED437E8FF8A1E3E9E53563BBA",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 10,
+      "id": "one-true-flag",
+      "name": "One True Flag",
+      "option": "Enable One True Flag",
+      "description": "Configurable normal damage from 0 to 9999, default 300. Durable damage is half of normal (rounded down) or equal to normal; default 150.",
+      "version": "0.11",
+      "guid": "a648cb47-266a-4b08-ac51-075697e3c549",
+      "origin": "One-True-Flag-v0.11.zip",
+      "origin_sha256": "5F8593998235E0F498804C13BAD14730E5D6E1C02753A833DE41991D40A0D955",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "DF1638F48DF9EF0C95E31DCA992C7B857DFB8A098EC9D8CA0FBBF793133F7BCC",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/durable/100/9ba626afa44a3aa3.patch_0": "8624045762A2D2359B15B96616A250BC44D1074C2BD791F612B71CD036150B53",
+        "Settings/durable/100/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/durable/100/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/durable/100/settings.lua": "289174068402E8CACCB2DFDA098DE51D35EE48A96571BA4E956B2A53622D6405",
+        "Settings/durable/50/9ba626afa44a3aa3.patch_0": "365C1637C4B21B581D2AE31C7EEC4F038B639EA3A1F6D42BBA47616EFB595D74",
+        "Settings/durable/50/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/durable/50/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/durable/50/settings.lua": "A160E1DCA017E2395FC698354440E86CA31F35DBFC9F2BD4AB39C97C900A7058",
+        "Settings/hundreds/0/9ba626afa44a3aa3.patch_0": "58CC8290664D4AAD89092395DB7B76B514E00411419BC4D150B4E0F86BF12CB3",
+        "Settings/hundreds/0/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/0/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/0/settings.lua": "2B06B5EB8A168E3C6C075E1B59527FF6AAA0C2691A13D47C79B8DA5B290EA225",
+        "Settings/hundreds/1/9ba626afa44a3aa3.patch_0": "6F5C6AC15C6BB59B98BCC958BB4A18315C7183A75EE092DC6F0CE179957347DD",
+        "Settings/hundreds/1/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/1/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/1/settings.lua": "2D84E4A2E60588DEAED35F55AA7CE846EBCC6FB22B71F5F2CC97A912FA9B478B",
+        "Settings/hundreds/2/9ba626afa44a3aa3.patch_0": "A3E38EADBE4753E008FC26647EF1E1C363097A11C012EA2F32389428C37AB860",
+        "Settings/hundreds/2/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/2/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/2/settings.lua": "EA7649922E8608B8EF6B9E15BF671E0C9F050FD4E915DFE17675FD40E84EEDF2",
+        "Settings/hundreds/3/9ba626afa44a3aa3.patch_0": "B1FC559D384F653EBBC4B6B8E649A0DEE58ABDC30165581649F76BE2C81F27DB",
+        "Settings/hundreds/3/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/3/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/3/settings.lua": "2F12542E7B0F8A50EA93C80471D620BE7805570242A384814957118640F8763C",
+        "Settings/hundreds/4/9ba626afa44a3aa3.patch_0": "F6322718344B4A800A2C7D48055529EA47837DDC9B86172F45E8DB129EFD86AE",
+        "Settings/hundreds/4/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/4/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/4/settings.lua": "9A25CDA577DC5A5B85EE7011511C621F8754B50E0B46B5BDB2053E2D5D35161B",
+        "Settings/hundreds/5/9ba626afa44a3aa3.patch_0": "3729DE1901B775827E979852FF99572E31680CD55073A8959165F92A08BDA3DB",
+        "Settings/hundreds/5/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/5/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/5/settings.lua": "B3F642DC44821C5999FD04D094C840E4D15EC47E30DA1025DE22E90FE14C6983",
+        "Settings/hundreds/6/9ba626afa44a3aa3.patch_0": "F70ACD9C5AC498DB221A0014D6A19BA5D0E925DDD6A8B71703431EB48D8DBC3C",
+        "Settings/hundreds/6/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/6/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/6/settings.lua": "EC7EA2538DCFCF61E4030587C8F2068532DBB99369065C49658C5C8F931F4301",
+        "Settings/hundreds/7/9ba626afa44a3aa3.patch_0": "EBC6B9661FDCCA553C834B03886E8604D0928423FE7443181F90E67F30B44306",
+        "Settings/hundreds/7/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/7/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/7/settings.lua": "BAFCE69854A72081752C304E0B9B2884F5978D8696C41278282EDDA01645CC90",
+        "Settings/hundreds/8/9ba626afa44a3aa3.patch_0": "58A75CBF62003A7E697B4F5CC312EC0045A023283DF9D18125F8DEFA4F343F38",
+        "Settings/hundreds/8/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/8/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/8/settings.lua": "96B1EC4E873AC643B3AD40FBF64CB6DE89014E84B110B99C399CBEB520BB83B4",
+        "Settings/hundreds/9/9ba626afa44a3aa3.patch_0": "1662ACA24BE8FC723D49400945E07A19DE60F22D17E4A15C0FC8C73D4FB6D5D2",
+        "Settings/hundreds/9/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/9/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/hundreds/9/settings.lua": "F674C7E3AA7E5EE8A73EC4F1334969F5E1F164D1552736F285806D1EED937745",
+        "Settings/ones/0/9ba626afa44a3aa3.patch_0": "A28A330730E0316342BCD7DCB5A9EEEAD120F6C14B9F4A3F52834E781A9DAA16",
+        "Settings/ones/0/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/0/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/0/settings.lua": "B76150133D645BD73989CC13E5A91F8AFE1697AD4D4EC13A6F6118C623C2D41D",
+        "Settings/ones/1/9ba626afa44a3aa3.patch_0": "1CD5FF31907BD725C2399FACB5CBCED1B2E0F3B0415A034BAFF4B97685068C6E",
+        "Settings/ones/1/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/1/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/1/settings.lua": "0AF78D8E649BE8C768D1664BDA92662787A3BE9C0C8EE42A7E3E4585B45F05D9",
+        "Settings/ones/2/9ba626afa44a3aa3.patch_0": "4DACA8E5AC2035D5CBEB1B6A4943973B3B6363078E61BC98FA5226B2DA42F7E2",
+        "Settings/ones/2/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/2/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/2/settings.lua": "5010F223D0280E743BC9E41E08DE7E358C5172093C8B75DBF654967D9F0B0FE4",
+        "Settings/ones/3/9ba626afa44a3aa3.patch_0": "AF8B24AAB38C297E137A644B2C8D7D44670891E00B82C93A9375FD6B337E6DAB",
+        "Settings/ones/3/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/3/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/3/settings.lua": "E57DBC4F0A24BD28B37CAE0F5F94F4208B43D1A7E81A79BC835EAB6F7CC391DC",
+        "Settings/ones/4/9ba626afa44a3aa3.patch_0": "127BBBFAFF703D410882EAD24FC1D40EB9B52016AB2DE916BEDF71A242E1C370",
+        "Settings/ones/4/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/4/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/4/settings.lua": "2E173D59C9C99F2190527117202C14F9E0300400D881B90B6F5CF5942390DF24",
+        "Settings/ones/5/9ba626afa44a3aa3.patch_0": "C4CFC0ED96C6109A0D7740008D9CDE2D509BEBA7B06510F8223941140007881A",
+        "Settings/ones/5/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/5/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/5/settings.lua": "EE432A7AAC70C6A6A60702BC824F64200DAB6D26D2313058BA16BC65291E6686",
+        "Settings/ones/6/9ba626afa44a3aa3.patch_0": "0A8EA99AB2251DB815F74765E425F84E9C6AABF520464E8B902FA37061DC3325",
+        "Settings/ones/6/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/6/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/6/settings.lua": "F001CB34970B9444F5C2491BE43BEAAB3601FBE0875DF7927329C3A758A75A8F",
+        "Settings/ones/7/9ba626afa44a3aa3.patch_0": "A7F98AC7877D8826A0A6F798D67FFA2382A2E4459C927E60518204E4F5D281DD",
+        "Settings/ones/7/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/7/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/7/settings.lua": "985CE1C5682CEEE21DF985EB1FAF8F37EA97DCF09521135F11FB0A8A4D0E96D3",
+        "Settings/ones/8/9ba626afa44a3aa3.patch_0": "9998B1C0C9987DB81223A94D33F00F2E510BCC7136E5538F2B4DEEDFCE4830CB",
+        "Settings/ones/8/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/8/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/8/settings.lua": "A3A640F843BB69F38B3EF506366766B7D7C19ED945FD87AFD6BB945B9E8914FA",
+        "Settings/ones/9/9ba626afa44a3aa3.patch_0": "2E662DEA98B888853E17DE40D18741262B966298704627A4B4C81DFED4216943",
+        "Settings/ones/9/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/9/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/ones/9/settings.lua": "C75D338A5A4AAC672AF10097CA80C213F1B6E9EAE60BBF1B1DB720940DD1936F",
+        "Settings/tens/0/9ba626afa44a3aa3.patch_0": "81D832A80CE748D170057D739DE53AC4287EDEE3533D60D41E900C1805543B9A",
+        "Settings/tens/0/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/0/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/0/settings.lua": "0644894F4EA938DF3FC8D477B7E84E72A4D20B53B3E2B7FF90CF80A2B68DBC14",
+        "Settings/tens/1/9ba626afa44a3aa3.patch_0": "4BA886CC8F2538728AEFDCE372CCE4BE554B8D5F39A09C4458002D6E6910858D",
+        "Settings/tens/1/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/1/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/1/settings.lua": "6286485631405A1B43752F97C8EE74DAB90FB353EC2B37EC632C3C22A888A643",
+        "Settings/tens/2/9ba626afa44a3aa3.patch_0": "8083E2F2D820666EE37B5DDBF8D58BDB5F1E5F2FEAA4D2635A2C0C927F19E92E",
+        "Settings/tens/2/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/2/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/2/settings.lua": "BFE65AAAB24F0B717FD3E54D65DD02C0717512E0C2E79C1274FE19CB8612E4E1",
+        "Settings/tens/3/9ba626afa44a3aa3.patch_0": "2B77A7AF62372D7D91B3C28FCB731987720F30B586294208F3BEB4CEA706EE34",
+        "Settings/tens/3/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/3/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/3/settings.lua": "46D08654EAFF88078633FD9CB1A9BD5553813368053317FC61A46E7EA9B9923A",
+        "Settings/tens/4/9ba626afa44a3aa3.patch_0": "568013AC271C30FD6414886CFD0540615A968D21AC5CB883E9E49B815D33E9B8",
+        "Settings/tens/4/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/4/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/4/settings.lua": "4692AE4C997DA9AB7E0B473D0B082507182D5D539EFC0B3B78977921AB4A8513",
+        "Settings/tens/5/9ba626afa44a3aa3.patch_0": "D18F3AD4AFCDC4AA278986785AE8BFDA0EDBAE9E39F46A1564044B6CEEFA4CBD",
+        "Settings/tens/5/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/5/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/5/settings.lua": "66BA4527377622ABF2CC4DADAA2CE3BB65A4C5D671D46F48EB29F34308577092",
+        "Settings/tens/6/9ba626afa44a3aa3.patch_0": "F1212E6FA023C9DCC06AB19C60982A484FF18F976821654D0B483962920D7D6D",
+        "Settings/tens/6/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/6/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/6/settings.lua": "D78D00C9349DA19D53D5C17C592C8EAEB43BEDE5FBFA0C1E26FFA9EA2672101E",
+        "Settings/tens/7/9ba626afa44a3aa3.patch_0": "822F12C0B729ECEAA7069E69678DDC319FAD6ED440DF5F8E15A8AAD5117311C5",
+        "Settings/tens/7/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/7/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/7/settings.lua": "807C0B76629CC74066C7BEAD97385ED89B7FE0778170B7A2C70BC9B05AEDCDE4",
+        "Settings/tens/8/9ba626afa44a3aa3.patch_0": "C734B46B2D52A2163CE0929B825B86E86DC756C3BD0A7D8A4DFAFDA65DF1B59E",
+        "Settings/tens/8/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/8/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/8/settings.lua": "74D1318A6523BC619C0A893635BD34470CC0172678D19D31161C992CF0C2028C",
+        "Settings/tens/9/9ba626afa44a3aa3.patch_0": "5EF4D10F4A03976D9CB8A783E8844B9E4AD830F8622C8EECDB00C5A1D25B3002",
+        "Settings/tens/9/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/9/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/tens/9/settings.lua": "4AB759FE2D82FCCF5CBEBE778685D97FBC22621309E58487843EC801B71654A4",
+        "Settings/thousands/0/9ba626afa44a3aa3.patch_0": "0DFEE5B5B39BEF91D7F789177F637EA6B96E85598C938B748DDF160BEE904169",
+        "Settings/thousands/0/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/0/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/0/settings.lua": "18115ACD7FFF63C398CA80EA096740BBF8770C18EA01F1DDF33D729606CA7A41",
+        "Settings/thousands/1/9ba626afa44a3aa3.patch_0": "5296803C7B1AA52A383160ED390FD5F4E56275566F20C759865027956AAD87D8",
+        "Settings/thousands/1/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/1/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/1/settings.lua": "400E7FC53B0829D4A5E209B14F78D9BB06BE302645227F7AA481B17F0A3ED1F4",
+        "Settings/thousands/2/9ba626afa44a3aa3.patch_0": "CB5DD32B61B65FC34B7940E8B22590157051D5293CA2DEEED0CE66DF64DB8938",
+        "Settings/thousands/2/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/2/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/2/settings.lua": "5158813CEC7B580D3FADA44E97CC752CFEAC0371B3CC30F048AC5D2163336ECC",
+        "Settings/thousands/3/9ba626afa44a3aa3.patch_0": "3B4F96DD1C11E575E1A64DF0A0F3A9EE3F37651B59207DB7C2733D358333DF7D",
+        "Settings/thousands/3/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/3/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/3/settings.lua": "C7E0B6617D683FDB839B127C8E3A99C50ADB59C9601EDE1104640DC62DA524AB",
+        "Settings/thousands/4/9ba626afa44a3aa3.patch_0": "D4214AEF50AFB5723A6CC1B2E6CE554FDC1248DCB8AECDB2145EFD7A7AAAB6C0",
+        "Settings/thousands/4/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/4/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/4/settings.lua": "1976F08027745492AAA042C4D1144F580DB1E807402DE65E79FD501CBD47FEE0",
+        "Settings/thousands/5/9ba626afa44a3aa3.patch_0": "34AC3A76C2DFD754F5E907D3A6453D2DD8CF88F50427E256B87138CE18E876B4",
+        "Settings/thousands/5/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/5/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/5/settings.lua": "14BBCC005E7B8028DA5FDC9F0E6C20865D2FF6D7E27782E8F811B4079A1A6D29",
+        "Settings/thousands/6/9ba626afa44a3aa3.patch_0": "8A28AF466958248BE9A4412A3BDE29BD93ADD37CFC48568A77185B1008562EF5",
+        "Settings/thousands/6/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/6/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/6/settings.lua": "C9D18DB2E83F7E16783C583F94EE933D6F4EEA931530683FCC5181301C41746C",
+        "Settings/thousands/7/9ba626afa44a3aa3.patch_0": "9EEE9A873F58A343FED38C0AB0071F99EF031F39FC6749165BB2EAABB4BB11C8",
+        "Settings/thousands/7/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/7/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/7/settings.lua": "63469B7132168258FE9AFB69631C5F73135E7DCB91C7CC4B2E73F7ADAAB3F70E",
+        "Settings/thousands/8/9ba626afa44a3aa3.patch_0": "0CA3D147281B25D63B098D593FA69995D872EC531D9E3696521C16381CF3195C",
+        "Settings/thousands/8/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/8/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/8/settings.lua": "1A2E1E18795266518F5B93DA95079CC5FFB547451CFBD677B85C5886DD91DD08",
+        "Settings/thousands/9/9ba626afa44a3aa3.patch_0": "123D74BF977C31B819B5AF7B8022D2183F96CEC470FED75C9EFAA9B72A2EDE78",
+        "Settings/thousands/9/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/9/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Settings/thousands/9/settings.lua": "90328C5A91FDD8C45BBADEE7994D2EDECD2808957A188A6673051982A6305CA0"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 11,
+      "id": "p-34-breacher",
+      "name": "P-34 Breacher",
+      "option": "Enable P-34 Breacher",
+      "description": "Sets the magazines received from resupply to 2.",
+      "version": "1.0.2",
+      "guid": "02d358d7-f17b-5a0f-af92-5a84684f4aaf",
+      "origin": "P-34-Breacher-v1.0.2.zip",
+      "origin_sha256": "AE082F88BF9D88C06566CCE00AD44A11F1FF72F7409DDDEED039BD2D578D9F3A",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "99F2C9B6C7F0C2A44622858A5E7F705C8F033CCFBB9354DD225267DF5B0F91E0",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 12,
+      "id": "plas-1-scorcher-ar",
+      "name": "PLAS-1 Scorcher AR",
+      "option": "Enable PLAS-1 Scorcher AR",
+      "description": "Increases the magazine from 20 to 50 rounds and fire rate from 350 to 540 RPM. Reduces normal damage from 200 total to 150: 75 impact plus 75 explosion, before armor, hit location and distance falloff. Sets impact durable damage to 38 and explosion durable damage to 75 (113 combined against fully durable targets). Increases the full-damage blast radius from 1 to 1.25 metres and outer blast radius from 2 to 2.5 metres. Starting spare magazines increase from 3 to 4, and maximum spare magazines from 5 to 6; resupply grants 5 magazines. Uses the Scorcher's native Semi and Auto selector. Select Auto in Weapon Functions for continuous fire; at 540 RPM, a 50-round magazine provides approximately 5.56 seconds of sustained fire. Reduces horizontal/vertical recoil drift from 20 to 15, horizontal camera recoil from 2 to 1.5, and vertical camera recoil from 20 to 15 (25% less per shot).",
+      "version": 1,
+      "guid": "a9e86554-15f9-50d5-99a1-94c6d2d14c9c",
+      "origin": "PLAS-1-Scorcher-AR-v1.0.2.zip",
+      "origin_sha256": "7DC219F00F09386E30ADFEB7034D77A2A2DF6E29A0A9C39C50D53EB7527DDC4D",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "C6C29C12BA0903F25644331B4FB7F136ED4F4291275276F49C6A19553E3D1454",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 13,
+      "id": "plas-39-accelerator-rifle",
+      "name": "PLAS-39 Accelerator Rifle",
+      "option": "Enable PLAS-39 Accelerator Rifle",
+      "description": "Magazine capacity is 21 rounds. Horizontal and vertical recoil drift and camera recoil are 2, horizontal and vertical spread are 0.3, sway is 0.4, and stagger is 25. Direct-hit and blast armor penetration are 4, and outer blast and shockwave radii are 2.5 m. Semi fires one round with a 0.01-second minimum charge at a base rate of 200 RPM (0.30-second spacing). Burst fires three rounds, consumes three rounds, charges for at least 0.45 seconds and spaces its rounds 0.12 seconds apart. Both modes use normal firing audio. Fixes PLAS-39 Semi/Burst switching and firing audio when the game applies its fire-rate modifier. Both modes retain that modifier and follow the selected Weapon Functions mode.",
+      "version": "1.1.10",
+      "guid": "d4154ed1-20aa-5ee1-80a4-3331d7d5d4b3",
+      "origin": "PLAS-39-Accelerator-Rifle-v1.1.10.zip",
+      "origin_sha256": "5B7BAD513E8A24CF20E638F23E00D079D10502602A7F51A4188FDF19054555A0",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "CD90E869672E95C706EF0C14591103E0A97411786A3D2A8B5CB8D576035D9235",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 14,
+      "id": "plas-45-epoch",
+      "name": "PLAS-45 Epoch Highest-Charge Rework",
+      "option": "Enable PLAS-45 Epoch Highest-Charge Rework",
+      "description": "PLAS-45 Epoch highest-charge shots gain 30% more normal and durable direct-hit and blast damage, burning on blast hits, a 5 m full-damage radius, 6 m outer damage radius and 7 m shockwave radius. Magazine capacity increases from 3 to 4 rounds and maximum spare magazines from 4 to 5. Reload while walking with the existing reload animation.",
+      "version": "1.0.0",
+      "guid": "21bcfccf-6876-5965-a429-becdb5fa56b2",
+      "origin": "PLAS-45-Epoch-v1.0.0.zip",
+      "origin_sha256": "B6B0A59B3622B461CBE3EAD269F7E2875CC1AF1C136FCFC6B436616C54FD5A18",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "4A02A98E614A17B1AE73C44C0CE7C8B54292467A72EE83D75E707EF41A80CD5B",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/18235e0c9ec0e636.patch_0": "D95064050733CF9D8CBA39903362A8C33E655032B4C5621CF4787B3A9DA1CB1C",
+        "Addon/18235e0c9ec0e636.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/18235e0c9ec0e636.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 15,
+      "id": "r-40-k-hot-shot",
+      "name": "R/40-K Hot-Shot",
+      "option": "Enable R/40-K Hot-Shot",
+      "description": "Sets magazine capacity to 20 rounds, starting magazines to 5, resupply magazines to 5, maximum magazines to 5, and ergonomics to 45. Uses standard magazine reloads.",
+      "version": "0.10",
+      "guid": "fd463fae-529d-46cd-a67b-b65234af0b07",
+      "origin": "R-40-K-Hot-Shot-v0.10.zip",
+      "origin_sha256": "97538E382E9B3BA0A9AAF1AA492EC7D8E245962B5CC1EAE49EF2E95167477963",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "85EA804BD1F3959DDF0526FEB44E44818AA90C37C9106FC2D52C8DF7C3E97D36",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 16,
+      "id": "rs-422-railgun",
+      "name": "RS-422 Railgun",
+      "option": "Enable RS-422 Railgun",
+      "description": "Sets durable damage to 240.",
+      "version": "1.0.2",
+      "guid": "811e19b4-0a14-58e3-9c55-430882ed84f4",
+      "origin": "RS-422-Railgun-v1.0.2.zip",
+      "origin_sha256": "92390F10B9C4E67AAC70013AD6B2C42B56794B1EAB782608B7BD6A2D5AB78FE0",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "4F9924E1D8C5AE4A1D1A8EC3DB2092170D6F40DE469F15B889800BAE5E08804A",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 17,
+      "id": "s-11-speargun",
+      "name": "S-11 Speargun",
+      "option": "Enable S-11 Speargun",
+      "description": "Sets starting magazines to 16, resupply magazines to 10, maximum magazines to 20, and ergonomics to 40.",
+      "version": "1.0.2",
+      "guid": "41e28d99-0081-5a87-91f6-8721f0445646",
+      "origin": "S-11-Speargun-v1.0.2.zip",
+      "origin_sha256": "269A096F6DDD9CA4C08C59B5C8CA2B60D2BD569763DA72A6072F615DBFED18F7",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "65B8ACB078DB2974900FF8EB11D23B361B00D12689CE918939C8F4AB568996FF",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 18,
+      "id": "sai-focus-precision",
+      "name": "SAI Focus Precision",
+      "option": "Enable SAI Focus Precision",
+      "description": "LAS-12 SAI deals 90 normal and 21 durable damage at the muzzle with either lens. Standard Lens spread is 70 MRAD and Focus Lens spread is 37.5 MRAD on both axes, each 50% below stock. Both lenses fire at 900 RPM. Projectile launch speed is 1,300 m/s and drag is 1.244, adding damage loss over distance. Recoil is reduced by one-third with both lenses. Heat per shot is reduced by one-third: 2 to 1.333333 with Standard and cooldown heatsinks, or 1.5 to 1 with the heat-capacity heatsink.",
+      "version": "0.10",
+      "guid": "3c8fb9f1-f1c2-4c81-bf48-a97722c1e902",
+      "origin": "SAI-Focus-Precision-v0.10.zip",
+      "origin_sha256": "B9A9A421429FFAD0708D6D21940350AD0B15060B26D59A64D9B1284D50810609",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "C0377792FD7B83FACA4F084A9B71CBD52618324A51181375B6BFE8938678E938",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 19,
+      "id": "sickle-laser-ar",
+      "name": "Sickle Laser AR",
+      "option": "Enable Sickle Laser AR",
+      "description": "LAS-16 Sickle deals 70 normal and 10 durable damage and generates 50% less heat per shot, from 1.15 to 0.575. LAS-17 Double-Edge Sickle deals 65/10 normal/durable damage cold and warm, then 83/14 at hot and maximum heat. Both weapons have at least AP3 penetration; Double-Edge reaches AP4 at maximum heat. Both Sickles have a base fire rate of 700 RPM, zero horizontal and vertical spread, and 2,000 m/s projectiles at every heat tier with no distance damage fall-off. Double-Edge direct heat self-damage is reduced by 25%. Its heat buildup, cooling and maximum-heat ignition remain unchanged; general fire damage is unchanged.",
+      "version": "0.1.2",
+      "guid": "f39ae777-e49f-4ffd-8844-c505a0080798",
+      "origin": "Sickle-Laser-AR-v0.1.2.zip",
+      "origin_sha256": "CFEC7823142E62C7EB1F5E580E43533D34B8FE44FA736A2B6919294FC04D68FA",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "51231B03217FFDE61A88A3D904D9ACADAF6D6F6BCAF6E4C7A95022BAAB53B641",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 20,
+      "id": "tenderizer-armor-softener",
+      "name": "Tenderizer Armor Softener",
+      "option": "Enable Tenderizer Armor Softener",
+      "description": "AR-61 Tenderizer magazine capacity increases from 35 to 70 rounds and bullet launch speed from 820 to 1,000 m/s. Direct and slight-angle armor penetration increase from AP2 to AP3; the other angle settings remain unchanged. Bullets apply Acid Storm to temporarily reduce enemy armor effectiveness for 15 seconds. Base sway is set to 0.9. Normal/durable damage is 90/30, with the existing 600/850 RPM settings, recoil and spread. The shared Acid Storm duration also affects its weather effect after exposure ends.",
+      "version": "0.1.2",
+      "guid": "8b086a81-7eaa-4d12-a465-abc93d51be5e",
+      "origin": "Tenderizer-Armor-Softener-v0.1.2.zip",
+      "origin_sha256": "201B2394DF758470FCCCDF9E3C57A165FFADEFCC8D77EF7DBF5D319653BA8C1C",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "02B40A216601C960C274BC50B0F8A77E53DE84E693B5B7465839F4A9B4831BDA",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 21,
+      "id": "vg-70-variable",
+      "name": "VG-70 Variable Portable Maxigun Rework",
+      "option": "Enable VG-70 Variable Portable Maxigun Rework",
+      "description": "The primary-slot VG-70 Variable keeps its mobile, backpack-free reload and gains a 150-round magazine. Auto offers 550, 750 and 1,000 RPM, with 110/29, 90/24 and 75/20 normal/durable damage per bullet, AP3. Volley fires 15 simultaneous bullets at 40/11 damage each, AP3, following the selected native RPM. Total fires all remaining rounds at 28/8 damage per bullet, AP4, with spread reduced to 0.75 on both axes. The weapon keeps 6 starting spare magazines, up to 7 maximum and 7 per resupply, along with its existing reload, projectile speed and sound. Recoil is reduced by 15% in every mode: drift 4.25/8.5 and climb 3.4/6.8 horizontal/vertical. Base ergonomics is 40 and sway is 0.9. Total retains its stock right-arm self-injury and knockdown behavior. Sustained Auto muzzle flashes stay aligned.",
+      "version": 1,
+      "guid": "f73eda09-32a6-5db8-b941-ab7992a936d4",
+      "origin": "VG-70-Variable-v0.1.0.zip",
+      "origin_sha256": "D11CDC42CBB18F22EDD7E80FC1FC3D8D6E62A7C3BA32F190B69539112FD34A0E",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "5342F697D9DF86409826BF3E02D0DA2F41323185B83D7570E7CA59FE707DDAC1",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      "includes": [
+        "Addon"
+      ]
+    }
+  ],
+  "flag_options": [
+    {
+      "Name": "Thousands",
+      "Description": "Choose this digit. Default when disabled: 0. All four digits add together.",
+      "SubOptions": [
+        {
+          "Name": "0",
+          "Description": "Adds 0 to normal damage.",
+          "Include": [
+            "Settings/thousands/0"
+          ]
+        },
+        {
+          "Name": "1000",
+          "Description": "Adds 1000 to normal damage.",
+          "Include": [
+            "Settings/thousands/1"
+          ]
+        },
+        {
+          "Name": "2000",
+          "Description": "Adds 2000 to normal damage.",
+          "Include": [
+            "Settings/thousands/2"
+          ]
+        },
+        {
+          "Name": "3000",
+          "Description": "Adds 3000 to normal damage.",
+          "Include": [
+            "Settings/thousands/3"
+          ]
+        },
+        {
+          "Name": "4000",
+          "Description": "Adds 4000 to normal damage.",
+          "Include": [
+            "Settings/thousands/4"
+          ]
+        },
+        {
+          "Name": "5000",
+          "Description": "Adds 5000 to normal damage.",
+          "Include": [
+            "Settings/thousands/5"
+          ]
+        },
+        {
+          "Name": "6000",
+          "Description": "Adds 6000 to normal damage.",
+          "Include": [
+            "Settings/thousands/6"
+          ]
+        },
+        {
+          "Name": "7000",
+          "Description": "Adds 7000 to normal damage.",
+          "Include": [
+            "Settings/thousands/7"
+          ]
+        },
+        {
+          "Name": "8000",
+          "Description": "Adds 8000 to normal damage.",
+          "Include": [
+            "Settings/thousands/8"
+          ]
+        },
+        {
+          "Name": "9000",
+          "Description": "Adds 9000 to normal damage.",
+          "Include": [
+            "Settings/thousands/9"
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Hundreds",
+      "Description": "Choose this digit. Default when disabled: 300. All four digits add together.",
+      "SubOptions": [
+        {
+          "Name": "300",
+          "Description": "Adds 300 to normal damage.",
+          "Include": [
+            "Settings/hundreds/3"
+          ]
+        },
+        {
+          "Name": "0",
+          "Description": "Adds 0 to normal damage.",
+          "Include": [
+            "Settings/hundreds/0"
+          ]
+        },
+        {
+          "Name": "100",
+          "Description": "Adds 100 to normal damage.",
+          "Include": [
+            "Settings/hundreds/1"
+          ]
+        },
+        {
+          "Name": "200",
+          "Description": "Adds 200 to normal damage.",
+          "Include": [
+            "Settings/hundreds/2"
+          ]
+        },
+        {
+          "Name": "400",
+          "Description": "Adds 400 to normal damage.",
+          "Include": [
+            "Settings/hundreds/4"
+          ]
+        },
+        {
+          "Name": "500",
+          "Description": "Adds 500 to normal damage.",
+          "Include": [
+            "Settings/hundreds/5"
+          ]
+        },
+        {
+          "Name": "600",
+          "Description": "Adds 600 to normal damage.",
+          "Include": [
+            "Settings/hundreds/6"
+          ]
+        },
+        {
+          "Name": "700",
+          "Description": "Adds 700 to normal damage.",
+          "Include": [
+            "Settings/hundreds/7"
+          ]
+        },
+        {
+          "Name": "800",
+          "Description": "Adds 800 to normal damage.",
+          "Include": [
+            "Settings/hundreds/8"
+          ]
+        },
+        {
+          "Name": "900",
+          "Description": "Adds 900 to normal damage.",
+          "Include": [
+            "Settings/hundreds/9"
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Tens",
+      "Description": "Choose this digit. Default when disabled: 0. All four digits add together.",
+      "SubOptions": [
+        {
+          "Name": "0",
+          "Description": "Adds 0 to normal damage.",
+          "Include": [
+            "Settings/tens/0"
+          ]
+        },
+        {
+          "Name": "10",
+          "Description": "Adds 10 to normal damage.",
+          "Include": [
+            "Settings/tens/1"
+          ]
+        },
+        {
+          "Name": "20",
+          "Description": "Adds 20 to normal damage.",
+          "Include": [
+            "Settings/tens/2"
+          ]
+        },
+        {
+          "Name": "30",
+          "Description": "Adds 30 to normal damage.",
+          "Include": [
+            "Settings/tens/3"
+          ]
+        },
+        {
+          "Name": "40",
+          "Description": "Adds 40 to normal damage.",
+          "Include": [
+            "Settings/tens/4"
+          ]
+        },
+        {
+          "Name": "50",
+          "Description": "Adds 50 to normal damage.",
+          "Include": [
+            "Settings/tens/5"
+          ]
+        },
+        {
+          "Name": "60",
+          "Description": "Adds 60 to normal damage.",
+          "Include": [
+            "Settings/tens/6"
+          ]
+        },
+        {
+          "Name": "70",
+          "Description": "Adds 70 to normal damage.",
+          "Include": [
+            "Settings/tens/7"
+          ]
+        },
+        {
+          "Name": "80",
+          "Description": "Adds 80 to normal damage.",
+          "Include": [
+            "Settings/tens/8"
+          ]
+        },
+        {
+          "Name": "90",
+          "Description": "Adds 90 to normal damage.",
+          "Include": [
+            "Settings/tens/9"
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Ones",
+      "Description": "Choose this digit. Default when disabled: 0. All four digits add together.",
+      "SubOptions": [
+        {
+          "Name": "0",
+          "Description": "Adds 0 to normal damage.",
+          "Include": [
+            "Settings/ones/0"
+          ]
+        },
+        {
+          "Name": "1",
+          "Description": "Adds 1 to normal damage.",
+          "Include": [
+            "Settings/ones/1"
+          ]
+        },
+        {
+          "Name": "2",
+          "Description": "Adds 2 to normal damage.",
+          "Include": [
+            "Settings/ones/2"
+          ]
+        },
+        {
+          "Name": "3",
+          "Description": "Adds 3 to normal damage.",
+          "Include": [
+            "Settings/ones/3"
+          ]
+        },
+        {
+          "Name": "4",
+          "Description": "Adds 4 to normal damage.",
+          "Include": [
+            "Settings/ones/4"
+          ]
+        },
+        {
+          "Name": "5",
+          "Description": "Adds 5 to normal damage.",
+          "Include": [
+            "Settings/ones/5"
+          ]
+        },
+        {
+          "Name": "6",
+          "Description": "Adds 6 to normal damage.",
+          "Include": [
+            "Settings/ones/6"
+          ]
+        },
+        {
+          "Name": "7",
+          "Description": "Adds 7 to normal damage.",
+          "Include": [
+            "Settings/ones/7"
+          ]
+        },
+        {
+          "Name": "8",
+          "Description": "Adds 8 to normal damage.",
+          "Include": [
+            "Settings/ones/8"
+          ]
+        },
+        {
+          "Name": "9",
+          "Description": "Adds 9 to normal damage.",
+          "Include": [
+            "Settings/ones/9"
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Durable damage",
+      "Description": "Half normal preserves the original ratio; equal normal boosts damage to durable parts. Default: half normal.",
+      "SubOptions": [
+        {
+          "Name": "Half of normal damage",
+          "Description": "Durable damage = 50% of normal, rounded down.",
+          "Include": [
+            "Settings/durable/50"
+          ]
+        },
+        {
+          "Name": "Equal to normal damage",
+          "Description": "Durable damage = 100% of normal, rounded down.",
+          "Include": [
+            "Settings/durable/100"
+          ]
+        }
+      ]
+    }
+  ],
+  "flag_presets": [
+    {
+      "normal": 300,
+      "durable_ratio": 50
+    },
+    {
+      "normal": 300,
+      "durable_ratio": 100
+    },
+    {
+      "normal": 0,
+      "durable_ratio": 50
+    },
+    {
+      "normal": 100,
+      "durable_ratio": 50
+    },
+    {
+      "normal": 100,
+      "durable_ratio": 100
+    },
+    {
+      "normal": 200,
+      "durable_ratio": 50
+    },
+    {
+      "normal": 200,
+      "durable_ratio": 100
+    },
+    {
+      "normal": 400,
+      "durable_ratio": 50
+    },
+    {
+      "normal": 400,
+      "durable_ratio": 100
+    },
+    {
+      "normal": 500,
+      "durable_ratio": 50
+    },
+    {
+      "normal": 500,
+      "durable_ratio": 100
+    },
+    {
+      "normal": 600,
+      "durable_ratio": 50
+    },
+    {
+      "normal": 600,
+      "durable_ratio": 100
+    },
+    {
+      "normal": 750,
+      "durable_ratio": 50
+    },
+    {
+      "normal": 750,
+      "durable_ratio": 100
+    },
+    {
+      "normal": 1000,
+      "durable_ratio": 50
+    },
+    {
+      "normal": 1000,
+      "durable_ratio": 100
+    },
+    {
+      "normal": 1500,
+      "durable_ratio": 50
+    },
+    {
+      "normal": 1500,
+      "durable_ratio": 100
+    },
+    {
+      "normal": 2000,
+      "durable_ratio": 50
+    },
+    {
+      "normal": 2000,
+      "durable_ratio": 100
+    },
+    {
+      "normal": 3000,
+      "durable_ratio": 50
+    },
+    {
+      "normal": 3000,
+      "durable_ratio": 100
+    },
+    {
+      "normal": 5000,
+      "durable_ratio": 50
+    },
+    {
+      "normal": 5000,
+      "durable_ratio": 100
+    },
+    {
+      "normal": 7500,
+      "durable_ratio": 50
+    },
+    {
+      "normal": 7500,
+      "durable_ratio": 100
+    },
+    {
+      "normal": 9999,
+      "durable_ratio": 50
+    },
+    {
+      "normal": 9999,
+      "durable_ratio": 100
+    }
+  ],
+  "flag_layout": "single-dropdown-under-flag-option"
+}

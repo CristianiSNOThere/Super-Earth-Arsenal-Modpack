@@ -1,10 +1,20 @@
-# Super Earth Arsenal Mod Pack v1.0.26
+# Super Earth Arsenal Mod Pack v2.0.0
 
-This ZIP includes the twenty-two listed mods. SG-8P Punisher Plasma is omitted and remains at its stock behavior. Loyalist and One-Two are also no longer repurposed by Punisher Plasma.
+Choose the weapon and equipment changes you want from one package. Each of the **22 mods has its own switch in Arsenal**: enable a single weapon, a smaller selection, or the complete set.
 
-The AR-32 Pacifier deals 75 normal and 15 durable damage, builds Stun Medium at strength 3 per hit, has a 65-round default magazine, and has 0.6 sway.
+**One True Flag now has one damage dropdown with 29 presets**, defaulting to **300 normal / 150 durable**. Its settings are inside the Flag option.
 
-[Download v1.0.26](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v1.0.26/Super-Earth-Arsenal-Modpack-v1.0.26.zip) | [Choose individual mods](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download v2.0.0](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v2.0.0/Super-Earth-Arsenal-Modpack-v2.0.0.zip) | [All releases](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases) | [Standalone runtime projects](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+
+## Choose your mods
+
+- Turn each weapon or equipment mod on or off independently in Arsenal.
+- Expand **One True Flag** to choose its normal/durable damage preset. Half durable damage rounds down; equal durable damage matches normal damage.
+- Changing selections takes effect after **Purge and Deploy**, followed by a game restart.
+- When importing or upgrading from v1, review all switches before deploying. Arsenal's enable-all preference can select the complete set automatically; with that preference off, Arsenal initially selects the first mod option.
+- Use this package in place of the matching individual weapon mods or older Arsenal modpacks.
+
+Punisher Plasma is not included. It remains a separate project in the [standalone runtime repository](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack).
 
 ## Gameplay changes
 
@@ -17,7 +27,7 @@ The AR-32 Pacifier deals 75 normal and 15 durable damage, builds Stun Medium at 
 | AR-32 Pacifier | Bullets deal 75 normal and 15 durable damage, up from 55/10, and build Stun Medium at strength 3 per hit, up from 2. Its default magazine holds 65 rounds, up from 40, and weapon sway falls from 1 to 0.6. |
 | AC-8 Autocannon | The call-in supplies only the weapon, freeing the backpack slot. The gun carries 10 loaded + 60 reserve rounds and uses its familiar five-round top reload while walking, about 20% faster than stock. A resupply is set to refill up to 60 reserve rounds. Ergonomics rises from 17 to 30. Horizontal/vertical recoil drift falls from 200/450 to 150/337.5 and recoil climb from 2/100 to 1.5/75, a 25% reduction to each. APHET direct damage becomes 375 normal / 340 durable with AP5, and impact blast becomes 180 normal. FLAK explosion damage becomes 210 normal with an 8 m outer radius; FLAK direct damage and shrapnel are unchanged. JAR-5 Dominator High Explosive ammo shares that explosion and receives the same explosion buff. |
 | PLAS-1 Scorcher AR | Increases the magazine from 20 to 50 rounds and fire rate from 350 to 540 RPM. Reduces normal damage from 200 total to 150: 75 impact plus 75 explosion, before armor, hit location and distance falloff. Sets impact durable damage to 38 and explosion durable damage to 75 (113 combined against fully durable targets). Increases the full-damage blast radius from 1 to 1.25 metres and outer blast radius from 2 to 2.5 metres. Starting spare magazines increase from 3 to 4, and maximum spare magazines from 5 to 6; resupply grants 5 magazines. Uses the Scorcher's native Semi and Auto selector. Select Auto in Weapon Functions for continuous fire; at 540 RPM, a 50-round magazine provides approximately 5.56 seconds of sustained fire. Reduces horizontal/vertical recoil drift from 20 to 15, horizontal camera recoil from 2 to 1.5, and vertical camera recoil from 20 to 15 (25% less per shot). |
-| One True Flag | Default damage is 300 normal / 150 durable. For selectable damage from 0 to 9999 and half/equal durable damage, use the individual One True Flag package. |
+| One True Flag | Choose damage from one dropdown with 29 presets. Normal-damage choices are 0, 100, 200, 300, 400, 500, 600, 750, 1,000, 1,500, 2,000, 3,000, 5,000, 7,500 and 9,999. Durable damage can be half of normal, rounded down, or equal to normal; zero has one 0/0 choice. Default: 300 normal / 150 durable. |
 | SAI Focus Precision | LAS-12 SAI deals 90 normal and 21 durable damage at the muzzle with either lens. Standard Lens spread is 70 MRAD and Focus Lens spread is 37.5 MRAD on both axes, each 50% below stock. Both lenses fire at 900 RPM. Projectile launch speed is 1,300 m/s and drag is 1.244, adding damage loss over distance. Recoil is reduced by one-third with both lenses. Heat per shot is reduced by one-third: 2 to 1.333333 with Standard and cooldown heatsinks, or 1.5 to 1 with the heat-capacity heatsink. |
 | AR-11 Arbitrator | Sets rifle damage to 80 and magazine capacity to 65 rounds. Sets underbarrel starting and maximum spare ammo to 30, stagger force to 25, and push force to 20. Its shotgun magazine holds 4 shells and refills 20 shells. Base ergonomics is 41, giving 40 with the default optic. |
 | R/40-K Hot-Shot | Sets magazine capacity to 20 rounds, starting magazines to 5, resupply magazines to 5, maximum magazines to 5, and ergonomics to 45. Uses standard magazine reloads. |
@@ -33,12 +43,28 @@ The AR-32 Pacifier deals 75 normal and 15 durable damage, builds Stun Medium at 
 | A/GM-17 Gas Mortar Sentry | Sets sentry health to 600. |
 | RS-422 Railgun | Sets durable damage to 240. |
 
+## Shared effects
+
+Gas Overhaul and Tenderizer both use a 15-second Acid Storm effect; the shared duration also affects Acid Storm weather. AC-8's FLAK explosion changes also affect JAR-5 Dominator High Explosive ammunition. AC-8 and Epoch share their mobile reload animation adjustment. These shared changes remain active when supplied by another enabled mod.
+
 ## Install
 
-If your currently installed pack includes Punisher Plasma, equip a different primary while that pack is still installed. Close the game completely before replacing it. Import this ZIP into Arsenal, enable its single option, keep Bingus Shared Loader at its documented priority, Purge and Deploy, then restart the game. Requires Helldivers 2 Steam build 25480438 and Bingus Shared Loader v19. Disable other Super Earth Arsenal modpacks and the individual versions of these mods to avoid duplicate resources.
+1. Close Helldivers 2. If replacing an older pack that changes Punisher Plasma, equip a different primary before closing the game.
+2. Import the ZIP into Arsenal and select the mods you want. Choose a Flag preset if enabling One True Flag.
+3. Disable matching individual weapon mods and older Arsenal modpacks. Keep Bingus Shared Loader at its documented priority.
+4. Run **Purge and Deploy**, then start the game. Allow up to about two minutes after reaching the ship for the weapon changes to take effect.
 
-For AC-8, choose APHET or FLAK through the stock Weapon Functions selector. For ARC-3, hold R and choose Auto/Rapid or Semi/Supercharge. For PLAS-39, hold R and use the left-side Weapon Functions selector. Semi fires one round with a 0.01-second minimum charge and a base 0.30-second interval; the native fire-rate modifier can increase that interval to approximately 0.333 seconds. Burst fires three rounds spaced 0.12 seconds apart with a 0.45-second minimum charge, consuming three rounds. Both modes retain normal firing audio and the game's fire-rate modifier.
+Requires Helldivers 2 Steam build 25480438 and Bingus Shared Loader v19.
 
-## Changes in v1.0.26
+## Weapon selectors
 
-Adds Tenderizer Armor Softener. The pack includes 22 mods; Pacifier remains included and Punisher Plasma remains omitted.
+- **AC-8:** choose APHET or FLAK in the stock Weapon Functions selector.
+- **ARC-3:** hold R and choose Auto/Rapid or Semi/Supercharge.
+- **Scorcher:** select Auto in Weapon Functions for continuous fire.
+- **PLAS-39:** hold R and use the left-side Weapon Functions selector. Semi fires one round with a 0.01-second minimum charge and a base 0.30-second interval; the native fire-rate modifier can increase that interval to approximately 0.333 seconds. Burst fires three rounds spaced 0.12 seconds apart with a 0.45-second minimum charge. Both modes keep normal firing audio and the game's fire-rate modifier.
+
+## Changes in v2.0.0
+
+- All 22 weapon and equipment mods can now be selected independently from one ZIP.
+- One True Flag's settings are combined into one dropdown with 29 damage presets, including half or equal durable damage. The default remains 300/150.
+- The existing weapon balance is retained, including Sickle, Tenderizer and Pacifier.
