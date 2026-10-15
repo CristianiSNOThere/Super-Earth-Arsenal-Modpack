@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "guid": "bf6cb345-73c0-5b9b-a16c-38d490155842",
-  "version": "2.1.0",
-  "baseline": "2.0.0",
+  "version": "2.1.1",
+  "baseline": "2.1.0",
   "packages": [
     {
       "index": 0,
@@ -582,19 +582,21 @@
       "id": "vg-70-variable",
       "name": "VG-70 Variable Portable Maxigun Rework",
       "option": "Enable VG-70 Variable Portable Maxigun Rework",
-      "description": "The primary-slot VG-70 Variable keeps its mobile, backpack-free reload and gains a 150-round magazine. Auto offers 550, 750 and 1,000 RPM, with 110/29, 90/24 and 75/20 normal/durable damage per bullet, AP3. Volley fires 15 simultaneous bullets at 40/11 damage each, AP3, following the selected native RPM. Total fires all remaining rounds at 28/8 damage per bullet, AP4, with spread reduced to 0.75 on both axes. The weapon keeps 6 starting spare magazines, up to 7 maximum and 7 per resupply, along with its existing reload, projectile speed and sound. Recoil is reduced by 15% in every mode: drift 4.25/8.5 and climb 3.4/6.8 horizontal/vertical. Base ergonomics is 40 and sway is 0.9. Total retains its stock right-arm self-injury and knockdown behavior. Sustained Auto muzzle flashes stay aligned.",
-      "version": 1,
+      "description": "The primary-slot VG-70 Variable keeps its mobile, backpack-free reload and gains a 150-round magazine. Auto offers 550, 750 and 1,000 RPM, with 110/29, 90/24 and 75/20 normal/durable damage per bullet, AP3. Volley fires 15 simultaneous bullets at 40/11 damage each, AP3, following the selected native RPM. Total fires all remaining rounds at 28/8 damage per bullet, AP3, with spread reduced to 0.75 on both axes. The weapon keeps 6 starting spare magazines, up to 7 maximum and 7 per resupply, along with its existing reload, projectile speed and sound. Recoil is reduced by 15% in every mode: drift 4.25/8.5 and climb 3.4/6.8 horizontal/vertical. Base ergonomics is 40 and sway is 0.9. Total retains its stock right-arm self-injury and knockdown behavior. Sustained Auto muzzle flashes stay aligned.",
+      "version": "0.1.1",
       "guid": "f73eda09-32a6-5db8-b941-ab7992a936d4",
       "origin": "VG-70-Variable-v0.1.0.zip",
       "origin_sha256": "D11CDC42CBB18F22EDD7E80FC1FC3D8D6E62A7C3BA32F190B69539112FD34A0E",
       "files": {
-        "Addon/9ba626afa44a3aa3.patch_0": "5342F697D9DF86409826BF3E02D0DA2F41323185B83D7570E7CA59FE707DDAC1",
+        "Addon/9ba626afa44a3aa3.patch_0": "1D6493454E892115F2E6CE98B4B317324F3996706E32DE15A0D5A6524076B950",
         "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
         "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
       },
       "includes": [
         "Addon"
-      ]
+      ],
+      "source": "source/vg70-variable/implementation.lua",
+      "source_sha256": "47BB40506ECD425BBBC525BC48B2E4838384E89BFC060639BC73B4EF716F7038"
     },
     {
       "index": 22,
@@ -1061,5 +1063,9 @@
     }
   ],
   "flag_layout": "single-dropdown-under-flag-option",
-  "expected_resources": 36
+  "expected_resources": 36,
+  "changed_package_ids": [
+    "vg-70-variable"
+  ],
+  "candidate_description": "Restores VG-70 Variable Auto, Volley and Total to their intended damage, with AP3 medium penetration in every mode. Includes 23 independent weapon/equipment switches and the unchanged 29 One True Flag presets."
 }

@@ -1,6 +1,6 @@
 return function(make_api,components,mode_profile,native,component_profile,compatibility,transaction_profile,component_specs,profile_specs)
     if rawget(_G,'Vg70VariableV1') then return end
-    local state={version='0.1.0',active=false,status='Waiting for game data',instances=0,diagnostics={}}
+    local state={version='0.1.1',active=false,status='Waiting for game data',instances=0,diagnostics={}}
     _G.Vg70VariableV1=state
     local previous=update
     local callback,api,plan
@@ -16,7 +16,7 @@ return function(make_api,components,mode_profile,native,component_profile,compat
             local loader=rawget(_G,'CowboyBingusModLoader')
             local file=loader and loader.open_log and loader.open_log('Vg70Variable.log')
             if file then
-                file:write('VG-70 Variable v0.1.0\nstatus='..tostring(state.status)..'\n'..table.concat(state.diagnostics,'\n')..'\n')
+                file:write('VG-70 Variable v0.1.1\nstatus='..tostring(state.status)..'\n'..table.concat(state.diagnostics,'\n')..'\n')
                 file:close()
             end
         end)
@@ -57,6 +57,18 @@ return function(make_api,components,mode_profile,native,component_profile,compat
             end
         end
     end
+    local function validate_lookups(api,targets,check_rows)
+        for _,entry in ipairs(targets)do
+            local actual=api.read(entry.registry_slot,8)
+            local pointer=actual and api.pointer(actual,0)
+            assert(pointer and api.identity(pointer)==api.identity(entry.address),
+                'VG-70 runtime profile collision: '..entry.label..' native lookup is owned by another modification')
+            if check_rows then
+                assert(api.read(entry.address,#entry.after)==entry.after,
+                    'VG-70 runtime profile collision: '..entry.label..' contents changed')
+            end
+        end
+    end
     local function table_rows(api,game,spec)
         local slot=game+spec.slot
         local root_bytes=assert(api.read(slot,8),'VG-70 table root unavailable')
@@ -86,8 +98,9 @@ return function(make_api,components,mode_profile,native,component_profile,compat
             local before,after=unhex(record.before),unhex(record.after)
             assert(actual==before or actual==after,spec.name..' row '..record.id..' exact baseline changed')
             targets[#targets+1]={address=rows+index*spec.stride,before=actual,after=after,
-                label=spec.name..' row '..record.id,protected=true}
+                label=spec.name..' row '..record.id,protected=true,registry_slot=game+spec.registry+record.id*8}
         end
+        validate_lookups(api,targets,false)
         return {root_slot=slot,root_bytes=root_bytes,root=root,group=group,header=header,
             rows=rows,all=all,targets=targets}
     end
@@ -95,6 +108,9 @@ return function(make_api,components,mode_profile,native,component_profile,compat
         checkpoint('Validating VG-70 profile tables',true)
         local projectile=table_rows(api,game,profile_specs.projectile)
         local damage=table_rows(api,game,profile_specs.damage)
+        local targets={}
+        for _,entry in ipairs(damage.targets)do targets[#targets+1]=entry end
+        for _,entry in ipairs(projectile.targets)do targets[#targets+1]=entry end
         local edits,seen={},{}
         for _,entry in ipairs(damage.targets) do
             add_row_edits(api,edits,seen,entry.address,entry.before,entry.after,entry.label,true,1)
@@ -117,6 +133,7 @@ return function(make_api,components,mode_profile,native,component_profile,compat
             add_row_edits(api,edits,seen,entry.address,entry.before,entry.after,entry.label,true,1)
         end
         local function validate()
+            validate_lookups(api,targets,false)
             assert(api.read(projectile.root_slot,8)==projectile.root_bytes
                 and api.read(damage.root_slot,8)==damage.root_bytes,'VG-70 table root changed before commit')
             assert(api.read(projectile.group,24)==projectile.header
@@ -127,7 +144,8 @@ return function(make_api,components,mode_profile,native,component_profile,compat
                 assert(api.read(entry.address,#entry.before)==entry.before,entry.label..' changed before commit')
             end
         end
-        local count=transaction_profile(api,edits,validate)
+        local count=transaction_profile(api,edits,validate,function()validate_lookups(api,targets,true)end)
+        native_plan.lookup_targets=targets
         for _,entry in ipairs(projectile.targets) do
             assert(api.read(entry.address,#entry.after)==entry.after,'Projectile profile readback failed')
         end
@@ -147,6 +165,7 @@ return function(make_api,components,mode_profile,native,component_profile,compat
         end
     end
     local function configure_instances(api,native_plan,instances,live)
+        validate_lookups(api,assert(native_plan.native.lookup_targets),true)
         local working={}
         for key,value in pairs(mode_memory) do
             working[key]={identity=value.identity,auto_rpm=value.auto_rpm,last_mode=value.last_mode}
@@ -181,13 +200,16 @@ return function(make_api,components,mode_profile,native,component_profile,compat
             local projectile_after=component_profile.cadence(projectile_before,current_rpm,selection.rpm)
             add_row_edits(api,edits,seen,item.projectile_state,projectile_before,projectile_after,'VG-70 native cadence',false,2)
         end
-        local changed=transaction_profile(api,edits,function() native.validate(api,native_plan,instances) end)
+        local changed=transaction_profile(api,edits,function()
+            validate_lookups(api,native_plan.native.lookup_targets,true);native.validate(api,native_plan,instances)
+        end,function()validate_lookups(api,native_plan.native.lookup_targets,true)end)
         mode_memory=working
         mode_profile.forget_missing(mode_memory,live)
         boot_sweep_done=true
         state.instances=#instances
+        state.active=true
         local previous_status=state.status
-        state.status='Applied: VG-70 Variable 150-round magazine; Auto 550/750/1000 RPM; 15-round Volley follows native RPM; guarded muzzle mapping; ergonomics 40; sway 0.9; recoil -15%; stock Total self-injury and knockdown; Total 28/8 damage, AP4 and 0.75 spread.'
+        state.status='Applied: VG-70 Variable 150-round magazine; Auto 550/750/1000 RPM; 15-round Volley follows native RPM; guarded muzzle mapping; ergonomics 40; sway 0.9; recoil -15%; stock Total self-injury and knockdown; Total 28/8 damage, AP3 and 0.75 spread.'
         if state.status~=previous_status then log() end
         if changed>0 then
             state.diagnostics[#state.diagnostics+1]='Updated '..changed..' guarded instance fields'
@@ -222,7 +244,8 @@ return function(make_api,components,mode_profile,native,component_profile,compat
                 configure_instances(api,plan,instances,live)
             end)
             if not ok then
-                state.status='Applied profiles; instance update refused safely: '..tostring(result)
+                state.active=false
+                state.status='Refused: VG-70 instance update: '..tostring(result)
                 if state.diagnostics[#state.diagnostics]~=state.status then log(state.status) end
             end
             coroutine.yield()

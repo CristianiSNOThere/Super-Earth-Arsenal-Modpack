@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "damage_ids": [
+    540,
+    541,
+    585,
+    586,
+    587
+  ],
+  "projectile_ids": [
+    333,
+    335,
+    336,
+    337,
+    338
+  ],
+  "avoided_runtime_damage_ids": [
+    542,
+    543,
+    544
+  ],
+  "policy": "Require each native registry pointer to equal its guarded serialized row; verify expected contents at startup and every instance transaction. Never replace another module registry pointer."
+}

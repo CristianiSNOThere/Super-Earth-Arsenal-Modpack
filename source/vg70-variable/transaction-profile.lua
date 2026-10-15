@@ -1,4 +1,4 @@
-return function(api,edits,validate)
+return function(api,edits,validate,validate_after)
     if validate then validate() end
     table.sort(edits,function(a,b)
         if a.priority~=b.priority then return a.priority<b.priority end
@@ -18,6 +18,7 @@ return function(api,edits,validate)
             assert(write(item.address,item.after),'short write at '..item.label)
             assert(api.read(item.address,#item.after)==item.after,'readback failed at '..item.label)
         end
+        if validate_after then validate_after()end
     end)
     if not ok then
         local restored=true

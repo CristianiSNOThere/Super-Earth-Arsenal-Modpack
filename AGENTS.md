@@ -11,16 +11,16 @@ resource/dependency audits, exact guards/rollback and fresh startup/gameplay
 gates. Build individual ZIPs only when separately maintaining legacy individual
 releases; a selectable-pack-only change does not require 22 individual builds.
 
-## Current release: selectable pack v2.1.0 (2026-10-15)
+## Current release: selectable pack v2.1.1 (2026-10-15)
 
-Current set:23 independently selectable mods, including BR-14 Adjudicator Heavy
-Battle Rifle at480RPM, and the unchanged29-preset Flag dropdown. User accepts
-Rev2 and explicitly requests publication. Canonical authored Adjudicator source
-is under `source/adjudicator-heavy/`; catalog/payloads and build tools remain
-under `source/configurable-pack/` and `tools/configurable-pack/`. Read BUILD.md
-and REGRESSION-POLICY.md before changes. The former individual repository hosts
-standalone runtime projects; keep its22legacy releases and all pack history.
-No need to build a new individual package for a selectable-pack-only addition.
+Current set: 23 independent mod switches and 29 Flag presets. Variable v0.1.1
+fixes redirected damage profiles and uses AP3 in Auto, Volley and Total.
+Canonical Variable source is under `source/vg70-variable/`. Keep private numeric
+ID ownership checks against native lookups as well as serialized tables; refuse
+redirected lookups and preserve foreign pointers/rows. Include registry collision
+and rollback fixtures. Read source/configurable-pack/BUILD.md and REGRESSION-POLICY.md.
+The former individual repository hosts standalone runtime projects; retain all
+legacy releases and ZIPs. This is a selectable-pack update only.
 
 Every new mod in this set, including Arc Thrower and Autocannon work, must follow the current startup contract in `source/startup-initialization/` and the companion gate in `source/scorcher-ar/runtime.lua`. Use bounded waits with named failures; retain exact supported peer-order checks, fail-closed shared-table validation, and rollback. Update supported peer values when a new mod edits a shared table.
 
@@ -32,11 +32,11 @@ Public release descriptions and player-facing READMEs must explain the complete 
 
 ## Latest accepted startup
 
-Rev2 full23 launch18:59:51 Europe/Madrid:62loaded/0failed, all23final mod states,
-Adjudicator480RPM,78exact deployed files and installedmanifest. Workspace evidence:
-`work/adjudicator-heavy-20261015-rev2/full-adjudicator-rev2-launch-20261015T170057Z/`.
-User subsequently says "Perfect. Let us update the repo.", accepting the result
-and authorizing publication. The earlier muzzle-flash report was withdrawn by
-the user as a fluke; no visual changes were made. Keep offline/startup/loaded/
-gameplay evidence distinct. Publication evidence/latest handoff is under
-`work/release-adjudicator-20261015/` in the HD2 Mods workspace.
+Variable Rev2 launch 2026-10-15 22:03:07 Europe/Madrid: 62 loaded, zero failed.
+Variable v0.1.1 Applied with 146 guarded fields; 13 dedicated Applied logs and
+26 exact main archives. Workspace evidence:
+`work/variable-auto-damage-20261015/rev2-launch-20261015T200447Z/`.
+User subsequently says "yep udate repos", accepting gameplay and authorizing
+publication. No additional external process capture was performed. Offline,
+startup, deployed-file/loader selection and user gameplay evidence are distinct.
+Publication and continuation evidence: `work/release-variable-fix-20261015/`.

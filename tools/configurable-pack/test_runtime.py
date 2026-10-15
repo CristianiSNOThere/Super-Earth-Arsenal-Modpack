@@ -49,6 +49,7 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--incremental',action='store_true')
     parser.add_argument('--evidence',type=Path)
+    parser.add_argument('--focus-id',default='adjudicator-heavy')
     args=parser.parse_args()
     if args.incremental:assert args.evidence
     else:assert not args.evidence
@@ -150,7 +151,8 @@ def main():
     if not args.incremental:
         for seed in (1107,2911):
             order = list(range(1,n+1)); random.Random(seed).shuffle(order); orders.append(order)
-    masks = [1<<(n-1),(1<<n)-1] if args.incremental else b.selection_matrix()
+    focus=next(i for i,p in enumerate(packets)if p['id']==args.focus_id)if args.incremental else None
+    masks = [1<<focus,(1<<n)-1] if args.incremental else b.selection_matrix()
     script = 'local controllers=' + literal(controllers) + '\n'
     script += 'local metadata=' + literal(metadata) + '\n'
     script += 'local profile_chunks=' + literal(profile_chunks) + '\n'
@@ -162,6 +164,7 @@ def main():
     script += 'local discovery_path=' + literal((b.ROOT / 'work/flag-mod/BingusSharedLoader-main/src/discover.lua').as_posix()) + '\n'
     script += 'local report_path=' + literal((evidence / 'runtime-counts.json').as_posix()) + '\n'
     script += 'local incremental='+literal(args.incremental)+'\n'
+    script += 'local focus_id='+literal(args.focus_id)+'\n'
     script += r'''
 local bit=require('bit')
 local discovery=dofile(discovery_path)
@@ -291,7 +294,7 @@ local peers={
  ['tenderizer-armor-softener']='SterilizerArmorControlV1',
 }
 for id,control in pairs(controllers)do
- if not incremental or id=='adjudicator-heavy'then
+ if not incremental or id==focus_id then
  for _,mode in ipairs({'bad_exe','unknown_patch','failed_peer','late_peer'})do
   if (mode~='failed_peer'and mode~='late_peer')or peers[id]then
    local env=make_environment();local now,calls,base_calls=0,0,0

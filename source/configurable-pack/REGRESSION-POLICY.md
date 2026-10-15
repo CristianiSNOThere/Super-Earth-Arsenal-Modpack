@@ -32,6 +32,14 @@ user gameplay acceptance for new behavior.
 
 ### Every change
 
+For custom numeric damage/projectile IDs, also check active native lookup
+ownership. A serialized row can retain the intended values while its registry
+entry points to another runtime's copy. Static Addon resource compatibility does
+not detect that collision. Include redirected-registry cases for the changed
+profiles, refuse unknown owners and preserve foreign rows/pointers. The captured
+Variable failure at damage IDs542-544 is a reusable regression case; it does not
+require repeating old weapon combinations or a live memory capture for every mod.
+
 1. Name the changed modules/resources/options and pin the game, loader and
    Arsenal versions used. Verify that unrelated payload hashes remain exact.
 2. Check the complete catalog for differing shared-resource collisions and

@@ -117,7 +117,7 @@ def main():
     packages = catalog['packages']
     if args.incremental:
         assert args.output and args.evidence and not args.import_baseline
-        assert catalog['baseline']=='2.0.0' and catalog['version']=='2.1.0'
+        assert (catalog['baseline'],catalog['version'])in {('2.0.0','2.1.0'),('2.1.0','2.1.1')}
         assert len(packages)==23 and catalog['expected_resources']==36
     else:
         assert not args.output and not args.evidence
@@ -239,7 +239,7 @@ def main():
         for option in manifest['Options']:
             option['Description']=public['option_descriptions'].get(option['Name'],option['Description']) if args.incremental and not args.release else public['option_descriptions'][option['Name']]
         if args.incremental and not args.release:
-            manifest['Description']=f'Choose from {len(packages)} independently selectable weapon and equipment mods, including BR-14 Adjudicator Heavy Battle Rifle. One True Flag has one dropdown with 29 damage presets (default 300 normal / 150 durable).'
+            manifest['Description']=catalog.get('candidate_description',f'Choose from {len(packages)} independently selectable weapon and equipment mods, including BR-14 Adjudicator Heavy Battle Rifle. One True Flag has one dropdown with 29 damage presets (default 300 normal / 150 durable).')
         files['manifest.json']=(json.dumps(manifest,indent=2)+'\n').encode()
         if args.release:files['README.md']=(REPO/'README.md').read_bytes()
     evidence=args.evidence if args.incremental else EVIDENCE
@@ -269,7 +269,9 @@ def main():
         # above prove the same property for any union without mask enumeration.
         for available,required in zip(option_resource_bits,option_dependencies):
             assert available and available&required==required
-        matrix=[1<<(len(packages)-1),(1<<len(packages))-1]
+        changed=catalog.get('changed_package_ids',[packages[-1]['id']])
+        assert changed and set(changed)<={p['id']for p in packages}
+        matrix=sorted({1<<p['index']for p in packages if p['id']in changed}|{(1<<len(packages))-1})
         checked_masks=None
     else:
         unions = [0] * (1 << len(packages))
@@ -284,7 +286,7 @@ def main():
         checked_masks=len(unions)
     (evidence / 'selections.json').write_text(json.dumps(matrix))
     detail = dict(result='PASS', artifact=str(zip_path), sha256=sha(body), bytes=len(body),
-                  baseline=('22 mods / v2.0.0'if args.incremental else '22 mods / v1.0.26'), package_guid=GUID, options=len(options),
+                  baseline=(str(22 if catalog['baseline']=='2.0.0'else 23)+' mods / v'+catalog['baseline']if args.incremental else '22 mods / v1.0.26'), package_guid=GUID, options=len(options),
                   mod_switches=len(packages), flag_controls=1, flag_dropdown_presets=preset_payloads,all_selection_masks=checked_masks,
                   runtime_selection_masks=len(matrix), resources=len(inventory),
                   differing_payload_collisions=0, unchanged_accepted_payloads=True,
