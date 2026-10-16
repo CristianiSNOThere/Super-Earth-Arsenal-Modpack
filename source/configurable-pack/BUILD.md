@@ -1,4 +1,4 @@
-# Selectable pack v2.1.2 release source
+# Selectable pack v2.1.3 release source
 
 Current set: 23 independent switches and One True Flag's 29 damage presets,
 defaulting to 300 normal / 150 durable. Stable pack GUID:
@@ -14,7 +14,7 @@ Canonical readable sources are under source/, including vg70-variable/.
 From the HD2 Mods workspace root:
 
 ```powershell
-python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/build.py --release --incremental --output work/super-earth-arsenal-modpack-repo/Super-Earth-Arsenal-Modpack-v2.1.2.zip --evidence work/release-health-compat-20261016/pack
+python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/build.py --release --incremental --output work/super-earth-arsenal-modpack-repo/Super-Earth-Arsenal-Modpack-v2.1.3.zip --evidence work/release-health-normal-20261016/pack
 ```
 
 Outputs are immutable; different bytes at an existing path are refused. Retain
@@ -88,3 +88,22 @@ work/runtime-editor-compat-20261016/health-compat-rev1/ and
 health-compat-launch-20261016T094940Z/. No independent live-memory read.
 Historical gas-overhaul/build.py predates the canonical startup contract;
 do not use it to regenerate this release. Use the selectable-pack builder.
+
+## v2.1.3 Normal and Casual health profiles
+
+Recognize only stock or either complete supplied eight-field health profile.
+Normalize only for full stock checksum validation; retain actual transaction
+bytes and disjoint Gas writes. Reject mixed, partial and unknown profiles.
+The canonical Gas files remain identical; only its Lua archive changes.
+58 actual health cases cover both export PATCH consumers in both orders,
+rollback/foreign mutations/guards, plus a v2.1.2 Normal refusal reproduction.
+Current Gas/SAI 45 and Gas validator 69 cases pass, including 16 peer subsets.
+Unchanged startup/consumer contracts reuse baseline evidence.
+
+Fresh Arsenal launch13:37:36local has62loaded/0failed,13fresh dedicated Applied,
+33common values/0errors,14Scorcher values and78matching candidate gameplay files.
+Neither Health Rework variant was present in that launch. It does not establish
+fresh Normal-loaded or health gameplay acceptance. User was told this and then
+explicitly authorized publication. Keep this limitation in internal evidence.
+Workspace: work/runtime-editor-compat-20261016/health-normal-compat-rev1/,
+health-normal-arsenal-launch-20261016T113941Z/ and work/release-health-normal-20261016/.

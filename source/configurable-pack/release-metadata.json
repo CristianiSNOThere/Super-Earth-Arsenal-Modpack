@@ -1,5 +1,5 @@
 {
-  "description": "Choose any of 23 Helldivers 2 weapon and equipment mods in Arsenal, or enable the full set. Gas Overhaul works with Health Rework (Casual, 160 hp, 3 regen), preserving its health, regeneration and stim settings. One True Flag offers 29 damage presets, defaulting to 300 normal / 150 durable.",
+  "description": "Choose any of 23 Helldivers 2 weapon and equipment mods in Arsenal, or enable the full set. Gas Overhaul works with Health Rework Casual (160 HP, 3 regeneration) and Normal (150 HP, 2.8 regeneration), preserving health, regeneration and stim settings. One True Flag offers 29 damage presets, defaulting to 300 normal / 150 durable.",
   "option_descriptions": {
     "Enable 40-K Meltagun": "Sets ergonomics to 40.",
     "Enable A/GM-17 Gas Mortar Sentry": "Sets sentry health to 600.",

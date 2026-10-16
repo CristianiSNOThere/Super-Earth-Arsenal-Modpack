@@ -538,32 +538,49 @@ local function validate_acid_status(api,address)
     return {address=address,size=ACID_STATUS_SIZE,source=s,writes={{offset=40,bytes=unhex('00007041'),write='protected'}}}
 end
 
--- Exact health export 0182f499-7df9-4192-815c-8a26df0e419a, fingerprint
--- 528db86c82f7bc91a8be. Recognize its complete eight-field health profile.
--- Normalize only for validation; retain the actual bytes for transactions.
-local KNOWN_HEALTH_EXPORT={
-    {0,unhex('7d000000'),unhex('a0000000')},
-    {1856,unhex('23000000'),unhex('5b000000')},
-    {2408,unhex('23000000'),unhex('5b000000')},
-    {1304,unhex('3c000000'),unhex('9b000000')},
-    {4,unhex('00000000'),unhex('00004040')},
-    {768,unhex('0000c03f'),unhex('0000803f')},
-    {2960,unhex('2d000000'),unhex('75000000')},
-    {3512,unhex('2d000000'),unhex('75000000')},
+-- Exact complete Casual (160 HP / 3 regen) and Normal (150 HP / 2.8 regen)
+-- exports supplied by the user. Normalize for validation only; transactions
+-- retain the actual health bytes. Mixed, partial and unknown profiles refuse.
+local KNOWN_HEALTH_EXPORTS={
+    { -- casual
+        {0,unhex('7d000000'),unhex('a0000000')},
+        {1856,unhex('23000000'),unhex('5b000000')},
+        {2408,unhex('23000000'),unhex('5b000000')},
+        {1304,unhex('3c000000'),unhex('9b000000')},
+        {4,unhex('00000000'),unhex('00004040')},
+        {768,unhex('0000c03f'),unhex('0000803f')},
+        {2960,unhex('2d000000'),unhex('75000000')},
+        {3512,unhex('2d000000'),unhex('75000000')},
+    },
+    { -- normal
+        {0,unhex('7d000000'),unhex('96000000')},
+        {1856,unhex('23000000'),unhex('5b000000')},
+        {2408,unhex('23000000'),unhex('5b000000')},
+        {1304,unhex('3c000000'),unhex('9b000000')},
+        {4,unhex('00000000'),unhex('33333340')},
+        {768,unhex('0000c03f'),unhex('0000803f')},
+        {2960,unhex('2d000000'),unhex('75000000')},
+        {3512,unhex('2d000000'),unhex('75000000')},
+    },
 }
 local function supported_health_baseline(api,s)
     if api.sha256(s)==HELLDIVER_HEALTH_SHA then return s end
-    local normalized=s
-    for _,field in ipairs(KNOWN_HEALTH_EXPORT) do
-        if s:sub(field[1]+1,field[1]+#field[3])~=field[3] then
-            return nil,'unsupported Helldiver health profile'
+    for _,profile in ipairs(KNOWN_HEALTH_EXPORTS) do
+        local normalized,matched=s,true
+        for _,field in ipairs(profile) do
+            if s:sub(field[1]+1,field[1]+#field[3])~=field[3] then
+                matched=false;break
+            end
+            normalized=replace(normalized,field[1],field[2])
         end
-        normalized=replace(normalized,field[1],field[2])
+        if matched then
+            if api.sha256(normalized)~=HELLDIVER_HEALTH_SHA then
+                return nil,'Helldiver health record checksum mismatch'
+            end
+            return normalized
+        end
     end
-    if api.sha256(normalized)~=HELLDIVER_HEALTH_SHA then
-        return nil,'Helldiver health record checksum mismatch'
-    end
-    return normalized
+    return nil,'unsupported Helldiver health profile'
 end
 
 local function validate_helldiver_health(api,address)

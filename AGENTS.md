@@ -11,7 +11,7 @@ resource/dependency audits, exact guards/rollback and fresh startup/gameplay
 gates. Build individual ZIPs only when separately maintaining legacy individual
 releases; a selectable-pack-only change does not require 22 individual builds.
 
-## Current release: selectable pack v2.1.2 (2026-10-16)
+## Current release: selectable pack v2.1.3 (2026-10-16)
 
 Current set: 23 independent mod switches and 29 Flag presets. Variable v0.1.1
 fixes redirected damage profiles and uses AP3 in Auto, Volley and Total.
@@ -50,3 +50,13 @@ source/gas-overhaul/sterilizer-entry.lua. Keep native Gas write targets and peer
 readiness statuses unchanged. Historical Gas builders are not current pack builders.
 Fresh accepted startup11:47:47local passes60loaded/0failed and13dedicated Applied
 with health export active. User explicitly authorizes publication afterwards.
+
+## v2.1.3 exact Normal and Casual health compatibility
+
+Preserve the two complete known profiles and the full normalized stock checksum.
+Unknown/partial/mixed profiles refuse; health bytes and transaction contracts stay
+unchanged. Only Gas validation changes from v2.1.2. Canonical Gas source mirrors
+and archived payload must match. 58 targeted health cases and45/69shared cases pass.
+Latest startup13:37:36local is62loaded/0failed/13Applied with the candidate but no
+Health Rework installed in that Arsenal profile. Normal-loaded startup/gameplay
+remain untested. User was informed, then authorized repository publication.
