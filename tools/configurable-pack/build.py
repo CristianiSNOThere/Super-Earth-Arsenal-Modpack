@@ -126,8 +126,8 @@ def main():
     packages = catalog['packages']
     if args.incremental:
         assert args.output and args.evidence and not args.import_baseline
-        assert (catalog['baseline'],catalog['version'])in {('2.0.0','2.1.0'),('2.1.0','2.1.1'),('2.1.1','2.1.2'),('2.1.2','2.1.3'),('2.1.3','2.2.0')}
-        assert (len(packages),catalog['expected_resources'])==((24,49) if catalog['version']=='2.2.0' else (23,36))
+        assert (catalog['baseline'],catalog['version'])in {('2.0.0','2.1.0'),('2.1.0','2.1.1'),('2.1.1','2.1.2'),('2.1.2','2.1.3'),('2.1.3','2.2.0'),('2.2.0','2.2.1')}
+        assert (len(packages),catalog['expected_resources'])==((24,49) if catalog['version'] in {'2.2.0','2.2.1'} else (23,36))
     else:
         assert not args.output and not args.evidence
         assert catalog['version']=='2.0.0', 'Use an explicit new incremental candidate for a changed catalog'
@@ -312,7 +312,7 @@ def main():
         checked_masks=len(unions)
     (evidence / 'selections.json').write_text(json.dumps(matrix))
     detail = dict(result='PASS', artifact=str(zip_path), sha256=sha(body), bytes=len(body),
-                  baseline=(str(22 if catalog['baseline']=='2.0.0'else 23)+' mods / v'+catalog['baseline']if args.incremental else '22 mods / v1.0.26'), package_guid=GUID, options=len(options),
+                  baseline=(str({'2.0.0':22,'2.2.0':24}.get(catalog['baseline'],23))+' mods / v'+catalog['baseline']if args.incremental else '22 mods / v1.0.26'), package_guid=GUID, options=len(options),
                   mod_switches=len(packages), flag_controls=1, flag_dropdown_presets=preset_payloads,all_selection_masks=checked_masks,
                   runtime_selection_masks=len(matrix), resources=len(inventory),
                   differing_payload_collisions=0, unchanged_accepted_payloads=True,

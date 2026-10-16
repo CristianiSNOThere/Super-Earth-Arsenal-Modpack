@@ -1,4 +1,4 @@
-# Selectable pack v2.2.0 source
+# Selectable pack v2.2.1 source
 
 Current source set: 24 independent switches and One True Flag's 29 damage presets,
 defaulting to 300 normal / 150 durable. Stable pack GUID:
@@ -14,12 +14,37 @@ Canonical readable sources are under source/, including vg70-variable/.
 From the HD2 Mods workspace root:
 
 ```powershell
-python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/build.py --release --incremental --output work/super-earth-arsenal-modpack-repo/Super-Earth-Arsenal-Modpack-v2.2.0.zip --evidence work/release-punisher-pack-20261016/pack
+python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/build.py --release --incremental --output work/super-earth-arsenal-modpack-repo/Super-Earth-Arsenal-Modpack-v2.2.1.zip --evidence work/readability-20261016/pack
 ```
 
 Outputs are immutable; different bytes at an existing path are refused. Retain
 all older releases/ZIPs. Use tagged historical catalogs to reproduce old versions.
 Do not run old one-time prepare/import builders against the current source.
+
+## v2.2.1 public readability revision
+
+source/configurable-pack/player-guide.json is the editable player-copy source.
+Run tools/configurable-pack/refresh_public_copy.py before building after a copy
+edit. This refreshes all24 catalog/Arsenal descriptions and the README gameplay
+section together. The README uses short summaries, a glossary and24 expandable
+stat lists. Arsenal receives the same plain-language bullets and explained values.
+Display decimals are rounded and marked approximate; equivalent percentages and
+degree conversions preserve the meaning. Every prior described stat remains
+covered. The warning, option names/identities/Include paths and29Flag presets stay.
+
+FinalZIP SHA256 E48C20A886A7183832EA6B187AAD446F8C57529540FCFFA09262141B81F85CE3,
+29030823bytes. Independent old/new ZIP comparison proves only README.md and
+manifest.json change; the manifest differs only in Version and descriptions.
+All174other ZIP entries are byte-exact v2.2.0. Full49resource/dependency/type-order/
+pureLua/collision audit passes. Eight real isolated Arsenal deploy/purge cases
+pass, plus actual importer checks of all24 new multiline descriptions, both
+enable-all preferences, all24 saved selections and a nondefault Flag choice
+migrating from v2.2.0. No real user settings or deployment changed.
+
+Evidence: work/readability-20261016/release-validation.json, pack/composition.json,
+arsenal/incremental-arsenal.json and copy-import/public-copy-arsenal.json.
+Reuse the exact v2.2.0 source/native/startup/user-gameplay baseline below. This
+copy-only change does not require another mission or old combination matrix.
 
 The builder checks the full resource inventory, pure-Lua archives and dependency
 closure per option, contiguous FileData type groups, and all CPU/GPU/STREAM

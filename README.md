@@ -1,4 +1,4 @@
-# Super Earth Arsenal Mod Pack v2.2.0
+# Super Earth Arsenal Mod Pack v2.2.1
 
 ## 🚨 COMPATIBILITY WARNING — READ BEFORE PLAYING 🚨
 
@@ -7,11 +7,11 @@
 
 Choose the weapon and equipment changes you want from one package. Each of the **24 mods has its own switch in Arsenal**: enable a single weapon, a smaller selection, or the complete set.
 
-**One True Flag has one damage dropdown with 29 presets**, defaulting to **300 normal / 150 durable**. Its settings are inside the Flag option.
+**One True Flag has one damage dropdown with 29 presets**, defaulting to **300 regular damage and 150 against durable parts**. Its settings are inside the Flag option.
 
 **Added in v2.2.0:** SG-8P Punisher Plasma with Normal and Shotgun modes, separate ammunition pools and a magazine-shaped undergrip.
 
-[Download v2.2.0](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v2.2.0/Super-Earth-Arsenal-Modpack-v2.2.0.zip) | [All releases](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases) | [Standalone runtime projects](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download v2.2.1](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v2.2.1/Super-Earth-Arsenal-Modpack-v2.2.1.zip) | [All releases](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases) | [Standalone runtime projects](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Choose your mods
 
@@ -25,32 +25,397 @@ For Punisher Plasma, switch to another primary before disabling, replacing or re
 
 ## Gameplay changes
 
-| Mod | Gameplay settings |
-|---|---|
-| SG-8P Punisher Plasma | SG-8P Punisher Plasma gains Normal and Shotgun modes in the left-side Weapon Functions selector and a magazine-shaped undergrip. Normal fires at 60 RPM with 350 normal / 225 durable blast damage, 3.5/6.5/8 m full-damage/outer/shockwave radii and burning. It carries 17 loaded rounds and one spare 17-round magazine, has 50% less sway and a flatter projectile trajectory, and uses demolition 30, stagger 25 and push 30. Shotgun fires nine plasma pellets per round at 100 RPM; each pellet deals 25/9 normal/durable direct damage plus 25/9 blast damage, with AP3 at every angle, 0.5 m blast radii, and stagger/push 25. Shotgun has an independent 20 loaded rounds and 60 reserve rounds, 100/90 MRAD horizontal/vertical spread, and reloads twice as fast. The Loyalist and One-Two original behavior is affected by this option. |
-| BR-14 Adjudicator Heavy Battle Rifle | BR-14 Adjudicator becomes a heavy battle rifle: normal/durable damage rises from 95/23 to 115/30, stagger force from 15 to 25, and push force becomes 10 instead of 12. Magazine capacity increases from 30 to 48 rounds. Fire rate falls from 550 to 480 RPM. Bullet velocity rises from 820 to 1,000 m/s, and speed loss per penetration falls from 25% to 15%. Horizontal recoil drift becomes 16.5 instead of 17, vertical recoil drift rises from 35 to 57.5, and base sway falls from 1 to 0.6. Existing armor penetration, recoil climb, spread, drag and spare-magazine counts are retained. |
-| Tenderizer Armor Softener | AR-61 Tenderizer magazine capacity increases from 35 to 70 rounds and bullet launch speed from 820 to 1,000 m/s. Direct and slight-angle armor penetration increase from AP2 to AP3; the other angle settings remain unchanged. Bullets apply Acid Storm to temporarily reduce enemy armor effectiveness for 15 seconds. Base sway is set to 0.9. Normal/durable damage is 90/30, with the existing 600/850 RPM settings, recoil and spread. The shared Acid Storm duration also affects its weather effect after exposure ends. |
-| Sickle Laser AR | LAS-16 Sickle deals 70 normal and 10 durable damage and generates 50% less heat per shot, from 1.15 to 0.575. LAS-17 Double-Edge Sickle deals 65/10 normal/durable damage cold and warm, then 83/14 at hot and maximum heat. Both weapons have at least AP3 penetration; Double-Edge reaches AP4 at maximum heat. Both Sickles have a base fire rate of 700 RPM, zero horizontal and vertical spread, and 2,000 m/s projectiles at every heat tier with no distance damage fall-off. Double-Edge direct heat self-damage is reduced by 25%. Its heat buildup, cooling and maximum-heat ignition remain unchanged; general fire damage is unchanged. |
-| VG-70 Variable Portable Maxigun Rework | The primary-slot VG-70 Variable keeps its mobile, backpack-free reload and gains a 150-round magazine. Auto offers 550, 750 and 1,000 RPM, with 110/29, 90/24 and 75/20 normal/durable damage per bullet, AP3. Volley fires 15 simultaneous bullets at 40/11 damage each, AP3, following the selected native RPM. Total fires all remaining rounds at 28/8 damage per bullet, AP3, with spread reduced to 0.75 on both axes. The weapon keeps 6 starting spare magazines, up to 7 maximum and 7 per resupply, along with its existing reload, projectile speed and sound. Recoil is reduced by 15% in every mode: drift 4.25/8.5 and climb 3.4/6.8 horizontal/vertical. Base ergonomics is 40 and sway is 0.9. Total retains its stock right-arm self-injury and knockdown behavior. Sustained Auto muzzle flashes stay aligned. |
-| PLAS-45 Epoch | PLAS-45 Epoch highest-charge shots gain 30% more normal and durable direct-hit and blast damage, burning on blast hits, a 5 m full-damage radius, 6 m outer damage radius and 7 m shockwave radius. Magazine capacity increases from 3 to 4 rounds and maximum spare magazines from 4 to 5. Reload while walking with the existing reload animation. Base highest-tier direct damage is 520/260 and blast damage is 1040/1040, with its existing charge multiplier retained. Charge times remain 1.0/2.5/2.6 seconds and lower-charge shots retain their current values. Starting/resupply spare magazines remain 2/2. |
-| AR-32 Pacifier | Bullets deal 75 normal and 15 durable damage, up from 55/10, and build Stun Medium at strength 3 per hit, up from 2. Its default magazine holds 65 rounds, up from 40, and weapon sway falls from 1 to 0.6. |
-| AC-8 Autocannon | The call-in supplies only the weapon, freeing the backpack slot. The gun carries 10 loaded + 60 reserve rounds and uses its familiar five-round top reload while walking, about 20% faster than stock. A resupply is set to refill up to 60 reserve rounds. Ergonomics rises from 17 to 30. Horizontal/vertical recoil drift falls from 200/450 to 150/337.5 and recoil climb from 2/100 to 1.5/75, a 25% reduction to each. APHET direct damage becomes 375 normal / 340 durable with AP5, and impact blast becomes 180 normal. FLAK explosion damage becomes 210 normal with an 8 m outer radius; FLAK direct damage and shrapnel are unchanged. JAR-5 Dominator High Explosive ammo shares that explosion and receives the same explosion buff. |
-| PLAS-1 Scorcher AR | Increases the magazine from 20 to 50 rounds and fire rate from 350 to 540 RPM. Reduces normal damage from 200 total to 150: 75 impact plus 75 explosion, before armor, hit location and distance falloff. Sets impact durable damage to 38 and explosion durable damage to 75 (113 combined against fully durable targets). Increases the full-damage blast radius from 1 to 1.25 metres and outer blast radius from 2 to 2.5 metres. Starting spare magazines increase from 3 to 4, and maximum spare magazines from 5 to 6; resupply grants 5 magazines. Uses the Scorcher's native Semi and Auto selector. Select Auto in Weapon Functions for continuous fire; at 540 RPM, a 50-round magazine provides approximately 5.56 seconds of sustained fire. Reduces horizontal/vertical recoil drift from 20 to 15, horizontal camera recoil from 2 to 1.5, and vertical camera recoil from 20 to 15 (25% less per shot). |
-| One True Flag | Choose damage from one dropdown with 29 presets. Normal-damage choices are 0, 100, 200, 300, 400, 500, 600, 750, 1,000, 1,500, 2,000, 3,000, 5,000, 7,500 and 9,999. Durable damage can be half of normal, rounded down, or equal to normal; zero has one 0/0 choice. Default: 300 normal / 150 durable. |
-| SAI Focus Precision | LAS-12 SAI deals 90 normal and 21 durable damage at the muzzle with either lens. Standard Lens spread is 70 MRAD and Focus Lens spread is 37.5 MRAD on both axes, each 50% below stock. Both lenses fire at 900 RPM. Projectile launch speed is 1,300 m/s and drag is 1.244, adding damage loss over distance. Recoil is reduced by one-third with both lenses. Heat per shot is reduced by one-third: 2 to 1.333333 with Standard and cooldown heatsinks, or 1.5 to 1 with the heat-capacity heatsink. |
-| AR-11 Arbitrator | Sets rifle damage to 80 and magazine capacity to 65 rounds. Sets underbarrel starting and maximum spare ammo to 30, stagger force to 25, and push force to 20. Its shotgun magazine holds 4 shells and refills 20 shells. Base ergonomics is 41, giving 40 with the default optic. |
-| R/40-K Hot-Shot | Sets magazine capacity to 20 rounds, starting magazines to 5, resupply magazines to 5, maximum magazines to 5, and ergonomics to 45. Uses standard magazine reloads. |
-| Gas Overhaul | Adds 15-second temporary armor reduction to supported gas weapons, including Dog Breath and gas grenades. Shared gas normal/durable damage rises from 25/25 to 45/45 DPS; Sterilizer magazine capacity from 125 to 175, gas/confusion buildup from 0.5 to 0.75, and incoming Helldiver gas multiplier from 1.3 to 0.7333. Shared Acid Storm duration changes from 1 to 15 seconds. |
-| ARC-3 Rapid/Supercharge | Adds the native Auto/Rapid and Semi/Supercharge fire-mode selector. Rapid charges in 0.307692/0.338462/0.369231 seconds and uses 0.85x of the shared 226/90 normal/durable pulse damage (about 192.1/76.5 before armor and hit location). Supercharge charges in 3.4/3.5/3.75 seconds, uses 2325/2325 damage and AP7, targets one enemy (chain 1, split 0), and cannot explode from overcharge. Both modes keep stock ARC audio and 45 m reach. |
-| ARC-12 Blitzer | Sets normal damage to 100, durable damage to 45, arc range to 30 m, and fire rate to 80 RPM. |
-| CQC-20 Breaching Hammer | Sets direct-hit, slight-blast, and large-blast armor penetration to 7. Sets starting, resupply, and maximum magazine counts to 21 each. |
-| PLAS-39 Accelerator Rifle | Sets magazine capacity to 21, horizontal/vertical drift and camera recoil to 2, horizontal/vertical spread to 0.3, sway to 0.4, stagger to 25, direct-hit and blast armor penetration to 4, and outer blast/shockwave values to 2.5. Offers near-instant Semi fire at a base rate of 200 RPM and charged three-round Burst with normal firing audio. |
-| P-34 Breacher | Sets the magazines received from resupply to 2. |
-| S-11 Speargun | Sets starting magazines to 16, resupply magazines to 10, maximum magazines to 20, and ergonomics to 40. |
-| APW-1 Anti-Materiel Rifle | Sets ergonomics to 40. |
-| 40-K Meltagun | Sets ergonomics to 40. |
-| A/GM-17 Gas Mortar Sentry | Sets sentry health to 600. |
-| RS-422 Railgun | Sets durable damage to 240. |
+Each entry starts with a short summary. Expand it for the complete settings in plain language.
+
+### A quick guide to the numbers
+
+- **Regular damage** is the usual damage value. **Damage against durable parts** is the separate value the game uses for its durability system; it is not bonus damage added on top.
+- **Rounds per minute** is firing speed. **Metres per second** is how fast the projectile travels.
+- **Armor penetration** determines which armor a hit can damage. Level 3 is medium penetration; higher levels can penetrate tougher armor. Hit angle still matters.
+- **Handling rating** is the ergonomics stat: how readily the weapon follows your aim. **Aim sway** is weapon wobble; a lower sway setting means less wobble.
+- **Stagger** is the strength used to interrupt an enemy; **knockback** is the strength used to push it. Actual reactions depend on the target.
+- **Full-damage radius** is the area receiving the blast's full damage. Damage falls toward the **outer damage radius**; the **shockwave radius** describes its force area.
+- Timings and awkward decimals are rounded and marked as approximate. The weapon settings themselves are unchanged.
+
+### SG-8P Punisher Plasma
+
+Switch between a powerful plasma blast and a nine-pellet plasma shotgun, with separate ammunition supplies.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Hold R and use the left-side Normal / Shotgun selector. Adds a magazine-shaped undergrip with a matching white finish.
+- Normal: 60 rounds per minute. Explosion damage is 350 regular and 225 against durable parts; hits apply burning.
+- Normal blast: full damage out to 3.5 metres, outer damage radius 6.5 metres and shockwave radius 8 metres.
+- Normal ammo: 17 loaded rounds and one spare 17-round magazine. Aim sway is reduced by 50%, and the projectile follows a flatter path.
+- Normal hit strength: demolition rating 30 for destructible objects, stagger strength 25 and knockback strength 30.
+- Shotgun: 100 rounds per minute. Each shot spends one round to fire nine explosive plasma pellets.
+- Each pellet: 25 regular damage and 9 against durable parts on impact, plus another 25 and 9 from the explosion. Medium armor penetration (level 3) at every impact angle.
+- Shotgun blasts: full-damage, outer damage and shockwave radii are all 0.5 metres. Stagger and knockback strength are both 25.
+- Shotgun ammo: a separate pool of 20 loaded rounds and 60 reserve rounds. Reloads twice as fast, with a broad pellet pattern that is slightly wider side to side.
+- Shared effect: this option also changes the original behavior of the Loyalist and One-Two.
+
+**Additional values explained**
+
+- Shotgun spread angle settings: roughly 5.7 degrees side to side and 5.2 degrees up and down (100 and 90 milliradians). These describe the spread settings, not a guaranteed group size.
+
+</details>
+
+### BR-14 Adjudicator Heavy Battle Rifle
+
+A harder-hitting 48-round battle rifle with a slower fire rate and heavier vertical recoil.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Damage per bullet: 115 regular and 30 against durable parts, up from 95 and 23.
+- Magazine: 48 rounds instead of 30. Fire rate: 480 rounds per minute instead of 550.
+- Hit reaction: stagger strength 25 instead of 15; knockback strength 10 instead of 12.
+- Bullet speed: 1,000 metres per second instead of 820. Bullets lose 15% speed each time they penetrate, instead of 25%, retaining more speed after passing through a target.
+- Recoil movement: side-to-side setting 16.5 instead of 17, vertical setting 57.5 instead of 35. Base aim sway falls by 40%, from setting 1 to 0.6.
+- Armor penetration, camera kick, spread, drag and spare-magazine counts stay the same.
+
+</details>
+
+### Tenderizer Armor Softener
+
+A 70-round rifle whose bullets temporarily weaken enemy armor.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Damage per bullet: 90 regular and 30 against durable parts. Keeps its 600 and 850 rounds-per-minute settings.
+- Magazine: 70 rounds instead of 35. Bullet speed: 1,000 metres per second instead of 820.
+- Penetration: medium armor (level 3 instead of 2) on direct and slightly angled hits. Other impact-angle penetration settings are unchanged.
+- Bullets apply Acid Storm, reducing enemy armor effectiveness for 15 seconds.
+- Base aim sway: setting 0.9. Recoil and spread stay the same.
+- Shared effect: the 15-second Acid Storm duration also applies to the weather effect after exposure ends.
+
+</details>
+
+### Sickle Laser AR
+
+Accurate laser assault rifles with faster projectiles, medium penetration and no damage loss over distance.
+
+<details>
+<summary>All changes and stats</summary>
+
+- LAS-16 Sickle: 70 regular damage and 10 against durable parts. Heat generated per shot is halved, so it can fire longer before overheating.
+- LAS-17 Double-Edge Sickle: cold and warm shots deal 65 regular damage and 10 against durable parts; hot and maximum-heat shots deal 83 and 14.
+- Both rifles: base fire rate 700 rounds per minute, zero spread and projectile speed 2,000 metres per second at every heat level. No damage loss over distance.
+- Both have at least medium armor penetration (level 3). Double-Edge reaches level 4 at maximum heat.
+- Double-Edge heat self-damage is reduced by 25%. Its bullet heat buildup, cooling and maximum-heat ignition stay the same; general fire damage is unchanged.
+
+**Additional values explained**
+
+- Normal Sickle heat per shot: about 0.58 instead of 1.15, a 50% reduction.
+
+</details>
+
+### VG-70 Variable Portable Maxigun Rework
+
+A mobile 150-round primary with three firing modes, medium penetration and 15% less recoil.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Magazine: 150 rounds. Remains a primary weapon, needs no backpack and can reload while moving.
+- Auto at 550 rounds per minute: 110 regular damage and 29 against durable parts per bullet.
+- Auto at 750 rounds per minute: 90 regular damage and 24 against durable parts per bullet.
+- Auto at 1,000 rounds per minute: 75 regular damage and 20 against durable parts per bullet.
+- Volley: fires 15 bullets together. Each deals 40 regular damage and 11 against durable parts. Uses the selected 550, 750 or 1,000 rounds-per-minute setting.
+- Total: fires every remaining round at once. Each bullet deals 28 regular damage and 8 against durable parts, with a tighter spread setting of 0.75 in both directions.
+- All modes: medium armor penetration (level 3) and 15% less recoil.
+- Spare magazines: 6 at the start, 7 maximum and 7 from resupply. Handling rating: 40. Base aim sway: setting 0.9.
+- Total still injures your right arm and knocks you down. Muzzle flashes stay aligned during sustained Auto fire. Reload timing, projectile speed and sounds stay the same.
+
+**Additional values explained**
+
+- Recoil movement settings, side to side / up and down: 4.25 / 8.5 instead of 5 / 10. Camera kick: 3.4 / 6.8 instead of 4 / 8. These are the same 15% reductions described above.
+
+</details>
+
+### PLAS-45 Epoch Highest-Charge Rework
+
+Stronger highest-charge shots, a larger magazine and a reload you can perform while walking.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Highest-charge shots: 30% more regular and durable-part damage on both the direct hit and explosion. Explosion hits also apply burning.
+- Highest-charge base damage: direct hit 520 regular and 260 against durable parts; explosion 1,040 regular and 1,040 against durable parts. The existing charge damage multiplier still applies.
+- Blast: full damage out to 5 metres, outer damage radius 6 metres and shockwave radius 7 metres.
+- Magazine: 4 rounds instead of 3. Maximum spare magazines: 5 instead of 4. Start with 2 spare magazines and receive 2 from resupply.
+- Reload while walking, using the existing reload animation.
+- Charge thresholds stay at 1, 2.5 and 2.6 seconds. Lower-charge shots retain their damage.
+
+</details>
+
+### AR-32 Pacifier Tuning
+
+More damage, stronger stun buildup, a 65-round magazine and 40% less aim sway.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Damage per bullet: 75 regular and 15 against durable parts, up from 55 and 10.
+- Stun buildup per hit: 3 instead of 2, a 50% increase. This uses the weapon's medium-stun effect.
+- Default magazine: 65 rounds instead of 40.
+- Aim sway: 40% lower; the sway setting changes from 1 to 0.6.
+
+</details>
+
+### AC-8 Autocannon Backpackless Rework
+
+A backpack-free Autocannon with more ammunition, a walking reload and 25% less recoil.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Ammo: 10 rounds loaded and 60 in reserve. The call-in supplies only the weapon, leaving your backpack slot free.
+- Reload: about 20% faster, using the familiar five-round top reload while walking. Resupply refills up to 60 reserve rounds.
+- Handling rating: 30 instead of 17. Recoil and the camera kick from firing are both reduced by 25%.
+- APHET shells: 375 regular damage and 340 damage against durable parts on a direct hit; heavy armor penetration (level 5). The impact explosion deals 180 regular damage.
+- FLAK shells: 210 explosion damage with an 8-metre outer damage radius. Direct-hit damage and shrapnel stay the same.
+- Shared effect: JAR-5 Dominator High Explosive ammunition gets the same explosion buff.
+
+**Additional values explained**
+
+- Recoil movement settings, side to side / up and down: 150 / 337.5, previously 200 / 450.
+- Camera kick settings, side to side / up and down: 1.5 / 75, previously 2 / 100. These are the same 25% reductions described above.
+
+</details>
+
+### PLAS-1 Scorcher AR
+
+A 50-round automatic Scorcher with lower damage per shot, a wider blast and 25% less recoil.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Magazine: 50 rounds instead of 20. Fire rate: 540 rounds per minute instead of 350.
+- Fire modes: select Semi or Auto in Weapon Functions. Auto empties a full magazine in about 5.6 seconds of continuous fire.
+- Regular damage: 150 total instead of 200, made up of 75 from the impact and 75 from the explosion, before armor, hit location and distance.
+- Damage against durable parts: 38 from the impact and 75 from the explosion, or 113 combined against a fully durable part.
+- Blast: full damage out to 1.25 metres instead of 1; outer damage radius 2.5 metres instead of 2.
+- Spare magazines: 4 at the start instead of 3, maximum 6 instead of 5, and 5 from resupply.
+- Recoil: 25% less weapon movement and camera kick per shot.
+
+**Additional values explained**
+
+- Recoil movement: 15 in both directions, previously 20. Camera kick: 1.5 side to side and 15 vertically, previously 2 and 20.
+
+</details>
+
+### One True Flag
+
+Choose a damage preset from one dropdown; the default is 300 regular damage and 150 against durable parts.
+
+<details>
+<summary>All changes and stats</summary>
+
+- 29 presets. Regular-damage choices: 0, 100, 200, 300, 400, 500, 600, 750, 1,000, 1,500, 2,000, 3,000, 5,000, 7,500 or 9,999.
+- Damage against durable parts can be half the regular damage, rounded down, or equal to it. The zero-damage preset uses zero for both.
+- Default: 300 regular damage and 150 against durable parts. The dropdown is inside the One True Flag option.
+
+</details>
+
+### SAI Focus Precision
+
+A fast laser SMG with tighter spread, less recoil and less heat per shot.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Both lenses: 90 regular damage and 21 against durable parts when the shot leaves the muzzle. Fire rate: 900 rounds per minute.
+- Spread: 50% tighter than stock for each lens. Focus remains more accurate than Standard.
+- Projectile speed: 1,300 metres per second. Damage decreases over distance.
+- Recoil and heat generated by each shot are both reduced by one-third with either lens.
+
+**Additional values explained**
+
+- Spread angle settings are about 4 degrees in each direction for Standard and 2.1 degrees for Focus (70 and 37.5 milliradians). These describe the spread settings, not a guaranteed group size.
+- Distance drag setting: about 1.24. A higher drag setting slows projectiles more and affects damage retention over distance.
+- Heat per shot: about 1.33 instead of 2 with Standard or cooldown heatsinks; 1 instead of 1.5 with the heat-capacity heatsink.
+
+</details>
+
+### AR-11 Arbitrator
+
+An 80-damage rifle with a 65-round magazine and more underbarrel shotgun ammunition.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Rifle damage: 80. Magazine: 65 rounds.
+- Underbarrel shotgun: 4 shells loaded, 30 starting reserve shells and a maximum of 30. Resupply provides 20 shells.
+- Hit reaction: stagger strength 25 and knockback strength 20.
+- Handling rating: 41 before attachments, or 40 with the default optic.
+
+</details>
+
+### R/40-K Hot-Shot
+
+A 20-round magazine, five spare magazines and a handling rating of 45.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Magazine: 20 rounds. Spare magazines: 5 at the start, 5 maximum and 5 from resupply.
+- Handling rating: 45. Uses standard magazine reloads.
+
+</details>
+
+### Gas Overhaul
+
+Gas temporarily weakens enemy armor, deals more damage and hurts Helldivers less.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Armor weakening: supported gas hits apply Acid Storm for 15 seconds. Armor plates are not permanently destroyed.
+- Gas damage over time: 45 regular damage and 45 against durable parts per second, up from 25 each. This also affects other sources that use the same gas damage.
+- Sterilizer tank: 175 rounds instead of 125. Gas and confusion build up 50% faster per hit, with both buildup values rising from 0.5 to 0.75.
+- Helldivers take about 44% less gas damage than with the stock gas-damage multiplier. This applies to gas from all sources, including hazards.
+- Supported sources include Sterilizer, Dog Breath, Re-Educator, Speargun, gas grenades, gas mines, Gas Mortar Sentry, Eagle Gas Airstrike and Orbital Gas Strike.
+- Shared effect: Acid Storm lasts 15 seconds instead of 1, including the weather effect after exposure ends.
+- Supports Health Rework Normal (150 health, 2.8 regeneration) or Casual (160 health, 3 regeneration), keeping the chosen preset's health, regeneration and stim settings. Use one health preset at a time.
+
+**Additional values explained**
+
+- The incoming gas-damage multiplier falls from 1.3 to about 0.73; the reduction relative to stock is about 43.6%.
+
+</details>
+
+### ARC-3 Rapid/Supercharge
+
+Choose quick, weaker shots or a slow, powerful charge that hits one enemy.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Hold R and select Auto for Rapid or Semi for Supercharge.
+- Rapid: charges in roughly one-third of a second. Each pulse deals about 192 regular damage and 77 against durable parts, 15% below its base pulse damage.
+- Supercharge: charges in roughly 3.4 to 3.75 seconds. Deals 2,325 regular damage and 2,325 against durable parts. Hits one enemy without chaining or splitting, and cannot explode from overcharging.
+- Both modes: heavy armor penetration (level 7), 45-metre reach and the original Arc Thrower sounds.
+
+**Additional values explained**
+
+- Rapid charge thresholds, rounded: 0.31, 0.34 and 0.37 seconds. Supercharge thresholds: 3.4, 3.5 and 3.75 seconds.
+- Rapid base pulse damage is 226 regular and 90 against durable parts. After its 15% reduction, this is about 192.1 and 76.5.
+
+</details>
+
+### ARC-12 Blitzer
+
+Sets damage to 100, range to 30 metres and fire rate to 80 rounds per minute.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Damage: 100 regular and 45 against durable parts.
+- Arc reach: 30 metres. Fire rate: 80 rounds per minute.
+
+</details>
+
+### CQC-20 Breaching Hammer
+
+Gives direct hits and both blast areas penetration level 7, with 21 ammo refills.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Armor penetration: level 7 for the direct hit, smaller blast and larger blast.
+- Ammo supply counts: 21 at the start, 21 from resupply and 21 maximum.
+
+</details>
+
+### PLAS-39 Accelerator Rifle
+
+A precise 21-round plasma rifle with quick single shots and a charged three-round burst.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Magazine: 21 rounds.
+- Semi: fires a single shot with almost no charge delay. Base fire rate is 200 rounds per minute; the normal fire-rate modifier can make the interval a little longer.
+- Burst: charges for 0.45 seconds, then fires three rounds about 0.12 seconds apart. Use the left-side Weapon Functions selector to switch modes.
+- Armor penetration: level 4 for both the direct hit and explosion. Stagger strength: 25.
+- Recoil movement and camera kick: setting 2 in each direction. Aim sway: setting 0.4. Spread: setting 0.3 in each direction; lower values mean a steadier aim and tighter grouping.
+- Explosion outer damage radius and shockwave radius: 2.5 metres. Original firing sounds are retained.
+
+**Additional values explained**
+
+- Semi minimum charge is 0.01 seconds. Base time between shots is 0.30 seconds, or about 0.33 seconds with the supported normal fire-rate modifier. Burst minimum charge is 0.45 seconds.
+
+</details>
+
+### P-34 Breacher
+
+Resupply provides 2 magazines.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Magazines received from resupply: 2.
+
+</details>
+
+### S-11 Speargun
+
+More spare ammunition and a handling rating of 40.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Spare magazines: 16 at the start, 10 from resupply and 20 maximum.
+- Handling rating: 40.
+
+</details>
+
+### APW-1 Anti-Materiel Rifle
+
+Sets the weapon handling rating to 40.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Handling rating: 40. This is the ergonomics stat that controls how readily the weapon follows your aim.
+
+</details>
+
+### 40-K Meltagun
+
+Sets the weapon handling rating to 40.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Handling rating: 40. This is the ergonomics stat that controls how readily the weapon follows your aim.
+
+</details>
+
+### A/GM-17 Gas Mortar Sentry
+
+Gives the sentry 600 health.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Sentry health: 600.
+
+</details>
+
+### RS-422 Railgun
+
+Sets damage against durable enemy parts to 240.
+
+<details>
+<summary>All changes and stats</summary>
+
+- Damage against durable parts: 240.
+
+</details>
 
 ## Shared effects
 
@@ -72,7 +437,13 @@ Requires Helldivers 2 Steam build 25480438 and Bingus Shared Loader v19.
 - **AC-8:** choose APHET or FLAK in the stock Weapon Functions selector.
 - **ARC-3:** hold R and choose Auto/Rapid or Semi/Supercharge.
 - **Scorcher:** select Auto in Weapon Functions for continuous fire.
-- **PLAS-39:** hold R and use the left-side Weapon Functions selector. Semi fires one round with a 0.01-second minimum charge and a base 0.30-second interval; the native fire-rate modifier can increase that interval to approximately 0.333 seconds. Burst fires three rounds spaced 0.12 seconds apart with a 0.45-second minimum charge. Both modes keep normal firing audio and the game's fire-rate modifier.
+- **PLAS-39:** hold R and use the left-side Weapon Functions selector. Semi is the quick single shot; Burst charges for about half a second and fires three rounds. Full timings are listed above.
+
+## Changes in v2.2.1
+
+- Clearer descriptions for all 24 mods in this README and Arsenal.
+- Short summaries, explained stats and rounded timings make it easier to compare weapons.
+- All weapon and equipment settings stay the same as v2.2.0.
 
 ## Changes in v2.2.0
 
@@ -98,7 +469,7 @@ Requires Helldivers 2 Steam build 25480438 and Bingus Shared Loader v19.
 
 
 - Restores VG-70 Variable damage in Auto, Volley and Total.
-- Auto deals 110/29 at 550 RPM, 90/24 at 750 RPM and 75/20 at 1,000 RPM.
-- Volley deals 40/11 per bullet; Total deals 28/8 per bullet.
-- All Variable modes use AP3 medium penetration. Total changes from AP4 to AP3.
+- Auto at 550 rounds per minute deals 110 regular damage and 29 against durable parts; at 750, it deals 90 and 24; at 1,000, it deals 75 and 20.
+- Volley deals 40 regular damage and 11 against durable parts per bullet. Total deals 28 and 8.
+- All Variable modes have medium armor penetration (level 3). Total changes from level 4 to level 3.
 - Keeps the 23 independent mod switches and One True Flag's 29 damage presets.
