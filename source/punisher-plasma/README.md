@@ -19,12 +19,6 @@ Shotgun mode fires nine explosive plasma pellets per trigger pull at 100 RPM, co
 
 Hold R to open Weapon Functions and select NORMAL or SHOTGUN using the left-side native selector. Normal mode has one spare magazine without Siege Ready; armor bonuses can add magazines. Shotgun ammunition is separate.
 
-Requires Bingus Shared Loader v18 or newer and Helldivers 2 Steam build 25480438. Use the modpack OR the individual packages; installing both duplicates addon resources. Replace previous Punisher test versions, deploy every Addon CPU/GPU/STREAM file and restart. Retained native storage is not safe to hot-unload.
+Requires Bingus Shared Loader v19 and Helldivers 2 Steam build 25480438. Use the modpack OR the individual packages; installing both duplicates addon resources. Replace previous Punisher test versions, deploy every Addon CPU/GPU/STREAM file and restart. Retained native storage is not safe to hot-unload.
 
 This mod repurposes the Loyalist projectile/explosion/damage profile and the One-Two grenade-launcher attachment. Their original behavior is affected. AR-11 Arbitrator, Scorcher AR and other pack weapons retain their existing settings.
-
-Keep the game focused during startup/loading. Switching from Chrome into the game during loading reproduced startup crashes in user testing; the cause is unresolved.
-
-## Validation
-
-The user accepted the finished weapon design. Offline checks verify the packaged profiles, radius/ammo edits, resource composition and preservation of native thread safety, refusal, rollback, protection restoration and retained allocation lifetime. The combined pack has no duplicate resource identities or conflicting packaged files in the checked inputs. Fresh combined-pack startup and gameplay have not been independently audited.

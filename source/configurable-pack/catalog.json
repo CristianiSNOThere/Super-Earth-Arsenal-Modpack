@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "guid": "bf6cb345-73c0-5b9b-a16c-38d490155842",
-  "version": "2.1.3",
-  "baseline": "2.1.2",
+  "version": "2.2.0",
+  "baseline": "2.1.3",
   "packages": [
     {
       "index": 0,
@@ -616,6 +616,34 @@
       "includes": [
         "Addon"
       ]
+    },
+    {
+      "index": 23,
+      "id": "punisher-plasma",
+      "name": "SG-8P Punisher Plasma",
+      "option": "Enable SG-8P Punisher Plasma",
+      "description": "SG-8P Punisher Plasma gains Normal and Shotgun modes in the left-side Weapon Functions selector and a magazine-shaped undergrip. Normal fires at 60 RPM with 350 normal / 225 durable blast damage, 3.5/6.5/8 m full-damage/outer/shockwave radii and burning. It carries 17 loaded rounds and one spare 17-round magazine, has 50% less sway and a flatter projectile trajectory, and uses demolition 30, stagger 25 and push 30. Shotgun fires nine plasma pellets per round at 100 RPM; each pellet deals 25/9 normal/durable direct damage plus 25/9 blast damage, with AP3 at every angle, 0.5 m blast radii, and stagger/push 25. Shotgun has an independent 20 loaded rounds and 60 reserve rounds, 100/90 MRAD horizontal/vertical spread, and reloads twice as fast. The Loyalist and One-Two original behavior is affected by this option.",
+      "version": "1.0.0",
+      "guid": "404f1bf0-dfff-512c-b999-324672b62cca",
+      "origin": "Punisher-Plasma-StA11-White-Tone-Rev10-Test.zip",
+      "origin_sha256": "2C8EA29E61E0FBEDB604C9763634EF478A9368DA8C3DA5F1608C3E9AE6F1FF7C",
+      "files": {
+        "Addon/49f1972458f7ccec.patch_0": "0BD5D203A04A53F16554476BB1F226E13E40790C0364707E81A2985A017EF5A4",
+        "Addon/49f1972458f7ccec.patch_0.gpu_resources": "D06E96BFC6259986D1D607CADBA84E018346641D1DB9B01B80030384E739971B",
+        "Addon/49f1972458f7ccec.patch_0.stream": "EEA07DF1B3B85F672E9081B4B201D8E0A9843D801D26AF9C858FAE4CDBCE6384",
+        "Addon/9ba626afa44a3aa3.patch_0": "BE64F8CE5E1A835034B9CE667B847103E1835BA59D277CA0C5AE6E88107E6812",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_1": "6165486FA831C9F4DC52235C4B6A83BB8984B1976D463BB315B024D4839C7E1A",
+        "Addon/9ba626afa44a3aa3.patch_1.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_1.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/e16e0aa7740716a2.patch_0": "23E7F3726DC9231476AEFB2AA922F420A2F94157262C07C500CAC61237675003",
+        "Addon/e16e0aa7740716a2.patch_0.gpu_resources": "D06E96BFC6259986D1D607CADBA84E018346641D1DB9B01B80030384E739971B",
+        "Addon/e16e0aa7740716a2.patch_0.stream": "EEA07DF1B3B85F672E9081B4B201D8E0A9843D801D26AF9C858FAE4CDBCE6384"
+      },
+      "includes": [
+        "Addon"
+      ]
     }
   ],
   "flag_options": [
@@ -1063,9 +1091,9 @@
     }
   ],
   "flag_layout": "single-dropdown-under-flag-option",
-  "expected_resources": 36,
+  "expected_resources": 49,
   "changed_package_ids": [
-    "gas-overhaul"
+    "punisher-plasma"
   ],
-  "candidate_description": "Choose any of 23 weapon and equipment mods. Gas Overhaul works with Health Rework Casual (160 HP, 3 regeneration) and Normal (150 HP, 2.8 regeneration), preserving health, regeneration and stim settings. One True Flag offers 29 damage presets."
+  "candidate_description": "Choose 24 independent weapon and equipment mods, now including dual-mode SG-8P Punisher Plasma. One True Flag offers 29 damage presets."
 }

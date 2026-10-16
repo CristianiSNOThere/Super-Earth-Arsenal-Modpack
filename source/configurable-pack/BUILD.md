@@ -1,6 +1,6 @@
-# Selectable pack v2.1.3 release source
+# Selectable pack v2.2.0 source
 
-Current set: 23 independent switches and One True Flag's 29 damage presets,
+Current source set: 24 independent switches and One True Flag's 29 damage presets,
 defaulting to 300 normal / 150 durable. Stable pack GUID:
 `bf6cb345-73c0-5b9b-a16c-38d490155842`.
 
@@ -14,7 +14,7 @@ Canonical readable sources are under source/, including vg70-variable/.
 From the HD2 Mods workspace root:
 
 ```powershell
-python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/build.py --release --incremental --output work/super-earth-arsenal-modpack-repo/Super-Earth-Arsenal-Modpack-v2.1.3.zip --evidence work/release-health-normal-20261016/pack
+python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/build.py --release --incremental --output work/super-earth-arsenal-modpack-repo/Super-Earth-Arsenal-Modpack-v2.2.0.zip --evidence work/release-punisher-pack-20261016/pack
 ```
 
 Outputs are immutable; different bytes at an existing path are refused. Retain
@@ -22,8 +22,9 @@ all older releases/ZIPs. Use tagged historical catalogs to reproduce old version
 Do not run old one-time prepare/import builders against the current source.
 
 The builder checks the full resource inventory, pure-Lua archives and dependency
-closure per option. The base union has 36 resources. A full selection with Flag
-uses 26 main archives and 52 companions. Shared identical resources and complete
+closure per option, contiguous FileData type groups, and all CPU/GPU/STREAM
+payloads. The base union has 49 resources. A full selection with Flag
+uses 30 main archives and 60 companions. Shared identical resources and complete
 option closures establish static union compatibility; gameplay is a separate gate.
 
 ## Variable v0.1.1 delta and accepted evidence
@@ -61,13 +62,64 @@ reuse exact baselines and broaden only for concrete affected paths. Numeric
 profile IDs require native ownership checks and redirected-registry fixtures.
 
 Existing named option selections survive upgrades; review selections on import.
-Enable-all off initially selects the first option; enable-all on selects all23
+Enable-all off initially selects the first option; enable-all on selects all24
 and the first Flag preset. Disabled Flag suppresses its preset. Stable names,
 GUID, order and Include paths remain unchanged.
 
 Gas/Tenderizer share15-second Acid Storm duration, including weather. AC-8/Epoch
 share animation resources; AC-8/JAR-5 share a FLAK explosion. Keep the former
 individual repository's legacy releases and all pack release history intact.
+
+## v2.2.0 Punisher addition — accepted Rev3
+
+Append Punisher as option24, keeping all23 existing option definitions and162
+baseline payload files exact. Readable accepted runtime and its source/planner/
+registry tests are under source/punisher-plasma/. All12 nonimplementation resource
+payloads match the user-accepted Rev10 individual. Only prepare/start scheduling
+and exact post-companion validation change in the implementation Lua. Its two Lua resources use one pure-Lua
+archive; the unchanged boot/loadout resource uses a separate non-Lua archive.
+Both visual triplets remain byte-exact Rev10. No gameplay/native changes.
+
+The user accepts Rev10 colour and both modes. Offline evidence under workspace
+work/punisher-pack-integration-20261016/rev3/:58 actual source/native/prepare/registry/startup
+cases, four actual startup-control cases (alone/full, forward/reverse; patch
+adapters mocked), eight actual isolated Arsenal import/deploy/purge cases,
+preferences/migration/profile-library/occupied-slot checks and full inventory.
+Source helper execution occurs only in disposable fixture-owned allocations.
+These fixture tests make no game-process or real deployment/settings changes.
+Rev1's actual full-pack equipped launch failed before ship because source
+installation was delayed behind companion readiness. Rev3 completes the guarded
+source install first, retains bounded named waits for companion completion,
+then revalidates epoch/registry/source/protected records with exact known peer
+variants. Saved code and the dump identify game.dll+78861A with invalidFFFFFFFF
+child-owner lookup. Native helper, guards, tuning, visuals and old23 payloads
+remain intact. Its scheduling fixtures cover early7s/late30s initialization,
+failed/never-ready peers and unknown/foreign/source/epoch drift after installation.
+
+Run targeted tests from the workspace root:
+
+```powershell
+python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/test_punisher.py outputs/punisher-pack-20261016/Super-Earth-Arsenal-Modpack-v2.2.0-Punisher-Rev3-Test.zip work/punisher-pack-integration-20261016/rev3/integration
+python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/test_runtime.py --incremental --focus-id punisher-plasma --evidence work/punisher-pack-integration-20261016/rev3/runtime
+node work/super-earth-arsenal-modpack-repo/tools/configurable-pack/test_punisher_arsenal.cjs work/configurable-pack-20261015/arsenal-backend work/punisher-pack-integration-20261016/rev3/arsenal outputs/punisher-pack-20261016/Super-Earth-Arsenal-Modpack-v2.2.0-Punisher-Rev3-Test.zip
+```
+
+Fresh full24 Rev3 startup20:51:22local passes63loaded0failed/allselected modules,
+13dedicatedApplied,33common values/0refused0errors,14Scorcher values,PunisherReady
+and90exact imported/deployed files. Evidence:
+work/punisher-pack-integration-20261016/launch-20261016T185252Z/report.json.
+This first launch used another primary. Unchanged Rev3 equipped restart20:54:07
+also passes63loaded0failed/13Applied/33common14Scorcher/all90exact with native
+child20loaded60spares. Evidence: launch-20261016T185537Z/. User confirms ship and
+both modes firing/reloading in a mission; required release gates are complete.
+Release ZIP differs from accepted Rev3 only in README.md, adding the prominent
+weapon/stat-editor compatibility warning requested by the user. All gameplay
+files and the complete manifest are byte-exact Rev3; no new gameplay gate is
+needed for this documentation-only change. Release SHA256:
+9069B423C2118D9EF080123BE95284C04DFE4C4446C745FB1B6ACFA9C3434AD7.
+Documentation delta/build/publication evidence: work/release-punisher-pack-20261016/.
+Standalone remains disabled with the pack option. Switch primary before changing
+Punisher packages. Preserve immutable candidates and all release history.
 
 ## v2.1.2 health compatibility
 

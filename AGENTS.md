@@ -1,5 +1,31 @@
 # Compatibility rule for future mods
 
+## Accepted v2.2.0 Punisher addition
+
+Rev1 failed before ship with Punisher equipped: game.dll+78861A used an invalid
+FFFFFFFF child-owner lookup while source installation waited for companions.
+Rev3 installs the fully guarded source before companion completion, then waits
+with the same named/bounded peer checks and revalidates exact protected variants.
+No native helper, gameplay data, visual resources or old23 payloads change.
+58 focused cases and eight isolated Arsenal cases pass. Fresh full24 Rev3 startup
+20:51:22 local passes63loaded/0failed,13Applied,33common/14Scorcher values,
+PunisherReady and all90files exact. Equipped restart20:54:07 also passes the same
+full-set gates, with child20loaded/60spares. User explicitly confirms ship and
+both mission modes fire/reload correctly and authorizes publication after gates.
+Evidence: work/punisher-pack-integration-20261016/launch-20261016T185252Z/ and
+launch-20261016T185537Z/. Release differs from accepted Rev3 only in README.md,
+which adds the user-requested prominent weapon/stat-editor compatibility warning.
+Every gameplay file and the manifest remain byte-exact Rev3.
+
+Source contains24 options. Preserve the separate offline, startup and user
+gameplay evidence; a selected-set startup is not universal gameplay proof.
+Workspace handoff: work/punisher-pack-integration-20261016/continuation.md.
+Keep all old23 option definitions and162 payload files exact. Punisher Lua and
+boot/loadout resources are separate archives;12nonimplementation resource payloads
+match acceptedRev10; the initialization change is described above. FileData type groups must remain contiguous, counts/indices exact,
+and resource collision checks include CPU/GPU/STREAM. The native constructor
+overflows on interleaved types. Preserve the Rev9 fix and its regression fixture.
+
 ## Incremental regression rule
 
 For future selectable-pack changes, follow
@@ -11,9 +37,10 @@ resource/dependency audits, exact guards/rollback and fresh startup/gameplay
 gates. Build individual ZIPs only when separately maintaining legacy individual
 releases; a selectable-pack-only change does not require 22 individual builds.
 
-## Current release: selectable pack v2.1.3 (2026-10-16)
+## Current release: selectable pack v2.2.0 (2026-10-16)
 
-Current set: 23 independent mod switches and 29 Flag presets. Variable v0.1.1
+Current set:24 independent mod switches including Punisher Plasma and29Flag presets.
+The previous v2.1.3 baseline has23 switches. Variable v0.1.1
 fixes redirected damage profiles and uses AP3 in Auto, Volley and Total.
 Canonical Variable source is under `source/vg70-variable/`. Keep private numeric
 ID ownership checks against native lookups as well as serialized tables; refuse

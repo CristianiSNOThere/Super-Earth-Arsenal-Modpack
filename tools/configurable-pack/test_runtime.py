@@ -107,6 +107,10 @@ def main():
     controllers = {}
     metadata = {}
     for p in packets:
+        # Punisher's source/native installer has a distinct six-argument
+        # controller, exercised explicitly below and by its transaction fixture.
+        if p['id']=='punisher-plasma':
+            continue
         for key in p['lua']:
             src = sources.get(key, '')
             if not re.search(r'local start\s*=\s*\(function\(\)', src) and 'local function start(make_api)' not in src:
@@ -146,7 +150,7 @@ def main():
     variable_gate = (b.REPO / 'source/vg70-variable/compatibility-profile.lua').read_text()
     tenderizer_profile = (b.REPO / 'source/tenderizer-armor/profile.lua').read_text()
     n=len(packets)
-    assert n==(23 if args.incremental else 22)
+    assert n==(len(catalog['packages']) if args.incremental else 22)
     orders = [list(range(1,n+1)), list(range(n,0,-1))]
     if not args.incremental:
         for seed in (1107,2911):
@@ -165,6 +169,14 @@ def main():
     script += 'local report_path=' + literal((evidence / 'runtime-counts.json').as_posix()) + '\n'
     script += 'local incremental='+literal(args.incremental)+'\n'
     script += 'local focus_id='+literal(args.focus_id)+'\n'
+    punisher=next((p for p in packets if p['id']=='punisher-plasma'),None)
+    punisher_setup=''
+    if punisher:
+        source=next(sources[key] for key in punisher['lua'] if len(sources.get(key,''))>1000)
+        tail='start(make_api,bridge,prepare,D,modules,helper)'
+        assert source.rstrip().endswith(tail)
+        punisher_setup=source.rstrip()[:-len(tail)]+'\nreturn {start=start,D=D}\n'
+    script+='local punisher_setup='+literal(punisher_setup)+'\n'
     script += r'''
 local bit=require('bit')
 local discovery=dofile(discovery_path)
@@ -230,6 +242,33 @@ for _,mask in ipairs(masks)do
   for _,i in ipairs(order)do if bit.band(mask,2^(i-1))~=0 then
    local id=packets[i].id
    if profile_chunks[id]then execute(profile_chunks[id],env,'@shipped-profile-'..id);expected_profiles=expected_profiles+1 end
+   if id=='punisher-plasma'then
+    local shipped=execute(punisher_setup,env,'@shipped-punisher-definitions')
+    local calls=0
+    local api={now=function()return now end,identity=function(p)return p end,
+     retain=function()end,epoch=function()return 'fixture'end,
+     read=function(p,n)return string.rep('\0',n)end,pointer=function()return nil end}
+    local function basic()
+     local a=make_api();a.byte_pointer=function()return 0x10000000 end;return a
+    end
+    local function prepare()
+     for _,name in ipairs({'ScorcherARRuntime','ArsenalPreset01Runtime'})do
+      local peer=rawget(env,name)
+      if peer and peer.phase~='ready'then error('Native data unavailable: waiting for '..name)end
+     end
+     return {snapshot={stock={}},protected={}}
+    end
+    local fixture={profile=function()return {}end,plan=function()return {epoch='fixture',guards={},rows={}}end,
+     runtime={start=function()calls=calls+1;controller_calls=controller_calls+1;
+      return {registry={slots={}},owned={shake_address=1,shake_bytes='x'}}end},
+     registry={check=function()return true end},
+     registration=function(_,plan)
+      plan.rows={{role='child_rounds',address=2,after=string.rep('\0',4)}}
+      return {installed=true,install=function()return true end}
+     end}
+    shipped.start(basic,function()return api end,prepare,shipped.D,fixture,{})
+    adapters[#adapters+1]={id=id,meta={global_name='PunisherPlasmaFirstTest'},calls=function()return calls end}
+   end
    if controllers[id]then
     local meta=metadata[id]
     local calls=0
@@ -274,7 +313,9 @@ for _,mask in ipairs(masks)do
   profiles=profiles+registered
   for _,adapter in ipairs(adapters)do
    local state=rawget(env,adapter.meta.global_name)
-   if adapter.id=='plas-39-accelerator-rifle'then
+   if adapter.id=='punisher-plasma'then
+    assert(state and state.source_installed and not state.stopped,state and state.status)
+   elseif adapter.id=='plas-39-accelerator-rifle'then
     assert(state and state.status=='Native mode synchronized; left-side selector active',state and state.status)
    else assert(state and state.active,adapter.id..': '..tostring(state and state.status))end
    assert(adapter.calls()==1,adapter.id..' initialized more/less than once')

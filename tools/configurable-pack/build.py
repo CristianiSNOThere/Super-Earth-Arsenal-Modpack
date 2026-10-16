@@ -12,6 +12,7 @@ import re
 import struct
 import sys
 import zipfile
+from collections import Counter
 
 REPO = Path(__file__).resolve().parents[2]
 ROOT = REPO.parents[1]
@@ -46,6 +47,14 @@ def resources(body):
     assert struct.unpack_from('<I', body)[0] == 0xF0000011
     types, count = struct.unpack_from('<II', body, 4)
     end = 72 + types * 32 + count * 80
+    declared = [struct.unpack_from('<IIQIIII',body,72+i*32) for i in range(types)]
+    rows = [struct.unpack_from('<7Q6I',body,72+types*32+i*80) for i in range(count)]
+    assert Counter(r[1] for r in rows)==Counter({t[2]:t[3] for t in declared}), 'Resource type count mismatch'
+    assert [r[12] for r in rows]==list(range(count)), 'Resource row indices differ'
+    runs=[]
+    for r in rows:
+        if not runs or runs[-1]!=r[1]:runs.append(r[1])
+    assert len(runs)==types and len(set(runs))==types, 'Non-contiguous resource type groups can overflow native loader metadata'
     result = {}
     for i in range(count):
         pos = 72 + types * 32 + i * 80
@@ -117,8 +126,8 @@ def main():
     packages = catalog['packages']
     if args.incremental:
         assert args.output and args.evidence and not args.import_baseline
-        assert (catalog['baseline'],catalog['version'])in {('2.0.0','2.1.0'),('2.1.0','2.1.1'),('2.1.1','2.1.2'),('2.1.2','2.1.3')}
-        assert len(packages)==23 and catalog['expected_resources']==36
+        assert (catalog['baseline'],catalog['version'])in {('2.0.0','2.1.0'),('2.1.0','2.1.1'),('2.1.1','2.1.2'),('2.1.2','2.1.3'),('2.1.3','2.2.0')}
+        assert (len(packages),catalog['expected_resources'])==((24,49) if catalog['version']=='2.2.0' else (23,36))
     else:
         assert not args.output and not args.evidence
         assert catalog['version']=='2.0.0', 'Use an explicit new incremental candidate for a changed catalog'
@@ -126,6 +135,7 @@ def main():
     pack_version=catalog['version']
     files = {}
     inventory = {}
+    backing_inventory = {}
     owners = {}
     module_owners = {}
     option_resource_bits = []
@@ -160,6 +170,19 @@ def main():
                 continue
             for key, payload in entries.items():
                 assert key not in inventory or inventory[key] == payload, 'Differing shared resource'
+                # CPU equality alone cannot detect texture/mesh GPU or STREAM
+                # collisions. Validate every payload part for each resource key.
+                nt,nf=struct.unpack_from('<II',body,4)
+                row=next(struct.unpack_from('<7Q6I',body,72+nt*32+i*80) for i in range(nf)
+                         if struct.unpack_from('<QQ',body,72+nt*32+i*80)==key)
+                companions=[]
+                for suffix,offset,size in (('.gpu_resources',4,9),('.stream',3,8)):
+                    companion=(CANON/'payloads'/p['id']/(relative+suffix)).read_bytes()
+                    assert row[size]==0 or row[offset]+row[size]<=len(companion), 'Companion payload exceeds backing'
+                    companions.append(companion[row[offset]:row[offset]+row[size]])
+                parts=(payload,*companions)
+                assert key not in backing_inventory or backing_inventory[key]==parts, 'Differing CPU/GPU/STREAM resource payload'
+                backing_inventory[key]=parts
                 inventory[key] = payload
                 provided.add(key)
                 owners.setdefault(key, []).append(p['id'])
@@ -186,7 +209,10 @@ def main():
                             Include=['Mods/' + p['id'] + '/' + d for d in p['includes']]))
     assert len(inventory) == catalog.get('expected_resources',34)
     assert (0x8CB98E0A56C28528, LUA) not in inventory
-    assert not any(kind == 0xAD9C6D9ED1E5E77A for key, kind in inventory)
+    boot_keys={key for key,kind in inventory if kind==0xAD9C6D9ED1E5E77A}
+    assert boot_keys==({0x9BA626AFA44A3AA3} if any(p['id']=='punisher-plasma' for p in packages) else set())
+    for key in boot_keys:
+        assert owners[key,0xAD9C6D9ED1E5E77A]==['punisher-plasma'], 'Foreign boot package owner'
     flag = next(p for p in packages if p['id'] == 'one-true-flag')
     flag_option=next(o for o in options if o['Name']==flag['option'])
     flag_option['Description']='Choose normal damage and half or equal durable damage in one dropdown. Default: 300 normal / 150 durable.'
@@ -292,11 +318,12 @@ def main():
                   differing_payload_collisions=0, unchanged_accepted_payloads=True,
                   dependency_check='Each option provides its full closure; shared overlaps byte-identical',
                   pure_lua_archives=True, root_patch_files=0,
-                  removed_pack_only_resources=['8CB98E0A56C28528', '9BA626AFA44A3AA3:AD9C6D9ED1E5E77A'],
+                  removed_pack_only_resources=['8CB98E0A56C28528']+([] if boot_keys else ['9BA626AFA44A3AA3:AD9C6D9ED1E5E77A']),
                   selection_dependencies=('Every option closure checked against referenced Lua resource keys; Tenderizer Gas peer is optional'if args.incremental else 'All masks checked against referenced Lua resource keys; Tenderizer Gas peer is optional'),
                   package_catalog=catalog_detail,
                   modules=module_owners,
-                  resources_detail=[dict(key=f'{k:016X}', kind=f'{t:016X}', sha256=sha(v), owners=owners[k,t])
+                  resources_detail=[dict(key=f'{k:016X}', kind=f'{t:016X}', sha256=sha(v),
+                                        gpu_sha256=sha(backing_inventory[k,t][1]),stream_sha256=sha(backing_inventory[k,t][2]),owners=owners[k,t])
                                     for (k,t),v in sorted(inventory.items())])
     (evidence / ('composition.json'if args.incremental else ('release-composition-v2.0.0.json'if args.release else 'composition-rev3.json'))).write_text(json.dumps(detail, indent=2) + '\n')
     print(json.dumps({k:v for k,v in detail.items() if k not in ('resources_detail','modules','package_catalog','flag_dropdown_presets')}, indent=2))

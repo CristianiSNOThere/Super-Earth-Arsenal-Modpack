@@ -1,12 +1,17 @@
-# Super Earth Arsenal Mod Pack v2.1.3
+# Super Earth Arsenal Mod Pack v2.2.0
 
-Choose the weapon and equipment changes you want from one package. Each of the **23 mods has its own switch in Arsenal**: enable a single weapon, a smaller selection, or the complete set.
+## 🚨 COMPATIBILITY WARNING — READ BEFORE PLAYING 🚨
+
+> [!CAUTION]
+> **IN CASE OF CRASHES OR MODS NOT LOADING PROPERLY, REMOVE ANY OTHER WEAPON MODS OR STAT EDITOR MODS.**
+
+Choose the weapon and equipment changes you want from one package. Each of the **24 mods has its own switch in Arsenal**: enable a single weapon, a smaller selection, or the complete set.
 
 **One True Flag has one damage dropdown with 29 presets**, defaulting to **300 normal / 150 durable**. Its settings are inside the Flag option.
 
-**Updated in v2.1.3:** Gas Overhaul works alongside **Health Rework Normal (150 HP, 2.8 regeneration)** and **Casual (160 HP, 3 regeneration)**, keeping the selected preset's health, regeneration and stim settings.
+**Added in v2.2.0:** SG-8P Punisher Plasma with Normal and Shotgun modes, separate ammunition pools and a magazine-shaped undergrip.
 
-[Download v2.1.3](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v2.1.3/Super-Earth-Arsenal-Modpack-v2.1.3.zip) | [All releases](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases) | [Standalone runtime projects](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download v2.2.0](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v2.2.0/Super-Earth-Arsenal-Modpack-v2.2.0.zip) | [All releases](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases) | [Standalone runtime projects](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Choose your mods
 
@@ -16,12 +21,13 @@ Choose the weapon and equipment changes you want from one package. Each of the *
 - When importing or upgrading from v1, review all switches before deploying. Arsenal's enable-all preference can select the complete set automatically; with that preference off, Arsenal initially selects the first mod option.
 - Use this package in place of the matching individual weapon mods or older Arsenal modpacks.
 
-Punisher Plasma is not included. It remains a separate project in the [standalone runtime repository](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack).
+For Punisher Plasma, switch to another primary before disabling, replacing or removing its option or the pack. Disable its separate individual mod when using the pack option.
 
 ## Gameplay changes
 
 | Mod | Gameplay settings |
 |---|---|
+| SG-8P Punisher Plasma | SG-8P Punisher Plasma gains Normal and Shotgun modes in the left-side Weapon Functions selector and a magazine-shaped undergrip. Normal fires at 60 RPM with 350 normal / 225 durable blast damage, 3.5/6.5/8 m full-damage/outer/shockwave radii and burning. It carries 17 loaded rounds and one spare 17-round magazine, has 50% less sway and a flatter projectile trajectory, and uses demolition 30, stagger 25 and push 30. Shotgun fires nine plasma pellets per round at 100 RPM; each pellet deals 25/9 normal/durable direct damage plus 25/9 blast damage, with AP3 at every angle, 0.5 m blast radii, and stagger/push 25. Shotgun has an independent 20 loaded rounds and 60 reserve rounds, 100/90 MRAD horizontal/vertical spread, and reloads twice as fast. The Loyalist and One-Two original behavior is affected by this option. |
 | BR-14 Adjudicator Heavy Battle Rifle | BR-14 Adjudicator becomes a heavy battle rifle: normal/durable damage rises from 95/23 to 115/30, stagger force from 15 to 25, and push force becomes 10 instead of 12. Magazine capacity increases from 30 to 48 rounds. Fire rate falls from 550 to 480 RPM. Bullet velocity rises from 820 to 1,000 m/s, and speed loss per penetration falls from 25% to 15%. Horizontal recoil drift becomes 16.5 instead of 17, vertical recoil drift rises from 35 to 57.5, and base sway falls from 1 to 0.6. Existing armor penetration, recoil climb, spread, drag and spare-magazine counts are retained. |
 | Tenderizer Armor Softener | AR-61 Tenderizer magazine capacity increases from 35 to 70 rounds and bullet launch speed from 820 to 1,000 m/s. Direct and slight-angle armor penetration increase from AP2 to AP3; the other angle settings remain unchanged. Bullets apply Acid Storm to temporarily reduce enemy armor effectiveness for 15 seconds. Base sway is set to 0.9. Normal/durable damage is 90/30, with the existing 600/850 RPM settings, recoil and spread. The shared Acid Storm duration also affects its weather effect after exposure ends. |
 | Sickle Laser AR | LAS-16 Sickle deals 70 normal and 10 durable damage and generates 50% less heat per shot, from 1.15 to 0.575. LAS-17 Double-Edge Sickle deals 65/10 normal/durable damage cold and warm, then 83/14 at hot and maximum heat. Both weapons have at least AP3 penetration; Double-Edge reaches AP4 at maximum heat. Both Sickles have a base fire rate of 700 RPM, zero horizontal and vertical spread, and 2,000 m/s projectiles at every heat tier with no distance damage fall-off. Double-Edge direct heat self-damage is reduced by 25%. Its heat buildup, cooling and maximum-heat ignition remain unchanged; general fire damage is unchanged. |
@@ -61,10 +67,18 @@ Requires Helldivers 2 Steam build 25480438 and Bingus Shared Loader v19.
 
 ## Weapon selectors
 
+- **Punisher Plasma:** hold R and use the left-side Normal / Shotgun selector.
+
 - **AC-8:** choose APHET or FLAK in the stock Weapon Functions selector.
 - **ARC-3:** hold R and choose Auto/Rapid or Semi/Supercharge.
 - **Scorcher:** select Auto in Weapon Functions for continuous fire.
 - **PLAS-39:** hold R and use the left-side Weapon Functions selector. Semi fires one round with a 0.01-second minimum charge and a base 0.30-second interval; the native fire-rate modifier can increase that interval to approximately 0.333 seconds. Burst fires three rounds spaced 0.12 seconds apart with a 0.45-second minimum charge. Both modes keep normal firing audio and the game's fire-rate modifier.
+
+## Changes in v2.2.0
+
+- Adds SG-8P Punisher Plasma as the 24th independent option.
+- Switch between Normal plasma blasts and a nine-pellet Shotgun mode, each with its own ammunition supply.
+- Adds the magazine-shaped undergrip with a matching white finish.
 
 ## Changes in v2.1.3
 

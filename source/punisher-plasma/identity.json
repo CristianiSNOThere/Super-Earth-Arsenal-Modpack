@@ -1,0 +1,19 @@
+{
+  "origin_sha256": "2C8EA29E61E0FBEDB604C9763634EF478A9368DA8C3DA5F1608C3E9AE6F1FF7C",
+  "package_guid": "404f1bf0-dfff-512c-b999-324672b62cca",
+  "resource_keys": [
+    "277CD8333685B69C:A14E8DFA2CD117E2",
+    "ED8FBEEDAAFFC494:A14E8DFA2CD117E2",
+    "9BA626AFA44A3AA3:AD9C6D9ED1E5E77A"
+  ],
+  "registered_lua_payloads_exact_origin": false,
+  "boot_package_payload_exact_origin": true,
+  "visual_six_files_exact_origin": true,
+  "lua_and_boot_separate_archives": true,
+  "module": "mods/codex/punisher_plasma_first_test",
+  "global": "PunisherPlasmaFirstTest",
+  "changed_from_origin": [
+    "prepare/start initialization scheduling and exact post-companion validation"
+  ],
+  "initialization": "source-before-companions-v2"
+}

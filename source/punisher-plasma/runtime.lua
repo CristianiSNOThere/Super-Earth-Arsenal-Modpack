@@ -1180,13 +1180,9 @@ end
 end)()
 local prepare=(function()
 return function(api,game,D)
- for _,name in ipairs({'ScorcherARRuntime','ArsenalPreset01Runtime'})do
-  local peer=rawget(_G,name)
-  if peer and peer.phase~='ready'then
-   assert(peer.phase~='gave_up','Installed companion failed: '..name)
-   error('Native data unavailable: waiting for '..name)
-  end
- end
+ -- Equipment creation needs these source profiles before a saved underbarrel
+ -- loadout is restored. Exact source/registry validation below is the gate;
+ -- optional companion completion is checked AFTER source installation.
  local function read(p,n)local s=api.read(p,n);assert(s and #s==n,'Native data unavailable');return s end
  local function ptr(p)return assert(api.pointer(read(p,8),0),'Native pointer unavailable')end
  local function u32(s,o)local a,b,c,d=s:byte(o+1,o+4);return a+b*256+c*65536+d*16777216 end
@@ -1237,7 +1233,14 @@ return function(api,game,D)
    assert(api.data_access(array,#g.array)and read(array,#g.array)==g.array,'Explosion array changed')
   else assert(accept(bytes,g),'Source record changed: '..name)end
   records[name]={address=address,bytes=bytes,slot=slot,id=g.id}
-  if g.protect then protected[#protected+1]={name=name,address=address,bytes=bytes}end
+  if g.protect then
+   local variants={}
+   for _,candidate in ipairs(g.accepted)do
+    if g.kind=='explosion'then candidate=candidate:sub(1,40)..bytes:sub(41,48)..candidate:sub(49)end
+    variants[#variants+1]=candidate
+   end
+   protected[#protected+1]={name=name,address=address,bytes=bytes,accepted=variants}
+  end
  end
  protected[#protected+1]={name='stock_magazine',address=magazine_address,bytes=stock.magazine}
  local c={route='user-selected-loyalist-donor',epoch=epoch,ids={projectile=171,damage=305,explosion=355},
@@ -1266,7 +1269,6 @@ return function(api,game,D)
   tuning=D.tuning,next_tuning=D.next_tuning,sway_factor=D.sway_factor,normal_single_fast=D.normal_single_fast,normal_two_shot=D.normal_two_shot}
  return c
 end
-
 end)()
 local start=(function()
 -- Source installation before normal native equipment creation. No manual
@@ -1286,7 +1288,10 @@ return function(make_api,bridge,prepare,D,modules,helper)
   end)
  end
  local worker=coroutine.create(function()
-  local basic=make_api();basic.checkpoint=function()if os.clock()>=deadline then coroutine.yield()end end
+  local basic=make_api();basic.checkpoint=function(stage)
+   state.status=stage or 'Checking game version'
+   if os.clock()>=deadline then coroutine.yield()end
+  end
   local exe=assert(basic.module(nil),'Engine unavailable');local module=assert(basic.module('game.dll'),'Game unavailable')
   assert(basic.module_hash(exe)==D.exe_hash and basic.module_hash(module)==D.game_hash,'Unsupported game build')
   local game=basic.byte_pointer(module);local api=bridge(make_api,game);local c
@@ -1295,6 +1300,7 @@ return function(make_api,bridge,prepare,D,modules,helper)
   -- last owner of native projectile/guard/unwind storage after a refusal.
   state.retained[#state.retained+1]={api=api,basic=basic,D=D,modules=modules,helper=helper}
   for attempt=1,240 do
+   state.status='Preparing exact source profiles; attempt '..attempt
    local ok,result=pcall(prepare,api,game,D)
    if ok then c=result;break end
    local why=tostring(result);assert(why:find('unavailable',1,true) and attempt<240,why)
@@ -1329,6 +1335,34 @@ return function(make_api,bridge,prepare,D,modules,helper)
   end
   assert(rounds,'Missing child Rounds profile')
   state.source_installed=true
+  -- Waiting here must never delay the source changes needed by native
+  -- equipment restoration. No more writes occur while companions initialize.
+  for attempt=1,240 do
+   local blocker
+   for _,name in ipairs({'ScorcherARRuntime','ArsenalPreset01Runtime'})do
+    local peer=rawget(_G,name)
+    if peer and peer.phase~='ready'then
+     assert(peer.phase~='gave_up','Installed companion failed: '..name)
+     blocker=blocker or name
+    end
+   end
+   if not blocker then break end
+   state.status='Source installed; waiting for '..blocker;log()
+   assert(attempt<240,'Installed companion unavailable: '..blocker)
+   local when=api.now()+1000;repeat coroutine.yield()until api.now()>=when
+  end
+  assert(api.epoch()==plan.epoch,'Source epoch expired during companion initialization')
+  assert(modules.registry.check(api,run.registry),'Owned registry changed during companion initialization')
+  for _,r in ipairs(plan.rows)do assert(api.read(r.address,#r.after)==r.after,'Source profile changed: '..r.role)end
+  -- Scorcher can finish after us. Rebase read-only observation guards only
+  -- onto exact predeclared stock/published variants, retaining runtime pointers.
+  -- This never changes a companion record or relaxes the native install guards.
+  for _,g in ipairs(c.protected)do
+   local bytes=api.read(g.address,#g.bytes);local accepted=bytes==g.bytes
+   if not accepted then for _,candidate in ipairs(g.accepted or {})do if bytes==candidate then accepted=true;break end end end
+   assert(accepted,'Protected record changed during companion initialization: '..g.name)
+   g.bytes=bytes
+  end
   return {api=api,game=game,run=run,c=c,plan=plan,rounds=rounds}
  end)
  local function tick()
@@ -1380,6 +1414,5 @@ return function(make_api,bridge,prepare,D,modules,helper)
  end
  log();return state
 end
-
 end)()
 start(make_api,bridge,prepare,D,modules,helper)

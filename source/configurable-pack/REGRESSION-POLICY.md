@@ -47,6 +47,13 @@ require repeating old weapon combinations or a live memory capture for every mod
    preserve stable identities and keep Lua archives separate from animations.
    This full inventory check is inexpensive; it does not require enumerating
    every selection or launching every weapon.
+   Compare CPU, GPU and STREAM payloads, not CPU bytes alone. FileData records
+   must keep each resource type contiguous with exact type counts and row
+   indices. The native loader allocates NumTypes*40 bytes but starts another
+   group on each uncached type transition; interleaved records can overflow it.
+   Punisher's Rev8/Rev9 saved-native-code fixture is the regression case. A boot
+   package required by a mod must have an explicit owner/dependency closure in
+   a separate non-Lua archive; never relax the pure-Lua check to accommodate it.
 3. Exercise actual changed transactions in isolated memory: stock success,
    unknown data refusal, ownership checks, partial writes/readback, rollback and
    preservation of foreign changes. Reuse unchanged fixture results when their
@@ -59,6 +66,14 @@ require repeating old weapon combinations or a live memory capture for every mod
 - Test both startup orders for those interactions, absent/late/failed peers,
   and every supported peer state accepted by any changed validator. Include
   mixed peer states only where the validator actually combines their changes.
+- For source changes required before native equipment creation, exercise a
+  saved equipped loadout against realistically delayed companions. A whole-pack
+  readiness wait must not postpone those source changes past equipment restore.
+  Preserve exact source/ownership/absence/native-transaction guards. If peer
+  completion follows installation, retain bounded named waits and validate only
+  exact supported peer variants before observation; preserve unknown/foreign edits.
+  Punisher Rev1's pre-ship failure and Rev3's 7s/30s scheduling fixtures cover
+  this case. Immediate-ready startup adapters alone do not cover the deadline.
 - Run one combined full-pack configuration after the addition, using the
   existing startup-control/dependency fixtures. A new unrelated private key
   does not require retesting every pair or triple of old mods.
