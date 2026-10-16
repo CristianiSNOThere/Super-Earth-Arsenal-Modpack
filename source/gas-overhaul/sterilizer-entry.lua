@@ -538,14 +538,44 @@ local function validate_acid_status(api,address)
     return {address=address,size=ACID_STATUS_SIZE,source=s,writes={{offset=40,bytes=unhex('00007041'),write='protected'}}}
 end
 
+-- Exact health export 0182f499-7df9-4192-815c-8a26df0e419a, fingerprint
+-- 528db86c82f7bc91a8be. Recognize its complete eight-field health profile.
+-- Normalize only for validation; retain the actual bytes for transactions.
+local KNOWN_HEALTH_EXPORT={
+    {0,unhex('7d000000'),unhex('a0000000')},
+    {1856,unhex('23000000'),unhex('5b000000')},
+    {2408,unhex('23000000'),unhex('5b000000')},
+    {1304,unhex('3c000000'),unhex('9b000000')},
+    {4,unhex('00000000'),unhex('00004040')},
+    {768,unhex('0000c03f'),unhex('0000803f')},
+    {2960,unhex('2d000000'),unhex('75000000')},
+    {3512,unhex('2d000000'),unhex('75000000')},
+}
+local function supported_health_baseline(api,s)
+    if api.sha256(s)==HELLDIVER_HEALTH_SHA then return s end
+    local normalized=s
+    for _,field in ipairs(KNOWN_HEALTH_EXPORT) do
+        if s:sub(field[1]+1,field[1]+#field[3])~=field[3] then
+            return nil,'unsupported Helldiver health profile'
+        end
+        normalized=replace(normalized,field[1],field[2])
+    end
+    if api.sha256(normalized)~=HELLDIVER_HEALTH_SHA then
+        return nil,'Helldiver health record checksum mismatch'
+    end
+    return normalized
+end
+
 local function validate_helldiver_health(api,address)
     if not api.data_access(address,HELLDIVER_HEALTH_SIZE) then return nil,'Helldiver health record permissions unsupported' end
     if api.writable(address,HELLDIVER_HEALTH_SIZE) then return nil,'writable signature copy; not the read-only Helldiver health record' end
     local s=api.read(address,HELLDIVER_HEALTH_SIZE)
-    if not s or #s~=HELLDIVER_HEALTH_SIZE or s:sub(1,#HELLDIVER_HEALTH_SIGNATURE)~=HELLDIVER_HEALTH_SIGNATURE then
+    if not s or #s~=HELLDIVER_HEALTH_SIZE then return nil,'Helldiver health record size mismatch' end
+    local baseline,reason=supported_health_baseline(api,s)
+    if not baseline then return nil,reason end
+    if baseline:sub(1,#HELLDIVER_HEALTH_SIGNATURE)~=HELLDIVER_HEALTH_SIGNATURE then
         return nil,'Helldiver health record signature mismatch'
     end
-    if api.sha256(s)~=HELLDIVER_HEALTH_SHA then return nil,'Helldiver health record checksum mismatch' end
 
     local gas_offset=nil
     for i=0,3 do

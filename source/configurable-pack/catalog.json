@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "guid": "bf6cb345-73c0-5b9b-a16c-38d490155842",
-  "version": "2.1.1",
-  "baseline": "2.1.0",
+  "version": "2.1.2",
+  "baseline": "2.1.1",
   "packages": [
     {
       "index": 0,
@@ -189,7 +189,7 @@
       "origin": "Gas-Overhaul-v0.16.zip",
       "origin_sha256": "420B853A93E3EF6D9B1F4561C747C3CAE46F25ED4F75747FAD6FC52E7676B129",
       "files": {
-        "Addon/9ba626afa44a3aa3.patch_0": "3BC9BC5E66813BC1FE6282F9C7A41C13AFE5E58ED437E8FF8A1E3E9E53563BBA",
+        "Addon/9ba626afa44a3aa3.patch_0": "E02C1E70320DDCE08489535582F140E732D43AE34C5444FDEBACC194BEF43803",
         "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
         "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
       },
@@ -1065,7 +1065,7 @@
   "flag_layout": "single-dropdown-under-flag-option",
   "expected_resources": 36,
   "changed_package_ids": [
-    "vg-70-variable"
+    "gas-overhaul"
   ],
-  "candidate_description": "Restores VG-70 Variable Auto, Volley and Total to their intended damage, with AP3 medium penetration in every mode. Includes 23 independent weapon/equipment switches and the unchanged 29 One True Flag presets."
+  "candidate_description": "Choose any of 23 weapon and equipment mods. Gas Overhaul works with Health Rework (Casual, 160 hp, 3 regen), preserving its health, regeneration and stim settings. One True Flag offers 29 damage presets."
 }

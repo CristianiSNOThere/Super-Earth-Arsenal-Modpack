@@ -1,4 +1,6 @@
-# Gas Overhaul v0.15
+# Gas Overhaul — selectable pack v2.1.2
+
+Works alongside **Health Rework (Casual, 160 hp, 3 regen)**, keeping that preset's health, regeneration and stim settings.
 
 Gas weapons now apply the Acid Storm effect, temporarily reducing enemy armor effectiveness for 15 seconds. Extends the Sterilizer's existing effect to AX/TX-13 Guard Dog Dog Breath, P-35 Re-Educator, S-11 Speargun, G-4 Gas grenades, MD-8 Gas Mines, A/GM-17 Gas Mortar Sentry, Eagle Gas Airstrike and Orbital Gas Strike. Armor plates are not permanently destroyed.
 

@@ -117,7 +117,7 @@ def main():
     packages = catalog['packages']
     if args.incremental:
         assert args.output and args.evidence and not args.import_baseline
-        assert (catalog['baseline'],catalog['version'])in {('2.0.0','2.1.0'),('2.1.0','2.1.1')}
+        assert (catalog['baseline'],catalog['version'])in {('2.0.0','2.1.0'),('2.1.0','2.1.1'),('2.1.1','2.1.2')}
         assert len(packages)==23 and catalog['expected_resources']==36
     else:
         assert not args.output and not args.evidence

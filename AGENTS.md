@@ -11,7 +11,7 @@ resource/dependency audits, exact guards/rollback and fresh startup/gameplay
 gates. Build individual ZIPs only when separately maintaining legacy individual
 releases; a selectable-pack-only change does not require 22 individual builds.
 
-## Current release: selectable pack v2.1.1 (2026-10-15)
+## Current release: selectable pack v2.1.2 (2026-10-16)
 
 Current set: 23 independent mod switches and 29 Flag presets. Variable v0.1.1
 fixes redirected damage profiles and uses AP3 in Auto, Volley and Total.
@@ -40,3 +40,13 @@ User subsequently says "yep udate repos", accepting gameplay and authorizing
 publication. No additional external process capture was performed. Offline,
 startup, deployed-file/loader selection and user gameplay evidence are distinct.
 Publication and continuation evidence: `work/release-variable-fix-20261015/`.
+
+## v2.1.2 health-profile compatibility
+
+Preserve the exact known health-export profile and full normalized stock checksum;
+unknown/partial profiles must refuse. Only Gas's validator changes from v2.1.1.
+Canonical Gas text matches source/startup-initialization/e54e34210bac937e.lua and
+source/gas-overhaul/sterilizer-entry.lua. Keep native Gas write targets and peer
+readiness statuses unchanged. Historical Gas builders are not current pack builders.
+Fresh accepted startup11:47:47local passes60loaded/0failed and13dedicated Applied
+with health export active. User explicitly authorizes publication afterwards.

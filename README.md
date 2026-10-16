@@ -1,12 +1,12 @@
-# Super Earth Arsenal Mod Pack v2.1.1
+# Super Earth Arsenal Mod Pack v2.1.2
 
 Choose the weapon and equipment changes you want from one package. Each of the **23 mods has its own switch in Arsenal**: enable a single weapon, a smaller selection, or the complete set.
 
 **One True Flag has one damage dropdown with 29 presets**, defaulting to **300 normal / 150 durable**. Its settings are inside the Flag option.
 
-**Updated in v2.1.1:** VG-70 Variable Auto, Volley and Total deliver their intended damage, with AP3 medium penetration in every mode.
+**Updated in v2.1.2:** Gas Overhaul works alongside **Health Rework (Casual, 160 hp, 3 regen)**, keeping that preset's health, regeneration and stim settings.
 
-[Download v2.1.1](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v2.1.1/Super-Earth-Arsenal-Modpack-v2.1.1.zip) | [All releases](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases) | [Standalone runtime projects](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download v2.1.2](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v2.1.2/Super-Earth-Arsenal-Modpack-v2.1.2.zip) | [All releases](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases) | [Standalone runtime projects](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Choose your mods
 
@@ -66,7 +66,14 @@ Requires Helldivers 2 Steam build 25480438 and Bingus Shared Loader v19.
 - **Scorcher:** select Auto in Weapon Functions for continuous fire.
 - **PLAS-39:** hold R and use the left-side Weapon Functions selector. Semi fires one round with a 0.01-second minimum charge and a base 0.30-second interval; the native fire-rate modifier can increase that interval to approximately 0.333 seconds. Burst fires three rounds spaced 0.12 seconds apart with a 0.45-second minimum charge. Both modes keep normal firing audio and the game's fire-rate modifier.
 
+## Changes in v2.1.2
+
+- Use Gas Overhaul and the complete weapon collection alongside Health Rework (Casual, 160 hp, 3 regen).
+- Keeps that preset's health, regeneration and stim settings, including armor bonuses to stim capacity.
+- Retains the 23 independent mod switches and One True Flag's 29 damage presets.
+
 ## Changes in v2.1.1
+
 
 - Restores VG-70 Variable damage in Auto, Volley and Total.
 - Auto deals 110/29 at 550 RPM, 90/24 at 750 RPM and 75/20 at 1,000 RPM.

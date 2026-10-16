@@ -88,6 +88,16 @@ end
     assert saved.startswith(sai_prefix),'Saved SAI fixture is stale'
     gaspatch=patch_source(gas).replace('local patch=(function()','local gas=(function()',1)
     gaspatch=gaspatch.replace('return patch','patch.validate_damage=validate_damage;patch.peer_damage=peer_damage;return patch',1)
+    if gaspatch.strip() not in saved:
+        # v2.1.2 changes the health validator; retain the archived SAI harness.
+        import zipfile
+        with zipfile.ZipFile(b.REPO/'Super-Earth-Arsenal-Modpack-v2.1.1.zip') as old_zip:
+            body=old_zip.read('Mods/gas-overhaul/Addon/9ba626afa44a3aa3.patch_0')
+        old_gas=b.resources(body)[(0xE54E34210BAC937E,b.LUA)][8:].decode().replace('\r\n','\n')
+        old_patch=patch_source(old_gas).replace('local patch=(function()','local gas=(function()',1)
+        old_patch=old_patch.replace('return patch','patch.validate_damage=validate_damage;patch.peer_damage=peer_damage;return patch',1)
+        assert saved.count(old_patch.strip())==1,'Archived Gas fixture is stale'
+        saved=saved.replace(old_patch.strip(),gaspatch.strip())
     assert gaspatch.strip() in saved,'Saved Gas fixture is stale'
     run('sai-gas-transactions',saved,dict(actual_transactions_and_refusals=45,
         covers='Current 70/37.5 MRAD, recoil/heat, prior peer orders, unknown rows/statuses, partial writes, rollback and original protection'))

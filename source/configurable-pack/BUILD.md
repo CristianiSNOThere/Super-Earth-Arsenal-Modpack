@@ -1,4 +1,4 @@
-# Selectable pack v2.1.1 release source
+# Selectable pack v2.1.2 release source
 
 Current set: 23 independent switches and One True Flag's 29 damage presets,
 defaulting to 300 normal / 150 durable. Stable pack GUID:
@@ -14,7 +14,7 @@ Canonical readable sources are under source/, including vg70-variable/.
 From the HD2 Mods workspace root:
 
 ```powershell
-python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/build.py --release --incremental --output work/super-earth-arsenal-modpack-repo/Super-Earth-Arsenal-Modpack-v2.1.1.zip --evidence work/release-variable-fix-20261015/pack
+python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/build.py --release --incremental --output work/super-earth-arsenal-modpack-repo/Super-Earth-Arsenal-Modpack-v2.1.2.zip --evidence work/release-health-compat-20261016/pack
 ```
 
 Outputs are immutable; different bytes at an existing path are refused. Retain
@@ -68,3 +68,23 @@ GUID, order and Include paths remain unchanged.
 Gas/Tenderizer share15-second Acid Storm duration, including weather. AC-8/Epoch
 share animation resources; AC-8/JAR-5 share a FLAK explosion. Keep the former
 individual repository's legacy releases and all pack release history intact.
+
+## v2.1.2 health compatibility
+
+Gas Overhaul's exact health-profile recognition is shared by
+source/startup-initialization/e54e34210bac937e.lua and source/gas-overhaul/sterilizer-entry.lua.
+The sole gameplay archive delta is gas-overhaul/Addon/9ba626afa44a3aa3.patch_0.
+Recognizes the complete eight-field health profile of export0182f499 with
+fingerprint528db86c82f7bc91a8be; validates the complete normalized stock checksum
+and preserves actual peer bytes for commit/rollback. Unknown/partial profiles
+refuse. This is not arbitrary stat-editor support.
+
+Offline28targeted actual validator/transaction cases cover both consumer orders,
+unknown fields, partial writes, rollback and foreign mutations. Accepted startup
+2026-10-16 11:47:47 Europe/Madrid:60loaded/0failed,13fresh dedicated Applied,
+33common values/0refused/0errors,14Scorcher values,health export active13changes.
+User then authorized repository publication. Full evidence under workspace
+work/runtime-editor-compat-20261016/health-compat-rev1/ and
+health-compat-launch-20261016T094940Z/. No independent live-memory read.
+Historical gas-overhaul/build.py predates the canonical startup contract;
+do not use it to regenerate this release. Use the selectable-pack builder.
