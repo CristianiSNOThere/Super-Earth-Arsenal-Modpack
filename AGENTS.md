@@ -37,20 +37,21 @@ resource/dependency audits, exact guards/rollback and fresh startup/gameplay
 gates. Build individual ZIPs only when separately maintaining legacy individual
 releases; a selectable-pack-only change does not require 22 individual builds.
 
-## Player-facing copy revision v2.2.1
+## Player-facing copy correction v2.2.2
 
 Player descriptions come from source/configurable-pack/player-guide.json.
 Run tools/configurable-pack/refresh_public_copy.py to refresh catalog/public
-metadata and the README gameplay section together. Begin each weapon with a
-brief practical summary, then short labeled bullets. Define specialist terms,
-use percentages where clearer, round awkward display decimals and mark them
-approximate. Keep every changed behavior/stat described; extra tuning values
-belong below the main bullets, with their meaning explained. Avoid packed
-slash-separated stat strings. Never round or edit actual gameplay payloads
+metadata and the README gameplay section together. The user explicitly wants
+the original two-column README table and full prose descriptions, including
+before-and-after comparisons wherever known. Simplify terms and awkward
+display decimals without reducing detail or hiding it behind summaries or
+expanders. Use normal sentences and name each damage value instead of packing
+unexplained slash-separated numbers. Keep every changed behavior/stat described.
+Never round or edit actual gameplay payloads
 for a documentation change. Keep option names/identities and the prominent
 compatibility warning unchanged; names preserve users' saved selections.
 
-## Current release: selectable pack v2.2.1 (2026-10-16)
+## Current release: selectable pack v2.2.2 (2026-10-16)
 
 Current set:24 independent mod switches including Punisher Plasma and29Flag presets.
 The previous v2.1.3 baseline has23 switches. Variable v0.1.1

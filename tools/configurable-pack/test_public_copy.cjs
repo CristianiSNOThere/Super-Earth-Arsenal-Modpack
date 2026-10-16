@@ -7,7 +7,7 @@ const body=String.raw`
 (async()=>{
  const previous=path.resolve(process.argv[5]);
  const previousManifest=JSON5.parse(new AdmZip(previous).readAsText('manifest.json'));
- assert.equal(previousManifest.Version,'2.2.0');assert.equal(manifest.Version,'2.2.1');
+ assert.equal(previousManifest.Version,'2.2.1');assert.equal(manifest.Version,'2.2.2');
  const flag=manifest.Options.findIndex(o=>o.Name==='Enable One True Flag');assert(flag>=0);
  for(const active of [false,true]){
   records.modsList=[];records.modsLibrary=[];records.setAllOptionsActive=active;
@@ -19,7 +19,8 @@ const body=String.raw`
   mod.options.forEach((o,i)=>{
    assert.equal(o.name,manifest.Options[i].Name);
    assert.equal(o.description,manifest.Options[i].Description);
-   assert(o.description.includes('\n\n- '),'Summary and bullet text lost');
+   assert(o.description.length>10,'Description lost');
+   assert(!o.description.includes('\n- '),'Expected restored prose, found a bullet list');
   });
   assert.equal(mod.options.filter(o=>o.enabled).length,active?24:1);
  }

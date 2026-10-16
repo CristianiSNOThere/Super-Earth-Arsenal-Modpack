@@ -1,4 +1,4 @@
-# Selectable pack v2.2.1 source
+# Selectable pack v2.2.2 source
 
 Current source set: 24 independent switches and One True Flag's 29 damage presets,
 defaulting to 300 normal / 150 durable. Stable pack GUID:
@@ -14,14 +14,35 @@ Canonical readable sources are under source/, including vg70-variable/.
 From the HD2 Mods workspace root:
 
 ```powershell
-python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/build.py --release --incremental --output work/super-earth-arsenal-modpack-repo/Super-Earth-Arsenal-Modpack-v2.2.1.zip --evidence work/readability-20261016/pack
+python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/build.py --release --incremental --output work/super-earth-arsenal-modpack-repo/Super-Earth-Arsenal-Modpack-v2.2.2.zip --evidence work/readability-correction-20261016/pack
 ```
 
 Outputs are immutable; different bytes at an existing path are refused. Retain
 all older releases/ZIPs. Use tagged historical catalogs to reproduce old versions.
 Do not run old one-time prepare/import builders against the current source.
 
-## v2.2.1 public readability revision
+## v2.2.2 full-description correction
+
+The user explicitly wants the original two-column README table and complete
+prose, including before-and-after values wherever known. Simplify wording and
+display precision only. Do not replace the structure with summaries, expanders
+or lists of final values. player-guide.json now maps each of24option names to
+its full prose description; refresh_public_copy.py refreshes catalog, public
+metadata and the table consistently. It preserves all24row names and their
+original order. The warning stays prominent. Gameplay files, option identities,
+Includes and29Flag presets remain exact. Evidence and latest handoff:
+work/readability-correction-20261016/. Reuse v2.2.0 gameplay acceptance and the
+unchanged dependency/transaction baseline; only copy/import checks are needed.
+
+Final v2.2.2 ZIP SHA256:
+C5C87FE35A99813779DDA0C41CB55FEEFA988ADE92D9C8FA4433A25CC5B218B0,
+29029191bytes. Only README.md and manifest.json differ from v2.2.1; all174other
+entries are byte-exact. Manifest differs only in Version and descriptions.
+The original24table row names/order, full prose and concrete before/after
+comparisons pass. Eight real isolated Arsenal deploy/purge cases and actual
+import/migration checks pass, preserving24selections and the Flag preset.
+
+## Historical v2.2.1 public readability revision
 
 source/configurable-pack/player-guide.json is the editable player-copy source.
 Run tools/configurable-pack/refresh_public_copy.py before building after a copy
