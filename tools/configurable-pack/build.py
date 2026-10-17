@@ -126,8 +126,9 @@ def main():
     packages = catalog['packages']
     if args.incremental:
         assert args.output and args.evidence and not args.import_baseline
-        assert (catalog['baseline'],catalog['version'])in {('2.0.0','2.1.0'),('2.1.0','2.1.1'),('2.1.1','2.1.2'),('2.1.2','2.1.3'),('2.1.3','2.2.0'),('2.2.0','2.2.1'),('2.2.1','2.2.2')}
-        assert (len(packages),catalog['expected_resources'])==((24,49) if catalog['version'] in {'2.2.0','2.2.1','2.2.2'} else (23,36))
+        assert (catalog['baseline'],catalog['version'])in {('2.0.0','2.1.0'),('2.1.0','2.1.1'),('2.1.1','2.1.2'),('2.1.2','2.1.3'),('2.1.3','2.2.0'),('2.2.0','2.2.1'),('2.2.1','2.2.2'),('2.2.2','2.3.0')}
+        expected=(25,51) if catalog['version']=='2.3.0' else ((24,49) if catalog['version'] in {'2.2.0','2.2.1','2.2.2'} else (23,36))
+        assert (len(packages),catalog['expected_resources'])==expected
     else:
         assert not args.output and not args.evidence
         assert catalog['version']=='2.0.0', 'Use an explicit new incremental candidate for a changed catalog'
@@ -246,6 +247,8 @@ def main():
     files['manifest.json'] = (json.dumps(manifest, indent=2) + '\n').encode()
     # Player-visible behavior stays in the public copy; test evidence is separate.
     readme = ['# Super Earth Arsenal Mod Pack v'+pack_version, '',
+              '> [!WARNING]',
+              '> **IN CASE OF CRASHES OR MODS NOT LOADING PROPERLY, REMOVE ANY OTHER WEAPON MODS OR STAT EDITOR MODS.**', '',
               'Choose the weapon and equipment mods you want in Arsenal, then deploy the pack.', '',
               'Requires Bingus Shared Loader. Select each desired mod in the pack options. '
               'When importing or upgrading from v1, review the new switches before deploying. '
@@ -312,7 +315,7 @@ def main():
         checked_masks=len(unions)
     (evidence / 'selections.json').write_text(json.dumps(matrix))
     detail = dict(result='PASS', artifact=str(zip_path), sha256=sha(body), bytes=len(body),
-                  baseline=(str({'2.0.0':22,'2.2.0':24,'2.2.1':24}.get(catalog['baseline'],23))+' mods / v'+catalog['baseline']if args.incremental else '22 mods / v1.0.26'), package_guid=GUID, options=len(options),
+                  baseline=(str({'2.0.0':22,'2.2.0':24,'2.2.1':24,'2.2.2':24}.get(catalog['baseline'],23))+' mods / v'+catalog['baseline']if args.incremental else '22 mods / v1.0.26'), package_guid=GUID, options=len(options),
                   mod_switches=len(packages), flag_controls=1, flag_dropdown_presets=preset_payloads,all_selection_masks=checked_masks,
                   runtime_selection_masks=len(matrix), resources=len(inventory),
                   differing_payload_collisions=0, unchanged_accepted_payloads=True,

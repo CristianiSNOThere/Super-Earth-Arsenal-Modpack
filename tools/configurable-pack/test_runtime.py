@@ -50,6 +50,7 @@ def main():
     parser.add_argument('--incremental',action='store_true')
     parser.add_argument('--evidence',type=Path)
     parser.add_argument('--focus-id',default='adjudicator-heavy')
+    parser.add_argument('--focus-pairs',action='store_true',help='Also test the changed mod with each existing option, in both orders')
     args=parser.parse_args()
     if args.incremental:assert args.evidence
     else:assert not args.evidence
@@ -86,6 +87,9 @@ def main():
     if args.incremental:
         identity=json.loads((b.REPO/'source/adjudicator-heavy/identity.json').read_text())
         mappings[int(identity['implementation_key'],16)]='adjudicator-heavy/entry.lua'
+        if any(p['id']=='gl52-de-escalator' for p in catalog['packages']):
+            identity=json.loads((b.REPO/'source/gl52-de-escalator/identity.json').read_text())
+            mappings[int(identity['implementation_key'],16)]='gl52-de-escalator/entry.lua'
     for (key,kind), data in all_resources.items():
         if kind != b.LUA:
             continue
@@ -132,7 +136,8 @@ def main():
             metadata[p['id']] = dict(global_name=global_match[1], status=status,
                                      returns_boolean=('make_api,patch)' in control or 'make_api, patch,' in control or 'make_api, patch)' in control))
     # Twelve controllers: 11 dedicated patches and PLAS-39's mode controller.
-    assert len(controllers) == (13 if args.incremental else 12), list(controllers)
+    expected_controllers=14 if any(p['id']=='gl52-de-escalator' for p in catalog['packages']) else (13 if args.incremental else 12)
+    assert len(controllers) == expected_controllers, list(controllers)
     profile_chunks = {}
     for p in packets:
         chunks = [sources[key] for key in p['lua'] if key in sources and '.register_profile({' in sources[key]]
@@ -157,6 +162,9 @@ def main():
             order = list(range(1,n+1)); random.Random(seed).shuffle(order); orders.append(order)
     focus=next(i for i,p in enumerate(packets)if p['id']==args.focus_id)if args.incremental else None
     masks = [1<<focus,(1<<n)-1] if args.incremental else b.selection_matrix()
+    if args.focus_pairs:
+        assert args.incremental
+        masks=sorted(set(masks)|{0,((1<<n)-1)^(1<<focus)}|{(1<<focus)|(1<<i)for i in range(n)if i!=focus})
     script = 'local controllers=' + literal(controllers) + '\n'
     script += 'local metadata=' + literal(metadata) + '\n'
     script += 'local profile_chunks=' + literal(profile_chunks) + '\n'
@@ -400,6 +408,8 @@ f:close()
     runtime.run(script.encode(), '@configurable-startup-control-matrix.lua')
     report = json.loads((evidence / 'runtime-counts.json').read_text())
     report.update(compiled_source_matches=compiled_checks,
+                  focus_pairs=args.focus_pairs,selection_masks=masks,
+                  changed_mod_pairs=(n-1 if args.focus_pairs else 0),
                   controllers=len(controllers), profile_entrypoints=len(profile_chunks),
                   orders=['forward','reverse']if args.incremental else ['forward','reverse','seed1107','seed2911'],
                   scope='Real loader discovery, shipped startup controllers, registration and peer gates; patch/native adapters are fixtures.',

@@ -1,21 +1,21 @@
 {
   "schema": 1,
   "guid": "bf6cb345-73c0-5b9b-a16c-38d490155842",
-  "version": "2.2.2",
-  "baseline": "2.2.1",
+  "version": "2.3.0",
+  "baseline": "2.2.2",
   "packages": [
     {
       "index": 0,
       "id": "40-k-meltagun",
       "name": "40-K Meltagun",
       "option": "Enable 40-K Meltagun",
-      "description": "Sets the weapon handling rating, also called ergonomics, to 40. This controls how readily the weapon follows your aim.",
+      "description": "Sets the handling rating, also called ergonomics, to 40. Removes the fire-panic effect that makes enemies panic when hit, while keeping its slowing effect. Beam range increases from 15 to 20 metres.",
       "version": "1.0.2",
       "guid": "103d6d9d-2bd7-5af3-8e7d-6d0b97d91abb",
       "origin": "40-K-Meltagun-v1.0.2.zip",
       "origin_sha256": "170CD390F8CF9F2FE0962D610F9C7DE5A97F2739E2750F62D1AE471FEF90ABD2",
       "files": {
-        "Addon/9ba626afa44a3aa3.patch_0": "0815E68AE3383585E421931B173DFA17A9A61DA177308708C6B534CC444F02C4",
+        "Addon/9ba626afa44a3aa3.patch_0": "8E2140C45F7BA4556C3625468DF8073D95FD516A323F2D98E71DC1580BE048F2",
         "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
         "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
       },
@@ -34,7 +34,7 @@
       "origin": "A-GM-17-Gas-Mortar-Sentry-v1.0.2.zip",
       "origin_sha256": "72C016DB151FEAB3D48DD8298F6852D93AA24C41B7C3BAFBEB7691EB62B252C9",
       "files": {
-        "Addon/9ba626afa44a3aa3.patch_0": "186CC8C01F143BD9718598D13AA7F97C550C287E74A592C7BF8276586998AB49",
+        "Addon/9ba626afa44a3aa3.patch_0": "35741B1CA5250BBF4E2C89598B089130C8C98E48CE478E37BE8C9111C01D16F1",
         "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
         "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
       },
@@ -69,13 +69,13 @@
       "id": "apw-1-anti-materiel-rifle",
       "name": "APW-1 Anti-Materiel Rifle",
       "option": "Enable APW-1 Anti-Materiel Rifle",
-      "description": "Sets the weapon handling rating, also called ergonomics, to 40. This controls how readily the weapon follows your aim.",
+      "description": "Sets the handling rating, also called ergonomics, to 40. Magazine capacity increases from 7 to 10 rounds, and the maximum number of spare magazines increases from 8 to 10. Starting and resupply magazine counts stay the same.",
       "version": "1.0.2",
       "guid": "29538c57-87fe-5852-b69f-3bdb1ad70656",
       "origin": "APW-1-Anti-Materiel-Rifle-v1.0.2.zip",
       "origin_sha256": "03625AA29494CE31C44298EFB9EEC569E79F29EE9633B6F8FBD89BD657FA7AEF",
       "files": {
-        "Addon/9ba626afa44a3aa3.patch_0": "86FDB26F2E39B80CEDC885E3796691DE37598CF5573BCF906B5C59B3CA336805",
+        "Addon/9ba626afa44a3aa3.patch_0": "17B6A0AD66435ACBCB63CC4BFC0EC8ABC7239981FD953DDB4AAF75A1F96305C5",
         "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
         "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
       },
@@ -132,7 +132,7 @@
       "origin": "ARC-12-Blitzer-v1.0.2.zip",
       "origin_sha256": "1C976146F1A2CC943ECA1FBB2670B5742F0183E107EF7DF959FA32FA0F070245",
       "files": {
-        "Addon/9ba626afa44a3aa3.patch_0": "6415A1FEE6A2443220964958C129CAEFF85C7C69AFFE7A4D6AC7D962BBA885B7",
+        "Addon/9ba626afa44a3aa3.patch_0": "26CB9A3832E799E221B65CCD057DD84371EDF71F24C788703192F910B0B1FC32",
         "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
         "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
       },
@@ -170,7 +170,7 @@
       "origin": "CQC-20-Breaching-Hammer-v1.0.2.zip",
       "origin_sha256": "7D353744ABA3EE9FEA485E79D38241AB8C8EDB8F848B48E092989F19D9C65864",
       "files": {
-        "Addon/9ba626afa44a3aa3.patch_0": "BE28B9D12F6D3C7824109108CF2D3E25C51E4FA478C97EAC006D034BCB14586C",
+        "Addon/9ba626afa44a3aa3.patch_0": "98D117B71BC87F41AD127052C7DB29B4688F7EA6FD442BF6AD1D63B124E743BE",
         "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
         "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
       },
@@ -395,7 +395,7 @@
       "origin": "P-34-Breacher-v1.0.2.zip",
       "origin_sha256": "AE082F88BF9D88C06566CCE00AD44A11F1FF72F7409DDDEED039BD2D578D9F3A",
       "files": {
-        "Addon/9ba626afa44a3aa3.patch_0": "99F2C9B6C7F0C2A44622858A5E7F705C8F033CCFBB9354DD225267DF5B0F91E0",
+        "Addon/9ba626afa44a3aa3.patch_0": "3C7F3DB2821FB19FF663BE1D92428B50CA98597EE0AA92F2AFE502235242C670",
         "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
         "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
       },
@@ -433,7 +433,7 @@
       "origin": "PLAS-39-Accelerator-Rifle-v1.1.10.zip",
       "origin_sha256": "5B7BAD513E8A24CF20E638F23E00D079D10502602A7F51A4188FDF19054555A0",
       "files": {
-        "Addon/9ba626afa44a3aa3.patch_0": "CD90E869672E95C706EF0C14591103E0A97411786A3D2A8B5CB8D576035D9235",
+        "Addon/9ba626afa44a3aa3.patch_0": "88ACB86990A1163427176CE737A98A07EA6F72535A0DB3DF607404D6D4921E66",
         "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
         "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
       },
@@ -493,7 +493,7 @@
       "origin": "RS-422-Railgun-v1.0.2.zip",
       "origin_sha256": "92390F10B9C4E67AAC70013AD6B2C42B56794B1EAB782608B7BD6A2D5AB78FE0",
       "files": {
-        "Addon/9ba626afa44a3aa3.patch_0": "4F9924E1D8C5AE4A1D1A8EC3DB2092170D6F40DE469F15B889800BAE5E08804A",
+        "Addon/9ba626afa44a3aa3.patch_0": "046358D7FB4CF26E916C58115009154CDA3C667E82FA136E5BBF1F97C1822323",
         "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
         "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
       },
@@ -512,7 +512,7 @@
       "origin": "S-11-Speargun-v1.0.2.zip",
       "origin_sha256": "269A096F6DDD9CA4C08C59B5C8CA2B60D2BD569763DA72A6072F615DBFED18F7",
       "files": {
-        "Addon/9ba626afa44a3aa3.patch_0": "65B8ACB078DB2974900FF8EB11D23B361B00D12689CE918939C8F4AB568996FF",
+        "Addon/9ba626afa44a3aa3.patch_0": "744778CA327BC6E0F11AFF653A1B336C6FE5824FAAF682B16A0DB33E3A6DF1D4",
         "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
         "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
       },
@@ -640,6 +640,25 @@
         "Addon/e16e0aa7740716a2.patch_0": "23E7F3726DC9231476AEFB2AA922F420A2F94157262C07C500CAC61237675003",
         "Addon/e16e0aa7740716a2.patch_0.gpu_resources": "D06E96BFC6259986D1D607CADBA84E018346641D1DB9B01B80030384E739971B",
         "Addon/e16e0aa7740716a2.patch_0.stream": "EEA07DF1B3B85F672E9081B4B201D8E0A9843D801D26AF9C858FAE4CDBCE6384"
+      },
+      "includes": [
+        "Addon"
+      ]
+    },
+    {
+      "index": 24,
+      "id": "gl52-de-escalator",
+      "name": "GL-52 De-Escalator",
+      "option": "Enable GL-52 De-Escalator",
+      "description": "Makes the GL-52 easier to aim by raising handling from 25 to 35. Increases maximum reserves and ammunition from a resupply from 40 to 70, and starting reserves from 32 to 70, while keeping its six-round cylinder. Reload speed increases by 15%. Electrical hits keep 100 normal damage, while damage against durable body parts rises from 70 to 100 and armor penetration stays at its stock level 4. Replaces its small-target stun with Stun Large, the effect used by stun grenades. Keeps its 200 rounds per minute and 10 m electrical reach.",
+      "version": "0.1.0",
+      "guid": "4650c894-ccd8-433c-869c-84b3901d55a8",
+      "origin": "source/gl52-de-escalator/entry.lua",
+      "origin_sha256": "8E8A47B77E83D492172A567003F07D8E75E958A4C40076AC4581E11453EC65E3",
+      "files": {
+        "Addon/9ba626afa44a3aa3.patch_0": "BE1FB30455F2A65E4F94A9C8F95EC6825A05C625B56A46289A2338AB7D4914C3",
+        "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
       },
       "includes": [
         "Addon"
@@ -1091,9 +1110,11 @@
     }
   ],
   "flag_layout": "single-dropdown-under-flag-option",
-  "expected_resources": 49,
+  "expected_resources": 51,
   "changed_package_ids": [
-    "punisher-plasma"
+    "gl52-de-escalator",
+    "40-k-meltagun",
+    "apw-1-anti-materiel-rifle"
   ],
-  "candidate_description": "Choose 24 independent weapon and equipment mods, now including dual-mode SG-8P Punisher Plasma. One True Flag offers 29 damage presets."
+  "candidate_description": "25 selectable mods: GL-52 at AP4, Meltagun without fire panic and with 20 m reach, and AMR with 10-round magazines and 10 maximum spares."
 }

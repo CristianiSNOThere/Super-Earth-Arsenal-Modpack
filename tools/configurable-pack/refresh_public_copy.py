@@ -16,8 +16,8 @@ def main():
         assert isinstance(text,str) and text and '|' not in text
         public['option_descriptions'][package['option']] = text
         package['description'] = text
-    public['description'] = ('Choose any of 24 Helldivers 2 weapon and equipment mods independently in Arsenal, '
-        'including SG-8P Punisher Plasma with Normal and Shotgun modes. One True Flag offers 29 damage presets, '
+    public['description'] = (f"Choose any of {len(catalog['packages'])} Helldivers 2 weapon and equipment mods independently in Arsenal, "
+        'including GL-52 De-Escalator and SG-8P Punisher Plasma with Normal and Shotgun modes. One True Flag offers 29 damage presets, '
         'defaulting to 300 normal damage and 150 against durable parts. Gas Overhaul supports Health Rework Normal and Casual.')
     for name,data in [('catalog.json',catalog),('release-metadata.json',public)]:
         (CANON/name).write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
@@ -34,6 +34,7 @@ def main():
         'AR-11 Arbitrator','R/40-K Hot-Shot','Gas Overhaul','ARC-3 Rapid/Supercharge','ARC-12 Blitzer',
         'CQC-20 Breaching Hammer','PLAS-39 Accelerator Rifle','P-34 Breacher','S-11 Speargun',
         'APW-1 Anti-Materiel Rifle','40-K Meltagun','A/GM-17 Gas Mortar Sentry','RS-422 Railgun']
+    if 'Enable GL-52 De-Escalator' in guide:order.append('GL-52 De-Escalator')
     assert set('Enable '+n for n in order) == set(guide)
     labels = {'PLAS-45 Epoch Highest-Charge Rework':'PLAS-45 Epoch','AR-32 Pacifier Tuning':'AR-32 Pacifier',
         'AC-8 Autocannon Backpackless Rework':'AC-8 Autocannon'}
@@ -46,7 +47,7 @@ def main():
     readme = re.sub(r'\[Download v\d+\.\d+\.\d+\]\(https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v[\d.]+/Super-Earth-Arsenal-Modpack-v[\d.]+\.zip\)',
         '[Download v'+version+'](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v'+version+'/Super-Earth-Arsenal-Modpack-v'+version+'.zip)',readme)
     path.write_text(readme,encoding='utf-8')
-    print('Refreshed full prose for 24 mods in the original README table and Arsenal.')
+    print(f'Refreshed full prose for {len(guide)} mods in the original README table and Arsenal.')
 
 if __name__ == '__main__':
     main()

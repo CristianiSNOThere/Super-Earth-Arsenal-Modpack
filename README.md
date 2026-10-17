@@ -1,17 +1,17 @@
-# Super Earth Arsenal Mod Pack v2.2.2
+# Super Earth Arsenal Mod Pack v2.3.0
 
 ## 🚨 COMPATIBILITY WARNING — READ BEFORE PLAYING 🚨
 
 > [!CAUTION]
 > **IN CASE OF CRASHES OR MODS NOT LOADING PROPERLY, REMOVE ANY OTHER WEAPON MODS OR STAT EDITOR MODS.**
 
-Choose the weapon and equipment changes you want from one package. Each of the **24 mods has its own switch in Arsenal**: enable a single weapon, a smaller selection, or the complete set.
+Choose the weapon and equipment changes you want from one package. Each of the **25 mods has its own switch in Arsenal**: enable a single weapon, a smaller selection, or the complete set.
 
 **One True Flag has one damage dropdown with 29 presets**, defaulting to **300 regular damage and 150 against durable parts**. Its settings are inside the Flag option.
 
-**Added in v2.2.0:** SG-8P Punisher Plasma with Normal and Shotgun modes, separate ammunition pools and a magazine-shaped undergrip.
+**Added in v2.3.0:** GL-52 De-Escalator with more ammunition, faster reloads, improved handling, stronger stun and 100 damage against durable parts, while keeping its original level 4 armor penetration. Meltagun gains 5 metres of range and no longer causes fire panic. The Anti-Materiel Rifle gains 10-round magazines and can carry 10 spare magazines.
 
-[Download v2.2.2](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v2.2.2/Super-Earth-Arsenal-Modpack-v2.2.2.zip) | [All releases](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases) | [Standalone runtime projects](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download v2.3.0](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v2.3.0/Super-Earth-Arsenal-Modpack-v2.3.0.zip) | [All releases](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases) | [Standalone runtime projects](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Choose your mods
 
@@ -49,10 +49,11 @@ Normal damage and damage against durable parts are listed separately; durable da
 | PLAS-39 Accelerator Rifle | Sets magazine capacity to 21 rounds. Side-to-side and up-and-down recoil movement and camera kick are set to 2. Spread is set to 0.3 in both directions, and aim sway to 0.4, giving a tight shot grouping and steady aim. Stagger strength is set to 25. Direct hits and explosions use armor penetration level 4. The explosion's outer damage radius and shockwave radius are both set to 2.5 metres.<br><br>Use the left-side Weapon Functions selector to choose Semi or Burst. Semi fires one shot with an almost instant charge, at a base rate of 200 rounds per minute. Its minimum charge is 0.01 seconds, and its base interval between shots is 0.30 seconds; the normal fire-rate modifier can increase that interval to about 0.33 seconds. Burst charges for at least 0.45 seconds, then fires three rounds about 0.12 seconds apart. Both modes keep normal firing sounds and the game's fire-rate modifier. |
 | P-34 Breacher | Sets the number of magazines received from resupply to 2. |
 | S-11 Speargun | Sets starting spare magazines to 16, magazines received from resupply to 10 and maximum spare magazines to 20. Sets the weapon handling rating to 40. |
-| APW-1 Anti-Materiel Rifle | Sets the weapon handling rating, also called ergonomics, to 40. This controls how readily the weapon follows your aim. |
-| 40-K Meltagun | Sets the weapon handling rating, also called ergonomics, to 40. This controls how readily the weapon follows your aim. |
+| APW-1 Anti-Materiel Rifle | Sets the handling rating, also called ergonomics, to 40. Magazine capacity increases from 7 to 10 rounds, and the maximum number of spare magazines increases from 8 to 10. Starting and resupply magazine counts stay the same. |
+| 40-K Meltagun | Sets the handling rating, also called ergonomics, to 40. Removes the fire-panic effect that makes enemies panic when hit, while keeping its slowing effect. Beam range increases from 15 to 20 metres. |
 | A/GM-17 Gas Mortar Sentry | Sets the sentry's health to 600. |
 | RS-422 Railgun | Sets damage against durable enemy parts to 240. |
+| GL-52 De-Escalator | Makes the GL-52 easier to aim by raising handling from 25 to 35. Increases maximum reserves and ammunition from a resupply from 40 to 70, and starting reserves from 32 to 70, while keeping its six-round cylinder. Reload speed increases by 15%. Electrical hits keep 100 normal damage, while damage against durable body parts rises from 70 to 100 and armor penetration stays at its stock level 4. Replaces its small-target stun with Stun Large, the effect used by stun grenades. Keeps its 200 rounds per minute and 10 m electrical reach. |
 
 ## Shared effects
 
@@ -75,6 +76,15 @@ Requires Helldivers 2 Steam build 25480438 and Bingus Shared Loader v19.
 - **ARC-3:** hold R and choose Auto/Rapid or Semi/Supercharge.
 - **Scorcher:** select Auto in Weapon Functions for continuous fire.
 - **PLAS-39:** hold R and use the left-side Weapon Functions selector. Semi is the quick single shot; Burst charges for about half a second and fires three rounds. Full timings are listed above.
+
+## Changes in v2.3.0
+
+- Meltagun beam range increases from 15 to 20 metres and no longer causes fire panic; its slowing effect stays the same.
+- Anti-Materiel Rifle magazine capacity increases from 7 to 10 rounds, and maximum spare magazines from 8 to 10.
+- Adds GL-52 De-Escalator as the 25th independent option.
+- Handling increases from 25 to 35; maximum reserve ammunition, starting reserves and resupply ammunition become 70 rounds.
+- Reload speed increases by 15%, and damage against durable parts rises from 70 to 100.
+- Uses Stun Large instead of Stun Small. Keeps 100 normal damage, level 4 armor penetration, a six-round cylinder, 200 rounds per minute and 10 m electrical reach.
 
 ## Changes in v2.2.2
 

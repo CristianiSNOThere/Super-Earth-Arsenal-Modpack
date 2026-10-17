@@ -1,0 +1,621 @@
+-- HD2-Addon: mods/codex/gl52_de_escalator
+local make_api=(function()
+return function()
+    local ffi = require('ffi')
+    assert(ffi.abi('64bit'), 'Requires Windows x64 LuaJIT')
+    ffi.cdef [[
+        void *GetModuleHandleA(const char *);
+        void *GetCurrentProcess(void);
+        uint64_t GetTickCount64(void);
+        uint32_t GetModuleFileNameW(void *, uint16_t *, uint32_t);
+        int ReadProcessMemory(void *, const void *, void *, size_t, size_t *);
+        int WriteProcessMemory(void *, void *, const void *, size_t, size_t *);
+        size_t VirtualQuery(const void *, void *, size_t);
+        int VirtualProtect(void *, size_t, uint32_t, uint32_t *);
+        void *CreateFileW(const uint16_t *, uint32_t, uint32_t, void *, uint32_t, uint32_t, void *);
+        int ReadFile(void *, void *, uint32_t, uint32_t *, void *);
+        int CloseHandle(void *);
+        int32_t BCryptOpenAlgorithmProvider(void **, const uint16_t *, const uint16_t *, uint32_t);
+        int32_t BCryptCloseAlgorithmProvider(void *, uint32_t);
+        int32_t BCryptCreateHash(void *, void **, void *, uint32_t, const void *, uint32_t, uint32_t);
+        int32_t BCryptHashData(void *, const void *, uint32_t, uint32_t);
+        int32_t BCryptFinishHash(void *, void *, uint32_t, uint32_t);
+        int32_t BCryptDestroyHash(void *);
+        typedef struct {
+            void *base; void *allocation; uint32_t initial_protection;
+            uint16_t partition; uint16_t reserved; size_t size;
+            uint32_t state; uint32_t protection; uint32_t kind;
+        } GL52MemoryInfoV1;
+    ]]
+    local k, b = ffi.load('kernel32'), ffi.load('bcrypt')
+    local self = k.GetCurrentProcess()
+    local api = {}
+    -- Canonical user addresses are below 2^47 and exactly representable as doubles.
+    -- The game may hide every cdata value behind the same tostring result.
+    function api.identity(p) return tonumber(ffi.cast('uintptr_t',p)) end
+    function api.now() return tonumber(k.GetTickCount64()) end
+    function api.module(name) return k.GetModuleHandleA(name) end
+    function api.distance(a,c) return tonumber(ffi.cast('intptr_t',a)-ffi.cast('intptr_t',c)) end
+    function api.pointer(s,o)
+        if not s or o<0 or o+8>#s then return nil end
+        local v=ffi.new('uintptr_t[1]'); ffi.copy(v,s:sub(o+1,o+8),8)
+        if v[0] < 65536 or v[0] >= 0x800000000000 then return nil end
+        return ffi.cast('uint8_t *',v[0])
+    end
+    function api.read(p,n)
+        local buf,got=ffi.new('uint8_t[?]',n),ffi.new('size_t[1]')
+        if k.ReadProcessMemory(self,p,buf,n,got)==0 or tonumber(got[0])~=n then return nil end
+        return ffi.string(buf,n)
+    end
+    function api.writable(p,n)
+        local info=ffi.new('GL52MemoryInfoV1[1]')
+        local cursor=ffi.cast('uint8_t *',p)
+        while n>0 do
+            if k.VirtualQuery(cursor,ffi.cast('void *',info),ffi.sizeof(info[0]))~=ffi.sizeof(info[0]) then return false end
+            if info[0].state~=0x1000 or info[0].kind~=0x20000 or info[0].protection~=4 then return false end
+            local remaining=tonumber(info[0].size)-api.distance(cursor,info[0].base)
+            if remaining<=0 then return false end
+            local take=math.min(n,remaining); cursor=cursor+take; n=n-take
+        end
+        return true
+    end
+    function api.write(p,s)
+        if not api.writable(p,#s) then return false end
+        local count=ffi.new('size_t[1]')
+        return k.WriteProcessMemory(self,p,s,#s,count)~=0 and tonumber(count[0])==#s
+    end
+    function api.data_access(p,n)
+        local info=ffi.new('GL52MemoryInfoV1[1]')
+        local cursor=ffi.cast('uint8_t *',p)
+        while n>0 do
+            if k.VirtualQuery(cursor,ffi.cast('void *',info),ffi.sizeof(info[0]))~=ffi.sizeof(info[0]) then return false end
+            if info[0].state~=0x1000 or info[0].kind~=0x20000 or (info[0].protection~=2 and info[0].protection~=4) then return false end
+            local remaining=tonumber(info[0].size)-api.distance(cursor,info[0].base)
+            if remaining<=0 then return false end
+            local take=math.min(n,remaining);cursor=cursor+take;n=n-take
+        end
+        return true
+    end
+    function api.write_attachment(p,s)
+        assert(#s==4 or #s==8 or #s==12 or #s==16 or #s==32,'Only guarded GL52 data fields may be written')
+        local info=ffi.new('GL52MemoryInfoV1[1]')
+        if k.VirtualQuery(p,ffi.cast('void *',info),ffi.sizeof(info[0]))~=ffi.sizeof(info[0]) then return false end
+        if not api.data_access(p,#s) or api.distance(p,info[0].base)+#s>tonumber(info[0].size) then return false end
+        local old=tonumber(info[0].protection)
+        if old==4 then return api.write(p,s) end
+        if old~=2 then return false end
+        local previous,ignored=ffi.new('uint32_t[1]'),ffi.new('uint32_t[1]')
+        if k.VirtualProtect(p,#s,4,previous)==0 then return false end
+        local ok,result=pcall(api.write,p,s)
+        local restored=k.VirtualProtect(p,#s,previous[0],ignored)~=0
+        assert(restored,'Attachment page protection restoration failed')
+        assert(ok,result)
+        return result
+    end
+    local function digest(feed)
+        local algorithm,hash=ffi.new('void *[1]'),ffi.new('void *[1]')
+        local ok,result=pcall(function()
+            local name=ffi.new('uint16_t[7]',{83,72,65,50,53,54,0})
+            assert(b.BCryptOpenAlgorithmProvider(algorithm,name,nil,0)==0,'SHA256 provider failed')
+            assert(b.BCryptCreateHash(algorithm[0],hash,nil,0,nil,0,0)==0,'SHA256 initialization failed')
+            feed(function(p,n) assert(b.BCryptHashData(hash[0],p,n,0)==0,'SHA256 input failed') end)
+            local out=ffi.new('uint8_t[32]')
+            assert(b.BCryptFinishHash(hash[0],out,32,0)==0,'SHA256 finalization failed')
+            local hex={}; for i=0,31 do hex[#hex+1]=string.format('%02X',out[i]) end
+            return table.concat(hex)
+        end)
+        if hash[0]~=nil then b.BCryptDestroyHash(hash[0]) end
+        if algorithm[0]~=nil then b.BCryptCloseAlgorithmProvider(algorithm[0],0) end
+        assert(ok,result); return result
+    end
+    function api.sha256(s) return digest(function(add) add(s,#s) end) end
+    function api.module_hash(module)
+        local path=ffi.new('uint16_t[32768]')
+        local length=k.GetModuleFileNameW(module,path,32768)
+        assert(length>0 and length<32768,'Module path unavailable')
+        local file=k.CreateFileW(path,0x80000000,7,nil,3,0,nil)
+        assert(file~=ffi.cast('void *',-1),'Module file unavailable')
+        local ok,result=pcall(digest,function(add)
+            local buf,n=ffi.new('uint8_t[65536]'),ffi.new('uint32_t[1]')
+            while true do
+                assert(k.ReadFile(file,buf,65536,n,nil)~=0,'Module read failed')
+                if n[0]==0 then break end
+                add(buf,n[0])
+                if api.checkpoint then api.checkpoint('Checking game version') end
+            end
+        end)
+        k.CloseHandle(file); assert(ok,result); return result
+    end
+    -- Retained by the public mod state for the entire process lifetime. No executable allocation.
+    function api.owned_copy(source)
+        assert(api.kept and (#source==76 or #source==272),'Owned-row lifetime unavailable')
+        local block=ffi.new('uint64_t[?]',math.ceil(#source/8))
+        ffi.copy(block,source,#source)
+        local row=ffi.cast('uint8_t *',block)
+        assert(api.writable(row,#source),'Owned data row permissions unsupported')
+        api.kept[#api.kept+1]=block
+        return row
+    end
+    function api.pointer_bytes(p)
+        local value=ffi.new('uintptr_t[1]',ffi.cast('uintptr_t',p))
+        return ffi.string(value,8)
+    end
+    -- Only the reviewed GL-52 damage registry slot; RO/RX pages are refused.
+    local registry_slots={[0x37c6708]=true
+    }
+    function api.registry_access(module,p)
+        module=ffi.cast('uint8_t *',module)
+        if not registry_slots[api.distance(p,module)] then return false end
+        local info=ffi.new('GL52MemoryInfoV1[1]')
+        if k.VirtualQuery(p,ffi.cast('void *',info),ffi.sizeof(info[0]))~=ffi.sizeof(info[0]) then return false end
+        return info[0].state==0x1000 and info[0].protection==4
+          and (info[0].kind==0x20000 or info[0].kind==0x1000000)
+          and api.distance(p,info[0].base)>=0 and api.distance(p,info[0].base)+8<=tonumber(info[0].size)
+          and api.identity(p)%8==0
+    end
+    function api.publish(module,p,expected,replacement)
+        if not api.registry_access(module,p) or api.read(p,8)~=api.pointer_bytes(expected) then return false end
+        -- An aligned x64 pointer store publishes a completely initialized retained data row.
+        ffi.cast('uintptr_t *',p)[0]=ffi.cast('uintptr_t',replacement)
+        return api.read(p,8)==api.pointer_bytes(replacement)
+    end
+
+    return api
+end
+
+end)()
+local profile=(function()
+return {["components"]={{["label"]="WeaponDataComponent",["group"]=26151656,["header"]="b1dbe4884c444c4401000000b1dbe488000f07000100000000000000",["count"]=730,["stride"]=1232,["record_count"]=366,["index"]=339,["owner"]="9b3fa6cfb2293bfe",["sha"]="50011186B53C3BB16236062C4D978286BFAA3E9CBE33D00DDF8D74054510C711",["edits"]={{["offset"]=356,["bytes"]="00000c42"}}},{["label"]="WeaponRoundsComponent",["group"]=5766096,["header"]="721008664c444c440100000072100866f01000000100000000000000",["count"]=50,["stride"]=136,["record_count"]=26,["index"]=24,["owner"]="9b3fa6cfb2293bfe",["sha"]="8956AED05BC822B74E39C85BADC20901FD319CB176E8ED7061E0648B1821AE67",["edits"]={{["offset"]=80,["bytes"]="460000004600000046000000"}}},{["label"]="WeaponReloadComponent",["group"]=5737840,["header"]="4e451d994c444c44010000004e451d99406d00000100000000000000",["count"]=498,["stride"]=80,["record_count"]=250,["index"]=230,["owner"]="9b3fa6cfb2293bfe",["sha"]="4E3E9582FE452B592839DF24306DFAD47A35D6699A605B6710EBB65565E3E81F",["edits"]={{["offset"]=56,["bytes"]="64210b40"}}}},["registries"]={{["label"]="damage",["id"]=201,["slot"]=58484488,["size"]=76,["sha"]="4E742D615BF19205EF160C04D35ADE7846850FA5D4EC118CA0F808930344517B",["offset"]=8,["bytes"]="640000000400000004000000040000000000000014000000230000000a0000000200000027000000",["original"]="c900000064000000460000000400000004000000040000000000000014000000230000000a00000002000000250000000000e03f000000000000000000000000000000000000000000000000"}},["pins"]={{["rva"]=19538941,["bytes"]="488d0dbc3c5202"},{["rva"]=19538948,["bytes"]="488b0cc1"},{["rva"]=19539065,["bytes"]="660f6e5904"},{["rva"]=19539070,["bytes"]="660f6e4908"}},["status_slot"]=58482056}
+
+end)()
+local patch=(function()
+local ffi=require('ffi')
+
+local patch={}
+
+local function unhex(s)return(s:gsub('..',function(h)return string.char(tonumber(h,16))end))end
+
+local function u32(s,o)
+
+    if not s or #s<o+4 then return nil end
+
+    local a,b,c,d=s:byte(o+1,o+4);return a+b*256+c*65536+d*16777216
+
+end
+
+local function replace(s,o,b)return s:sub(1,o)..b..s:sub(o+#b+1)end
+
+local function fail(s)error(s..'. No edit applied.',0)end
+
+local function discover(api,game)
+
+    local owner=api.pointer(api.read(game+0x346bf98,8),0)
+
+    local map=owner and api.pointer(api.read(owner+0xf12bd8,8),0)
+
+    if not map then fail('Expected one supported GL52 entity table; found 0')end
+
+    local entities=map-26151684
+
+    local plans={}
+
+    for _,spec in ipairs(profile.components)do
+
+        local group=entities+spec.group
+
+        local owners=api.read(group+28,spec.count*16)
+
+        assert(api.read(group,28)==unhex(spec.header) and owners,'GL52 '..spec.label..' group mismatch')
+
+        local hits,aliases=0,0
+
+        for i=0,spec.count-1 do
+
+            local entry=owners:sub(i*16+1,i*16+16)
+
+            if entry:sub(1,8)==unhex(spec.owner)then
+
+                assert(u32(entry,8)==spec.index and u32(entry,12)==0,'GL52 owner index changed');hits=hits+1
+
+            end
+
+            if entry:sub(1,8)~=string.rep('\0',8) and u32(entry,8)==spec.index then aliases=aliases+1 end
+
+        end
+
+        assert(hits==1 and aliases==1,'GL52 component owner is not unique')
+
+        local row=group+28+spec.count*16+spec.index*spec.stride
+
+        local source=api.read(row,spec.stride)
+
+        assert(api.data_access(row,spec.stride) and source and api.sha256(source)==spec.sha,
+
+            'GL52 '..spec.label..' row mismatch or unsupported permissions')
+
+        local function proof()
+
+            local current_owner=api.pointer(api.read(game+0x346bf98,8),0)
+
+            local current_map=current_owner and api.pointer(api.read(current_owner+0xf12bd8,8),0)
+
+            return current_owner and current_map and api.distance(current_owner,owner)==0 and api.distance(current_map,map)==0
+
+              and api.read(group,28)==unhex(spec.header) and api.read(group+28,spec.count*16)==owners
+
+        end
+
+        plans[#plans+1]={row=row,size=spec.stride,source=source,edits=spec.edits,proof=proof,label=spec.label}
+
+    end
+
+    return plans
+
+end
+
+function patch.apply(api,module)
+
+    local ok,result=pcall(function()
+
+        local game=ffi.cast('uint8_t *',module)
+
+        for _,pin in ipairs(profile.pins)do
+
+            assert(api.read(game+pin.rva,#pin.bytes/2)==unhex(pin.bytes),'Unsupported GL52 native data consumer')
+
+        end
+
+        -- Read-only semantic guard: old SDK enums use different numeric values.
+
+        local status_slot=game+profile.status_slot
+
+        local status_row=api.pointer(api.read(status_slot,8),0)
+
+        if not status_row then fail('Expected one supported GL52 Stun Large row; found 0')end
+
+        local status=api.read(status_row,44)
+
+        local name=status and api.pointer(status,8)
+
+        assert(status and u32(status,0)==39 and status:sub(41,44)==unhex('0000a040')
+
+          and name and api.read(name,11)=='Stun Large\0','GL52 Stun Large definition mismatch')
+
+        local function status_intact()
+
+            return api.read(status_slot,8)==api.pointer_bytes(status_row)
+
+              and api.read(status_row,44)==status and api.read(name,11)=='Stun Large\0'
+
+        end
+
+        local plans=discover(api,game)
+
+        local registries={}
+
+        for _,spec in ipairs(profile.registries)do
+
+            local slot=game+spec.slot
+
+            local row=api.pointer(api.read(slot,8),0)
+
+            if not row then fail('Expected one supported GL52 '..spec.label..' row; found 0')end
+
+            local source=api.read(row,spec.size)
+
+            assert(source and api.sha256(source)==spec.sha and u32(source,0)==spec.id,'GL52 '..spec.label..' source mismatch')
+
+            assert(api.registry_access(game,slot),'GL52 '..spec.label..' registry is not writable data')
+
+            local after=replace(source,spec.offset,unhex(spec.bytes))
+
+            local owned=api.owned_copy(after)
+
+            assert(api.read(owned,spec.size)==after,'GL52 owned row initialization failed')
+
+            registries[#registries+1]={slot=slot,row=row,source=source,size=spec.size,owned=owned,after=after}
+
+        end
+
+        local function sources_intact()
+
+            if not status_intact()then return false end
+
+            for _,p in ipairs(plans)do
+
+                if api.read(p.row,p.size)~=p.source or not p.proof()then return false end
+
+            end
+
+            for _,p in ipairs(registries)do
+
+                if api.read(p.slot,8)~=api.pointer_bytes(p.row) or api.read(p.row,p.size)~=p.source then return false end
+
+            end
+
+            return true
+
+        end
+
+        assert(sources_intact(),'Data changed before edit. No edit applied.')
+
+        local attempted,published={},{}
+
+        local applied,reason=pcall(function()
+
+            for _,p in ipairs(plans)do
+
+                local expected=p.source
+
+                assert(p.proof() and api.read(p.row,p.size)==expected,'GL52 ownership changed during edit')
+
+                for _,edit in ipairs(p.edits)do
+
+                    local bytes=unhex(edit.bytes)
+
+                    attempted[#attempted+1]={row=p.row,size=p.size,source=expected,offset=edit.offset,bytes=bytes,proof=p.proof}
+
+                    assert(api.write_attachment(p.row+edit.offset,bytes),'GL52 data write incomplete')
+
+                    expected=replace(expected,edit.offset,bytes)
+
+                    assert(api.read(p.row,p.size)==expected,'GL52 component verification failed')
+
+                end
+
+                p.expected=expected
+
+            end
+
+            for _,p in ipairs(registries)do
+
+                assert(api.read(p.row,p.size)==p.source and api.read(p.owned,p.size)==p.after,'GL52 registry source changed')
+
+                published[#published+1]=p
+
+                assert(api.publish(game,p.slot,p.row,p.owned),'GL52 registry publication failed')
+
+            end
+
+            assert(status_intact(),'GL52 Stun Large changed during edit')
+
+            for _,p in ipairs(plans)do assert(p.proof() and api.read(p.row,p.size)==p.expected,'Full table verification failed')end
+
+            for _,p in ipairs(registries)do
+
+                assert(api.read(p.slot,8)==api.pointer_bytes(p.owned) and api.read(p.owned,p.size)==p.after
+
+                  and api.read(p.row,p.size)==p.source,'Full registry verification failed')
+
+            end
+
+        end)
+
+        if not applied then
+
+            local restored=true
+
+            for i=#published,1,-1 do
+
+                local p=published[i]
+
+                local current=api.read(p.slot,8)
+
+                if current==api.pointer_bytes(p.owned)then
+
+                    restored=api.publish(game,p.slot,p.owned,p.row)and restored
+
+                elseif current~=api.pointer_bytes(p.row)then restored=false end
+
+            end
+
+            for i=#attempted,1,-1 do
+
+                local p=attempted[i]
+
+                local before=p.source:sub(p.offset+1,p.offset+#p.bytes)
+
+                local current=api.read(p.row,p.size)
+
+                local owned=p.proof() and current and replace(current,p.offset,before)==p.source
+
+                if owned then
+
+                    for j=1,#p.bytes do
+
+                        local b=current:byte(p.offset+j)
+
+                        if b~=before:byte(j)and b~=p.bytes:byte(j)then owned=false;break end
+
+                    end
+
+                end
+
+                if owned then restored=api.write_attachment(p.row+p.offset,before)and api.read(p.row,p.size)==p.source and restored
+
+                else restored=false end
+
+            end
+
+            error(tostring(reason)..'; restored='..tostring(restored),0)
+
+        end
+
+        return "Applied: GL-52 handling 35; reserve/start/resupply 70; reload speed 1.15x; arc 100/100 AP4/4/4/0; Stun Large strength 1.75; six loaded rounds, 200 RPM and 10 m arc reach retained."
+
+    end)
+
+    return ok,tostring(result)
+
+end
+
+return patch
+
+
+end)()
+local start=(function()
+return function(make_api,patch)
+
+    if rawget(_G,'GL52DeEscalatorV1') then return end
+
+    local state={kept={},version='0.1.0',active=false,status='Waiting for first game update',scanned=0,candidates=0,diagnostics={}}
+
+    _G.GL52DeEscalatorV1=state
+
+    local previous=update
+
+    local callback
+
+    local function log()
+
+        pcall(function()
+
+            local logger=rawget(_G,'CowboyBingusModLoader')
+
+            local file=logger and logger.open_log and logger.open_log('GL52DeEscalator.log')
+
+            if file then
+
+                file:write('GL52DeEscalator v0.1.0 / 70 RESERVES / AP4 / STUN LARGE / RELOAD 1.15X\nstatus='..state.status..'\nscanned_bytes='..state.scanned..'\ncandidates='..state.candidates..'\n'..table.concat(state.diagnostics,'\n')..'\n')
+
+                file:close()
+
+            end
+
+        end)
+
+    end
+
+    local deadline=0
+
+    local logged_mb=-1
+
+    local worker=coroutine.create(function()
+
+            local api=make_api()
+
+            api.kept=state.kept
+
+            api.note=function(message)
+
+                if #state.diagnostics>=12 then table.remove(state.diagnostics,1) end
+
+                state.diagnostics[#state.diagnostics+1]='validation='..message
+
+            end
+
+            api.checkpoint=function(stage,force)
+
+                state.status=stage
+
+                if force or os.clock()>=deadline then coroutine.yield() end
+
+            end
+
+            api.progress=function(scanned,total,candidates)
+
+                state.scanned,state.candidates=scanned,candidates
+
+                local mb=math.floor(scanned/16777216)
+
+                if mb~=logged_mb then logged_mb=mb;log() end
+
+            end
+
+            local exe,game=api.module(nil),api.module('game.dll')
+
+            assert(exe~=nil and game~=nil,'Game modules unavailable')
+
+            assert(api.module_hash(exe)=='F5FEE03DCFDB2E553A4752C283590950AC13316B376D8196AA556FF0400D5F06','Unsupported executable. No edit applied.')
+
+            assert(api.module_hash(game)=='2E2C3B7C2500646DADD5F2B4C6E0504DBB7E7896139F64CDDC0D1813C718F51E','Unsupported game module. No edit applied.')
+
+            local function wait_for_loading(milliseconds,attempt)
+
+                if not api.now then return end
+
+                state.status='Waiting for game data to load; attempt '..attempt..'/8'
+
+                log()
+
+                local until_time=api.now()+milliseconds
+
+                repeat coroutine.yield() until api.now()>=until_time
+
+            end
+
+            for attempt=1,8 do
+
+                if attempt==1 then wait_for_loading(15000,attempt) end
+
+                local applied,reason=patch.apply(api,game)
+
+                if applied then return reason end
+
+                local not_ready=reason:find('found 0. No edit applied.',1,true)~=nil
+
+                local stale=reason:find('Data changed before edit. No edit applied.',1,true)~=nil
+
+                local restored_conflict=reason:find('Full table verification failed',1,true)~=nil
+
+                    and reason:find('restored=true',1,true)~=nil
+
+                if not not_ready and not stale and not restored_conflict or attempt==8 then error(reason) end
+
+                local retry_conflict=stale or restored_conflict
+
+                state.status=retry_conflict
+
+                    and 'Shared table changed during GL52 setup; retrying safely'
+
+                    or 'Damage table not ready; retrying after loading'
+
+                log()
+
+                wait_for_loading(retry_conflict and 3000 or 10000,attempt)
+
+            end
+
+    end)
+
+    local function init()
+
+        if coroutine.status(worker)=='dead' then return end
+
+        deadline=os.clock()+0.0007
+
+        local ok,message=coroutine.resume(worker)
+
+        if not ok or coroutine.status(worker)=='dead' then
+
+            state.active,state.status=ok,tostring(message)
+
+            print('[GL52DeEscalator] '..state.status)
+
+            log()
+
+            if update==callback then update=previous or function() end end
+
+        end
+
+    end
+
+    local function finish(...) init();return ... end
+
+    callback=function(...)
+
+        if previous then return finish(previous(...)) end
+
+        init()
+
+    end
+
+    update=callback
+
+    log()
+
+end
+
+
+end)()
+start(make_api,patch)

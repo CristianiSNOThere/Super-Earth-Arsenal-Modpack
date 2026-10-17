@@ -1,5 +1,54 @@
 # Compatibility rule for future mods
 
+## v2.3.0: GL-52 AP4 and Meltagun/AMR update (2026-10-17)
+
+The user's latest direct instruction authorizes publication after the final
+offline compatibility check. This supersedes the earlier publication hold and
+fresh-test gate for these small Meltagun/AMR changes only; retain the normal
+REGRESSION-POLICY.md for future work. No fresh live startup or gameplay result
+is claimed for Meltagun/AMR. GL52 retains its accepted AP4 gameplay and full-pack
+startup evidence. Publication evidence: workspace work/release-melt-amr-20261017/.
+
+Meltagun range is 20 m instead of 15; damage 509's second status ID and buildup
+are zero, removing Fire_Panic while preserving FlamerSlowed and all other damage.
+AMR has 10 loaded rounds and maximum 10 spare magazines; starting 5/supply 4 and
+handling 40 stay unchanged. Canonical source is startup-initialization/runtime.lua
+and its two profile mirrors. Embedded source/meltagun-tuning/ fragments preserve
+exact whole-row/owner guards and recognize only stock or manager-owned values.
+All nine shared-runtime carriers must remain identical. No new numeric IDs.
+
+Final tests include 20 actual local-buffer transactions, 112 startup-controller
+fixture cases (with overlaps) pairing each changed weapon with all 24 other
+options in both orders, 14 isolated Arsenal cases and the full 51-resource
+composition/dependency/CPU-GPU-STREAM audit. Only the common runtime and two
+profiles change from accepted GL52 AP4 Rev3; Punisher and GL52 stay exact.
+Preserve old releases and all immutable candidates. The old GL52-only publication
+helper remains blocked; it points to superseded evidence and must not be used.
+
+## Accepted GL-52 AP4 candidate before the publication hold (2026-10-17)
+
+25 independent switches. Canonical GL52 source is source/gl52-de-escalator/.
+User accepted AP4 comparison Rev3 after gameplay and authorized publication
+following compatibility checks. Keep100normal/100durable,stockAP4/4/4/0,
+handling35,70reserve/start/resupply,reload1.15x,Stun Large39strength1.75.
+Do not restore the rejected AP5 setting. No friendly-fire or Weakpoint mod changes.
+The roughly three-grenade heavy-stun target is not a measured universal breakpoint.
+
+Full25 AP4 startup20:43:54Europe/Madrid:64loaded/0failed,14freshdedicatedApplied,
+common33/Scorcher14values,Punishernative20loaded60spares,and93exactdeployedfiles.
+Evidence:workspace work/gl52-de-escalator-20261017/launch-20261017T185351Z/.
+34actual GL52 transactions,11focused controller cases,56startup simulations
+(GL52with each24peer,alone,full,disabled,alloff;bothorders),2extra faults,
+8isolated Arsenal cases and full51resource/dependency inventory pass.
+All174old gameplay payloads and24old option definitions retained. Release gameplay
+is byte-exact accepted AP4Rev3. Selection/dependency closure is checked for any
+union; startup simulations use fixture patch adapters, not live transactions.
+Do not claim universal gameplay from a full-set launch. Workspace release evidence:
+work/release-gl52-20261017/. Preserve old releases and immutable candidates.
+Compile the accepted canonical entry.lua as-is to preserve tested line metadata;
+the historical work prepare script may reformat source and must not bypass
+bytecode/source checks. Keep Punisher deployment safety and incremental policy.
+
 ## Accepted v2.2.0 Punisher addition
 
 Rev1 failed before ship with Punisher equipped: game.dll+78861A used an invalid
@@ -51,7 +100,7 @@ Never round or edit actual gameplay payloads
 for a documentation change. Keep option names/identities and the prominent
 compatibility warning unchanged; names preserve users' saved selections.
 
-## Current release: selectable pack v2.2.2 (2026-10-16)
+## Earlier release: selectable pack v2.2.2 (2026-10-16)
 
 Current set:24 independent mod switches including Punisher Plasma and29Flag presets.
 The previous v2.1.3 baseline has23 switches. Variable v0.1.1
@@ -71,7 +120,7 @@ Keep deployment and Arsenal settings with the user. Verify a published replaceme
 
 Public release descriptions and player-facing READMEs must explain the complete player-visible changes without implementation details, test history, failed prototypes, or statements about which tests were or were not run. Keep validation evidence in internal work notes.
 
-## Latest accepted startup
+## Earlier accepted Variable startup
 
 Variable Rev2 launch 2026-10-15 22:03:07 Europe/Madrid: 62 loaded, zero failed.
 Variable v0.1.1 Applied with 146 guarded fields; 13 dedicated Applied logs and

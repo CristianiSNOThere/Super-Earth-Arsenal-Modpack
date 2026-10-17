@@ -5,7 +5,9 @@ local ok, why = runtime.register_profile({
     name = 'APW-1 Anti-Materiel Rifle',
     hash = '89C5493E08CA4207',
     values = {
-        { hash = '89C5493E08CA4207', id = 'ergonomics', value = 40 }
+        { hash = '89C5493E08CA4207', id = 'ergonomics', value = 40 },
+        { hash = '89C5493E08CA4207', id = 'capacity', value = 10 },
+        { hash = '89C5493E08CA4207', id = 'mags_max', value = 10 }
     },
 })
 if not ok then error(why) end

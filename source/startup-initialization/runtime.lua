@@ -1046,6 +1046,40 @@ local defaults = {}     -- exact current-build source value decoded from EXT.STO
 EXT.safety_options = { build_ok = false }
 EXT.safety_tx = nil
 
+-- Embedded in the shared runtime after its fields/defaults declarations.
+-- Only the Meltagun's beam 18 and damage 509 receive these exceptions.
+EXT.meltagun_sources = {
+    {kind=T_BEAM,owner='18',size=112,
+     hex='120000000000000000007041fd01000000007041000020410000803f9a99193f0000803f0000803f0000803e0d010000385e71d394489be900000000000000000000000000000000000000000000000000000000b71b299108000000000080bf00000000010000000500000000000000',
+     members={8}},
+    {kind=T_DAMAGE,owner='509',size=76,
+     hex='fd010000280a0000280a0000070000000700000007000000070000001e0000002800000028000000000000004300000000000040060000000000804000000000000000000000000000000000',
+     members={52,56}},
+}
+function EXT.meltagun_sources_intact()
+    for _,spec in ipairs(EXT.meltagun_sources) do
+        local entry=tables[spec.kind]
+        local base=entry and entry.base_by_owner and entry.base_by_owner[spec.owner]
+        if not base or not entry.owner_by_base or entry.owner_by_base[base]~=spec.owner
+           or entry.stride~=spec.size or not entry.copies or #entry.copies==0 then return false end
+        local stock=(spec.hex:gsub('..',function(h)return string.char(tonumber(h,16))end))
+        for _,block in ipairs(entry.copies) do
+            local current=api.read(block+HEADER_BYTES+base,spec.size)
+            if not current or #current~=spec.size then return false end
+            for _,offset in ipairs(spec.members) do
+                local word=u32(current,offset)
+                local field=fields[spec.kind..':'..(base+offset)]
+                local owned=field and EXT.safety_tx and EXT.safety_tx.owned_value(field)
+                if word~=u32(stock,offset) and (owned==nil or word~=owned) then return false end
+                current=current:sub(1,offset)..stock:sub(offset+1,offset+4)..current:sub(offset+5)
+            end
+            if current~=stock then return false end
+        end
+    end
+    return true
+end
+
+
 local function acid_status_stock(entry, record_base)
     local signature = string.char(0, 0, 0, 0, 0, 0, 0, 0, 0x9D, 0xB9, 0x58, 0xBD,
         0xD7, 0xE7, 0xBC, 0x96, 0, 0, 0xC0, 0x3F, 0, 0, 0x80, 0x3F, 0, 0, 0x80, 0x3F)
@@ -1079,6 +1113,8 @@ local function field_source(kind, offset, entry_override)
     end
     local stock = EXT.STOCK_FIELDS[string.format('%08X|%s|%d', kind, owner, member)]
     local explicit = false
+    if stock == nil and kind == T_BEAM and owner == '18' and member == 8
+       and EXT.meltagun_sources_intact() then stock=0x41700000; explicit=true end
     if stock == nil and kind == T_STATUS and owner == '55' and member == 40 then
         stock = acid_status_stock(entry, record_base)
         explicit = stock ~= nil
@@ -1188,6 +1224,7 @@ EXT.safety_options.encode = encode_bits
 EXT.safety_options.guard = function(field)
         if not EXT.safety_options.build_ok then return false, 'unsupported or unverified game build' end
         if not EXT.tables_intact or not EXT.tables_intact() then return false, 'a source table moved or changed layout; scan again' end
+        if field.meltagun_guard and not EXT.meltagun_sources_intact() then return false, 'Meltagun source or owned value changed' end
         return field_writable(field), field.read_only_reason or 'target has no verified stock source value'
     end
 EXT.safety_options.log = function(kind, detail)
@@ -1298,6 +1335,24 @@ local function add_hidden_part(weapon, id, field, min, max)
     return p
 end
 
+-- Embedded after add_hidden_part; only the exact Meltagun path is accepted.
+function EXT.add_meltagun_fields(weapon,beam_id,damage_id)
+    if weapon.hash~='6CFCC7F8801A0266' or beam_id~=18 or damage_id~=509
+       or not EXT.meltagun_sources_intact() then return false end
+    local range=field_for_owner(T_BEAM,'18',8,'f32',1000)
+    local panic=field_for_owner(T_DAMAGE,'509',52,'u32',1000)
+    local buildup=field_for_owner(T_DAMAGE,'509',56,'f32',1000)
+    if not range or not panic or not buildup then return false end
+    for _,field in ipairs({range,panic,buildup}) do field.meltagun_guard=true end
+    -- This exception only permits removing the existing assignment, never
+    -- choosing another status. All other effect-assignment IDs stay read-only.
+    panic.explicit_validation=true
+    add_hidden_part(weapon,'melt_range',range,20,20)
+    add_hidden_part(weapon,'melt_panic_type',panic,0,0)
+    add_hidden_part(weapon,'melt_panic_buildup',buildup,0,0)
+    return true
+end
+
 -- Adds the rows of the gun whose entity hash is `key` (8 bytes) to `weapon` (a weapon, or a
 -- stratagem whose payload is a gun: sentries, emplacements).
 local function resolve_gun(weapon, key)
@@ -1328,6 +1383,7 @@ local function resolve_gun(weapon, key)
         local brow = kind and tables[T_BEAM] and tables[T_BEAM].index[kind]
         local id = brow and read_field(field_at(T_BEAM, brow + 12, 'u32', 100000))
         drow = id and tables[T_DAMAGE] and tables[T_DAMAGE].index[id]
+        EXT.add_meltagun_fields(weapon,kind,id)
     end
     -- flame and gas weapons: spray component (+200 damage row), damage per flame / gas hit
     local spray = not drow and record(T_SPRAY)
@@ -3341,8 +3397,8 @@ local function draw(width, height)
                 local stock, current = field and default_of(field), field and read_field(field)
                 local unit = target.status and ' s' or (target.kind == TYPES.delta and ' MRAD' or '')
                 text(label, x0 + 4, y, 14, WHITE, 228)
-                text('stock ' .. fmt(stock, target.storage) .. ' · current ' .. fmt(current, target.storage) ..
-                     ' → new ' .. fmt(target.value, target.storage) .. unit,
+                text('stock ' .. fmt(stock, target.storage) .. ' Â· current ' .. fmt(current, target.storage) ..
+                     ' â†’ new ' .. fmt(target.value, target.storage) .. unit,
                      W - 24, y, 14, current == nil and WARN or MUTED, 360, true)
                 y = y + 22
                 if field then
@@ -3366,7 +3422,7 @@ local function draw(width, height)
                 text('SHARED EFFECTS', x0, y, 14, WARN)
                 y = y + 24
                 for warning in item.warning:gmatch('[^;]+') do
-                    text('• ' .. warning:gsub('^%s+', ''), x0 + 4, y, 14, WARN, W - x0 - 32)
+                    text('â€¢ ' .. warning:gsub('^%s+', ''), x0 + 4, y, 14, WARN, W - x0 - 32)
                     y = y + 28
                 end
             else

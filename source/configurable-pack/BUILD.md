@@ -1,6 +1,19 @@
-# Selectable pack v2.2.2 source
+# Selectable pack v2.3.0 source
 
-Current source set: 24 independent switches and One True Flag's 29 damage presets,
+Includes accepted GL52 AP4 plus Meltagun range 15 -> 20 m / fire-panic removal
+and AMR 10-round magazines / maximum 10 spare magazines. The user's final direct
+instruction authorizes release after offline compatibility checks; no new live
+startup or gameplay is claimed for the last two changes. See workspace
+work/release-melt-amr-20261017/ for final release evidence and
+work/melt-amr-tuning-20261017/ for candidate/source/transaction evidence.
+
+The GL52 payload stays byte-exact accepted AP4 Rev3. Only the two weapon profiles
+and the identical common runtime in nine carriers change from that candidate.
+Preserve the exact Meltagun owner/whole-row guards, rollback and foreign values.
+The prior GL52-only ZIP is retained under workspace
+work/release-gl52-20261017/unpublished-GL52-only-v2.3.0.zip; do not publish it.
+
+Current source set: 25 independent switches and One True Flag's 29 damage presets,
 defaulting to 300 normal / 150 durable. Stable pack GUID:
 `bf6cb345-73c0-5b9b-a16c-38d490155842`.
 
@@ -14,7 +27,7 @@ Canonical readable sources are under source/, including vg70-variable/.
 From the HD2 Mods workspace root:
 
 ```powershell
-python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/build.py --release --incremental --output work/super-earth-arsenal-modpack-repo/Super-Earth-Arsenal-Modpack-v2.2.2.zip --evidence work/readability-correction-20261016/pack
+python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/build.py --release --incremental --output work/super-earth-arsenal-modpack-repo/Super-Earth-Arsenal-Modpack-v2.3.0.zip --evidence work/release-gl52-20261017/pack
 ```
 
 Outputs are immutable; different bytes at an existing path are refused. Retain

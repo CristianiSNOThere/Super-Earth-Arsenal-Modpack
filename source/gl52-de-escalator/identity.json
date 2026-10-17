@@ -1,0 +1,9 @@
+{
+  "guid": "4650c894-ccd8-433c-869c-84b3901d55a8",
+  "module": "mods/codex/gl52_de_escalator",
+  "implementation": "mods/codex/gl52_de_escalator_impl",
+  "global_name": "GL52DeEscalatorV1",
+  "version": "0.1.0",
+  "key": "4C30E97ED9564339",
+  "implementation_key": "312BD17A8AC475AD"
+}
