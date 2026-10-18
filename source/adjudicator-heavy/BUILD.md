@@ -1,15 +1,15 @@
 # Adjudicator Heavy v0.1.1 release source
 
-Included as the23rd selectable option in packv2.1.0. User accepts final480RPM
-Rev2 after the full23 launch and requests publication. Package/module identities
+Added as the 23rd selectable option in pack v2.1.0 with the final 480 RPM profile. Package/module identities
 are stable inidentity.json. No separate legacy individual package is created.
 
 ## Compiler input
 
 entry.lua is the complete readable compiler input, assembled fromwindows.lua,
 profile.lua,transaction.lua andstartup.lua. Compile using the game's isolated
-LuaJIT with chunk name `@mods/codex/adjudicator_heavy_impl.lua`. loader-entry.lua
-declares mods/codex/adjudicator_heavy and requires the compiled implementation.
+LuaJIT, using the implementation identity in `identity.json` as the chunk
+name with an `@` prefix and `.lua` suffix. `loader-entry.lua` declares the entry
+module and requires the compiled implementation.
 Resources are enveloped with little-endian u32payload length,u32version2 and
 packed into a pure-Lua archive. The catalog stores its accepted payload hash.
 
@@ -39,24 +39,12 @@ Gas dependency. It checks versions, delays the first attempt, uses8bounded retri
 for missing/changing data, refusesunknown data and preserves theupdatechain.
 Final state/log:AdjudicatorHeavyV1 / AdjudicatorHeavy.log.
 
-## Evidence
+## Validation
 
-Work scripts and reports: `work/adjudicator-heavy-20261015-rev2/`.
-30actual isolated transactions,9bounded startupcases,2savedx64 penetrationcases,
-fullresource/closure audit,focusedalone/fullstartupchecks inbothorders,
-7source-bytecode matches and6realArsenal0.36.2 deployment/import/purge cases pass.
-The penetration code appliesvelocity_after=velocity_before*(1-slowdown):75%
-stock retention becomes85% perpenetration. Saved-code emulation uses a1.0constant
-fixture; there was no newgameprocess access.
-
-Accepted Rev2 full23 launch18:59:51 Europe/Madrid:62loaded/0failed,allmodfinalstates,
-exact480RPM status,installedmanifest and78deployedfile matches. User then accepts
-and requests repo update. Evidence:
-`work/adjudicator-heavy-20261015-rev2/full-adjudicator-rev2-launch-20261015T170057Z/`.
-Startup/fileidentity is distinct from independent loaded-resource or exact
-numerical gameplay measurements. The earlier flashreport was withdrawn by the
-user; bothrifles' visuals remain unchanged. No further flashcapture is required.
-
-Publication records/download verification are underwork/release-adjudicator-20261015.
-Allother22modpayloads and29Flagpresets remain exact. Deployment/settings stay
-withuser; retain published history and immutable testZIPs.
+The release baseline includes 30 isolated transactions, nine startup cases,
+two captured-code penetration cases, source/bytecode checks, resource closure
+and six isolated Arsenal import/deployment/purge cases. The accepted 23-option
+startup loaded 62 modules without loader failures and matched 78 deployed files.
+Penetration velocity retention changes from 75% to 85% per penetration.
+These checks establish their stated scope; they do not establish every gameplay
+combination. Preserve existing payloads and historical releases.

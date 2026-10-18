@@ -1,7 +1,7 @@
 # VG-70 Variable v0.1.1 release source
 
 Current local fix remaps the three colliding damage IDs542/543/544 to585/586/587.
-Damage remains 75/20 Auto1000, 40/11 Volley and 28/8 Total. All modes now use AP3/3/3/0; Total changes from AP4 to AP3 at user request. Auto550
+Damage remains 75/20 Auto1000, 40/11 Volley and 28/8 Total. All modes now use AP3/3/3/0; Total changes from AP4 to AP3. Auto550
 and750 still use540/541. Projectile IDs333/335/336/337/338 remain stable.
 
 The current implementation.lua is the exact readable compiler input. Compile
@@ -28,4 +28,4 @@ Workspace work/variable-auto-damage-20261015 containsprepare_fix.py,verify_fix.p
 census.py,package_fix.py,oneauthorizedcapture,oldsource andregression evidence.
 Ten actual synthetic runtime scenarios include the captured originalfailure,
 all9mode/rate pairs withtwoowners,collisionguards,partialwrites androllback.
-Fresh Rev2 startup passed 62/0 at 22:03:07. User accepts gameplay and authorizes v2.1.1 publication; prior v2.1.0 remains in release history. Keepdeployment/settingswithuser andpreserveallhistory.
+Fresh Rev2 startup passed 62/0 at 22:03:07. Gameplay acceptance precedes v2.1.1 publication; prior v2.1.0 remains in release history. Keep deployment and settings under player control and preserve release history.

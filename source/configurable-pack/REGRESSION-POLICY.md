@@ -1,34 +1,13 @@
-# Incremental checks for future mod changes
-
-Requested by the user on 2026-10-15 after the selectable-pack migration. The
-initial broad offline matrix is retained as evidence. A fresh four-mod Rev2
-launch at 16:02:19 local applied APW-1, P-34, CQC-20 and Railgun: four profiles,
-nine values, 41 modules loaded, zero loader failures, 12 exact deployed file
-matches. This is startup evidence for that selection; gameplay acceptance and
-the remaining v2 release checks are separate.
-
-Full22Rev3startup at16:16:44 local is also confirmed:61loaded/0failed,
-all22expected final states and75exact deployed files; Flagdefault300/150applied.
-Both startup selections are accepted baseline evidence; v2.0.0 was subsequently
-published at the user request. Do not infer universal gameplay.
-
-## v2.1.0 accepted extension
-
-AdjudicatorHeavy adds one private option/resource pair; existing22gameplay
-archives and29Flagpresets are exact. Rev2full23startup18:59:51Europe/Madrid
-passes62loaded/0failed,all23finalstates,78deployedfiles. Useraccepts480RPM and
-requests publication. Incrementalchecks cover30actualBR-14transactions,
-targetedstartup/faultcases,fullresourceclosure,6Arsenaldeployments andoldoption
-migration. The oldmigrationmatrix was reused rather than repeated.
+# Incremental regression policy
 
 ## Rule
 
 **Test the change and its shared consumers. Do not repeat the entire baseline
-combination matrix or ask the user to test every existing mod for a routine
+combination matrix or require testing every existing mod for a routine
 addition.** Use the accepted catalog, resource hashes and startup contract as
 the regression baseline. This rule reduces repeated tests; it does not waive
 unknown-value guards, partial-write rollback, actual transaction checks or
-user gameplay acceptance for new behavior.
+playtester acceptance for new behavior.
 
 ### Every change
 
@@ -77,7 +56,7 @@ require repeating old weapon combinations or a live memory capture for every mod
 - Run one combined full-pack configuration after the addition, using the
   existing startup-control/dependency fixtures. A new unrelated private key
   does not require retesting every pair or triple of old mods.
-- Ask for a fresh user startup/gameplay check of the new behavior and a
+- Obtain a fresh playtester startup/gameplay check of the new behavior and a
   representative combined startup. Combine those checks in one launch when
   the scenario covers both gates. Additional launches require a concrete
   affected path or observed failure; no manual checklist of all weapons.
@@ -113,6 +92,6 @@ Keep offline checks, actual loader startup, independent loaded-resource checks,
 gameplay and host/client evidence distinct. A fixture adapter's Applied result
 is not a live transaction. One working subset does not prove every game
 combination. Save final module states and exact selected deployed bytes for
-fresh user launches. Keep deployment, settings and gameplay with the user.
+fresh playtester launches. Keep deployment, settings and gameplay under player control.
 Publishing and retirement of the individual repository remain separately
 authorized actions; retain release history and immutable candidates.
