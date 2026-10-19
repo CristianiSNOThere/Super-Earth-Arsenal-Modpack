@@ -54,7 +54,7 @@ return function(make_api,patch)
                 repeat
                     peer=rawget(_G,'SterilizerArmorControlV1')
                     if peer and type(peer.status)=='string'and peer.status:sub(1,8)=='Applied:'then
-                        assert(peer.status==profile.gas_applied,'Unsupported Gas Overhaul Applied state. No edit applied.')
+                        assert(peer.status==profile.gas_applied or peer.status==profile.gas_applied60 or peer.status==profile.gas_appliedenemy,'Unsupported Gas Overhaul Applied state. No edit applied.')
                         return
                     end
                     assert(api.now()-started<120000,'Installed companion did not become ready within 120 seconds: Gas Overhaul; no Tenderizer edits applied')

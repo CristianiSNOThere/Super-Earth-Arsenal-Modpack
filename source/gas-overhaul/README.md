@@ -1,27 +1,11 @@
-# Gas Overhaul — selectable pack v2.1.3
+# Gas Overhaul — selectable pack v2.4.0
 
-Works alongside **Health Rework Casual (160 HP, 3 regeneration) or Normal (150 HP, 2.8 regeneration)**, keeping that preset's health, regeneration and stim settings.
+Gas damage over time increases from 25 to 60 per second, for both normal damage and damage against durable parts. Sterilizer direct contact damage increases from 1 to 2 for both values. Gas clouds keep their standard spread. The Sterilizer tank holds 175 rounds instead of 125, and its gas and confusion buildup per hit is 0.75 instead of 0.5. The incoming Helldiver gas-damage multiplier is 0.55, keeping nominal incoming gas damage at 33 per second before armour passives and other modifiers.
 
-Gas weapons now apply the Acid Storm effect, temporarily reducing enemy armor effectiveness for 15 seconds. Extends the Sterilizer's existing effect to AX/TX-13 Guard Dog Dog Breath, P-35 Re-Educator, S-11 Speargun, G-4 Gas grenades, MD-8 Gas Mines, A/GM-17 Gas Mortar Sentry, Eagle Gas Airstrike and Orbital Gas Strike. Armor plates are not permanently destroyed.
+Gas confusion strength is doubled on susceptible enemies, producing stronger slowdown. When hosting a mission, gas-confused enemies can receive a 3-second Medium Stun, at most once every 6 seconds per enemy; existing active stuns are not refreshed and normal stun resistance applies. Gas also applies 15-second temporary armour weakening only to enemies, refreshed while their gas effects remain active. Gas no longer applies this armour debuff to Helldivers, and armour plates are not permanently destroyed. Up to four enemies per second can receive each of these effects.
 
-## Stock → modded values
+These gas changes cover the Sterilizer, Dog Breath, Re-Educator, Speargun, gas grenades and mines, Gas Mortar Sentry, Eagle Gas Airstrike, Orbital Gas Strike and shared gas hazards. Advanced Filtration armour provides 100% immunity to gas damage and gas status effects, increased from 80%; other armour passives keep their existing bonuses. Natural Acid Storm weather still reduces Helldiver armour, and its shared effect duration is 15 seconds.
 
-| Setting | Stock | Gas Overhaul |
-|---|---|---|
-| Acid Storm armor-reduction effect on supported gas hits | Not applied | Applied for 15 seconds |
-| Shared Acid Storm duration | 1 second | 15 seconds |
-| Shared gas damage over time, normal / durable | 25 / 25 DPS | 45 / 45 DPS |
-| TX-41 Sterilizer magazine capacity | 125 rounds | 175 rounds |
-| Sterilizer Gas MKII buildup per hit | 0.5 | 0.75 |
-| Sterilizer gas confusion buildup per hit | 0.5 | 0.75 |
-| Helldiver incoming gas damage multiplier | 1.3 | 0.7333 |
+Works with Health Rework Normal (150 HP, 2.8 regeneration) or Casual (160 HP, 3 regeneration), preserving the selected preset's health, regeneration and stim settings. Use one health preset at a time.
 
-The 45 DPS gas damage is shared by ordinary gas and Sterilizer/Dog Breath gas, including gas grenades and shared gas hazards. It is not limited to those two weapons. The incoming gas multiplier applies to all gas sources, including grenades and hazards; 0.7333 is about 43.6% less incoming gas damage than the stock 1.3 multiplier. The shared Acid Storm duration also affects the weather status after the storm ends.
-
-Compared with Sterilizer v0.11, this release adds armor reduction to the other supported gas weapons. Existing damage, magazine size, incoming gas protection and Sterilizer buildup are retained. Dog Breath and the newly covered weapons retain their existing direct damage, armor penetration, force and gas/confusion buildup values. Gas Mortar sentry health changes belong to the separate sentry mod.
-
-## Install and compatibility
-
-Replaces TX-41 Sterilizer Armor Control. Import this ZIP into Arsenal, enable its option, keep Bingus Shared Loader at its documented priority, Purge and Deploy, then restart Helldivers 2. Use either individual packages or the combined modpack. Do not enable Gas Overhaul alongside an older Sterilizer package or a modpack that already contains it.
-
-Requires Helldivers 2 Steam build 25480438 and Bingus Shared Loader v19. Can be used alongside ARC-3 Rapid/Supercharge v0.14, including its 2325/2325-damage Supercharge. Allow up to two minutes after reaching the ship for initialization.
+Enable Gas Overhaul in Arsenal, Purge and Deploy, then restart Helldivers 2. Keep Bingus Shared Loader at its documented priority. Use the selectable pack in place of older copies of Gas Overhaul or TX-41 Sterilizer Armor Control.

@@ -16,9 +16,9 @@ def main():
         assert isinstance(text,str) and text and '|' not in text
         public['option_descriptions'][package['option']] = text
         package['description'] = text
-    public['description'] = (f"Choose any of {len(catalog['packages'])} Helldivers 2 weapon and equipment mods independently in Arsenal, "
-        'including GL-52 De-Escalator and SG-8P Punisher Plasma with Normal and Shotgun modes. One True Flag offers 29 damage presets, '
-        'defaulting to 300 normal damage and 150 against durable parts. Gas Overhaul supports Health Rework Normal and Casual.')
+    public['description'] = (f"Choose any of {len(catalog['packages'])} Helldivers 2 weapon and equipment mods independently in Arsenal. "
+        'Gas Overhaul adds stronger gas damage and slowdown, brief enemy stuns, enemy-only armour weakening and full Advanced Filtration gas immunity. '
+        'Includes 29 One True Flag damage presets and Health Rework Normal/Casual support.')
     for name,data in [('catalog.json',catalog),('release-metadata.json',public)]:
         (CANON/name).write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
     path = REPO/'README.md'

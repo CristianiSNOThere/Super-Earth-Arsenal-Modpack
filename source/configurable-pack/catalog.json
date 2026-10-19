@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "guid": "bf6cb345-73c0-5b9b-a16c-38d490155842",
-  "version": "2.3.0",
-  "baseline": "2.2.2",
+  "version": "2.4.0",
+  "baseline": "2.3.0",
   "packages": [
     {
       "index": 0,
@@ -183,13 +183,13 @@
       "id": "gas-overhaul",
       "name": "Gas Overhaul",
       "option": "Enable Gas Overhaul",
-      "description": "Supported gas weapons apply Acid Storm, temporarily weakening enemy armor for 15 seconds without permanently destroying armor plates. This covers Sterilizer, Dog Breath, Re-Educator, Speargun, gas grenades, gas mines, Gas Mortar Sentry, Eagle Gas Airstrike and Orbital Gas Strike. Shared gas damage increases from 25 to 45 per second, for both normal damage and damage against durable parts; other gas sources using the same damage also receive this increase.\n\nThe Sterilizer tank increases from 125 to 175 rounds. Its gas and confusion buildup per hit increases from 0.5 to 0.75, a 50% increase. Helldivers take about 44% less gas damage than stock: the incoming gas-damage multiplier falls from 1.3 to about 0.73. This applies to gas from all sources, including hazards. The shared Acid Storm duration increases from 1 to 15 seconds, also affecting the weather effect after exposure ends. Supports Health Rework Normal or Casual while keeping the selected preset's health, regeneration and stim settings; use one health preset at a time.",
+      "description": "Gas damage over time increases from 25 to 60 per second, for both normal damage and damage against durable parts. Sterilizer direct contact damage increases from 1 to 2 for both values. Gas clouds keep their standard spread. The Sterilizer tank holds 175 rounds instead of 125, and its gas and confusion buildup per hit is 0.75 instead of 0.5. The incoming Helldiver gas-damage multiplier is 0.55, keeping nominal incoming gas damage at 33 per second before armour passives and other modifiers.\n\nGas confusion strength is doubled on susceptible enemies, producing stronger slowdown. When hosting a mission, gas-confused enemies can receive a 3-second Medium Stun, at most once every 6 seconds per enemy; existing active stuns are not refreshed and normal stun resistance applies. Gas also applies 15-second temporary armour weakening only to enemies, refreshed while their gas effects remain active. Gas no longer applies this armour debuff to Helldivers, and armour plates are not permanently destroyed. Up to four enemies per second can receive each of these effects.\n\nThese gas changes cover the Sterilizer, Dog Breath, Re-Educator, Speargun, gas grenades and mines, Gas Mortar Sentry, Eagle Gas Airstrike, Orbital Gas Strike and shared gas hazards. Advanced Filtration armour provides 100% immunity to gas damage and gas status effects, increased from 80%; other armour passives keep their existing bonuses. Natural Acid Storm weather still reduces Helldiver armour, and its shared effect duration is 15 seconds.\n\nWorks with Health Rework Normal (150 HP, 2.8 regeneration) or Casual (160 HP, 3 regeneration), preserving the selected preset's health, regeneration and stim settings. Use one health preset at a time.",
       "version": "0.16",
       "guid": "d7bcf26d-5c36-42de-b8ce-e456b8840a25",
       "origin": "Gas-Overhaul-v0.16.zip",
       "origin_sha256": "420B853A93E3EF6D9B1F4561C747C3CAE46F25ED4F75747FAD6FC52E7676B129",
       "files": {
-        "Addon/9ba626afa44a3aa3.patch_0": "0F4F6F9E07C1E01F528FB91060DC98326F07610BC4C964540B4F716BB9ADD4C5",
+        "Addon/9ba626afa44a3aa3.patch_0": "DF010F2EE29CCAEADFF457C2D95E019BCAB1FBB457DC2F7CEE4AD580A442D9AD",
         "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
         "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
       },
@@ -569,7 +569,7 @@
       "origin": "Tenderizer-Armor-Softener-v0.1.2.zip",
       "origin_sha256": "201B2394DF758470FCCCDF9E3C57A165FFADEFCC8D77EF7DBF5D319653BA8C1C",
       "files": {
-        "Addon/9ba626afa44a3aa3.patch_0": "02B40A216601C960C274BC50B0F8A77E53DE84E693B5B7465839F4A9B4831BDA",
+        "Addon/9ba626afa44a3aa3.patch_0": "64F8E5DFF4A59F7EB5A086740F865366BE58651248D3A06F6DA8803F3DC3AAFD",
         "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
         "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
       },
@@ -1112,9 +1112,8 @@
   "flag_layout": "single-dropdown-under-flag-option",
   "expected_resources": 51,
   "changed_package_ids": [
-    "gl52-de-escalator",
-    "40-k-meltagun",
-    "apw-1-anti-materiel-rifle"
+    "gas-overhaul",
+    "tenderizer-armor-softener"
   ],
-  "candidate_description": "25 selectable mods: GL-52 at AP4, Meltagun without fire panic and with 20 m reach, and AMR with 10-round magazines and 10 maximum spares."
+  "candidate_description": "25 selectable weapon and equipment mods, including stronger gas damage and slowdown, enemy-only gas armour weakening, brief gas stuns and full Advanced Filtration gas immunity."
 }

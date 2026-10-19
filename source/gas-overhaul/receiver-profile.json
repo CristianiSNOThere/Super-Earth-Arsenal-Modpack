@@ -1,0 +1,1076 @@
+{
+  "payload_offset": 30174500,
+  "header_map_size": 10396,
+  "header_map_sha": "A0E8E5B1014F3A8E62C96EF3C5DEFE46F729D0137A47B6428D8DDA59FB89DB62",
+  "stride": 46600,
+  "map_size": 10368,
+  "record_count": 325,
+  "records": [
+    {
+      "owner": "36AA99CCE5E60146",
+      "index": 4,
+      "offsets": [
+        2820
+      ],
+      "sha": "2E50A8498ECEB56707815FE8ECCA6A24F47E536B433682FB313F08519741B7C7",
+      "applied_sha": "0DB661B247431F751052C646BFF89AD4FE5DC8E26375308246943E8CAC8C34E3",
+      "faction": 2
+    },
+    {
+      "owner": "1A7FCDFF98C664B0",
+      "index": 5,
+      "offsets": [
+        2644
+      ],
+      "sha": "3EDEA480D8AD276CBAA6605C84EF71A108D45D62390F63A2343DAEBB4367D81A",
+      "applied_sha": "12CEF999604D98CE4B89D0DD04128599DFEDE66ABEC5CB96ED224B7C82CA2A3E",
+      "faction": 2
+    },
+    {
+      "owner": "0AB7B92B131C228C",
+      "index": 6,
+      "offsets": [
+        2644
+      ],
+      "sha": "3E052B399B3AECD488B7D3C83A14072BF3016B7B69FAB64F15C2D3D40D3893BD",
+      "applied_sha": "FFCF48678F857E526CD9F4904FEB03E65093F82F4C2E8A011C25184154C845C8",
+      "faction": 2
+    },
+    {
+      "owner": "D9511E9F6BD62E3F",
+      "index": 9,
+      "offsets": [
+        2820
+      ],
+      "sha": "B41B493C5695EC74D891FE95ECFE805EE6CF7EAE232D6E2CDF316F384DAA7C77",
+      "applied_sha": "AFBDD2997F8E2C8B6EEBA33F9638C99461DF80EBBF115535CBE1BD8A8A519275",
+      "faction": 2
+    },
+    {
+      "owner": "672F7DA17F3BA34A",
+      "index": 11,
+      "offsets": [
+        2292
+      ],
+      "sha": "2FDA127FA4923E351C2375823396826261581C6A3AFB4CD81712F0FC0A23E812",
+      "applied_sha": "5EECC3E164C8DA9C413127F2B2D262C5595846C235839D4136EDCEDBA4152570",
+      "faction": 2
+    },
+    {
+      "owner": "8FF0A839830A7692",
+      "index": 12,
+      "offsets": [
+        2820
+      ],
+      "sha": "D1C0084317E970A99CCE61A6B7900B845B14D967B4661773BF0CAF8D8E709BE7",
+      "applied_sha": "528D660FFBAAB4C163E12465BAEE7E725B970C3D80A05CB6BFD94A08D016F7F2",
+      "faction": 2
+    },
+    {
+      "owner": "64090088502435DD",
+      "index": 13,
+      "offsets": [
+        1060
+      ],
+      "sha": "D0D9796F9A42179C3EB28D61E5204E88E81F5E910B404C758D4CD440945D7347",
+      "applied_sha": "137152E83800E2F8AC7A01D0D1AB1AA8A39B83498C39E0CEE0168BED5EE81BDC",
+      "faction": 2
+    },
+    {
+      "owner": "F540CA9D9D4A422E",
+      "index": 14,
+      "offsets": [
+        2644
+      ],
+      "sha": "8850E739AC9418D8C68A6928B7115244FBF1B913981B160175C7018F4CEF0E3E",
+      "applied_sha": "E3137ED383AD0E682197F8CFDE538CEC1F2EEED796D293419046BC057DC5BD90",
+      "faction": 2
+    },
+    {
+      "owner": "EACEE39FA017B495",
+      "index": 16,
+      "offsets": [
+        2644
+      ],
+      "sha": "66AE980446D72E6EF4B3A52B404F013A2949683CA3EDCFFBAC71A6B09967651C",
+      "applied_sha": "297523C328EB1B33B227506BC0185BA19AC1AE0DAEE9D40688631FFA6CFCAE2F",
+      "faction": 2
+    },
+    {
+      "owner": "A6A68D8AF177F3A1",
+      "index": 17,
+      "offsets": [
+        2292
+      ],
+      "sha": "429B9238B342F3550FFDA0848DBE2562347D44111BCB30E31945844B654AFBD9",
+      "applied_sha": "100CAD682E54EBA21355FC1E69609EC58686B8CBA053A6763D239F1D0DD4B307",
+      "faction": 8
+    },
+    {
+      "owner": "7ECE5304F868F6B3",
+      "index": 19,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "9D8827FED763650E",
+      "index": 20,
+      "offsets": [
+        2468
+      ],
+      "sha": "06930F32D006FB3C5E52A65A828F000D77644C5C68A347D88000FC992639EA7A",
+      "applied_sha": "FD52C8E9985D20A5683F8A0583AD43A07F94E8AF3FD10FC878347A76ABB3F82D",
+      "faction": 8
+    },
+    {
+      "owner": "96BA14C9EBB49CE1",
+      "index": 21,
+      "offsets": [
+        2468
+      ],
+      "sha": "1D19AE19F55A0602E60B54A631BBE1CF2BD467F5F63CCA1EE4A58C294A328D58",
+      "applied_sha": "9F7D61D64327F035A7643C312404F466701429D081A7ABBD00ACBB968356B919",
+      "faction": 8
+    },
+    {
+      "owner": "AE63E525853D7044",
+      "index": 22,
+      "offsets": [
+        2468
+      ],
+      "sha": "8A1C237638B436993DACBF98233417BB6F9AFE805D5CA85363B06ABF5EF992B4",
+      "applied_sha": "B8AB26E9839F8A929671CDB5B21EF1068B83727D0EB8826556522CE191FE4214",
+      "faction": 8
+    },
+    {
+      "owner": "F8131632AA867107",
+      "index": 34,
+      "offsets": [
+        1060
+      ],
+      "sha": "F620B5FAEF482FA4C2D7E532F7BB1209BCF79FB9C9EF75E778F396B5CDE007A9",
+      "applied_sha": "FEB9C100152696B4053D69E9D45A2926A7B20E7AECE25D3AC76C68F7B2982339",
+      "faction": 8
+    },
+    {
+      "owner": "E8F19A0AA958E46D",
+      "index": 41,
+      "offsets": [
+        2468
+      ],
+      "sha": "3554D74754B3AA611FB544121E30C12FC875BB5BF06D5AF2FE759AAC085E659C",
+      "applied_sha": "0A37526DD729F53CFFB6DB01635A6A89A43B5B1D475E899C44DE9B23EAF12BF3",
+      "faction": 4
+    },
+    {
+      "owner": "CC188F0C80505C6C",
+      "index": 42,
+      "offsets": [
+        2820
+      ],
+      "sha": "30612EE88817584D29CB8AF4B1552379D756BE764905EC30F4256D7317864BA4",
+      "applied_sha": "B9B9016A141D1DAC6129879C3BF5437D072DD73977E743F9108C47854BF9F9B4",
+      "faction": 4
+    },
+    {
+      "owner": "905809A4C28D8A45",
+      "index": 43,
+      "offsets": [
+        2644
+      ],
+      "sha": "46D391933D9793B18ABD35268D0236F88EAC554DB5E9ADC868B9C71843602425",
+      "applied_sha": "25A251BE601A1A9C172DAA038790A523F29CB2C0A28DB9B5C3085CE6F5753503",
+      "faction": 4
+    },
+    {
+      "owner": "78E1497571012C47",
+      "index": 44,
+      "offsets": [
+        2468
+      ],
+      "sha": "9C6CAA702A430C17BA7319CE614D62D81E945B0807F3E72ED58FFBE3C90127C3",
+      "applied_sha": "1277B640303D4E45D11421758822FED0027F45C664BDCBE8EAABCBF5A64BE786",
+      "faction": 4
+    },
+    {
+      "owner": "20B9C7734DAEAD65",
+      "index": 45,
+      "offsets": [
+        2468
+      ],
+      "sha": "99DE030D68FCE57A35CB1CC60ADAACD00D8229C4F7343F9062032987A25E387B",
+      "applied_sha": "9F7211FFC6B728B865ED8556672971DA8A0EC24C6C5570B37CFE4ADDF08A8050",
+      "faction": 4
+    },
+    {
+      "owner": "453FE22C634EB30F",
+      "index": 46,
+      "offsets": [
+        2468
+      ],
+      "sha": "99DE030D68FCE57A35CB1CC60ADAACD00D8229C4F7343F9062032987A25E387B",
+      "applied_sha": "9F7211FFC6B728B865ED8556672971DA8A0EC24C6C5570B37CFE4ADDF08A8050",
+      "faction": 4
+    },
+    {
+      "owner": "DA40BB347C7447F2",
+      "index": 47,
+      "offsets": [
+        2468
+      ],
+      "sha": "C6A16F8FBF1A6FA0624157F3C398C1590B15A12299CE9D80D5352673726FEE05",
+      "applied_sha": "C0311DCC45D9154B7B1331BDED279E176126BAE2DC7EC630A4DF70CB3A661D2B",
+      "faction": 4
+    },
+    {
+      "owner": "604A794EC45BB820",
+      "index": 48,
+      "offsets": [
+        2292
+      ],
+      "sha": "8B1E14086579A852548CBE34CB8DFB083410DD005BCE7747357C77027FB851F3",
+      "applied_sha": "0BBDE96BBCB661B79F499A0CEBF5EB7166DAC66717942BCEC1188E531E8A989B",
+      "faction": 4
+    },
+    {
+      "owner": "67DC32DCA4F02D33",
+      "index": 49,
+      "offsets": [
+        2292
+      ],
+      "sha": "F14A20DB4F432EBB045530B4EE0128F62DB2523E59F61028A88C74FAF757A445",
+      "applied_sha": "F70F4718444D8F7E903E30CC54A1AD3B4C113220DB07FC6B558DE048D978EE32",
+      "faction": 4
+    },
+    {
+      "owner": "CCAE5264ACD591B7",
+      "index": 73,
+      "offsets": [
+        2820
+      ],
+      "sha": "2E50A8498ECEB56707815FE8ECCA6A24F47E536B433682FB313F08519741B7C7",
+      "applied_sha": "0DB661B247431F751052C646BFF89AD4FE5DC8E26375308246943E8CAC8C34E3",
+      "faction": 2
+    },
+    {
+      "owner": "A381A11C07D3EB94",
+      "index": 74,
+      "offsets": [
+        2820
+      ],
+      "sha": "2E50A8498ECEB56707815FE8ECCA6A24F47E536B433682FB313F08519741B7C7",
+      "applied_sha": "0DB661B247431F751052C646BFF89AD4FE5DC8E26375308246943E8CAC8C34E3",
+      "faction": 2
+    },
+    {
+      "owner": "CC7022FDD172089B",
+      "index": 75,
+      "offsets": [
+        2820
+      ],
+      "sha": "2E50A8498ECEB56707815FE8ECCA6A24F47E536B433682FB313F08519741B7C7",
+      "applied_sha": "0DB661B247431F751052C646BFF89AD4FE5DC8E26375308246943E8CAC8C34E3",
+      "faction": 2
+    },
+    {
+      "owner": "6021E22338333D88",
+      "index": 76,
+      "offsets": [
+        2820
+      ],
+      "sha": "2E50A8498ECEB56707815FE8ECCA6A24F47E536B433682FB313F08519741B7C7",
+      "applied_sha": "0DB661B247431F751052C646BFF89AD4FE5DC8E26375308246943E8CAC8C34E3",
+      "faction": 2
+    },
+    {
+      "owner": "6B202392F4AB605E",
+      "index": 77,
+      "offsets": [
+        2644
+      ],
+      "sha": "3EDEA480D8AD276CBAA6605C84EF71A108D45D62390F63A2343DAEBB4367D81A",
+      "applied_sha": "12CEF999604D98CE4B89D0DD04128599DFEDE66ABEC5CB96ED224B7C82CA2A3E",
+      "faction": 2
+    },
+    {
+      "owner": "3AFF5FD7D5450B99",
+      "index": 78,
+      "offsets": [
+        2644
+      ],
+      "sha": "3EDEA480D8AD276CBAA6605C84EF71A108D45D62390F63A2343DAEBB4367D81A",
+      "applied_sha": "12CEF999604D98CE4B89D0DD04128599DFEDE66ABEC5CB96ED224B7C82CA2A3E",
+      "faction": 2
+    },
+    {
+      "owner": "FD5247653C897803",
+      "index": 79,
+      "offsets": [
+        2644
+      ],
+      "sha": "3EDEA480D8AD276CBAA6605C84EF71A108D45D62390F63A2343DAEBB4367D81A",
+      "applied_sha": "12CEF999604D98CE4B89D0DD04128599DFEDE66ABEC5CB96ED224B7C82CA2A3E",
+      "faction": 2
+    },
+    {
+      "owner": "3D0E03E2D574E1CA",
+      "index": 80,
+      "offsets": [
+        2820
+      ],
+      "sha": "B41B493C5695EC74D891FE95ECFE805EE6CF7EAE232D6E2CDF316F384DAA7C77",
+      "applied_sha": "AFBDD2997F8E2C8B6EEBA33F9638C99461DF80EBBF115535CBE1BD8A8A519275",
+      "faction": 2
+    },
+    {
+      "owner": "5CA832447445C0BA",
+      "index": 81,
+      "offsets": [
+        2820
+      ],
+      "sha": "B41B493C5695EC74D891FE95ECFE805EE6CF7EAE232D6E2CDF316F384DAA7C77",
+      "applied_sha": "AFBDD2997F8E2C8B6EEBA33F9638C99461DF80EBBF115535CBE1BD8A8A519275",
+      "faction": 2
+    },
+    {
+      "owner": "883401AF2A98A5F6",
+      "index": 82,
+      "offsets": [
+        2820
+      ],
+      "sha": "B41B493C5695EC74D891FE95ECFE805EE6CF7EAE232D6E2CDF316F384DAA7C77",
+      "applied_sha": "AFBDD2997F8E2C8B6EEBA33F9638C99461DF80EBBF115535CBE1BD8A8A519275",
+      "faction": 2
+    },
+    {
+      "owner": "D1E990BAF22D5A52",
+      "index": 83,
+      "offsets": [
+        2644
+      ],
+      "sha": "8850E739AC9418D8C68A6928B7115244FBF1B913981B160175C7018F4CEF0E3E",
+      "applied_sha": "E3137ED383AD0E682197F8CFDE538CEC1F2EEED796D293419046BC057DC5BD90",
+      "faction": 2
+    },
+    {
+      "owner": "51EEA86BF6997E4E",
+      "index": 84,
+      "offsets": [
+        2820
+      ],
+      "sha": "D1C0084317E970A99CCE61A6B7900B845B14D967B4661773BF0CAF8D8E709BE7",
+      "applied_sha": "528D660FFBAAB4C163E12465BAEE7E725B970C3D80A05CB6BFD94A08D016F7F2",
+      "faction": 2
+    },
+    {
+      "owner": "DFBACBD977A948DC",
+      "index": 85,
+      "offsets": [
+        2820
+      ],
+      "sha": "D1C0084317E970A99CCE61A6B7900B845B14D967B4661773BF0CAF8D8E709BE7",
+      "applied_sha": "528D660FFBAAB4C163E12465BAEE7E725B970C3D80A05CB6BFD94A08D016F7F2",
+      "faction": 2
+    },
+    {
+      "owner": "9A8A3AAE287B230C",
+      "index": 86,
+      "offsets": [
+        2820
+      ],
+      "sha": "D1C0084317E970A99CCE61A6B7900B845B14D967B4661773BF0CAF8D8E709BE7",
+      "applied_sha": "528D660FFBAAB4C163E12465BAEE7E725B970C3D80A05CB6BFD94A08D016F7F2",
+      "faction": 2
+    },
+    {
+      "owner": "AAB438596F5E8FD9",
+      "index": 87,
+      "offsets": [
+        2820
+      ],
+      "sha": "D1C0084317E970A99CCE61A6B7900B845B14D967B4661773BF0CAF8D8E709BE7",
+      "applied_sha": "528D660FFBAAB4C163E12465BAEE7E725B970C3D80A05CB6BFD94A08D016F7F2",
+      "faction": 2
+    },
+    {
+      "owner": "72A83E49CED6DB3D",
+      "index": 88,
+      "offsets": [
+        2820
+      ],
+      "sha": "D1C0084317E970A99CCE61A6B7900B845B14D967B4661773BF0CAF8D8E709BE7",
+      "applied_sha": "528D660FFBAAB4C163E12465BAEE7E725B970C3D80A05CB6BFD94A08D016F7F2",
+      "faction": 2
+    },
+    {
+      "owner": "F0B26FA9258128D3",
+      "index": 89,
+      "offsets": [
+        1060
+      ],
+      "sha": "D0D9796F9A42179C3EB28D61E5204E88E81F5E910B404C758D4CD440945D7347",
+      "applied_sha": "137152E83800E2F8AC7A01D0D1AB1AA8A39B83498C39E0CEE0168BED5EE81BDC",
+      "faction": 2
+    },
+    {
+      "owner": "BE39E313A1E46BB9",
+      "index": 91,
+      "offsets": [
+        2644
+      ],
+      "sha": "66AE980446D72E6EF4B3A52B404F013A2949683CA3EDCFFBAC71A6B09967651C",
+      "applied_sha": "297523C328EB1B33B227506BC0185BA19AC1AE0DAEE9D40688631FFA6CFCAE2F",
+      "faction": 2
+    },
+    {
+      "owner": "4E97FB073BDC7A4B",
+      "index": 92,
+      "offsets": [
+        2644
+      ],
+      "sha": "66AE980446D72E6EF4B3A52B404F013A2949683CA3EDCFFBAC71A6B09967651C",
+      "applied_sha": "297523C328EB1B33B227506BC0185BA19AC1AE0DAEE9D40688631FFA6CFCAE2F",
+      "faction": 2
+    },
+    {
+      "owner": "32541FC4EC7C9CDC",
+      "index": 93,
+      "offsets": [
+        2644
+      ],
+      "sha": "66AE980446D72E6EF4B3A52B404F013A2949683CA3EDCFFBAC71A6B09967651C",
+      "applied_sha": "297523C328EB1B33B227506BC0185BA19AC1AE0DAEE9D40688631FFA6CFCAE2F",
+      "faction": 2
+    },
+    {
+      "owner": "B2A6FA1E4284C7E6",
+      "index": 94,
+      "offsets": [
+        2644
+      ],
+      "sha": "66AE980446D72E6EF4B3A52B404F013A2949683CA3EDCFFBAC71A6B09967651C",
+      "applied_sha": "297523C328EB1B33B227506BC0185BA19AC1AE0DAEE9D40688631FFA6CFCAE2F",
+      "faction": 2
+    },
+    {
+      "owner": "10081ACEF6163EF6",
+      "index": 95,
+      "offsets": [
+        2644
+      ],
+      "sha": "66AE980446D72E6EF4B3A52B404F013A2949683CA3EDCFFBAC71A6B09967651C",
+      "applied_sha": "297523C328EB1B33B227506BC0185BA19AC1AE0DAEE9D40688631FFA6CFCAE2F",
+      "faction": 2
+    },
+    {
+      "owner": "D522FD4748D443A5",
+      "index": 96,
+      "offsets": [
+        2644
+      ],
+      "sha": "88F6B5330521D93AD9A3F85133A98980B64A0527730DCA575D8056955A57F7C8",
+      "applied_sha": "94687A3182C649F834BF66EFB19ED16BC77FDCC4A282C00F741381CCA1E04661",
+      "faction": 2
+    },
+    {
+      "owner": "F79CD8BB654397DF",
+      "index": 97,
+      "offsets": [
+        2644
+      ],
+      "sha": "88F6B5330521D93AD9A3F85133A98980B64A0527730DCA575D8056955A57F7C8",
+      "applied_sha": "94687A3182C649F834BF66EFB19ED16BC77FDCC4A282C00F741381CCA1E04661",
+      "faction": 2
+    },
+    {
+      "owner": "A35207C6F2150806",
+      "index": 98,
+      "offsets": [
+        2644
+      ],
+      "sha": "66AE980446D72E6EF4B3A52B404F013A2949683CA3EDCFFBAC71A6B09967651C",
+      "applied_sha": "297523C328EB1B33B227506BC0185BA19AC1AE0DAEE9D40688631FFA6CFCAE2F",
+      "faction": 2
+    },
+    {
+      "owner": "A1F37BF2A40FBDE4",
+      "index": 99,
+      "offsets": [
+        2644
+      ],
+      "sha": "66AE980446D72E6EF4B3A52B404F013A2949683CA3EDCFFBAC71A6B09967651C",
+      "applied_sha": "297523C328EB1B33B227506BC0185BA19AC1AE0DAEE9D40688631FFA6CFCAE2F",
+      "faction": 2
+    },
+    {
+      "owner": "B5DBC0C240C921AD",
+      "index": 100,
+      "offsets": [
+        2292
+      ],
+      "sha": "429B9238B342F3550FFDA0848DBE2562347D44111BCB30E31945844B654AFBD9",
+      "applied_sha": "100CAD682E54EBA21355FC1E69609EC58686B8CBA053A6763D239F1D0DD4B307",
+      "faction": 8
+    },
+    {
+      "owner": "D5792F6856B06BA4",
+      "index": 101,
+      "offsets": [
+        2292
+      ],
+      "sha": "429B9238B342F3550FFDA0848DBE2562347D44111BCB30E31945844B654AFBD9",
+      "applied_sha": "100CAD682E54EBA21355FC1E69609EC58686B8CBA053A6763D239F1D0DD4B307",
+      "faction": 8
+    },
+    {
+      "owner": "B056F8FC74ABA02D",
+      "index": 102,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "7B48CACDBACB3881",
+      "index": 103,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "AE57FCDB49F74E98",
+      "index": 104,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "82A87AD8D595B2BA",
+      "index": 105,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "09DFB04B2E578BC3",
+      "index": 106,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "089833D2880D9E06",
+      "index": 107,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "52018DEB9AB6827E",
+      "index": 108,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "AF0F9B3A163787A5",
+      "index": 109,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "856E9710E45E760F",
+      "index": 110,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "B4ED319B39F5457B",
+      "index": 111,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "A4552F97033392F4",
+      "index": 112,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "D8CBC4A807A6D035",
+      "index": 113,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "30CF04B2EC8C9BD4",
+      "index": 114,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "FB9937035D652C43",
+      "index": 115,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "257D805CAA7E10C0",
+      "index": 116,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "4019623142351CB6",
+      "index": 117,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "64BA5F030B114EC1",
+      "index": 118,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "0002BA767DF856F3",
+      "index": 119,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "A71AAFD82C6EBC92",
+      "index": 120,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "215CE160A17BE4CD",
+      "index": 121,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "1B5B9AC4F96B36E5",
+      "index": 122,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "09FE0BE51A23396C",
+      "index": 123,
+      "offsets": [
+        2468
+      ],
+      "sha": "06930F32D006FB3C5E52A65A828F000D77644C5C68A347D88000FC992639EA7A",
+      "applied_sha": "FD52C8E9985D20A5683F8A0583AD43A07F94E8AF3FD10FC878347A76ABB3F82D",
+      "faction": 8
+    },
+    {
+      "owner": "746A7F3BEDA32699",
+      "index": 124,
+      "offsets": [
+        2468
+      ],
+      "sha": "06930F32D006FB3C5E52A65A828F000D77644C5C68A347D88000FC992639EA7A",
+      "applied_sha": "FD52C8E9985D20A5683F8A0583AD43A07F94E8AF3FD10FC878347A76ABB3F82D",
+      "faction": 8
+    },
+    {
+      "owner": "CBB1BA3366009C3A",
+      "index": 125,
+      "offsets": [
+        2468
+      ],
+      "sha": "06930F32D006FB3C5E52A65A828F000D77644C5C68A347D88000FC992639EA7A",
+      "applied_sha": "FD52C8E9985D20A5683F8A0583AD43A07F94E8AF3FD10FC878347A76ABB3F82D",
+      "faction": 8
+    },
+    {
+      "owner": "1E66EE1F6F7FD00E",
+      "index": 126,
+      "offsets": [
+        2468
+      ],
+      "sha": "1D19AE19F55A0602E60B54A631BBE1CF2BD467F5F63CCA1EE4A58C294A328D58",
+      "applied_sha": "9F7D61D64327F035A7643C312404F466701429D081A7ABBD00ACBB968356B919",
+      "faction": 8
+    },
+    {
+      "owner": "3E0537D606438FEA",
+      "index": 127,
+      "offsets": [
+        2468
+      ],
+      "sha": "1D19AE19F55A0602E60B54A631BBE1CF2BD467F5F63CCA1EE4A58C294A328D58",
+      "applied_sha": "9F7D61D64327F035A7643C312404F466701429D081A7ABBD00ACBB968356B919",
+      "faction": 8
+    },
+    {
+      "owner": "E44EC9F9B3FE1D2A",
+      "index": 128,
+      "offsets": [
+        2468
+      ],
+      "sha": "1D19AE19F55A0602E60B54A631BBE1CF2BD467F5F63CCA1EE4A58C294A328D58",
+      "applied_sha": "9F7D61D64327F035A7643C312404F466701429D081A7ABBD00ACBB968356B919",
+      "faction": 8
+    },
+    {
+      "owner": "6DAB2EADF5D8B692",
+      "index": 129,
+      "offsets": [
+        2468
+      ],
+      "sha": "1D19AE19F55A0602E60B54A631BBE1CF2BD467F5F63CCA1EE4A58C294A328D58",
+      "applied_sha": "9F7D61D64327F035A7643C312404F466701429D081A7ABBD00ACBB968356B919",
+      "faction": 8
+    },
+    {
+      "owner": "1897BDD32105D2DC",
+      "index": 130,
+      "offsets": [
+        2468
+      ],
+      "sha": "1D19AE19F55A0602E60B54A631BBE1CF2BD467F5F63CCA1EE4A58C294A328D58",
+      "applied_sha": "9F7D61D64327F035A7643C312404F466701429D081A7ABBD00ACBB968356B919",
+      "faction": 8
+    },
+    {
+      "owner": "137988CEA16458F7",
+      "index": 131,
+      "offsets": [
+        2468
+      ],
+      "sha": "1D19AE19F55A0602E60B54A631BBE1CF2BD467F5F63CCA1EE4A58C294A328D58",
+      "applied_sha": "9F7D61D64327F035A7643C312404F466701429D081A7ABBD00ACBB968356B919",
+      "faction": 8
+    },
+    {
+      "owner": "32CDEADA234FB8DF",
+      "index": 132,
+      "offsets": [
+        2468
+      ],
+      "sha": "1D19AE19F55A0602E60B54A631BBE1CF2BD467F5F63CCA1EE4A58C294A328D58",
+      "applied_sha": "9F7D61D64327F035A7643C312404F466701429D081A7ABBD00ACBB968356B919",
+      "faction": 8
+    },
+    {
+      "owner": "57EED0EAC346CD9D",
+      "index": 133,
+      "offsets": [
+        2468
+      ],
+      "sha": "8A1C237638B436993DACBF98233417BB6F9AFE805D5CA85363B06ABF5EF992B4",
+      "applied_sha": "B8AB26E9839F8A929671CDB5B21EF1068B83727D0EB8826556522CE191FE4214",
+      "faction": 8
+    },
+    {
+      "owner": "FC8DEC78BE8AB47D",
+      "index": 134,
+      "offsets": [
+        2468
+      ],
+      "sha": "8A1C237638B436993DACBF98233417BB6F9AFE805D5CA85363B06ABF5EF992B4",
+      "applied_sha": "B8AB26E9839F8A929671CDB5B21EF1068B83727D0EB8826556522CE191FE4214",
+      "faction": 8
+    },
+    {
+      "owner": "BE743B2FAA3A6E26",
+      "index": 135,
+      "offsets": [
+        2468
+      ],
+      "sha": "8A1C237638B436993DACBF98233417BB6F9AFE805D5CA85363B06ABF5EF992B4",
+      "applied_sha": "B8AB26E9839F8A929671CDB5B21EF1068B83727D0EB8826556522CE191FE4214",
+      "faction": 8
+    },
+    {
+      "owner": "B92435FBF60F0748",
+      "index": 136,
+      "offsets": [
+        2468
+      ],
+      "sha": "8A1C237638B436993DACBF98233417BB6F9AFE805D5CA85363B06ABF5EF992B4",
+      "applied_sha": "B8AB26E9839F8A929671CDB5B21EF1068B83727D0EB8826556522CE191FE4214",
+      "faction": 8
+    },
+    {
+      "owner": "F8B5A81A86D5D4EB",
+      "index": 137,
+      "offsets": [
+        2468
+      ],
+      "sha": "8A1C237638B436993DACBF98233417BB6F9AFE805D5CA85363B06ABF5EF992B4",
+      "applied_sha": "B8AB26E9839F8A929671CDB5B21EF1068B83727D0EB8826556522CE191FE4214",
+      "faction": 8
+    },
+    {
+      "owner": "58B2B86C11369241",
+      "index": 138,
+      "offsets": [
+        2468
+      ],
+      "sha": "8A1C237638B436993DACBF98233417BB6F9AFE805D5CA85363B06ABF5EF992B4",
+      "applied_sha": "B8AB26E9839F8A929671CDB5B21EF1068B83727D0EB8826556522CE191FE4214",
+      "faction": 8
+    },
+    {
+      "owner": "91EBD77931110AFC",
+      "index": 139,
+      "offsets": [
+        2468
+      ],
+      "sha": "8A1C237638B436993DACBF98233417BB6F9AFE805D5CA85363B06ABF5EF992B4",
+      "applied_sha": "B8AB26E9839F8A929671CDB5B21EF1068B83727D0EB8826556522CE191FE4214",
+      "faction": 8
+    },
+    {
+      "owner": "9647B00CC3A9D36F",
+      "index": 140,
+      "offsets": [
+        2468
+      ],
+      "sha": "8A1C237638B436993DACBF98233417BB6F9AFE805D5CA85363B06ABF5EF992B4",
+      "applied_sha": "B8AB26E9839F8A929671CDB5B21EF1068B83727D0EB8826556522CE191FE4214",
+      "faction": 8
+    },
+    {
+      "owner": "F66D0BAD8693779A",
+      "index": 141,
+      "offsets": [
+        2468
+      ],
+      "sha": "8A1C237638B436993DACBF98233417BB6F9AFE805D5CA85363B06ABF5EF992B4",
+      "applied_sha": "B8AB26E9839F8A929671CDB5B21EF1068B83727D0EB8826556522CE191FE4214",
+      "faction": 8
+    },
+    {
+      "owner": "C9BCCCB0A54A82A4",
+      "index": 142,
+      "offsets": [
+        2468
+      ],
+      "sha": "8A1C237638B436993DACBF98233417BB6F9AFE805D5CA85363B06ABF5EF992B4",
+      "applied_sha": "B8AB26E9839F8A929671CDB5B21EF1068B83727D0EB8826556522CE191FE4214",
+      "faction": 8
+    },
+    {
+      "owner": "E0353177F1329573",
+      "index": 143,
+      "offsets": [
+        2468
+      ],
+      "sha": "8A1C237638B436993DACBF98233417BB6F9AFE805D5CA85363B06ABF5EF992B4",
+      "applied_sha": "B8AB26E9839F8A929671CDB5B21EF1068B83727D0EB8826556522CE191FE4214",
+      "faction": 8
+    },
+    {
+      "owner": "9076EEED17FCEE35",
+      "index": 154,
+      "offsets": [
+        1060
+      ],
+      "sha": "F620B5FAEF482FA4C2D7E532F7BB1209BCF79FB9C9EF75E778F396B5CDE007A9",
+      "applied_sha": "FEB9C100152696B4053D69E9D45A2926A7B20E7AECE25D3AC76C68F7B2982339",
+      "faction": 8
+    },
+    {
+      "owner": "0ADC9F9173AD8E1D",
+      "index": 259,
+      "offsets": [
+        2468
+      ],
+      "sha": "9C6CAA702A430C17BA7319CE614D62D81E945B0807F3E72ED58FFBE3C90127C3",
+      "applied_sha": "1277B640303D4E45D11421758822FED0027F45C664BDCBE8EAABCBF5A64BE786",
+      "faction": 4
+    },
+    {
+      "owner": "44458A2C52B002FB",
+      "index": 260,
+      "offsets": [
+        2468
+      ],
+      "sha": "9C6CAA702A430C17BA7319CE614D62D81E945B0807F3E72ED58FFBE3C90127C3",
+      "applied_sha": "1277B640303D4E45D11421758822FED0027F45C664BDCBE8EAABCBF5A64BE786",
+      "faction": 4
+    },
+    {
+      "owner": "F1610AC48CDC5240",
+      "index": 261,
+      "offsets": [
+        2468
+      ],
+      "sha": "C6A16F8FBF1A6FA0624157F3C398C1590B15A12299CE9D80D5352673726FEE05",
+      "applied_sha": "C0311DCC45D9154B7B1331BDED279E176126BAE2DC7EC630A4DF70CB3A661D2B",
+      "faction": 4
+    },
+    {
+      "owner": "08E6FFC2474287BD",
+      "index": 262,
+      "offsets": [
+        2468
+      ],
+      "sha": "C6A16F8FBF1A6FA0624157F3C398C1590B15A12299CE9D80D5352673726FEE05",
+      "applied_sha": "C0311DCC45D9154B7B1331BDED279E176126BAE2DC7EC630A4DF70CB3A661D2B",
+      "faction": 4
+    },
+    {
+      "owner": "A05BD1EC67B3AC4C",
+      "index": 298,
+      "offsets": [
+        2644
+      ],
+      "sha": "3EDEA480D8AD276CBAA6605C84EF71A108D45D62390F63A2343DAEBB4367D81A",
+      "applied_sha": "12CEF999604D98CE4B89D0DD04128599DFEDE66ABEC5CB96ED224B7C82CA2A3E",
+      "faction": 2
+    },
+    {
+      "owner": "1F0A91729C0004E0",
+      "index": 299,
+      "offsets": [
+        2820
+      ],
+      "sha": "B24ABD4DF42940BDA945D98429075EF31F8FB3EDDC36CC86790DD03843DC49E5",
+      "applied_sha": "4AF0C1A248A45D5B1AC17DF8DC7DE5332EC8E15753B6A63B016AE1640746AC3B",
+      "faction": 2
+    },
+    {
+      "owner": "DB964631BE1CF501",
+      "index": 300,
+      "offsets": [
+        2820
+      ],
+      "sha": "1692D368E231E5E83C2FB9C29F6F679AA4855BB62AB7867A0C22F41F8C01C073",
+      "applied_sha": "58B96D9260FFAC2EE72D1454CFB5170010D6DCAF59F32685543FEF01B0A5C4C8",
+      "faction": 2
+    },
+    {
+      "owner": "728421351D440EBC",
+      "index": 301,
+      "offsets": [
+        2644
+      ],
+      "sha": "805E1A11C6168B492D9E0264566E14FE5C0B1580FDA9F06591150540EFD7D5E0",
+      "applied_sha": "AD40937FC9D80C08EBD34FBEF2CFD6B65DE8F7E1D0D3D3E984FC73EC6F8A8A14",
+      "faction": 2
+    },
+    {
+      "owner": "9F57782F00E6ED20",
+      "index": 302,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "E683D2CA5618D74A",
+      "index": 303,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    },
+    {
+      "owner": "2A12104F2853AE16",
+      "index": 304,
+      "offsets": [
+        2644
+      ],
+      "sha": "21283EEEE54CDFEC66DBA41AB015918407735B47348387E30E60412207E6EF6E",
+      "applied_sha": "10BB207747C8998552D0545015279F9FC5A1CC22DBBB3D0EDAAC8A517522AD8E",
+      "faction": 8
+    }
+  ],
+  "avatar": {
+    "owner": "4D1C334D294DFA97",
+    "index": 35,
+    "sha": "38854EC181BE9A9441E22CA481AB6C7F2310A960671C9400832792963BB9CF80"
+  },
+  "multiplier": 2
+}

@@ -1,4 +1,4 @@
-# Selectable pack v2.3.0 build
+# Selectable pack v2.4.0 build
 
 The current catalog contains 25 independent mod switches and 29 One True Flag
 damage presets. The default Flag preset is 300 normal and 150 durable damage.
@@ -16,7 +16,7 @@ The pack GUID is `bf6cb345-73c0-5b9b-a16c-38d490155842`.
 Run from the HD2 Mods development workspace with Python 3:
 
 ```powershell
-python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/build.py --release --incremental --output work/super-earth-arsenal-modpack-repo/Super-Earth-Arsenal-Modpack-v2.3.0.zip --evidence work/release-melt-amr-20261017/pack
+python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/build.py --release --incremental --output work/super-earth-arsenal-modpack-repo/Super-Earth-Arsenal-Modpack-v2.4.0.zip --evidence work/release-gas-overhaul-20261019/pack
 ```
 
 Existing outputs with different bytes are refused. Use a fresh output path for
@@ -74,7 +74,6 @@ on selects the complete set and first Flag preset. Disabling Flag suppresses
 its preset. Preserve unrelated gameplay payloads for metadata changes.
 
 Keep offline fixtures, startup, loaded resources, gameplay and multiplayer
-evidence distinct. The v2.3.0 Meltagun and AMR changes have offline compatibility
-coverage; their final revision has no separate fresh gameplay result. Retain
+evidence distinct. Retain
 release history and immutable candidates. Switch to another primary before
 replacing or removing Punisher packages.
