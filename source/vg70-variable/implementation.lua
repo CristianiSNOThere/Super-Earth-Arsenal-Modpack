@@ -895,6 +895,13 @@ return function(make_api,components,mode_profile,native,component_profile,compat
             end
         end
     end
+    local function profile_matches(entry,actual)
+        if actual==entry.after then return true end
+        if not entry.foliage_query or not actual or #actual~=272 then return false end
+        local query=u32(actual,244)
+        if query~=0 and query~=2 then return false end
+        return actual==entry.after:sub(1,244)..actual:sub(245,248)..entry.after:sub(249)
+    end
     local function validate_lookups(api,targets,check_rows)
         for _,entry in ipairs(targets)do
             local actual=api.read(entry.registry_slot,8)
@@ -902,7 +909,7 @@ return function(make_api,components,mode_profile,native,component_profile,compat
             assert(pointer and api.identity(pointer)==api.identity(entry.address),
                 'VG-70 runtime profile collision: '..entry.label..' native lookup is owned by another modification')
             if check_rows then
-                assert(api.read(entry.address,#entry.after)==entry.after,
+                assert(profile_matches(entry,api.read(entry.address,#entry.after)),
                     'VG-70 runtime profile collision: '..entry.label..' contents changed')
             end
         end
@@ -934,9 +941,17 @@ return function(make_api,components,mode_profile,native,component_profile,compat
             assert(index==record.index,spec.name..' row '..record.id..' index changed')
             local actual=all:sub(index*spec.stride+1,(index+1)*spec.stride)
             local before,after=unhex(record.before),unhex(record.after)
+            -- Only the reviewed foliage query is shared; retain every other row byte.
+            local foliage=spec==profile_specs.projectile and (record.id==336 or record.id==338)
+                and #before==272 and #after==272 and u32(before,244)==0 and u32(after,244)==0
+            if foliage and u32(actual,244)==2 then
+                before=before:sub(1,244)..'\2\0\0\0'..before:sub(249)
+                after=after:sub(1,244)..'\2\0\0\0'..after:sub(249)
+            end
             assert(actual==before or actual==after,spec.name..' row '..record.id..' exact baseline changed')
             targets[#targets+1]={address=rows+index*spec.stride,before=actual,after=after,
-                label=spec.name..' row '..record.id,protected=true,registry_slot=game+spec.registry+record.id*8}
+                label=spec.name..' row '..record.id,protected=true,registry_slot=game+spec.registry+record.id*8,
+                foliage_query=foliage}
         end
         validate_lookups(api,targets,false)
         return {root_slot=slot,root_bytes=root_bytes,root=root,group=group,header=header,
@@ -985,10 +1000,10 @@ return function(make_api,components,mode_profile,native,component_profile,compat
         local count=transaction_profile(api,edits,validate,function()validate_lookups(api,targets,true)end)
         native_plan.lookup_targets=targets
         for _,entry in ipairs(projectile.targets) do
-            assert(api.read(entry.address,#entry.after)==entry.after,'Projectile profile readback failed')
+            assert(profile_matches(entry,api.read(entry.address,#entry.after)),'Projectile profile readback failed')
         end
         for _,entry in ipairs(damage.targets) do
-            assert(api.read(entry.address,#entry.after)==entry.after,'Damage profile readback failed')
+            assert(profile_matches(entry,api.read(entry.address,#entry.after)),'Damage profile readback failed')
         end
         return count,edits
     end

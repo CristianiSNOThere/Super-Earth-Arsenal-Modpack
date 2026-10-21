@@ -1,6 +1,31 @@
-# Super Earth Arsenal Mod Pack v2.4.0
+# Super Earth Arsenal Mod Pack v2.4.1
 
-## ðŸš¨ COMPATIBILITY WARNING â€” READ BEFORE PLAYING ðŸš¨
+## Install
+
+Download the [latest pack](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/latest). If replacing or removing a pack that changes Punisher Plasma, equip another primary before closing the game.
+
+### Arsenal
+
+1. Close Helldivers 2 and import the ZIP into Arsenal.
+2. Choose your mods and the One True Flag damage preset. Disable matching individual mods and older copies of this pack.
+3. Keep Bingus Shared Loader enabled at its documented priority, then Purge and Deploy.
+4. Restart the game and allow up to two minutes for the selected mods to apply.
+
+Requires game build **25480438** and **Bingus Shared Loader v19 or later**.
+
+### HellForge
+
+The pack also works with **HellForge**, using its Helldivers 2 build **25480438**.
+
+1. Close the game, then use **Add mods...** in HellForge to import the ZIP and replace the older pack.
+2. Choose your pack options and keep **Bingus Shared Loader** enabled; the setup uses v20.
+3. Disable the three mods bundled with HellForge: **HellForge Difficulty**, **HellForge Editor** and **Vanilla Plus**. We needed all three disabled for this setup.
+4. Bingus's **Vanilla Plus / Vanilla Megapack** has been ported to HellForge and is available on the [HellForge mod website](https://hf-mod.com/Mods/Details/6). Use that port in place of the original Lua megapack; disable the original copy.
+5. Start a fresh game session after changing mods or options.
+
+AC-8 Autocannon and VG-70 Variable work with the port's **Foliage Pass Through** option. The pack keeps its 25 independent mod switches and 29 One True Flag damage presets.
+
+## Compatibility warning
 
 > [!CAUTION]
 > **IN CASE OF CRASHES OR MODS NOT LOADING PROPERLY, REMOVE ANY OTHER WEAPON MODS OR STAT EDITOR MODS.**
@@ -9,9 +34,9 @@ Choose the weapon and equipment changes you want from one package. Each of the *
 
 **One True Flag has one damage dropdown with 29 presets**, defaulting to **300 regular damage and 150 against durable parts**. Its settings are inside the Flag option.
 
-**New in v2.4.0:** Gas Overhaul gains 60 damage per second, stronger enemy slowdown, brief stuns, enemy-only gas armour weakening and complete gas immunity with Advanced Filtration armour.
+**New in v2.4.1:** HellForge support, with AC-8 Autocannon and VG-70 Variable compatibility for Foliage Pass Through.
 
-[Download v2.4.0](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v2.4.0/Super-Earth-Arsenal-Modpack-v2.4.0.zip) | [All releases](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases) | [Standalone runtime projects](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
+[Download v2.4.1](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/download/v2.4.1/Super-Earth-Arsenal-Modpack-v2.4.1.zip) | [All releases](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases) | [Standalone runtime projects](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Pack)
 
 ## Choose your mods
 
@@ -59,15 +84,6 @@ Normal damage and damage against durable parts are listed separately; durable da
 
 Gas Overhaul and Tenderizer both use a 15-second Acid Storm effect; the shared duration also affects Acid Storm weather. AC-8's FLAK explosion changes also affect JAR-5 Dominator High Explosive ammunition. AC-8 and Epoch share their mobile reload animation adjustment. These shared changes remain active when supplied by another enabled mod.
 
-## Install
-
-1. Close Helldivers 2. If replacing an older pack that changes Punisher Plasma, equip a different primary before closing the game.
-2. Import the ZIP into Arsenal and select the mods you want. Choose a Flag preset if enabling One True Flag.
-3. Disable matching individual weapon mods and older Arsenal modpacks. Keep Bingus Shared Loader at its documented priority.
-4. Run **Purge and Deploy**, then start the game. Allow up to about two minutes after reaching the ship for the weapon changes to take effect.
-
-Requires Helldivers 2 Steam build 25480438 and Bingus Shared Loader v19.
-
 ## Weapon selectors
 
 - **Punisher Plasma:** hold R and use the left-side Normal / Shotgun selector.
@@ -76,6 +92,12 @@ Requires Helldivers 2 Steam build 25480438 and Bingus Shared Loader v19.
 - **ARC-3:** hold R and choose Auto/Rapid or Semi/Supercharge.
 - **Scorcher:** select Auto in Weapon Functions for continuous fire.
 - **PLAS-39:** hold R and use the left-side Weapon Functions selector. Semi is the quick single shot; Burst charges for about half a second and fires three rounds. Full timings are listed above.
+
+## Changes in v2.4.1
+
+- Adds HellForge support, including AC-8 Autocannon and VG-70 Variable with Foliage Pass Through.
+- Moves installation instructions to the top and includes the HellForge setup and Bingus megapack port link.
+- Keeps the existing weapon and equipment settings.
 
 ## Changes in v2.3.0
 

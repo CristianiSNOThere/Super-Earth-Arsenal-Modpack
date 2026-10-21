@@ -1,4 +1,4 @@
-# Selectable pack v2.4.0 build
+# Selectable pack v2.4.1 build
 
 The current catalog contains 25 independent mod switches and 29 One True Flag
 damage presets. The default Flag preset is 300 normal and 150 durable damage.
@@ -16,7 +16,7 @@ The pack GUID is `bf6cb345-73c0-5b9b-a16c-38d490155842`.
 Run from the HD2 Mods development workspace with Python 3:
 
 ```powershell
-python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/build.py --release --incremental --output work/super-earth-arsenal-modpack-repo/Super-Earth-Arsenal-Modpack-v2.4.0.zip --evidence work/release-gas-overhaul-20261019/pack
+python work/super-earth-arsenal-modpack-repo/tools/configurable-pack/build.py --release --incremental --output work/super-earth-arsenal-modpack-repo/Super-Earth-Arsenal-Modpack-v2.4.1.zip --evidence work/release-hellforge-20261021/pack
 ```
 
 Existing outputs with different bytes are refused. Use a fresh output path for
@@ -44,6 +44,13 @@ The Punisher source must initialize before companion completion, then perform
 the existing post-companion validation; retain its scheduling regressions.
 
 ## Current release details
+
+AC-8 accepts the stock or Foliage Pass Through projectile query field on rows
+115, 206 and 284, preserving the field while checking all other bytes. Variable
+does the same for donor rows 336 and 338 and its owned profiles; registry ownership
+checks remain required. The foliage provider initializes before the Lua runtime.
+Keep the three bundled HellForge gameplay mods disabled as described in the README.
+
 
 GL-52 retains the AP4 Rev3 payload. Meltagun range is 20 m and its Fire_Panic
 slot is cleared while FlamerSlowed remains. AMR capacity and maximum spare

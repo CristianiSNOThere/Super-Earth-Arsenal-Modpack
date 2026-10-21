@@ -17,8 +17,8 @@ def main():
         public['option_descriptions'][package['option']] = text
         package['description'] = text
     public['description'] = (f"Choose any of {len(catalog['packages'])} Helldivers 2 weapon and equipment mods independently in Arsenal. "
-        'Gas Overhaul adds stronger gas damage and slowdown, brief enemy stuns, enemy-only armour weakening and full Advanced Filtration gas immunity. '
-        'Includes 29 One True Flag damage presets and Health Rework Normal/Casual support.')
+        'Also works with HellForge. Includes 29 One True Flag damage presets, Gas Overhaul and Health Rework Normal/Casual support. '
+        'For HellForge, disable its bundled HellForge Difficulty, HellForge Editor and Vanilla Plus mods.')
     for name,data in [('catalog.json',catalog),('release-metadata.json',public)]:
         (CANON/name).write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
     path = REPO/'README.md'

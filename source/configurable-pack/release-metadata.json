@@ -1,5 +1,5 @@
 {
-  "description": "Choose any of 25 Helldivers 2 weapon and equipment mods independently in Arsenal. Gas Overhaul adds stronger gas damage and slowdown, brief enemy stuns, enemy-only armour weakening and full Advanced Filtration gas immunity. Includes 29 One True Flag damage presets and Health Rework Normal/Casual support.",
+  "description": "Choose any of 25 Helldivers 2 weapon and equipment mods independently in Arsenal. Also works with HellForge. Includes 29 One True Flag damage presets, Gas Overhaul and Health Rework Normal/Casual support. For HellForge, disable its bundled HellForge Difficulty, HellForge Editor and Vanilla Plus mods.",
   "option_descriptions": {
     "Enable 40-K Meltagun": "Sets the handling rating, also called ergonomics, to 40. Removes the fire-panic effect that makes enemies panic when hit, while keeping its slowing effect. Beam range increases from 15 to 20 metres.",
     "Enable A/GM-17 Gas Mortar Sentry": "Sets the sentry's health to 600.",

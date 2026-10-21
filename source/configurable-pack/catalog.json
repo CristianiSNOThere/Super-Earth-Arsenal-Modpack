@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "guid": "bf6cb345-73c0-5b9b-a16c-38d490155842",
-  "version": "2.4.0",
-  "baseline": "2.3.0",
+  "version": "2.4.1",
+  "baseline": "2.4.0",
   "packages": [
     {
       "index": 0,
@@ -56,7 +56,7 @@
         "Addon/18235e0c9ec0e636.patch_0": "D95064050733CF9D8CBA39903362A8C33E655032B4C5621CF4787B3A9DA1CB1C",
         "Addon/18235e0c9ec0e636.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
         "Addon/18235e0c9ec0e636.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
-        "Addon/9ba626afa44a3aa3.patch_0": "12FAD45944F352E258DC9C23E5CA03848432DCEFF3C49F0BD74E276DFFE64376",
+        "Addon/9ba626afa44a3aa3.patch_0": "E0B359B5570CCFD0576E79A1ADF0183270D7E4C379D0FF3C2FEEFDFF7D05E8EB",
         "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
         "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
       },
@@ -588,7 +588,7 @@
       "origin": "VG-70-Variable-v0.1.0.zip",
       "origin_sha256": "D11CDC42CBB18F22EDD7E80FC1FC3D8D6E62A7C3BA32F190B69539112FD34A0E",
       "files": {
-        "Addon/9ba626afa44a3aa3.patch_0": "1D6493454E892115F2E6CE98B4B317324F3996706E32DE15A0D5A6524076B950",
+        "Addon/9ba626afa44a3aa3.patch_0": "636AFB12068281B90E357974314F8823E34F1B946A9F97B1C0638C7A7C386259",
         "Addon/9ba626afa44a3aa3.patch_0.gpu_resources": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
         "Addon/9ba626afa44a3aa3.patch_0.stream": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
       },
@@ -596,7 +596,7 @@
         "Addon"
       ],
       "source": "source/vg70-variable/implementation.lua",
-      "source_sha256": "47BB40506ECD425BBBC525BC48B2E4838384E89BFC060639BC73B4EF716F7038"
+      "source_sha256": "700F8FA1B1E09804DF410ED3072BC23D7131A2FB86265B82589BC72F3AD8C608"
     },
     {
       "index": 22,
@@ -1112,8 +1112,8 @@
   "flag_layout": "single-dropdown-under-flag-option",
   "expected_resources": 51,
   "changed_package_ids": [
-    "gas-overhaul",
-    "tenderizer-armor-softener"
+    "ac-8-autocannon",
+    "vg-70-variable"
   ],
-  "candidate_description": "25 selectable weapon and equipment mods, including stronger gas damage and slowdown, enemy-only gas armour weakening, brief gas stuns and full Advanced Filtration gas immunity."
+  "candidate_description": "25 selectable weapon and equipment mods with HellForge support, including the AC-8 and Variable foliage compatibility update."
 }

@@ -399,7 +399,14 @@ local function settings_rows(api,game,spec)
             actual=actual:sub(1,40)..actual:sub(49)
             baseline=baseline:sub(1,40)..baseline:sub(49)
         end
-        if actual~=baseline then fail(spec.name..' row '..expect.id..' exact baseline') end
+        if actual~=baseline then
+            -- Foliage Pass Through changes these APHET/FLAK/HE queries from 0 to 2.
+            -- Accept its complete reviewed row and preserve that peer-owned field.
+            local foliage=spec==PROJECTILE and (expect.id==115 or expect.id==206 or expect.id==284)
+                and u32(baseline,244)==0
+                and actual==baseline:sub(1,244)..'\2\0\0\0'..baseline:sub(249)
+            if not foliage then fail(spec.name..' row '..expect.id..' exact baseline') end
+        end
         found[expect.id]=rows+i*spec.stride
     end
     return found,by_id,all
