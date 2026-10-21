@@ -1,5 +1,10 @@
 # Super Earth Arsenal Mod Pack v2.4.1
 
+## Compatibility warning
+
+> [!CAUTION]
+> **IN CASE OF CRASHES OR MODS NOT LOADING PROPERLY, REMOVE ANY OTHER WEAPON MODS OR STAT EDITOR MODS.**
+
 ## Install
 
 Download the [latest pack](https://github.com/CristianiSNOThere/Super-Earth-Arsenal-Modpack/releases/latest). If replacing or removing a pack that changes Punisher Plasma, equip another primary before closing the game.
@@ -24,11 +29,6 @@ The pack also works with **HellForge**, using its Helldivers 2 build **25480438*
 5. Start a fresh game session after changing mods or options.
 
 AC-8 Autocannon and VG-70 Variable work with the port's **Foliage Pass Through** option. The pack keeps its 25 independent mod switches and 29 One True Flag damage presets.
-
-## Compatibility warning
-
-> [!CAUTION]
-> **IN CASE OF CRASHES OR MODS NOT LOADING PROPERLY, REMOVE ANY OTHER WEAPON MODS OR STAT EDITOR MODS.**
 
 Choose the weapon and equipment changes you want from one package. Each of the **25 mods has its own switch in Arsenal**: enable a single weapon, a smaller selection, or the complete set.
 
